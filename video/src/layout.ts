@@ -51,7 +51,8 @@ export const getLayout = (width: number, height: number): Layout => {
     };
   }
   // Portrait (Shorts): the 1920x1080 stage sits as a band at the bottom, overlays use the top area.
-  const stageScale = (width / 1920) * 1.25;
+  // Slightly enlarged stage; Stage() also pulls characters toward the centre in portrait so none are cut off.
+  const stageScale = (width / 1920) * 1.15;
   const stageW = 1920 * stageScale;
   const stageH = 1080 * stageScale;
   return {

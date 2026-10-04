@@ -46,9 +46,14 @@ const Stage: React.FC<{beat: Beat; prev?: Beat; layout: Layout; blur: boolean; b
       }}
     >
       <BackgroundBack id={beat.background} />
-      {(beat.characters ?? []).map((c, i) => {
+      {(beat.characters ?? []).map((raw, i) => {
         const sameScene = prev?.background === beat.background;
-        const before = sameScene ? prev?.characters?.find((p) => p.id === c.id) : undefined;
+        const rawBefore = sameScene ? prev?.characters?.find((p) => p.id === raw.id) : undefined;
+        // In portrait the stage edges are cropped, so pull characters toward the centre (kitchen seats stay at their plates).
+        const squeeze = layout.portrait && beat.background !== 'kitchen';
+        const sx = (x: number) => (squeeze ? 0.5 + (x - 0.5) * 0.8 : x);
+        const c = {...raw, x: sx(raw.x), from: raw.from ? {...raw.from, x: sx(raw.from.x)} : undefined};
+        const before = rawBefore ? {...rawBefore, x: sx(rawBefore.x)} : undefined;
         const talking = c.talking ?? (speaker === c.id || (speaker === 'everyone' && c.id !== 'miu'));
         return <Character key={c.id} placement={c} prev={before} index={i} talking={talking} />;
       })}

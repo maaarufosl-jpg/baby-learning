@@ -266,7 +266,7 @@ export const SilencePrompt: React.FC<{layout: Layout; beatFrames: number}> = ({l
         boxShadow: '0 10px 0 rgba(59,58,74,0.10)',
       }}
     >
-      <span style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: 54, color: colors.white}}>এবার তুমি বলো</span>
+      <span style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: 54, color: colors.white, whiteSpace: 'nowrap'}}>এবার তুমি বলো</span>
       <span style={{display: 'flex', gap: 14}}>
         {Array.from({length: seconds}).map((_, i) => {
           const filled = frame >= (i + 1) * fps - 4;
