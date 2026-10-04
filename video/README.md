@@ -40,9 +40,18 @@ REMOTION_BROWSER_EXECUTABLE=/path/to/chrome npm run render:ep01
 
 ## ভয়েস যোগ করা
 
-1. প্রতিটি সংলাপ আলাদা ফাইলে রেকর্ড করুন, যেমন `public/audio/ep01/04-ammu.mp3`।
-2. `src/episodes/ep01.ts` এ সংশ্লিষ্ট beat এ `audio: 'audio/ep01/04-ammu.mp3'` লিখুন।
-3. সেই beat এর `seconds` অডিওর দৈর্ঘ্যের সমান বা একটু বেশি করুন।
+1. `episodes/ep01-voice-script.md` দেখে প্রতিটা লাইন আলাদা ফাইলে রেকর্ড করুন। ফোনের রেকর্ডিং (m4a, mp3, wav) সরাসরি চলবে।
+2. ফাইলের নামের শুরুতে স্ক্রিপ্টের লাইন নম্বর রাখুন, যেমন `05-umayer.m4a`, `11-ammu.mp3`। বাকি নাম যা খুশি হতে পারে।
+3. ফাইলগুলো `video/public/audio/ep01/` ফোল্ডারে রাখুন। GitHub-এ ব্রাঞ্চ খুলে "Add file → Upload files" দিয়েও রাখা যায়।
+4. চালান:
+
+```bash
+cd video
+npm run attach-audio:ep01   # নীরবতা কাটে, আওয়াজ সমান করে, দৃশ্যের সময় কণ্ঠ অনুযায়ী বাড়ায়
+npm run render:ep01
+```
+
+যে লাইনের ফাইল নেই, সেই দৃশ্য আগের মতো কণ্ঠ ছাড়াই থাকবে। তাই অল্প অল্প করেও কণ্ঠ যোগ করা যায়।
 
 ## নতুন পর্ব
 

@@ -9,6 +9,7 @@
     "render:ep01-shorts": "remotion render Ep01Shorts out/ep01-shorts.mp4",
     "still:ep01": "remotion still Ep01 out/ep01-frame.png",
     "typecheck": "tsc --noEmit",
+    "attach-audio:ep01": "node scripts/attach-audio.mjs ep01",
     "voice-script:ep01": "node scripts/voice-script.mjs ep01 > ../episodes/ep01-voice-script.md"
   },
   "dependencies": {

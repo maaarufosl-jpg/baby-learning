@@ -1,4 +1,5 @@
 import type {Beat, CharacterPlacement, Episode} from '../types';
+import voice from './ep01.audio.json';
 
 // Script: episodes/ep01-bismillah-bole-khai.md
 // Beat lengths are estimates. Once voice is recorded, set each beat's `seconds` to its audio length.
@@ -34,7 +35,7 @@ const repeatPart = (part: number, said: string, shorts = true): Beat[] => [
   },
 ];
 
-export const ep01: Episode = {
+const base: Episode = {
   id: 'ep01',
   number: 1,
   season: 1,
@@ -405,4 +406,17 @@ export const ep01: Episode = {
       shorts: true,
     },
   ],
+};
+
+/**
+ * Recorded voice lines (written by scripts/attach-audio.mjs) are matched to beats by line number.
+ * A beat is stretched to fit its voice line plus a short pause, never shortened.
+ */
+const lines = voice as Record<string, {file: string; seconds: number}>;
+export const ep01: Episode = {
+  ...base,
+  beats: base.beats.map((b, i) => {
+    const v = lines[String(i + 1)];
+    return v ? {...b, audio: v.file, seconds: Math.max(b.seconds, v.seconds + 0.6)} : b;
+  }),
 };
