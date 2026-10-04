@@ -45,7 +45,7 @@ if (existsSync(srcDir)) {
     // Optional per-voice pitch shift before mixing.
     const shifted = names.map((n, i) => {
       const st = pitchFor(n);
-      return st ? `[${i}:a]rubberband=pitch=${Math.pow(2, st / 12).toFixed(4)}:formant=preserved[p${i}]` : `[${i}:a]anull[p${i}]`;
+      return st ? `[${i}:a]rubberband=pitch=${Math.pow(2, st / 12).toFixed(4)}:formant=shifted:pitchq=quality,highpass=f=90,equalizer=f=3000:t=q:w=1:g=2[p${i}]` : `[${i}:a]anull[p${i}]`;
     });
     const mixed = names.length > 1 ? `${names.map((_, i) => `[p${i}]`).join('')}amix=inputs=${names.length}:duration=longest:normalize=0,` : '[p0]';
     const filter = names.length > 1 ? `${shifted.join(';')};${mixed}${clean}` : `${shifted[0]};[p0]${clean}`;
