@@ -55,6 +55,19 @@ npm run render:ep01
 
 যে লাইনের ফাইল নেই, সেই দৃশ্য আগের মতো কণ্ঠ ছাড়াই থাকবে। তাই অল্প অল্প করেও কণ্ঠ যোগ করা যায়।
 
+## ElevenLabs দিয়ে স্বয়ংক্রিয় কণ্ঠ
+
+এর জন্য পরিবেশে দুটো জিনিস লাগবে: নেটওয়ার্কে `api.elevenlabs.io` খোলা, আর `ELEVENLABS_API_KEY` নামে key রাখা। key কখনো রিপোতে বা চ্যাটে রাখবেন না।
+
+```bash
+cd video
+# পরীক্ষা: উমায়েরের দুটো লাইন
+node scripts/elevenlabs-generate.mjs ep01 --voice "Jane" --who umayer --lines 5,13 --out out/voice-tests
+# সব লাইন, তারপর বাচ্চার স্বর ও ভিডিওতে বসানো
+node scripts/elevenlabs-generate.mjs ep01 --voice "Jane" --who umayer
+node scripts/attach-audio.mjs ep01 --pitch umayer=4
+```
+
 ## নতুন পর্ব
 
 1. `src/episodes/ep01.ts` কপি করে `ep02.ts` বানান, দোয়া ও beats বদলান।
