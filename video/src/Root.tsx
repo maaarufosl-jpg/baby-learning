@@ -14,17 +14,17 @@ loadAllFonts()
 /** Moments of episode 1 shown in the motion preview (start second, length in seconds). */
 const EP01_PREVIEW = [
   {start: 0, seconds: 4.5}, // title + nasheed
-  {start: 8, seconds: 3}, // Ayan runs in
-  {start: 27, seconds: 6.5}, // the mistake, Miu shakes its head
-  {start: 35, seconds: 4}, // question mark
-  {start: 40, seconds: 3.5}, // Ammu walks in
-  {start: 61, seconds: 5}, // dua: syllables light up one by one
-  {start: 66, seconds: 3}, // golden star
-  {start: 86, seconds: 3.5}, // plate glow
-  {start: 101, seconds: 5}, // "now you say it" with silence dots
-  {start: 126.5, seconds: 5}, // right hand
-  {start: 136, seconds: 4}, // Ayan eating with his right hand
-  {start: 159, seconds: 4}, // end card
+  {start: 13, seconds: 3}, // Umayer runs in
+  {start: 32, seconds: 6.5}, // the mistake, Miu shakes its head
+  {start: 40, seconds: 4}, // question mark
+  {start: 45, seconds: 3.5}, // Ammu walks in
+  {start: 66, seconds: 5}, // dua: syllables light up one by one
+  {start: 71, seconds: 3}, // golden star
+  {start: 91, seconds: 3.5}, // plate glow
+  {start: 106, seconds: 5}, // "now you say it" with silence dots
+  {start: 131.5, seconds: 5}, // right hand
+  {start: 141, seconds: 4}, // Umayer eating with his right hand
+  {start: 164, seconds: 4}, // end card
 ];
 
 export const Root: React.FC = () => (

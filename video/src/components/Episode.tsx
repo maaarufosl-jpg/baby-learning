@@ -17,7 +17,7 @@ export const episodeFrames = (episode: EpisodeData, shorts: boolean, fps: number
 const PlateGlow: React.FC = () => {
   const frame = useCurrentFrame();
   const pulse = 0.55 + 0.35 * Math.sin(frame * 0.2);
-  const x = KITCHEN.ayanPlateX * STAGE_W;
+  const x = KITCHEN.umayerPlateX * STAGE_W;
   return (
     <svg width={STAGE_W} height={STAGE_H} style={{position: 'absolute', inset: 0}}>
       <ellipse cx={x} cy={KITCHEN.tableTop + 14} rx={155} ry={44} fill="none" stroke={colors.gold} strokeWidth={10} opacity={pulse} />
@@ -73,9 +73,9 @@ const BeatView: React.FC<{beat: Beat; prev?: Beat; episode: EpisodeData; frames:
     <AbsoluteFill style={{background: layout.portrait ? colors.cream : undefined}}>
       {layout.portrait && <PortraitBackdrop />}
       <Stage beat={beat} prev={prev} layout={layout} blur={blur} blurIn={blur && !prevBlur} />
-      {beat.kind === 'intro' && <Title layout={layout} episodeLabel={`পর্ব ${toBn(episode.number)} · ${episode.title}`} />}
+      {beat.kind === 'intro' && !prev && <Title layout={layout} episodeLabel={`পর্ব ${toBn(episode.number)} · ${episode.title}`} />}
       {beat.speech && (
-        <SpeechBubble speech={beat.speech} layout={layout} top={beat.kind === 'intro' ? layout.titleTop + (layout.portrait ? 300 : 300) : undefined} />
+        <SpeechBubble speech={beat.speech} layout={layout} top={beat.kind === 'intro' && !prev ? layout.titleTop + (layout.portrait ? 300 : 300) : undefined} />
       )}
       {beat.dua && (
         <DuaPanel dua={episode.dua} display={beat.dua} layout={layout} beatFrames={frames} hasSpeech={!!beat.speech} animateIn={duaAnimateIn} />

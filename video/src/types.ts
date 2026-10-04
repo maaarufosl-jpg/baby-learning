@@ -1,4 +1,4 @@
-export type CharacterId = 'ayan' | 'safa' | 'ammu' | 'abbu' | 'nanu' | 'miu';
+export type CharacterId = 'umayer' | 'safa' | 'ammu' | 'abbu' | 'nanu' | 'miu';
 export type Mood = 'happy' | 'excited' | 'surprised' | 'thinking' | 'calm' | 'sad';
 export type BackgroundId = 'kitchen' | 'plain' | 'outdoor';
 export type ArmPose = 'down' | 'up' | 'wave' | 'reach' | 'eat';
@@ -53,7 +53,7 @@ export type Beat = {
   star?: boolean;
   /** Shows the "your turn" prompt with a dot per second of silence. */
   silence?: boolean;
-  /** Big question mark (used for "what did Ayan forget?"). */
+  /** Big question mark (used for "what did Umayer forget?"). */
   question?: boolean;
   props?: PropId[];
   /** Include this beat in the 60-second Shorts cut. */

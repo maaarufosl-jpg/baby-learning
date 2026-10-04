@@ -8,248 +8,299 @@ export const STAGE_W = 1920;
 export const STAGE_H = 1080;
 
 /*
- * Soft "chibi" style: big round heads, glossy eyes with two highlights, blush, tiny mouths,
- * and outlines in a darker shade of each fill instead of black.
+ * Picture-book style: natural proportions, almond eyes with brown irises and lashes,
+ * soft brows, small nose and lips, and clear brown outlines so every shape reads well.
  */
-
-const SKIN_LINE = '#E8AE88';
-const HAIR = '#4A3328';
-const HAIR_LIGHT = '#6E4C3B';
+const LINE = '#5B4036';
+const SKIN = '#F9D3B6';
+const SKIN_SHADE = '#EDB896';
+const SKIN_LINE = '#C08A6E';
+const HAIR = '#3E2A22';
+const LIP = '#9C4A44';
 
 const useBlink = (offset: number) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const period = Math.round(fps * 3.4);
+  const period = Math.round(fps * 3.6);
   const t = (frame + offset) % period;
   return t < 5 ? 1 - Math.abs(t - 2.5) / 2.5 : 0;
 };
 
 const Defs: React.FC<{p: string}> = ({p}) => (
   <defs>
-    <radialGradient id={`${p}-skin`} cx="0.42" cy="0.36" r="0.75">
-      <stop offset="0" stopColor="#FFE6D2" />
-      <stop offset="1" stopColor="#F5C3A0" />
+    <radialGradient id={`${p}-iris`} cx="0.45" cy="0.35" r="0.7">
+      <stop offset="0" stopColor="#9A6440" />
+      <stop offset="1" stopColor="#3A2214" />
     </radialGradient>
-    <linearGradient id={`${p}-eye`} x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stopColor="#1E120C" />
-      <stop offset="0.6" stopColor="#3B2418" />
-      <stop offset="1" stopColor="#8A5A3C" />
-    </linearGradient>
     <radialGradient id={`${p}-blush`}>
-      <stop offset="0" stopColor="#FF8FA0" stopOpacity="0.7" />
-      <stop offset="1" stopColor="#FF8FA0" stopOpacity="0" />
+      <stop offset="0" stopColor="#FF9BA6" stopOpacity="0.55" />
+      <stop offset="1" stopColor="#FF9BA6" stopOpacity="0" />
     </radialGradient>
   </defs>
 );
 
-const Shadow: React.FC<{y: number; rx: number}> = ({y, rx}) => <ellipse cx={100} cy={y} rx={rx} ry={9} fill="rgba(59,58,74,0.10)" />;
+const Shadow: React.FC<{y: number; rx: number}> = ({y, rx}) => <ellipse cx={100} cy={y} rx={rx} ry={8} fill="rgba(59,58,74,0.12)" />;
 
-const Eye: React.FC<{p: string; cx: number; cy: number; rx: number; ry: number; mood: Mood; blink: number; side: 'l' | 'r'; lashes?: boolean}> = ({
-  p,
-  cx,
-  cy,
-  rx,
-  ry,
-  mood,
-  blink,
-  side,
-  lashes,
-}) => {
+/* ---------- face parts ---------- */
+
+type EyeProps = {p: string; cx: number; cy: number; s: number; mood: Mood; blink: number; side: 'l' | 'r'; lashes?: boolean};
+
+const Eye: React.FC<EyeProps> = ({p, cx, cy, s, mood, blink, side, lashes}) => {
   const out = side === 'l' ? -1 : 1;
-  const brow =
-    mood === 'surprised' || mood === 'thinking' || mood === 'sad' ? (
-      <path
-        d={`M ${cx - rx} ${cy - ry - 7 + (mood === 'sad' ? out * 3 : 0)} Q ${cx} ${cy - ry - (mood === 'surprised' ? 16 : 12)} ${cx + rx} ${cy - ry - 7 - (mood === 'sad' ? out * 3 : 0)}`}
-        stroke={HAIR}
-        strokeWidth={3}
-        fill="none"
-        strokeLinecap="round"
-      />
+  const w = 12 * s;
+  const lashMarks = (y: number) =>
+    lashes ? (
+      <g stroke={LINE} strokeWidth={2 * s} strokeLinecap="round">
+        <path d={`M ${cx + out * w} ${y} l ${out * 4.5 * s} ${-2 * s}`} />
+        <path d={`M ${cx + out * w * 0.7} ${y - 3.5 * s} l ${out * 3.5 * s} ${-3.5 * s}`} />
+      </g>
     ) : null;
-  if (mood === 'excited' || blink > 0.55) {
+  if (mood === 'excited') {
     return (
       <g>
-        <path d={`M ${cx - rx} ${cy + 2} Q ${cx} ${cy - ry * 0.9} ${cx + rx} ${cy + 2}`} stroke="#2A1A12" strokeWidth={4.5} fill="none" strokeLinecap="round" />
-        {lashes && <path d={`M ${cx + out * rx} ${cy + 2} l ${out * 5} 1`} stroke="#2A1A12" strokeWidth={2.5} strokeLinecap="round" />}
-        {brow}
+        <path d={`M ${cx - w} ${cy + 2 * s} Q ${cx} ${cy - 8 * s} ${cx + w} ${cy + 2 * s}`} stroke={LINE} strokeWidth={2.8 * s} fill="none" strokeLinecap="round" />
+        {lashMarks(cy + 1 * s)}
       </g>
     );
   }
-  const big = mood === 'surprised' ? 1.08 : 1;
-  const lookX = mood === 'thinking' ? -2.5 : 0;
-  const lookY = mood === 'thinking' ? -2.5 : 0;
-  const ery = ry * big * (1 - blink * 0.7);
-  const erx = rx * big;
+  if (blink > 0.5) {
+    return (
+      <g>
+        <path d={`M ${cx - w} ${cy} Q ${cx} ${cy + 5 * s} ${cx + w} ${cy}`} stroke={LINE} strokeWidth={2.6 * s} fill="none" strokeLinecap="round" />
+        {lashMarks(cy + 1 * s)}
+      </g>
+    );
+  }
+  const open = mood === 'surprised' ? 1.3 : mood === 'sad' ? 0.85 : 1;
+  const h = 8.6 * s * open * (1 - blink * 0.8);
+  const almond = `M ${cx - w} ${cy} C ${cx - w * 0.6} ${cy - h * 1.2} ${cx + w * 0.6} ${cy - h * 1.2} ${cx + w} ${cy} C ${cx + w * 0.6} ${cy + h * 0.9} ${cx - w * 0.6} ${cy + h * 0.9} ${cx - w} ${cy} Z`;
+  const lx = mood === 'thinking' ? -2.5 * s : 0;
+  const ly = mood === 'thinking' ? -2 * s : 0.5 * s;
+  const ir = 6.8 * s * (mood === 'surprised' ? 0.85 : 1);
+  const clip = `${p}-eye-${side}`;
   return (
     <g>
-      <ellipse cx={cx} cy={cy} rx={erx} ry={ery} fill={`url(#${p}-eye)`} />
-      <circle cx={cx + erx * 0.32 + lookX} cy={cy - ery * 0.36 + lookY} r={erx * 0.42} fill={colors.white} />
-      <circle cx={cx - erx * 0.38 + lookX} cy={cy + ery * 0.4 + lookY} r={erx * 0.17} fill={colors.white} opacity={0.9} />
-      {lashes && (
-        <g stroke="#2A1A12" strokeWidth={2.2} strokeLinecap="round">
-          <path d={`M ${cx + out * erx * 0.95} ${cy - ery * 0.25} l ${out * 5} -1`} />
-          <path d={`M ${cx + out * erx * 0.8} ${cy - ery * 0.6} l ${out * 4} -3`} />
-        </g>
-      )}
-      {mood === 'sad' && <path d={`M ${cx - erx - 1} ${cy - ery * 0.35} Q ${cx} ${cy - ery * 0.75} ${cx + erx + 1} ${cy - ery * 0.35}`} stroke="#2A1A12" strokeWidth={2.5} fill="none" />}
-      {brow}
+      <clipPath id={clip}>
+        <path d={almond} />
+      </clipPath>
+      <path d={almond} fill={colors.white} />
+      <g clipPath={`url(#${clip})`}>
+        <circle cx={cx + lx} cy={cy + ly} r={ir} fill={`url(#${p}-iris)`} />
+        <circle cx={cx + lx} cy={cy + ly} r={ir * 0.45} fill="#1A0F0A" />
+        <circle cx={cx + lx + ir * 0.38} cy={cy + ly - ir * 0.42} r={ir * 0.32} fill={colors.white} />
+        <circle cx={cx + lx - ir * 0.35} cy={cy + ly + ir * 0.35} r={ir * 0.14} fill={colors.white} opacity={0.85} />
+        <path d={`M ${cx - w} ${cy - h * 1.3} H ${cx + w} V ${cy - h * 0.55} Q ${cx} ${cy - h * 1.05} ${cx - w} ${cy - h * 0.55} Z`} fill="rgba(120,70,40,0.18)" />
+      </g>
+      <path
+        d={`M ${cx - w - 1} ${cy + 0.5} C ${cx - w * 0.6} ${cy - h * 1.25} ${cx + w * 0.6} ${cy - h * 1.25} ${cx + w + 1} ${cy - 0.5}`}
+        stroke={LINE}
+        strokeWidth={2.6 * s}
+        fill="none"
+        strokeLinecap="round"
+      />
+      <path d={`M ${cx - w * 0.7} ${cy + h * 0.72} Q ${cx} ${cy + h * 1.0} ${cx + w * 0.7} ${cy + h * 0.72}`} stroke={SKIN_LINE} strokeWidth={1.2 * s} fill="none" opacity={0.6} />
+      {lashMarks(cy - 1 * s)}
     </g>
   );
 };
 
-const Mouth: React.FC<{cx: number; cy: number; mood: Mood; talking: boolean; scale?: number}> = ({cx, cy, mood, talking, scale = 1}) => {
+const Brow: React.FC<{cx: number; cy: number; s: number; mood: Mood; side: 'l' | 'r'; color?: string}> = ({cx, cy, s, mood, side, color = HAIR}) => {
+  const out = side === 'l' ? -1 : 1;
+  const base = cy - 13 * s - (mood === 'surprised' ? 4 * s : 0);
+  const outerX = cx + out * 11 * s;
+  const innerX = cx - out * 9 * s;
+  const innerLift = mood === 'sad' ? -4 * s : mood === 'thinking' && side === 'r' ? -4 * s : 0;
+  return (
+    <path
+      d={`M ${outerX} ${base + 1.5 * s} Q ${cx} ${base - 4 * s} ${innerX} ${base + innerLift}`}
+      stroke={color}
+      strokeWidth={2.8 * s}
+      fill="none"
+      strokeLinecap="round"
+    />
+  );
+};
+
+const Mouth: React.FC<{cx: number; cy: number; s: number; mood: Mood; talking: boolean}> = ({cx, cy, s, mood, talking}) => {
   const frame = useCurrentFrame();
   const open = talking ? 0.5 + 0.5 * Math.sin(frame * 0.9) : 0;
-  const s = scale;
-  if (mood === 'surprised') return <ellipse cx={cx} cy={cy + 2} rx={5.5 * s} ry={(7 + open * 2) * s} fill="#8E3B3B" />;
-  if (mood === 'sad') return <path d={`M ${cx - 7 * s} ${cy + 4} Q ${cx} ${cy - 3} ${cx + 7 * s} ${cy + 4}`} stroke="#8E3B3B" strokeWidth={3} fill="none" strokeLinecap="round" />;
-  if (mood === 'thinking') return <path d={`M ${cx - 6 * s} ${cy + 2} Q ${cx + 2} ${cy + 5 + open * 4} ${cx + 8 * s} ${cy - 1}`} stroke="#8E3B3B" strokeWidth={3} fill="none" strokeLinecap="round" />;
+  if (mood === 'surprised') return <ellipse cx={cx} cy={cy + 2 * s} rx={4 * s} ry={(5.5 + open * 1.5) * s} fill="#8E3B3B" stroke={LIP} strokeWidth={1.2} />;
+  if (mood === 'sad') return <path d={`M ${cx - 6 * s} ${cy + 3 * s} Q ${cx} ${cy - 2 * s} ${cx + 6 * s} ${cy + 3 * s}`} stroke={LIP} strokeWidth={2.4 * s} fill="none" strokeLinecap="round" />;
+  if (mood === 'thinking') return <path d={`M ${cx - 5 * s} ${cy + 1 * s} Q ${cx + 1 * s} ${cy + (3 + open * 3) * s} ${cx + 6 * s} ${cy - 1 * s}`} stroke={LIP} strokeWidth={2.4 * s} fill="none" strokeLinecap="round" />;
   if (open > 0.15 || mood === 'excited') {
-    const w = (mood === 'excited' ? 11 : 8) * s;
-    const h = (mood === 'excited' ? 13 : 5 + open * 8) * s;
+    const w = (mood === 'excited' ? 10 : 7.5) * s;
+    const d = (mood === 'excited' ? 10 : 4 + open * 6) * s;
     return (
       <g>
-        <path d={`M ${cx - w} ${cy} Q ${cx} ${cy + h * 1.6} ${cx + w} ${cy} Q ${cx} ${cy + 2} ${cx - w} ${cy} Z`} fill="#8E3B3B" />
-        <ellipse cx={cx} cy={cy + h * 0.85} rx={w * 0.55} ry={h * 0.32} fill="#F28B95" />
+        <path d={`M ${cx - w} ${cy} Q ${cx} ${cy + d * 1.5} ${cx + w} ${cy} Q ${cx} ${cy + 1.5 * s} ${cx - w} ${cy} Z`} fill="#8E3B3B" stroke={LIP} strokeWidth={1.4 * s} strokeLinejoin="round" />
+        <path d={`M ${cx - w * 0.7} ${cy + 1 * s} Q ${cx} ${cy + 3 * s} ${cx + w * 0.7} ${cy + 1 * s} L ${cx + w * 0.6} ${cy + 0.5 * s} Q ${cx} ${cy + 1.6 * s} ${cx - w * 0.6} ${cy + 0.5 * s} Z`} fill={colors.white} />
+        <ellipse cx={cx} cy={cy + d * 0.95} rx={w * 0.5} ry={d * 0.28} fill="#F28B95" />
       </g>
     );
   }
-  return <path d={`M ${cx - 7 * s} ${cy} Q ${cx} ${cy + 7 * s} ${cx + 7 * s} ${cy}`} stroke="#8E3B3B" strokeWidth={3} fill="none" strokeLinecap="round" />;
+  return <path d={`M ${cx - 7 * s} ${cy} Q ${cx} ${cy + 6 * s} ${cx + 7 * s} ${cy}`} stroke={LIP} strokeWidth={2.4 * s} fill="none" strokeLinecap="round" />;
 };
 
-const Face: React.FC<{
+type FaceProps = {
   p: string;
   cx: number;
   eyeY: number;
   eyeDX: number;
-  eyeRX: number;
-  eyeRY: number;
+  s: number;
+  noseY: number;
   mouthY: number;
   mood: Mood;
   talking: boolean;
   blink: number;
   lashes?: boolean;
-  mouthScale?: number;
-}> = ({p, cx, eyeY, eyeDX, eyeRX, eyeRY, mouthY, mood, talking, blink, lashes, mouthScale}) => (
+};
+
+const Face: React.FC<FaceProps> = ({p, cx, eyeY, eyeDX, s, noseY, mouthY, mood, talking, blink, lashes}) => (
   <g>
-    <ellipse cx={cx - eyeDX - eyeRX * 0.4} cy={eyeY + eyeRY + 7} rx={eyeRX * 1.35} ry={eyeRX * 0.85} fill={`url(#${p}-blush)`} />
-    <ellipse cx={cx + eyeDX + eyeRX * 0.4} cy={eyeY + eyeRY + 7} rx={eyeRX * 1.35} ry={eyeRX * 0.85} fill={`url(#${p}-blush)`} />
-    <Eye p={p} cx={cx - eyeDX} cy={eyeY} rx={eyeRX} ry={eyeRY} mood={mood} blink={blink} side="l" lashes={lashes} />
-    <Eye p={p} cx={cx + eyeDX} cy={eyeY} rx={eyeRX} ry={eyeRY} mood={mood} blink={blink} side="r" lashes={lashes} />
-    <ellipse cx={cx} cy={eyeY + eyeRY * 0.85} rx={2.8} ry={2} fill="#E39B78" />
-    <Mouth cx={cx} cy={mouthY} mood={mood} talking={talking} scale={mouthScale} />
+    <ellipse cx={cx - eyeDX - 3 * s} cy={eyeY + 13 * s} rx={9 * s} ry={5.5 * s} fill={`url(#${p}-blush)`} />
+    <ellipse cx={cx + eyeDX + 3 * s} cy={eyeY + 13 * s} rx={9 * s} ry={5.5 * s} fill={`url(#${p}-blush)`} />
+    <Brow cx={cx - eyeDX} cy={eyeY} s={s} mood={mood} side="l" />
+    <Brow cx={cx + eyeDX} cy={eyeY} s={s} mood={mood} side="r" />
+    <Eye p={p} cx={cx - eyeDX} cy={eyeY} s={s} mood={mood} blink={blink} side="l" lashes={lashes} />
+    <Eye p={p} cx={cx + eyeDX} cy={eyeY} s={s} mood={mood} blink={blink} side="r" lashes={lashes} />
+    <path d={`M ${cx - 3 * s} ${noseY} Q ${cx} ${noseY + 3.5 * s} ${cx + 3 * s} ${noseY}`} stroke={SKIN_LINE} strokeWidth={2 * s} fill="none" strokeLinecap="round" />
+    <Mouth cx={cx} cy={mouthY} s={s} mood={mood} talking={talking} />
   </g>
 );
 
-/**
- * Arm angle in degrees. side 'l' is the arm on the viewer's left, which is the character's RIGHT arm.
- * 0 degrees hangs straight down; positive values on the 'l' side swing outward.
- */
-const armAngle = (pose: ArmPose, side: 'l' | 'r', frame: number, fps: number) => {
+/* ---------- arms (two segments so elbows can bend) ---------- */
+
+/** [upper arm, forearm relative] in degrees. side 'l' is the viewer's left = the character's RIGHT arm. */
+const armAngles = (pose: ArmPose, side: 'l' | 'r', frame: number, fps: number): [number, number] => {
   const out = side === 'l' ? 1 : -1;
   switch (pose) {
     case 'up':
-      return out * 150;
+      return [out * 160, 0];
     case 'wave':
-      return out * (140 + Math.sin(frame * 0.35) * 18);
+      return [out * 150, out * (15 + Math.sin(frame * 0.35) * 25)];
     case 'reach':
-      return -out * 40;
+      return [-out * 30, -out * 25];
     case 'eat': {
       const t = (1 - Math.cos(((frame / fps) * Math.PI * 2) / 1.8)) / 2;
-      return -out * (40 + t * 100);
+      return [-out * (25 + t * 35), -out * (15 + t * 105)];
     }
     default:
-      return out * 16 + Math.sin(frame * 0.12) * 3;
+      return [out * 10 + Math.sin(frame * 0.12) * 2.5, -out * 8];
   }
 };
 
-const Arm: React.FC<{p: string; x: number; y: number; pose: ArmPose; side: 'l' | 'r'; sleeve: string; line: string; len?: number}> = ({
-  p,
+const Arm: React.FC<{x: number; y: number; pose: ArmPose; side: 'l' | 'r'; sleeve: string; line: string; upper: number; fore: number; s?: number}> = ({
   x,
   y,
   pose,
   side,
   sleeve,
   line,
-  len = 44,
+  upper,
+  fore,
+  s = 1,
 }) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const [a, b] = armAngles(pose, side, frame, fps);
+  const thumb = side === 'l' ? 6 : -6;
   return (
-    <g transform={`rotate(${armAngle(pose, side, frame, fps)} ${x} ${y})`}>
-      <rect x={x - 12} y={y - 8} width={24} height={len} rx={12} fill={sleeve} stroke={line} strokeWidth={2.5} />
-      <circle cx={x} cy={y + len - 2} r={11} fill={`url(#${p}-skin)`} stroke={SKIN_LINE} strokeWidth={2} />
+    <g transform={`rotate(${a} ${x} ${y})`}>
+      <rect x={x - 10 * s} y={y - 6} width={20 * s} height={upper + 12} rx={10 * s} fill={sleeve} stroke={line} strokeWidth={2} />
+      <g transform={`rotate(${b} ${x} ${y + upper})`}>
+        <rect x={x - 9 * s} y={y + upper - 8} width={18 * s} height={fore + 8} rx={9 * s} fill={sleeve} stroke={line} strokeWidth={2} />
+        <ellipse cx={x + thumb * s} cy={y + upper + fore - 1} rx={3.5 * s} ry={5 * s} fill={SKIN} stroke={SKIN_LINE} strokeWidth={1.6} />
+        <circle cx={x} cy={y + upper + fore + 4} r={8.5 * s} fill={SKIN} stroke={SKIN_LINE} strokeWidth={2} />
+      </g>
     </g>
   );
 };
 
 type PersonProps = {mood: Mood; talking: boolean; right: ArmPose; left: ArmPose; blinkOffset: number};
 
-/* ---------- Ayan: 4-year-old boy, white tupi, sky-blue panjabi ---------- */
-const Ayan: React.FC<PersonProps> = ({mood, talking, right, left, blinkOffset}) => {
+/* ---------- Umayer: 4-year-old boy, white tupi, sky-blue panjabi ---------- */
+const Umayer: React.FC<PersonProps> = ({mood, talking, right, left, blinkOffset}) => {
   const blink = useBlink(blinkOffset);
-  const p = 'ayan';
+  const p = 'umayer';
+  const kurta = '#83BCE2';
+  const kurtaLine = '#4F7FA3';
   return (
     <g>
       <Defs p={p} />
-      <Shadow y={312} rx={54} />
-      <rect x={81} y={258} width={17} height={46} rx={8.5} fill="#F6F1E7" stroke="#DCD2C0" strokeWidth={2} />
-      <rect x={102} y={258} width={17} height={46} rx={8.5} fill="#F6F1E7" stroke="#DCD2C0" strokeWidth={2} />
-      <ellipse cx={88} cy={306} rx={14} ry={7} fill="#8A6650" />
-      <ellipse cx={112} cy={306} rx={14} ry={7} fill="#8A6650" />
-      <path d="M 66 194 Q 100 180 134 194 Q 146 234 142 270 Q 100 281 58 270 Q 54 234 66 194 Z" fill="#8EC5E8" stroke="#6AA6CF" strokeWidth={2.5} />
-      <path d="M 100 190 L 100 226" stroke={colors.white} strokeWidth={3} strokeLinecap="round" />
-      <circle cx={100} cy={206} r={2.6} fill={colors.white} />
-      <circle cx={100} cy={218} r={2.6} fill={colors.white} />
-      <Arm p={p} x={68} y={202} pose={right} side="l" sleeve="#8EC5E8" line="#6AA6CF" />
-      <Arm p={p} x={132} y={202} pose={left} side="r" sleeve="#8EC5E8" line="#6AA6CF" />
-      <ellipse cx={27} cy={122} rx={10} ry={13} fill={`url(#${p}-skin)`} stroke={SKIN_LINE} strokeWidth={2} />
-      <ellipse cx={173} cy={122} rx={10} ry={13} fill={`url(#${p}-skin)`} stroke={SKIN_LINE} strokeWidth={2} />
-      <circle cx={100} cy={112} r={75} fill={`url(#${p}-skin)`} stroke={SKIN_LINE} strokeWidth={2.5} />
-      <path d="M 30 98 Q 38 58 100 56 Q 162 58 170 98 Q 152 82 134 88 Q 120 74 102 86 Q 84 74 68 88 Q 50 82 30 98 Z" fill={HAIR} />
-      <path d="M 120 70 Q 138 72 148 82" stroke={HAIR_LIGHT} strokeWidth={4} fill="none" strokeLinecap="round" />
-      <path d="M 32 82 Q 36 30 100 28 Q 164 30 168 82 Q 100 64 32 82 Z" fill={colors.white} stroke="#D9E3EC" strokeWidth={2.5} />
-      {[50, 75, 100, 125, 150].map((x) => (
-        <circle key={x} cx={x} cy={x === 100 ? 70 : x === 75 || x === 125 ? 71 : 73} r={2.4} fill="#BFD6E8" />
+      <Shadow y={310} rx={44} />
+      <path d="M 80 232 L 98 232 L 97 300 L 81 300 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} />
+      <path d="M 102 232 L 120 232 L 119 300 L 103 300 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} />
+      <ellipse cx={88} cy={304} rx={13} ry={6} fill="#8A5A3A" stroke={LINE} strokeWidth={2} />
+      <ellipse cx={112} cy={304} rx={13} ry={6} fill="#8A5A3A" stroke={LINE} strokeWidth={2} />
+      <rect x={91} y={112} width={18} height={18} rx={6} fill={SKIN_SHADE} />
+      <path d="M 68 136 Q 100 126 132 136 Q 140 186 142 240 Q 100 250 58 240 Q 60 186 68 136 Z" fill={kurta} stroke={kurtaLine} strokeWidth={2.2} />
+      <path d="M 116 142 Q 130 190 132 240 Q 124 242 116 243 Q 120 190 110 142 Z" fill="#6EA7CE" opacity={0.55} />
+      <rect x={86} y={124} width={28} height={12} rx={5} fill={kurta} stroke={kurtaLine} strokeWidth={2} />
+      <path d="M 100 136 V 178" stroke={kurtaLine} strokeWidth={1.8} />
+      {[148, 160, 172].map((y) => (
+        <circle key={y} cx={100} cy={y} r={2.2} fill={colors.white} stroke={kurtaLine} strokeWidth={1} />
       ))}
-      <Face p={p} cx={100} eyeY={126} eyeDX={30} eyeRX={13} eyeRY={16} mouthY={154} mood={mood} talking={talking} blink={blink} />
+      <Arm x={70} y={142} pose={right} side="l" sleeve={kurta} line={kurtaLine} upper={36} fore={38} />
+      <Arm x={130} y={142} pose={left} side="r" sleeve={kurta} line={kurtaLine} upper={36} fore={38} />
+      <ellipse cx={50} cy={86} rx={8} ry={11} fill={SKIN} stroke={SKIN_LINE} strokeWidth={2} />
+      <ellipse cx={150} cy={86} rx={8} ry={11} fill={SKIN} stroke={SKIN_LINE} strokeWidth={2} />
+      <path d="M 100 30 C 133 30 150 52 150 82 C 150 107 132 124 100 124 C 68 124 50 107 50 82 C 50 52 67 30 100 30 Z" fill={SKIN} stroke={SKIN_LINE} strokeWidth={2.2} />
+      <path d="M 52 70 C 54 48 74 36 100 36 C 126 36 146 48 148 70 Q 138 60 128 68 Q 116 60 104 68 Q 92 60 80 68 Q 66 60 52 70 Z" fill={HAIR} />
+      <path d="M 52 66 Q 51 82 56 90 L 59 70 Z" fill={HAIR} />
+      <path d="M 148 66 Q 149 82 144 90 L 141 70 Z" fill={HAIR} />
+      <path d="M 50 62 C 50 32 72 18 100 18 C 128 18 150 32 150 62 C 128 54 72 54 50 62 Z" fill={colors.white} stroke="#B8C4CF" strokeWidth={2} />
+      <path d="M 56 56 Q 100 46 144 56" stroke="#BFD3E3" strokeWidth={2.4} fill="none" strokeDasharray="3 4" />
+      <Face p={p} cx={100} eyeY={86} eyeDX={20} s={1} noseY={98} mouthY={108} mood={mood} talking={talking} blink={blink} />
     </g>
   );
 };
 
-/* ---------- Safa: 2.5-year-old girl, soft pink hijab with a flower ---------- */
+/* ---------- Safa: 2.5-year-old girl, pink hijab with a flower ---------- */
 const Safa: React.FC<PersonProps> = ({mood, talking, right, left, blinkOffset}) => {
   const blink = useBlink(blinkOffset);
   const p = 'safa';
-  const hijab = '#F7B8C8';
-  const hijabLine = '#EC9DB3';
+  const hijab = '#F6AFC2';
+  const hijabLine = '#D9839C';
+  const frock = '#FFD08A';
+  const frockLine = '#D9A050';
   return (
     <g>
       <Defs p={p} />
-      <Shadow y={312} rx={50} />
-      <rect x={84} y={266} width={15} height={38} rx={7.5} fill={`url(#${p}-skin)`} stroke={SKIN_LINE} strokeWidth={2} />
-      <rect x={101} y={266} width={15} height={38} rx={7.5} fill={`url(#${p}-skin)`} stroke={SKIN_LINE} strokeWidth={2} />
-      <ellipse cx={90} cy={306} rx={12} ry={6.5} fill="#E7798F" />
-      <ellipse cx={110} cy={306} rx={12} ry={6.5} fill="#E7798F" />
-      <path d="M 72 202 Q 100 190 128 202 Q 146 248 150 278 Q 100 291 50 278 Q 54 248 72 202 Z" fill="#FFC79A" stroke="#F0A672" strokeWidth={2.5} />
-      <path d="M 100 246 C 92 236 82 244 100 256 C 118 244 108 236 100 246 Z" fill={colors.white} />
-      <Arm p={p} x={74} y={210} pose={right} side="l" sleeve="#FFC79A" line="#F0A672" len={40} />
-      <Arm p={p} x={126} y={210} pose={left} side="r" sleeve="#FFC79A" line="#F0A672" len={40} />
-      <path d="M 100 32 Q 180 36 177 124 Q 176 184 140 204 Q 100 214 60 204 Q 24 184 23 124 Q 20 36 100 32 Z" fill={hijab} stroke={hijabLine} strokeWidth={2.5} />
-      <ellipse cx={100} cy={130} rx={61} ry={63} fill={`url(#${p}-skin)`} stroke={SKIN_LINE} strokeWidth={2.5} />
-      <path d="M 38 122 Q 44 62 100 60 Q 156 62 162 122 Q 150 86 100 84 Q 50 86 38 122 Z" fill={hijab} />
-      <g transform="translate(148 70)">
+      <Shadow y={310} rx={40} />
+      <rect x={85} y={232} width={13} height={68} rx={6} fill="#FFFFFF" stroke={LINE} strokeWidth={2} />
+      <rect x={102} y={232} width={13} height={68} rx={6} fill="#FFFFFF" stroke={LINE} strokeWidth={2} />
+      <ellipse cx={91} cy={303} rx={11} ry={6} fill="#EF7C98" stroke={LINE} strokeWidth={2} />
+      <ellipse cx={109} cy={303} rx={11} ry={6} fill="#EF7C98" stroke={LINE} strokeWidth={2} />
+      <path d="M 74 146 Q 100 138 126 146 L 148 240 Q 100 254 52 240 Z" fill={frock} stroke={frockLine} strokeWidth={2.2} />
+      <path d="M 56 232 Q 100 246 144 232" stroke={colors.white} strokeWidth={5} fill="none" strokeLinecap="round" />
+      {[
+        [82, 200],
+        [116, 188],
+        [100, 218],
+        [72, 228],
+        [128, 224],
+      ].map(([x, y]) => (
+        <circle key={`${x}-${y}`} cx={x} cy={y} r={3} fill={colors.white} />
+      ))}
+      <Arm x={76} y={156} pose={right} side="l" sleeve={frock} line={frockLine} upper={30} fore={32} s={0.9} />
+      <Arm x={124} y={156} pose={left} side="r" sleeve={frock} line={frockLine} upper={30} fore={32} s={0.9} />
+      <path d="M 100 34 C 142 34 162 62 162 96 C 162 122 152 140 140 150 Q 150 168 128 176 L 72 176 Q 50 168 60 150 C 48 140 38 122 38 96 C 38 62 58 34 100 34 Z" fill={hijab} stroke={hijabLine} strokeWidth={2.2} />
+      <path d="M 70 168 Q 100 178 130 168" stroke="#E596AC" strokeWidth={3} fill="none" strokeLinecap="round" />
+      <path d="M 100 56 C 125 56 140 74 140 97 C 140 119 124 134 100 134 C 76 134 60 119 60 97 C 60 74 75 56 100 56 Z" fill={SKIN} stroke={SKIN_LINE} strokeWidth={2} />
+      <path d="M 58 100 C 58 70 76 52 100 52 C 124 52 142 70 142 100 C 138 78 122 62 100 62 C 78 62 62 78 58 100 Z" fill={hijab} />
+      <path d="M 70 44 Q 100 34 130 44" stroke={colors.white} strokeOpacity={0.5} strokeWidth={4} fill="none" strokeLinecap="round" />
+      <g transform="translate(140 62)">
         {[0, 72, 144, 216, 288].map((a) => (
-          <circle key={a} cx={Math.cos((a * Math.PI) / 180) * 7} cy={Math.sin((a * Math.PI) / 180) * 7} r={6} fill={colors.white} />
+          <circle key={a} cx={Math.cos((a * Math.PI) / 180) * 6.5} cy={Math.sin((a * Math.PI) / 180) * 6.5} r={5.5} fill={colors.white} stroke="#E7A8B8" strokeWidth={1} />
         ))}
-        <circle r={4.5} fill={colors.gold} />
+        <circle r={4} fill={colors.gold} />
       </g>
-      <Face p={p} cx={100} eyeY={136} eyeDX={26} eyeRX={12} eyeRY={15} mouthY={162} mood={mood} talking={talking} blink={blink} mouthScale={0.9} />
+      <Face p={p} cx={100} eyeY={98} eyeDX={17} s={0.95} noseY={109} mouthY={118} mood={mood} talking={talking} blink={blink} lashes />
     </g>
   );
 };
 
-/* ---------- Ammu / Nanu: mother and grandmother in hijab ---------- */
+/* ---------- Ammu / Nanu: mother and grandmother in hijab and abaya ---------- */
 const HijabPerson: React.FC<PersonProps & {p: string; hijab: string; hijabLine: string; dress: string; dressLine: string; glasses?: boolean}> = ({
   mood,
   talking,
@@ -267,91 +318,119 @@ const HijabPerson: React.FC<PersonProps & {p: string; hijab: string; hijabLine: 
   return (
     <g>
       <Defs p={p} />
-      <Shadow y={316} rx={66} />
-      <path d="M 62 176 Q 100 162 138 176 Q 160 250 168 314 Q 100 322 32 314 Q 40 250 62 176 Z" fill={dress} stroke={dressLine} strokeWidth={2.5} />
-      <Arm p={p} x={64} y={190} pose={right} side="l" sleeve={dress} line={dressLine} len={62} />
-      <Arm p={p} x={136} y={190} pose={left} side="r" sleeve={dress} line={dressLine} len={62} />
-      <path d="M 100 22 Q 170 26 168 104 Q 168 150 150 176 Q 130 196 100 198 Q 70 196 50 176 Q 32 150 32 104 Q 30 26 100 22 Z" fill={hijab} stroke={hijabLine} strokeWidth={2.5} />
-      <ellipse cx={100} cy={102} rx={47} ry={51} fill={`url(#${p}-skin)`} stroke={SKIN_LINE} strokeWidth={2.5} />
-      <path d="M 52 102 Q 56 50 100 48 Q 144 50 148 102 Q 138 72 100 70 Q 62 72 52 102 Z" fill={hijab} />
-      <path d="M 70 40 Q 100 30 130 40" stroke={colors.white} strokeOpacity={0.45} strokeWidth={4} fill="none" strokeLinecap="round" />
-      <Face p={p} cx={100} eyeY={106} eyeDX={19} eyeRX={9} eyeRY={11} mouthY={130} mood={mood} talking={talking} blink={blink} lashes />
+      <Shadow y={316} rx={58} />
+      <path d="M 72 116 Q 100 108 128 116 Q 146 210 156 314 Q 100 322 44 314 Q 54 210 72 116 Z" fill={dress} stroke={dressLine} strokeWidth={2.2} />
+      <path d="M 88 170 Q 84 240 78 312 M 112 170 Q 116 240 122 312" stroke={dressLine} strokeWidth={1.6} opacity={0.5} fill="none" />
+      <Arm x={77} y={126} pose={right} side="l" sleeve={dress} line={dressLine} upper={50} fore={46} s={0.95} />
+      <Arm x={123} y={126} pose={left} side="r" sleeve={dress} line={dressLine} upper={50} fore={46} s={0.95} />
+      <path d="M 100 18 C 130 18 146 40 146 68 C 146 88 140 100 132 108 Q 148 124 136 142 L 64 142 Q 52 124 68 108 C 60 100 54 88 54 68 C 54 40 70 18 100 18 Z" fill={hijab} stroke={hijabLine} strokeWidth={2.2} />
+      <path d="M 70 136 Q 100 146 130 136" stroke={hijabLine} strokeWidth={1.6} opacity={0.6} fill="none" />
+      <path d="M 100 34 C 120 34 132 50 132 70 C 132 90 118 104 100 104 C 82 104 68 90 68 70 C 68 50 80 34 100 34 Z" fill={SKIN} stroke={SKIN_LINE} strokeWidth={2} />
+      <path d="M 66 74 C 66 46 82 30 100 30 C 118 30 134 46 134 74 C 130 54 118 40 100 40 C 82 40 70 54 66 74 Z" fill={hijab} />
+      <path d="M 80 26 Q 100 20 120 26" stroke={colors.white} strokeOpacity={0.45} strokeWidth={3} fill="none" strokeLinecap="round" />
+      <Face p={p} cx={100} eyeY={70} eyeDX={13} s={0.72} noseY={80} mouthY={89} mood={mood} talking={talking} blink={blink} lashes />
       {glasses && (
-        <g stroke="#9C8AA8" strokeWidth={2.5} fill="none">
-          <circle cx={81} cy={106} r={14} />
-          <circle cx={119} cy={106} r={14} />
-          <line x1={95} y1={104} x2={105} y2={104} />
+        <g stroke="#8C7A99" strokeWidth={2} fill="none">
+          <circle cx={87} cy={70} r={9.5} />
+          <circle cx={113} cy={70} r={9.5} />
+          <line x1={96.5} y1={69} x2={103.5} y2={69} />
         </g>
       )}
     </g>
   );
 };
 
-/* ---------- Abbu: father with tupi and soft beard ---------- */
+/* ---------- Abbu: father with tupi and short beard ---------- */
 const Abbu: React.FC<PersonProps> = ({mood, talking, right, left, blinkOffset}) => {
   const blink = useBlink(blinkOffset);
   const p = 'abbu';
+  const kurta = '#94C4A2';
+  const kurtaLine = '#5E9670';
   return (
     <g>
       <Defs p={p} />
-      <Shadow y={314} rx={62} />
-      <rect x={76} y={250} width={21} height={56} rx={10} fill="#F6F1E7" stroke="#DCD2C0" strokeWidth={2} />
-      <rect x={103} y={250} width={21} height={56} rx={10} fill="#F6F1E7" stroke="#DCD2C0" strokeWidth={2} />
-      <ellipse cx={86} cy={308} rx={15} ry={7} fill="#8A6650" />
-      <ellipse cx={114} cy={308} rx={15} ry={7} fill="#8A6650" />
-      <path d="M 54 172 Q 100 158 146 172 Q 158 230 156 268 Q 100 279 44 268 Q 42 230 54 172 Z" fill="#9CC9A8" stroke="#79AE88" strokeWidth={2.5} />
-      <Arm p={p} x={58} y={182} pose={right} side="l" sleeve="#9CC9A8" line="#79AE88" len={58} />
-      <Arm p={p} x={142} y={182} pose={left} side="r" sleeve="#9CC9A8" line="#79AE88" len={58} />
-      <circle cx={100} cy={102} r={56} fill={`url(#${p}-skin)`} stroke={SKIN_LINE} strokeWidth={2.5} />
-      <path d="M 46 104 Q 50 168 100 170 Q 150 168 154 104 Q 146 142 100 146 Q 54 142 46 104 Z" fill="#5A4033" />
-      <path d="M 46 80 Q 50 38 100 36 Q 150 38 154 80 Q 100 68 46 80 Z" fill={colors.white} stroke="#D9E3EC" strokeWidth={2.5} />
-      <Face p={p} cx={100} eyeY={102} eyeDX={20} eyeRX={9} eyeRY={11} mouthY={128} mood={mood} talking={talking} blink={blink} />
+      <Shadow y={314} rx={52} />
+      <path d="M 78 244 L 98 244 L 97 304 L 79 304 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} />
+      <path d="M 102 244 L 122 244 L 121 304 L 103 304 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} />
+      <ellipse cx={87} cy={307} rx={14} ry={6} fill="#6E4A33" stroke={LINE} strokeWidth={2} />
+      <ellipse cx={113} cy={307} rx={14} ry={6} fill="#6E4A33" stroke={LINE} strokeWidth={2} />
+      <rect x={90} y={96} width={20} height={18} rx={6} fill={SKIN_SHADE} />
+      <path d="M 64 120 Q 100 110 136 120 Q 146 190 148 252 Q 100 262 52 252 Q 54 190 64 120 Z" fill={kurta} stroke={kurtaLine} strokeWidth={2.2} />
+      <rect x={86} y={108} width={28} height={12} rx={5} fill={kurta} stroke={kurtaLine} strokeWidth={2} />
+      <path d="M 100 120 V 170" stroke={kurtaLine} strokeWidth={1.8} />
+      <Arm x={66} y={128} pose={right} side="l" sleeve={kurta} line={kurtaLine} upper={48} fore={44} />
+      <Arm x={134} y={128} pose={left} side="r" sleeve={kurta} line={kurtaLine} upper={48} fore={44} />
+      <ellipse cx={67} cy={66} rx={6} ry={9} fill={SKIN} stroke={SKIN_LINE} strokeWidth={2} />
+      <ellipse cx={133} cy={66} rx={6} ry={9} fill={SKIN} stroke={SKIN_LINE} strokeWidth={2} />
+      <path d="M 100 26 C 122 26 134 42 134 64 C 134 88 120 104 100 104 C 80 104 66 88 66 64 C 66 42 78 26 100 26 Z" fill={SKIN} stroke={SKIN_LINE} strokeWidth={2} />
+      <path d="M 67 66 C 69 94 84 112 100 112 C 116 112 131 94 133 66 C 128 86 118 98 100 98 C 82 98 72 86 67 66 Z" fill="#4A342A" />
+      <path d="M 90 85 Q 100 81 110 85 Q 100 88 90 85 Z" fill="#4A342A" />
+      <path d="M 66 50 C 66 28 82 18 100 18 C 118 18 134 28 134 50 C 118 44 82 44 66 50 Z" fill={colors.white} stroke="#B8C4CF" strokeWidth={2} />
+      <Face p={p} cx={100} eyeY={64} eyeDX={13} s={0.72} noseY={75} mouthY={90} mood={mood} talking={talking} blink={blink} />
     </g>
   );
 };
 
 /* ---------- Miu: the family kitten ---------- */
+const CatEye: React.FC<{cx: number; cy: number; mood: Mood; blink: number}> = ({cx, cy, mood, blink}) => {
+  if (mood === 'excited' || blink > 0.5)
+    return <path d={`M ${cx - 10} ${cy + 2} Q ${cx} ${cy - 7} ${cx + 10} ${cy + 2}`} stroke={LINE} strokeWidth={3} fill="none" strokeLinecap="round" />;
+  const h = mood === 'surprised' ? 13 : 11;
+  return (
+    <g>
+      <ellipse cx={cx} cy={cy} rx={10} ry={h} fill="#A8D86E" stroke={LINE} strokeWidth={2} />
+      <ellipse cx={cx} cy={cy} rx={mood === 'surprised' ? 5.5 : 3.2} ry={h * 0.8} fill="#1A0F0A" />
+      <circle cx={cx + 3} cy={cy - 4} r={2.6} fill={colors.white} />
+    </g>
+  );
+};
+
 const Miu: React.FC<{mood: Mood; talking: boolean}> = ({mood, talking}) => {
   const frame = useCurrentFrame();
   const blink = useBlink(17);
-  const p = 'miu';
   const fur = colors.catFur;
-  const line = '#E0995C';
+  const line = '#B0703F';
   const tail = Math.sin(frame * 0.15) * 16;
   const surprised = mood === 'surprised';
   const earPerk = surprised ? -8 : 0;
   const pawUp = surprised ? -40 : 0;
   return (
     <g>
-      <Defs p={p} />
-      <ellipse cx={100} cy={308} rx={70} ry={9} fill="rgba(59,58,74,0.10)" />
-      <path d="M 146 270 Q 196 250 184 196" stroke={fur} strokeWidth={20} fill="none" strokeLinecap="round" transform={`rotate(${tail} 146 270)`} />
-      <ellipse cx={100} cy={264} rx={56} ry={42} fill={fur} stroke={line} strokeWidth={2.5} />
-      <ellipse cx={100} cy={276} rx={32} ry={24} fill={colors.catFurLight} />
-      <ellipse cx={80} cy={302} rx={15} ry={9} fill={colors.catFurLight} stroke={line} strokeWidth={2} />
-      <ellipse cx={120} cy={302 + pawUp} rx={15} ry={9} fill={colors.catFurLight} stroke={line} strokeWidth={2} />
-      <path d={`M 46 ${170 + earPerk} Q 40 ${104 + earPerk} 84 ${128}`} fill={fur} stroke={line} strokeWidth={2.5} />
-      <path d={`M 154 ${170 + earPerk} Q 160 ${104 + earPerk} 116 ${128}`} fill={fur} stroke={line} strokeWidth={2.5} />
-      <path d={`M 54 ${158 + earPerk} Q 52 ${120 + earPerk} 76 ${134}`} fill="#F9B4B4" />
-      <path d={`M 146 ${158 + earPerk} Q 148 ${120 + earPerk} 124 ${134}`} fill="#F9B4B4" />
-      <circle cx={100} cy={180} r={62} fill={fur} stroke={line} strokeWidth={2.5} />
-      <path d="M 90 124 q 2 10 0 18 M 100 122 q 0 12 0 20 M 110 124 q -2 10 0 18" stroke={line} strokeWidth={3.5} strokeLinecap="round" fill="none" />
-      <ellipse cx={100} cy={206} rx={30} ry={20} fill={colors.catFurLight} />
-      <ellipse cx={66} cy={202} rx={15} ry={9} fill={`url(#${p}-blush)`} />
-      <ellipse cx={134} cy={202} rx={15} ry={9} fill={`url(#${p}-blush)`} />
-      <Eye p={p} cx={76} cy={182} rx={13} ry={15} mood={mood === 'excited' ? 'excited' : surprised ? 'surprised' : 'calm'} blink={blink} side="l" />
-      <Eye p={p} cx={124} cy={182} rx={13} ry={15} mood={mood === 'excited' ? 'excited' : surprised ? 'surprised' : 'calm'} blink={blink} side="r" />
-      <path d="M 95 198 Q 100 195 105 198 Q 100 205 95 198 Z" fill="#F28B95" />
+      <defs>
+        <radialGradient id="miu-blush">
+          <stop offset="0" stopColor="#FF9BA6" stopOpacity="0.55" />
+          <stop offset="1" stopColor="#FF9BA6" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <ellipse cx={100} cy={308} rx={70} ry={8} fill="rgba(59,58,74,0.12)" />
+      <path d="M 146 270 Q 196 250 184 196" stroke={line} strokeWidth={23} fill="none" strokeLinecap="round" transform={`rotate(${tail} 146 270)`} />
+      <path d="M 146 270 Q 196 250 184 196" stroke={fur} strokeWidth={18} fill="none" strokeLinecap="round" transform={`rotate(${tail} 146 270)`} />
+      <ellipse cx={100} cy={264} rx={54} ry={42} fill={fur} stroke={line} strokeWidth={2.2} />
+      <ellipse cx={100} cy={276} rx={30} ry={24} fill={colors.catFurLight} />
+      <ellipse cx={80} cy={302} rx={14} ry={8} fill={colors.catFurLight} stroke={line} strokeWidth={2} />
+      <ellipse cx={120} cy={302 + pawUp} rx={14} ry={8} fill={colors.catFurLight} stroke={line} strokeWidth={2} />
+      <path d={`M 50 ${168 + earPerk} L 56 ${112 + earPerk} L 88 ${136}`} fill={fur} stroke={line} strokeWidth={2.2} strokeLinejoin="round" />
+      <path d={`M 150 ${168 + earPerk} L 144 ${112 + earPerk} L 112 ${136}`} fill={fur} stroke={line} strokeWidth={2.2} strokeLinejoin="round" />
+      <path d={`M 58 ${156 + earPerk} L 61 ${124 + earPerk} L 80 ${140}`} fill="#F9B4B4" />
+      <path d={`M 142 ${156 + earPerk} L 139 ${124 + earPerk} L 120 ${140}`} fill="#F9B4B4" />
+      <ellipse cx={100} cy={182} rx={58} ry={52} fill={fur} stroke={line} strokeWidth={2.2} />
+      <path d="M 90 134 q 2 9 0 16 M 100 132 q 0 11 0 19 M 110 134 q -2 9 0 16" stroke={line} strokeWidth={3} strokeLinecap="round" fill="none" />
+      <ellipse cx={100} cy={204} rx={26} ry={18} fill={colors.catFurLight} />
+      <ellipse cx={66} cy={204} rx={13} ry={8} fill="url(#miu-blush)" />
+      <ellipse cx={134} cy={204} rx={13} ry={8} fill="url(#miu-blush)" />
+      <CatEye cx={78} cy={182} mood={mood} blink={blink} />
+      <CatEye cx={122} cy={182} mood={mood} blink={blink} />
+      <path d="M 95 196 Q 100 193 105 196 Q 100 202 95 196 Z" fill="#F28B95" stroke={line} strokeWidth={1} />
       {surprised || talking ? (
-        <ellipse cx={100} cy={214} rx={5} ry={6 + (talking ? 3 * Math.abs(Math.sin(frame * 0.5)) : 0)} fill="#8E3B3B" />
+        <ellipse cx={100} cy={211} rx={4.5} ry={5.5 + (talking ? 3 * Math.abs(Math.sin(frame * 0.5)) : 0)} fill="#8E3B3B" />
       ) : (
-        <path d="M 91 207 Q 95.5 213 100 207 Q 104.5 213 109 207" stroke="#8E3B3B" strokeWidth={2.5} fill="none" strokeLinecap="round" />
+        <path d="M 92 205 Q 96 210 100 205 Q 104 210 108 205" stroke={LINE} strokeWidth={2.2} fill="none" strokeLinecap="round" />
       )}
-      <g stroke={line} strokeWidth={2} strokeLinecap="round" opacity={0.8}>
-        <line x1={44} y1={204} x2={68} y2={207} />
-        <line x1={46} y1={216} x2={68} y2={212} />
-        <line x1={156} y1={204} x2={132} y2={207} />
-        <line x1={154} y1={216} x2={132} y2={212} />
+      <g stroke={line} strokeWidth={1.8} strokeLinecap="round" opacity={0.8}>
+        <line x1={46} y1={200} x2={70} y2={203} />
+        <line x1={48} y1={212} x2={70} y2={208} />
+        <line x1={154} y1={200} x2={130} y2={203} />
+        <line x1={152} y1={212} x2={130} y2={208} />
       </g>
     </g>
   );
@@ -359,7 +438,7 @@ const Miu: React.FC<{mood: Mood; talking: boolean}> = ({mood, talking}) => {
 
 /* ---------- placement on the stage ---------- */
 
-const BASE_HEIGHT: Record<CharacterId, number> = {ayan: 1, safa: 0.74, ammu: 1.28, abbu: 1.34, nanu: 1.2, miu: 0.55};
+const BASE_HEIGHT: Record<CharacterId, number> = {umayer: 1, safa: 0.8, ammu: 1.4, abbu: 1.48, nanu: 1.32, miu: 0.55};
 const PX_PER_UNIT = 1.35;
 
 export const Character: React.FC<{placement: CharacterPlacement; prev?: CharacterPlacement; index: number; talking: boolean}> = ({
@@ -385,16 +464,19 @@ export const Character: React.FC<{placement: CharacterPlacement; prev?: Characte
   const pop = isNew ? spring({frame, fps, config: {damping: 11, mass: 0.6}}) : 1;
   const opacity = isNew ? interpolate(frame, [0, 6], [0, 1], {extrapolateRight: 'clamp'}) : 1;
 
-  const idleBob = Math.sin(frame * 0.1 + index) * 3;
-  const walkBob = moving ? -Math.abs(Math.sin(frame * 0.55)) * 16 : 0;
-  const hop = mood === 'excited' ? -Math.abs(Math.sin(frame * 0.3)) * 12 : 0;
-  const nod = placement.nod ? Math.max(0, Math.sin(frame * 0.4)) * 7 : 0;
+  const idleBob = Math.sin(frame * 0.1 + index) * 2.5;
+  const walkBob = moving ? -Math.abs(Math.sin(frame * 0.55)) * 14 : 0;
+  const hop = mood === 'excited' ? -Math.abs(Math.sin(frame * 0.3)) * 10 : 0;
+  const nod = placement.nod ? Math.max(0, Math.sin(frame * 0.4)) * 6 : 0;
   const shake = placement.shake ? Math.sin(frame * 0.5) * 6 : 0;
 
   const w = 200 * scale;
   const h = 320 * scale;
   const px = x * STAGE_W;
   const py = y * STAGE_H + idleBob + walkBob + hop + nod;
+  const right = placement.arms?.right ?? 'down';
+  const left = placement.arms?.left ?? 'down';
+  const common = {mood, talking, right, left, blinkOffset: index * 37};
   return (
     <svg
       viewBox="0 0 200 320"
@@ -410,31 +492,18 @@ export const Character: React.FC<{placement: CharacterPlacement; prev?: Characte
         transformOrigin: '50% 100%',
       }}
     >
-      {(() => {
-        const right = placement.arms?.right ?? 'down';
-        const left = placement.arms?.left ?? 'down';
-        const common = {mood, talking, right, left, blinkOffset: index * 37};
-        switch (placement.id) {
-          case 'ayan':
-            return <Ayan {...common} />;
-          case 'safa':
-            return <Safa {...common} />;
-          case 'ammu':
-            return <HijabPerson {...common} p="ammu" hijab="#A9BEE3" hijabLine="#8AA4D2" dress="#9CC9A8" dressLine="#79AE88" />;
-          case 'nanu':
-            return <HijabPerson {...common} p="nanu" hijab="#E6DFF2" hijabLine="#CFC3E3" dress="#BCA4CC" dressLine="#A088B3" glasses />;
-          case 'abbu':
-            return <Abbu {...common} />;
-          case 'miu':
-            return <Miu mood={mood} talking={talking} />;
-        }
-      })()}
+      {placement.id === 'umayer' && <Umayer {...common} />}
+      {placement.id === 'safa' && <Safa {...common} />}
+      {placement.id === 'ammu' && <HijabPerson {...common} p="ammu" hijab="#A9BEE3" hijabLine="#7D97C6" dress="#9CC9A8" dressLine="#6FA27F" />}
+      {placement.id === 'nanu' && <HijabPerson {...common} p="nanu" hijab="#E6DFF2" hijabLine="#BFB1D8" dress="#BCA4CC" dressLine="#977DAE" glasses />}
+      {placement.id === 'abbu' && <Abbu {...common} />}
+      {placement.id === 'miu' && <Miu mood={mood} talking={talking} />}
     </svg>
   );
 };
 
 export const characterName = (id: CharacterId): string =>
-  ({ayan: 'আয়ান', safa: 'সাফা', ammu: 'আম্মু', abbu: 'আব্বু', nanu: 'নানু', miu: 'মিউ'})[id];
+  ({umayer: 'উমায়ের', safa: 'সাফা', ammu: 'আম্মু', abbu: 'আব্বু', nanu: 'নানু', miu: 'মিউ'})[id];
 
 export const characterColor = (id: CharacterId): string =>
-  ({ayan: colors.skyDark, safa: colors.peachDark, ammu: colors.sageDark, abbu: colors.sageDark, nanu: '#A98BB5', miu: colors.peachDark})[id];
+  ({umayer: colors.skyDark, safa: colors.peachDark, ammu: colors.sageDark, abbu: colors.sageDark, nanu: '#A98BB5', miu: colors.peachDark})[id];
