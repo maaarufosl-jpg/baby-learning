@@ -40,12 +40,18 @@ if (existsSync(srcDir)) {
     const nn = String(beat).padStart(2, '0');
     const out = join(readyDir, `${nn}.wav`);
     // Trim leading/trailing silence, even out loudness, and convert to 48 kHz mono WAV.
-    const clean = 'silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,loudnorm=I=-16:TP=-1.5:LRA=11,adelay=150|150';
+    const clean = 'highpass=f=80,afftdn=nf=-25,silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,loudnorm=I=-16:TP=-1.5:LRA=11,adelay=150|150';
     const inputs = names.flatMap((n) => ['-i', join(srcDir, n)]);
     // Optional per-voice pitch shift before mixing.
     const shifted = names.map((n, i) => {
       const st = pitchFor(n);
-      return st ? `[${i}:a]rubberband=pitch=${Math.pow(2, st / 12).toFixed(4)}:formant=shifted:pitchq=quality,highpass=f=90,equalizer=f=3000:t=q:w=1:g=2[p${i}]` : `[${i}:a]anull[p${i}]`;
+      if (!st) return `[${i}:a]anull[p${i}]`;
+      // Formants move up by at most 5 semitones (a child's vocal tract is only somewhat smaller);
+      // any further pitch rise keeps formants in place, so big shifts from a male voice avoid the "chipmunk" sound.
+      const formantSt = Math.min(st, 5);
+      const stages = [`rubberband=pitch=${Math.pow(2, formantSt / 12).toFixed(4)}:formant=shifted:pitchq=quality`];
+      if (st > formantSt) stages.push(`rubberband=pitch=${Math.pow(2, (st - formantSt) / 12).toFixed(4)}:formant=preserved:pitchq=quality`);
+      return `[${i}:a]${stages.join(',')},equalizer=f=3000:t=q:w=1:g=2[p${i}]`;
     });
     const mixed = names.length > 1 ? `${names.map((_, i) => `[p${i}]`).join('')}amix=inputs=${names.length}:duration=longest:normalize=0,` : '[p0]';
     const filter = names.length > 1 ? `${shifted.join(';')};${mixed}${clean}` : `${shifted[0]};[p0]${clean}`;
