@@ -8,7 +8,8 @@
     "render:ep01": "remotion render Ep01 out/ep01.mp4",
     "render:ep01-shorts": "remotion render Ep01Shorts out/ep01-shorts.mp4",
     "still:ep01": "remotion still Ep01 out/ep01-frame.png",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "voice-script:ep01": "node scripts/voice-script.mjs ep01 > ../episodes/ep01-voice-script.md"
   },
   "dependencies": {
     "@remotion/cli": "4.0.532",
