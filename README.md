@@ -16,6 +16,7 @@
 | `docs/05-roadmap.md` | সিজন ২, ৩ ও পরবর্তী পরিকল্পনা |
 | `episodes/ep01-bismillah-bole-khai.md` | এপিসোড ১ এর পূর্ণ স্ক্রিপ্ট (দৃশ্য, সংলাপ, স্ক্রিনের লেখা, সময়) |
 | `templates/episode-template.md` | নতুন এপিসোড লেখার টেমপ্লেট |
+| `video/` | Remotion দিয়ে ভিডিও রেন্ডার প্রজেক্ট (বিস্তারিত `video/README.md`) |
 
 ## কাজের ধাপ (সংক্ষেপে)
 

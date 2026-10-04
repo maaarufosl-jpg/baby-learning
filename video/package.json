@@ -1,0 +1,27 @@
+{
+  "name": "chotto-mumin-video",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Remotion project that renders Chotto Mumin episodes from script data",
+  "scripts": {
+    "studio": "remotion studio",
+    "render:ep01": "remotion render Ep01 out/ep01.mp4",
+    "render:ep01-shorts": "remotion render Ep01Shorts out/ep01-shorts.mp4",
+    "still:ep01": "remotion still Ep01 out/ep01-frame.png",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.532",
+    "@remotion/fonts": "4.0.532",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@fontsource/amiri": "5.3.0",
+    "@fontsource/hind-siliguri": "5.3.0",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.0",
+    "typescript": "5.8.3"
+  }
+}

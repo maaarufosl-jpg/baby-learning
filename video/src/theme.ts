@@ -1,0 +1,20 @@
+// Warm pastel palette, max five main colours (see docs/04-production-guide.md)
+export const colors = {
+  cream: '#FFF6E5',
+  sage: '#CFE8D5',
+  sageDark: '#8FBF9F',
+  peach: '#FFD6B0',
+  peachDark: '#F2A65A',
+  sky: '#CDE7F5',
+  skyDark: '#6FB1D6',
+  ink: '#3B3A4A',
+  inkSoft: '#6B6A7A',
+  gold: '#F5C542',
+  white: '#FFFFFF',
+  skin: '#F6CBA6',
+  skinDark: '#D9A277',
+  hair: '#4A3328',
+  hijabAmmu: '#9FB7D9',
+  catFur: '#F2B880',
+  catFurLight: '#FFE2C2',
+};
