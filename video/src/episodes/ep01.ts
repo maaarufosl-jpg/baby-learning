@@ -4,8 +4,8 @@ import type {Beat, CharacterPlacement, Episode} from '../types';
 // Beat lengths are estimates. Once voice is recorded, set each beat's `seconds` to its audio length.
 
 /* Seats at the kitchen table (plates are drawn in Backgrounds.tsx at the same x). */
-const ayan = (p: Partial<CharacterPlacement> = {}): CharacterPlacement => ({id: 'ayan', x: 0.42, y: 0.94, scale: 1.3, mood: 'happy', ...p});
-const safa = (p: Partial<CharacterPlacement> = {}): CharacterPlacement => ({id: 'safa', x: 0.62, y: 0.89, scale: 1.3, mood: 'happy', ...p});
+const ayan = (p: Partial<CharacterPlacement> = {}): CharacterPlacement => ({id: 'ayan', x: 0.42, y: 0.87, scale: 1.3, mood: 'happy', ...p});
+const safa = (p: Partial<CharacterPlacement> = {}): CharacterPlacement => ({id: 'safa', x: 0.62, y: 0.83, scale: 1.3, mood: 'happy', ...p});
 const ammu = (p: Partial<CharacterPlacement> = {}): CharacterPlacement => ({id: 'ammu', x: 0.14, y: 0.97, scale: 1.15, mood: 'happy', ...p});
 const miu = (p: Partial<CharacterPlacement> = {}): CharacterPlacement => ({id: 'miu', x: 0.91, y: 0.98, scale: 1.2, mood: 'happy', ...p});
 

@@ -78,12 +78,12 @@ const Steam: React.FC<{x: number; y: number}> = ({x, y}) => {
         return (
           <path
             key={i}
-            d={`M ${x - 30 + i * 30} ${y - t * 90} q 12 -18 0 -36 q -12 -18 0 -36`}
+            d={`M ${x - 24 + i * 24} ${y + 10 - t * 40} q 8 -10 0 -20 q -8 -10 0 -20`}
             stroke={colors.white}
-            strokeWidth={8}
+            strokeWidth={6}
             fill="none"
             strokeLinecap="round"
-            opacity={(1 - t) * 0.8}
+            opacity={(1 - t) * 0.7}
           />
         );
       })}
