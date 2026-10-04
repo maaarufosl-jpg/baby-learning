@@ -48,6 +48,8 @@ REMOTION_BROWSER_EXECUTABLE=/path/to/chrome npm run render:ep01
 ```bash
 cd video
 npm run attach-audio:ep01   # নীরবতা কাটে, আওয়াজ সমান করে, দৃশ্যের সময় কণ্ঠ অনুযায়ী বাড়ায়
+# বড়দের কণ্ঠকে বাচ্চার মতো করতে (সেমিটোন):
+node scripts/attach-audio.mjs ep01 --pitch umayer=3,safa=5
 npm run render:ep01
 ```
 

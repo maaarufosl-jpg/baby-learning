@@ -19,14 +19,14 @@ const VOICE = {
     name: 'উমায়ের',
     save: 'Umayer',
     prompt:
-      'A cheerful four-year-old Bangladeshi boy with a sweet, bright and innocent voice. Curious and energetic, speaks Bengali clearly and a little slowly with a soft Dhaka accent. Warm, happy, never shouting. Perfect for a gentle Islamic cartoon for toddlers.',
+      'A bright, playful and very friendly animated cartoon voice with a light, soft and high tone. Cheerful, curious and full of wonder, like the hero of a gentle family cartoon. Speaks Bengali clearly and a little slowly with a soft Bangladeshi accent. Warm and sweet, never loud.',
     preview: 'আসসালামু আলাইকুম! আমি উমায়ের। আজ আমরা একসাথে একটা সুন্দর দোয়া শিখব। তুমিও আমার সাথে বলবে তো?',
   },
   safa: {
     name: 'সাফা',
     save: 'Safa',
     prompt:
-      'A tiny two-and-a-half-year-old Bangladeshi girl with a very soft, sweet, babyish voice. Says short Bengali words with a little toddler lisp, giggly and gentle. Cute and innocent, for a calm cartoon for young children.',
+      'A very soft, sweet, airy and high cartoon voice, like a tiny cute animated sidekick. Giggly, gentle and playful, says short Bengali words softly with a slight lisp. Light, bubbly and calm.',
     preview: 'ভাইয়া! খাবো! বিচমিল্লাহ! আমিও পারি! আম্মু, দেখো!',
   },
   ammu: {
@@ -90,7 +90,9 @@ for (const key of ['umayer', 'safa', 'ammu']) {
   p('```');
 }
 p();
-p('Voice Design যদি বাচ্চার কণ্ঠ বানাতে না দেয়, তাহলে Voice Library-তে "kid" বা "cartoon child" খুঁজে দেখুন। না পেলে একটা মিষ্টি তরুণী নারী কণ্ঠ বেছে নিন। পরে আমি সেই কণ্ঠের স্বর একটু উঁচু করে বাচ্চার মতো করে দিতে পারব।');
+p('**খেয়াল রাখুন:** ElevenLabs বর্ণনায় বয়স বা "শিশু" জাতীয় শব্দ থাকলে প্রম্পট আটকে দেয়। তাই ওপরের বর্ণনায় শুধু "কার্টুন চরিত্রের কণ্ঠ" লেখা আছে। নিজে বদলালে boy, girl, child, kid, toddler বা বয়সের সংখ্যা লিখবেন না।');
+p();
+p('তবুও আটকে গেলে Voice Library-তে "cartoon", "animated" বা "playful" লিখে খুঁজুন, আর একটা মিষ্টি তরুণী নারী কণ্ঠ বেছে নিন। কণ্ঠটা একটু বড়দের মতো শোনালেও চলবে। ফাইল পাঠানোর সময় জানিয়ে দেবেন, আমি উমায়ের আর সাফার কণ্ঠের স্বর উঁচু করে বাচ্চার মতো করে দেব। গতি একই থাকবে।');
 p();
 p('## ধাপ ৩: সেটিং');
 p();

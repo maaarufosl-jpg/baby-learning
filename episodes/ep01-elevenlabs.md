@@ -22,7 +22,7 @@ Voices পাতায় "Create a voice" থেকে **Voice Design** খু�
 বর্ণনা:
 
 ```
-A cheerful four-year-old Bangladeshi boy with a sweet, bright and innocent voice. Curious and energetic, speaks Bengali clearly and a little slowly with a soft Dhaka accent. Warm, happy, never shouting. Perfect for a gentle Islamic cartoon for toddlers.
+A bright, playful and very friendly animated cartoon voice with a light, soft and high tone. Cheerful, curious and full of wonder, like the hero of a gentle family cartoon. Speaks Bengali clearly and a little slowly with a soft Bangladeshi accent. Warm and sweet, never loud.
 ```
 
 পরীক্ষার লেখা:
@@ -36,7 +36,7 @@ A cheerful four-year-old Bangladeshi boy with a sweet, bright and innocent voice
 বর্ণনা:
 
 ```
-A tiny two-and-a-half-year-old Bangladeshi girl with a very soft, sweet, babyish voice. Says short Bengali words with a little toddler lisp, giggly and gentle. Cute and innocent, for a calm cartoon for young children.
+A very soft, sweet, airy and high cartoon voice, like a tiny cute animated sidekick. Giggly, gentle and playful, says short Bengali words softly with a slight lisp. Light, bubbly and calm.
 ```
 
 পরীক্ষার লেখা:
@@ -59,7 +59,9 @@ A warm, gentle Bangladeshi mother in her early thirties. Soft, loving and patien
 উমায়ের সোনা, একটু থামো তো। খাওয়ার আগে আমরা কী বলি? আমরা বলি বিসমিল্লাহ। আল্লাহর নাম নিলে খাবারে বরকত হয়।
 ```
 
-Voice Design যদি বাচ্চার কণ্ঠ বানাতে না দেয়, তাহলে Voice Library-তে "kid" বা "cartoon child" খুঁজে দেখুন। না পেলে একটা মিষ্টি তরুণী নারী কণ্ঠ বেছে নিন। পরে আমি সেই কণ্ঠের স্বর একটু উঁচু করে বাচ্চার মতো করে দিতে পারব।
+**খেয়াল রাখুন:** ElevenLabs বর্ণনায় বয়স বা "শিশু" জাতীয় শব্দ থাকলে প্রম্পট আটকে দেয়। তাই ওপরের বর্ণনায় শুধু "কার্টুন চরিত্রের কণ্ঠ" লেখা আছে। নিজে বদলালে boy, girl, child, kid, toddler বা বয়সের সংখ্যা লিখবেন না।
+
+তবুও আটকে গেলে Voice Library-তে "cartoon", "animated" বা "playful" লিখে খুঁজুন, আর একটা মিষ্টি তরুণী নারী কণ্ঠ বেছে নিন। কণ্ঠটা একটু বড়দের মতো শোনালেও চলবে। ফাইল পাঠানোর সময় জানিয়ে দেবেন, আমি উমায়ের আর সাফার কণ্ঠের স্বর উঁচু করে বাচ্চার মতো করে দেব। গতি একই থাকবে।
 
 ## ধাপ ৩: সেটিং
 
