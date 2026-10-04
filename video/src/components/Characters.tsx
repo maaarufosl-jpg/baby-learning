@@ -168,6 +168,28 @@ const Face: React.FC<FaceProps> = ({p, cx, eyeY, eyeDX, s, noseY, mouthY, mood, 
   </g>
 );
 
+/** A small hand with four fingers and a thumb, pointing along +y from the wrist at (x, y). */
+const Hand: React.FC<{x: number; y: number; s: number; side: 'l' | 'r'}> = ({x, y, s, side}) => {
+  const t = side === 'l' ? 1 : -1;
+  const lens = [8.5, 10.5, 10, 8];
+  return (
+    <g fill={SKIN} stroke={SKIN_LINE} strokeWidth={1.5} strokeLinejoin="round">
+      {lens.map((len, i) => (
+        <rect key={i} x={x + (-8 + i * 4) * s} y={y + 9 * s} width={4.2 * s} height={len * s} rx={2.1 * s} />
+      ))}
+      <rect
+        x={x + t * 7 * s - 2.2 * s}
+        y={y + 3 * s}
+        width={4.4 * s}
+        height={9.5 * s}
+        rx={2.2 * s}
+        transform={`rotate(${-t * 38} ${x + t * 7 * s} ${y + 4 * s})`}
+      />
+      <rect x={x - 8.5 * s} y={y} width={17 * s} height={14 * s} rx={6 * s} />
+    </g>
+  );
+};
+
 /* ---------- arms (two segments so elbows can bend) ---------- */
 
 /** [upper arm, forearm relative] in degrees. side 'l' is the viewer's left = the character's RIGHT arm. */
@@ -203,18 +225,23 @@ const Arm: React.FC<{x: number; y: number; pose: ArmPose; side: 'l' | 'r'; sleev
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const [a, b] = armAngles(pose, side, frame, fps);
-  const thumb = side === 'l' ? 6 : -6;
   return (
     <g transform={`rotate(${a} ${x} ${y})`}>
       <rect x={x - 10 * s} y={y - 6} width={20 * s} height={upper + 12} rx={10 * s} fill={sleeve} stroke={line} strokeWidth={2} />
       <g transform={`rotate(${b} ${x} ${y + upper})`}>
         <rect x={x - 9 * s} y={y + upper - 8} width={18 * s} height={fore + 8} rx={9 * s} fill={sleeve} stroke={line} strokeWidth={2} />
-        <ellipse cx={x + thumb * s} cy={y + upper + fore - 1} rx={3.5 * s} ry={5 * s} fill={SKIN} stroke={SKIN_LINE} strokeWidth={1.6} />
-        <circle cx={x} cy={y + upper + fore + 4} r={8.5 * s} fill={SKIN} stroke={SKIN_LINE} strokeWidth={2} />
+        <Hand x={x} y={y + upper + fore - 4} s={s} side={side} />
       </g>
     </g>
   );
 };
+
+const Shoe: React.FC<{x: number; y: number; color: string; w?: number}> = ({x, y, color, w = 15}) => (
+  <g>
+    <path d={`M ${x - w} ${y + 4} Q ${x - w} ${y - 6} ${x} ${y - 6} Q ${x + w} ${y - 6} ${x + w} ${y + 4} Q ${x + w} ${y + 8} ${x} ${y + 8} Q ${x - w} ${y + 8} ${x - w} ${y + 4} Z`} fill={color} stroke={LINE} strokeWidth={2} />
+    <path d={`M ${x - w + 3} ${y + 5} Q ${x} ${y + 8} ${x + w - 3} ${y + 5}`} stroke="rgba(255,255,255,0.45)" strokeWidth={2} fill="none" />
+  </g>
+);
 
 type PersonProps = {mood: Mood; talking: boolean; right: ArmPose; left: ArmPose; blinkOffset: number};
 
@@ -228,10 +255,12 @@ const Umayer: React.FC<PersonProps> = ({mood, talking, right, left, blinkOffset}
     <g>
       <Defs p={p} />
       <Shadow y={310} rx={44} />
-      <path d="M 80 232 L 98 232 L 97 300 L 81 300 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} />
-      <path d="M 102 232 L 120 232 L 119 300 L 103 300 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} />
-      <ellipse cx={88} cy={304} rx={13} ry={6} fill="#8A5A3A" stroke={LINE} strokeWidth={2} />
-      <ellipse cx={112} cy={304} rx={13} ry={6} fill="#8A5A3A" stroke={LINE} strokeWidth={2} />
+      <rect x={84} y={268} width={14} height={30} rx={6} fill={SKIN} stroke={SKIN_LINE} strokeWidth={1.6} />
+      <rect x={102} y={268} width={14} height={30} rx={6} fill={SKIN} stroke={SKIN_LINE} strokeWidth={1.6} />
+      <path d="M 74 232 L 99 232 L 99 288 Q 88 292 77 288 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} strokeLinejoin="round" />
+      <path d="M 101 232 L 126 232 L 123 288 Q 112 292 101 288 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} strokeLinejoin="round" />
+      <Shoe x={88} y={302} color="#8A5A3A" />
+      <Shoe x={112} y={302} color="#8A5A3A" />
       <rect x={91} y={112} width={18} height={18} rx={6} fill={SKIN_SHADE} />
       <path d="M 68 136 Q 100 126 132 136 Q 140 186 142 240 Q 100 250 58 240 Q 60 186 68 136 Z" fill={kurta} stroke={kurtaLine} strokeWidth={2.2} />
       <path d="M 116 142 Q 130 190 132 240 Q 124 242 116 243 Q 120 190 110 142 Z" fill="#6EA7CE" opacity={0.55} />
@@ -267,18 +296,18 @@ const Safa: React.FC<PersonProps> = ({mood, talking, right, left, blinkOffset}) 
     <g>
       <Defs p={p} />
       <Shadow y={310} rx={40} />
-      <rect x={85} y={232} width={13} height={68} rx={6} fill="#FFFFFF" stroke={LINE} strokeWidth={2} />
-      <rect x={102} y={232} width={13} height={68} rx={6} fill="#FFFFFF" stroke={LINE} strokeWidth={2} />
-      <ellipse cx={91} cy={303} rx={11} ry={6} fill="#EF7C98" stroke={LINE} strokeWidth={2} />
-      <ellipse cx={109} cy={303} rx={11} ry={6} fill="#EF7C98" stroke={LINE} strokeWidth={2} />
-      <path d="M 74 146 Q 100 138 126 146 L 148 240 Q 100 254 52 240 Z" fill={frock} stroke={frockLine} strokeWidth={2.2} />
-      <path d="M 56 232 Q 100 246 144 232" stroke={colors.white} strokeWidth={5} fill="none" strokeLinecap="round" />
+      <path d="M 80 236 L 99 236 L 98 298 Q 89 301 81 298 Z" fill="#FFFFFF" stroke={LINE} strokeWidth={2} strokeLinejoin="round" />
+      <path d="M 101 236 L 120 236 L 119 298 Q 111 301 102 298 Z" fill="#FFFFFF" stroke={LINE} strokeWidth={2} strokeLinejoin="round" />
+      <Shoe x={90} y={302} color="#EF7C98" w={13} />
+      <Shoe x={110} y={302} color="#EF7C98" w={13} />
+      <path d="M 74 146 Q 100 138 126 146 Q 140 200 152 256 Q 100 272 48 256 Q 60 200 74 146 Z" fill={frock} stroke={frockLine} strokeWidth={2.2} />
+      <path d="M 52 248 Q 100 264 148 248" stroke={colors.white} strokeWidth={5} fill="none" strokeLinecap="round" />
       {[
         [82, 200],
         [116, 188],
         [100, 218],
-        [72, 228],
-        [128, 224],
+        [70, 236],
+        [130, 234],
       ].map(([x, y]) => (
         <circle key={`${x}-${y}`} cx={x} cy={y} r={3} fill={colors.white} />
       ))}
@@ -323,8 +352,15 @@ const HijabPerson: React.FC<PersonProps & {p: string; hijab: string; hijabLine: 
       <path d="M 88 170 Q 84 240 78 312 M 112 170 Q 116 240 122 312" stroke={dressLine} strokeWidth={1.6} opacity={0.5} fill="none" />
       <Arm x={77} y={126} pose={right} side="l" sleeve={dress} line={dressLine} upper={50} fore={46} s={0.95} />
       <Arm x={123} y={126} pose={left} side="r" sleeve={dress} line={dressLine} upper={50} fore={46} s={0.95} />
-      <path d="M 100 18 C 130 18 146 40 146 68 C 146 88 140 100 132 108 Q 148 124 136 142 L 64 142 Q 52 124 68 108 C 60 100 54 88 54 68 C 54 40 70 18 100 18 Z" fill={hijab} stroke={hijabLine} strokeWidth={2.2} />
-      <path d="M 70 136 Q 100 146 130 136" stroke={hijabLine} strokeWidth={1.6} opacity={0.6} fill="none" />
+      <path
+        d="M 100 16 C 132 16 148 40 148 70 C 148 92 143 104 137 112 C 160 126 171 164 170 208 Q 136 222 100 220 Q 64 222 30 208 C 29 164 40 126 63 112 C 57 104 52 92 52 70 C 52 40 68 16 100 16 Z"
+        fill={hijab}
+        stroke={hijabLine}
+        strokeWidth={2.2}
+        strokeLinejoin="round"
+      />
+      <path d="M 66 132 Q 56 170 52 212 M 134 132 Q 144 170 148 212 M 84 140 Q 80 180 80 218 M 116 140 Q 120 180 120 218" stroke={hijabLine} strokeWidth={1.6} opacity={0.45} fill="none" strokeLinecap="round" />
+      <path d="M 33 203 Q 66 215 100 214 Q 134 215 167 203" stroke={colors.white} strokeOpacity={0.7} strokeWidth={3} fill="none" strokeDasharray="1 6" strokeLinecap="round" />
       <path d="M 100 34 C 120 34 132 50 132 70 C 132 90 118 104 100 104 C 82 104 68 90 68 70 C 68 50 80 34 100 34 Z" fill={SKIN} stroke={SKIN_LINE} strokeWidth={2} />
       <path d="M 66 74 C 66 46 82 30 100 30 C 118 30 134 46 134 74 C 130 54 118 40 100 40 C 82 40 70 54 66 74 Z" fill={hijab} />
       <path d="M 80 26 Q 100 20 120 26" stroke={colors.white} strokeOpacity={0.45} strokeWidth={3} fill="none" strokeLinecap="round" />
@@ -350,10 +386,10 @@ const Abbu: React.FC<PersonProps> = ({mood, talking, right, left, blinkOffset}) 
     <g>
       <Defs p={p} />
       <Shadow y={314} rx={52} />
-      <path d="M 78 244 L 98 244 L 97 304 L 79 304 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} />
-      <path d="M 102 244 L 122 244 L 121 304 L 103 304 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} />
-      <ellipse cx={87} cy={307} rx={14} ry={6} fill="#6E4A33" stroke={LINE} strokeWidth={2} />
-      <ellipse cx={113} cy={307} rx={14} ry={6} fill="#6E4A33" stroke={LINE} strokeWidth={2} />
+      <path d="M 72 244 L 99 244 L 99 300 Q 87 304 75 300 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} strokeLinejoin="round" />
+      <path d="M 101 244 L 128 244 L 125 300 Q 113 304 101 300 Z" fill="#FAF6EE" stroke={LINE} strokeWidth={2} strokeLinejoin="round" />
+      <Shoe x={87} y={306} color="#6E4A33" w={16} />
+      <Shoe x={113} y={306} color="#6E4A33" w={16} />
       <rect x={90} y={96} width={20} height={18} rx={6} fill={SKIN_SHADE} />
       <path d="M 64 120 Q 100 110 136 120 Q 146 190 148 252 Q 100 262 52 252 Q 54 190 64 120 Z" fill={kurta} stroke={kurtaLine} strokeWidth={2.2} />
       <rect x={86} y={108} width={28} height={12} rx={5} fill={kurta} stroke={kurtaLine} strokeWidth={2} />
