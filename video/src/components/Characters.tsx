@@ -17,25 +17,34 @@ const useBlink = (offset: number) => {
   return t < 4 ? 1 - Math.abs(t - 2) / 2 : 0;
 };
 
+/** Simple dot eyes with a small shine; excited = happy arcs; brows only for strong moods. */
 const Eye: React.FC<{cx: number; cy: number; mood: Mood; blink: number; side: 'l' | 'r'}> = ({cx, cy, mood, blink, side}) => {
-  const wide = mood === 'surprised' || mood === 'excited';
-  const rx = wide ? 13 : 11;
-  const ry = Math.max(1.5, (wide ? 15 : 12) * (1 - blink));
-  const pupilR = mood === 'surprised' ? 4 : 6;
-  const pupilDx = mood === 'thinking' ? -3 : 0;
-  const pupilDy = mood === 'thinking' ? -4 : 1;
-  const browY = cy - (wide ? 24 : 20) - (mood === 'thinking' && side === 'r' ? 6 : 0);
-  const tilt = mood === 'sad' ? (side === 'l' ? -4 : 4) : mood === 'surprised' ? 0 : side === 'l' ? 2 : -2;
+  const dx = mood === 'thinking' ? -3 : 0;
+  const dy = mood === 'thinking' ? -3 : 2;
+  const big = mood === 'surprised';
+  const brow =
+    mood === 'surprised' || mood === 'thinking' || mood === 'sad' ? (
+      <path
+        d={`M ${cx - 9} ${cy - 16 + (mood === 'sad' ? (side === 'l' ? -3 : 3) : 0)} Q ${cx} ${cy - (big ? 24 : 20) - (mood === 'thinking' && side === 'r' ? 4 : 0)} ${cx + 9} ${cy - 16 + (mood === 'sad' ? (side === 'l' ? 3 : -3) : 0)}`}
+        stroke={colors.ink}
+        strokeWidth={3}
+        fill="none"
+        strokeLinecap="round"
+      />
+    ) : null;
+  if (mood === 'excited' || blink > 0.6) {
+    return (
+      <g>
+        <path d={`M ${cx - 8} ${cy + 3} Q ${cx} ${cy - 7} ${cx + 8} ${cy + 3}`} stroke={colors.ink} strokeWidth={4} fill="none" strokeLinecap="round" />
+        {brow}
+      </g>
+    );
+  }
   return (
     <g>
-      <ellipse cx={cx} cy={cy} rx={rx} ry={ry} fill={colors.white} stroke={colors.ink} strokeWidth={3} />
-      {blink < 0.8 && (
-        <>
-          <circle cx={cx + pupilDx} cy={cy + pupilDy} r={pupilR * (1 - blink)} fill={colors.ink} />
-          <circle cx={cx + pupilDx + 2} cy={cy + pupilDy - 2} r={2 * (1 - blink)} fill={colors.white} />
-        </>
-      )}
-      <path d={`M ${cx - 12} ${browY + tilt} Q ${cx} ${browY - 5} ${cx + 12} ${browY - tilt}`} stroke={colors.ink} strokeWidth={4} fill="none" strokeLinecap="round" />
+      <ellipse cx={cx + dx} cy={cy + dy} rx={big ? 8 : 6.5} ry={(big ? 10 : 8) * (1 - blink * 0.6)} fill={colors.ink} />
+      <circle cx={cx + dx + 2.2} cy={cy + dy - 3} r={2.2} fill={colors.white} />
+      {brow}
     </g>
   );
 };
@@ -231,8 +240,14 @@ const Miu: React.FC<{mood: Mood; talking: boolean}> = ({mood, talking}) => {
       <ellipse cx={100} cy={206} rx={30} ry={22} fill={colors.catFurLight} />
       {[-20, 20].map((dx) => (
         <g key={dx}>
-          <ellipse cx={100 + dx} cy={184} rx={surprised ? 13 : 10} ry={Math.max(1.5, (surprised ? 15 : 12) * (1 - blink))} fill="#6FBF73" stroke={colors.ink} strokeWidth={2} />
-          {blink < 0.8 && <ellipse cx={100 + dx} cy={185} rx={surprised ? 5 : 3} ry={8 * (1 - blink)} fill={colors.ink} />}
+          {blink > 0.6 ? (
+            <path d={`M ${92 + dx} 186 Q ${100 + dx} 178 ${108 + dx} 186`} stroke={colors.ink} strokeWidth={3.5} fill="none" strokeLinecap="round" />
+          ) : (
+            <>
+              <ellipse cx={100 + dx} cy={186} rx={surprised ? 8 : 6.5} ry={surprised ? 10 : 8} fill={colors.ink} />
+              <circle cx={102 + dx} cy={183} r={2.2} fill={colors.white} />
+            </>
+          )}
         </g>
       ))}
       <path d="M 94 200 L 106 200 L 100 207 Z" fill="#E88C8C" />
