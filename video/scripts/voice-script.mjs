@@ -37,8 +37,8 @@ ep.beats.forEach((b, i) => {
     who = b.speech.who;
     text = b.speech.text.replace(/\n/g, ' ');
     const label = b.speech.label;
-    const mood = b.characters?.find((c) => c.id === who)?.mood;
-    tone = who === 'narrator' ? 'নরম, গল্প বলার মতো' : mood ? MOOD[mood] : '';
+    const mood = b.speech.mood ?? b.characters?.find((c) => c.id === who)?.mood;
+    tone = who === 'narrator' && !b.speech.mood ? 'নরম, গল্প বলার মতো' : mood ? MOOD[mood] : '';
     if (label && who === 'everyone') tone = `${label} একসাথে`;
   } else if (b.dua && b.kind === 'learn') {
     who = 'dua';

@@ -54,8 +54,8 @@ const jobs = ep.beats
   .map((b, i) => ({b, n: i + 1}))
   .filter(({b, n}) => b.speech && b.speech.who !== 'miu' && (!who || b.speech.who === who) && (!only.length || only.includes(n)))
   .map(({b, n}) => {
-    const mood = b.characters?.find((c) => c.id === b.speech.who)?.mood;
-    const tag = b.speech.who === 'narrator' ? '[warmly]' : TAG[mood] ?? '';
+    const mood = b.speech.mood ?? b.characters?.find((c) => c.id === b.speech.who)?.mood;
+    const tag = b.speech.who === 'narrator' && !b.speech.mood ? '[warmly]' : TAG[mood] ?? '';
     return {n, who: b.speech.who, text: `${tag} ${speakable(b.speech.text)}`.trim()};
   });
 if (!jobs.length) throw new Error('No matching lines.');

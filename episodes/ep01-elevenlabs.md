@@ -202,7 +202,7 @@ A warm, gentle Bangladeshi mother in her early thirties. Soft, loving and patien
 **লাইন ৯** → `09-narrator.mp3` (বর্ণনাকারী)
 
 ```
-[warmly] এই রে! উমায়ের কিছু একটা ভুলে গেছে।
+[surprised] এই রে! উমায়ের কিছু একটা ভুলে গেছে।
 ```
 
 **লাইন ১০** → `10-narrator.mp3` (বর্ণনাকারী)

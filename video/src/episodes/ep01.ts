@@ -122,7 +122,7 @@ const base: Episode = {
       kind: 'story',
       background: 'kitchen',
       characters: [umayer({mood: 'excited', arms: {left: 'reach'}}), safa({mood: 'surprised'}), miu({mood: 'surprised', shake: true})],
-      speech: {who: 'narrator', text: 'এই রে! উমায়ের কিছু একটা ভুলে গেছে।'},
+      speech: {who: 'narrator', text: 'এই রে! উমায়ের কিছু একটা ভুলে গেছে।', mood: 'surprised'},
       shorts: true,
     },
     {

@@ -29,6 +29,8 @@ export type Speech = {
   text: string;
   /** Overrides the name shown on the speech bubble. */
   label?: string;
+  /** How the line is spoken; overrides the speaker's mood (and the narrator's usual warm tone). */
+  mood?: Mood;
 };
 
 export type DuaDisplay = {

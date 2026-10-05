@@ -43,8 +43,8 @@ ep.beats.forEach((b, i) => {
   if (!b.speech) return;
   const n = i + 1;
   const who = b.speech.who;
-  const mood = b.characters?.find((c) => c.id === who)?.mood;
-  const tag = who === 'narrator' ? '[warmly]' : TAG[mood] ?? '';
+  const mood = b.speech.mood ?? b.characters?.find((c) => c.id === who)?.mood;
+  const tag = who === 'narrator' && !b.speech.mood ? '[warmly]' : TAG[mood] ?? '';
   lines.push({n, who, text: speakable(b.speech.text), tag, label: b.speech.label, file: `${String(n).padStart(2, '0')}-${who}.mp3`});
 });
 const duaBeats = ep.beats.map((b, i) => ({b, n: i + 1})).filter(({b}) => !b.speech && b.dua && b.kind === 'learn');
