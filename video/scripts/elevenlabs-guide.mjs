@@ -12,7 +12,7 @@ const BN = '০১২৩৪৫৬৭৮৯';
 const bn = (v) => String(v).replace(/\d/g, (d) => BN[d]);
 // TTS cannot read the ﷺ ligature; spell it out.
 const speakable = (t) => t.replace(/\s*ﷺ/g, ' সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম').replace(/\n/g, ' ');
-const TAG = {excited: '[excited]', happy: '[cheerfully]', surprised: '[surprised]', thinking: '[thoughtful]', calm: '[softly]', sad: '[sad]'};
+const TAG = {excited: '[excited]', happy: '[happy]', surprised: '[surprised]', thinking: '[thoughtful]', calm: '[warmly]', sad: '[sad]'};
 
 const VOICE = {
   umayer: {
@@ -45,7 +45,8 @@ ep.beats.forEach((b, i) => {
   const who = b.speech.who;
   const mood = b.speech.mood ?? b.characters?.find((c) => c.id === who)?.mood;
   const tag = who === 'narrator' && !b.speech.mood ? '[warmly]' : TAG[mood] ?? '';
-  lines.push({n, who, text: speakable(b.speech.text), tag, label: b.speech.label, file: `${String(n).padStart(2, '0')}-${who}.mp3`});
+  const say = speakable(b.speech.tts ?? `${who === 'everyone' ? '[happy]' : tag} ${b.speech.text}`.trim());
+  lines.push({n, who, text: speakable(b.speech.text), say, label: b.speech.label, file: `${String(n).padStart(2, '0')}-${who}.mp3`});
 });
 const duaBeats = ep.beats.map((b, i) => ({b, n: i + 1})).filter(({b}) => !b.speech && b.dua && b.kind === 'learn');
 
@@ -65,8 +66,8 @@ p('## ধাপ ১: অ্যাকাউন্ট ও মডেল');
 p();
 p('1. elevenlabs.io এ অ্যাকাউন্ট খুলুন।');
 p('2. Text to Speech পাতায় মডেল হিসেবে **Eleven v3** বেছে নিন। আমার জানা মতে বাংলা শুধু v3 মডেলেই আছে। পুরনো Multilingual v2 মডেলে বাংলা নেই।');
-p('3. লাইনের শুরুতে ইংরেজিতে বন্ধনীর ভেতরের শব্দ, যেমন `[cheerfully]`, হলো v3 এর "audio tag"। এগুলো পড়া হয় না, শুধু বলার ভঙ্গি ঠিক করে। ভালো না লাগলে মুছে দিতে পারেন।');
-const chars = lines.reduce((s, l) => s + l.text.length, 0);
+p('3. লাইনের শুরুতে ইংরেজিতে বন্ধনীর ভেতরের শব্দ, যেমন `[warmly]`, `[gasps]`, `[giggles]`, হলো v3 এর "audio tag"। এগুলো পড়া হয় না, শুধু বলার ভঙ্গি ঠিক করে। একটা লাইনের মাঝখানেও ট্যাগ থাকতে পারে, তখন সেখান থেকে ভঙ্গি বদলায়। ভালো না লাগলে মুছে দিতে পারেন।');
+const chars = lines.reduce((s, l) => s + l.say.length, 0);
 p(`4. পুরো পর্বে মোট প্রায় ${bn(chars)} অক্ষর। কয়েকবার করে বানালেও বিনামূল্যের মাসিক সীমায় সাধারণত হয়ে যায়। তবে দাম ও সীমা বদলাতে পারে, অ্যাকাউন্টে দেখে নিন।`);
 p();
 p('## ধাপ ২: তিনটা কণ্ঠ বানান (Voice Design)');
@@ -113,7 +114,7 @@ for (const key of ['umayer', 'safa', 'ammu']) {
     p(`**লাইন ${bn(l.n)}** → \`${l.file}\`${l.who === 'narrator' ? ' (বর্ণনাকারী)' : ''}`);
     p();
     p('```');
-    p(`${l.tag} ${l.text}`.trim());
+    p(l.say);
     p('```');
   }
 }
@@ -128,7 +129,7 @@ if (group.length) {
     p(`**লাইন ${bn(l.n)}**${l.label ? ` (${l.label})` : ''} → \`${l.file}\``);
     p();
     p('```');
-    p(`[cheerfully] ${l.text}`);
+    p(l.say);
     p('```');
   }
 }

@@ -46,7 +46,7 @@ const resolveVoice = async (nameOrId) => {
 const out = await build({entryPoints: [`src/episodes/${id}.ts`], bundle: true, format: 'esm', write: false, platform: 'neutral'});
 const ep = (await import('data:text/javascript;base64,' + Buffer.from(out.outputFiles[0].text).toString('base64')))[id];
 const speakable = (t) => t.replace(/\s*ﷺ/g, ' সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম').replace(/\n/g, ' ');
-const TAG = {excited: '[excited]', happy: '[cheerfully]', surprised: '[surprised]', thinking: '[thoughtful]', calm: '[softly]', sad: '[sad]'};
+const TAG = {excited: '[excited]', happy: '[happy]', surprised: '[surprised]', thinking: '[thoughtful]', calm: '[warmly]', sad: '[sad]'};
 
 const only = opt('lines', '').split(',').filter(Boolean).map(Number);
 const who = opt('who', '');
@@ -56,7 +56,7 @@ const jobs = ep.beats
   .map(({b, n}) => {
     const mood = b.speech.mood ?? b.characters?.find((c) => c.id === b.speech.who)?.mood;
     const tag = b.speech.who === 'narrator' && !b.speech.mood ? '[warmly]' : TAG[mood] ?? '';
-    return {n, who: b.speech.who, text: `${tag} ${speakable(b.speech.text)}`.trim()};
+    return {n, who: b.speech.who, text: speakable(b.speech.tts ?? `${tag} ${b.speech.text}`.trim())};
   });
 if (!jobs.length) throw new Error('No matching lines.');
 
