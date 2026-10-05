@@ -1,5 +1,5 @@
 // Writes an ElevenLabs guide (Markdown) for an episode: voice-design prompts,
-// settings, and every line grouped by voice, ready to paste with v3 audio tags.
+// settings, and every line grouped by voice, ready to paste with Eleven v4 audio tags.
 // Usage: node scripts/elevenlabs-guide.mjs ep01 > ../episodes/ep01-elevenlabs.md
 import {build} from 'esbuild';
 
@@ -65,8 +65,8 @@ p();
 p('## ধাপ ১: অ্যাকাউন্ট ও মডেল');
 p();
 p('1. elevenlabs.io এ অ্যাকাউন্ট খুলুন।');
-p('2. Text to Speech পাতায় মডেল হিসেবে **Eleven v3** বেছে নিন। আমার জানা মতে বাংলা শুধু v3 মডেলেই আছে। পুরনো Multilingual v2 মডেলে বাংলা নেই।');
-p('3. লাইনের শুরুতে ইংরেজিতে বন্ধনীর ভেতরের শব্দ, যেমন `[warmly]`, `[gasps]`, `[giggles]`, হলো v3 এর "audio tag"। এগুলো পড়া হয় না, শুধু বলার ভঙ্গি ঠিক করে। একটা লাইনের মাঝখানেও ট্যাগ থাকতে পারে, তখন সেখান থেকে ভঙ্গি বদলায়। ভালো না লাগলে মুছে দিতে পারেন।');
+p('2. Text to Speech পাতায় মডেল হিসেবে **Eleven v4** বেছে নিন। এতে বাংলা আছে, আর বলার ভঙ্গির নির্দেশ v3-এর চেয়ে ভালো মানে। v4 না পেলে Eleven v3 নিন, ট্যাগগুলো সেখানেও মোটামুটি চলে। পুরনো Multilingual v2 মডেলে বাংলা নেই।');
+p('3. লাইনের শুরুতে ইংরেজিতে বন্ধনীর ভেতরের শব্দ, যেমন `[warmly]`, `[gasps]`, `[giggles]`, হলো "audio tag"। এগুলো পড়া হয় না, শুধু বলার ভঙ্গি ঠিক করে। একটা লাইনের মাঝখানেও ট্যাগ থাকতে পারে, তখন সেখান থেকে ভঙ্গি বদলায়। `[pause]` মানে একটু থামা। v4-এ ট্যাগের ভেতরে ইংরেজিতে নিজের মতো নির্দেশও লেখা যায়, যেমন `[whispers, like sharing a secret]`। ভালো না লাগলে মুছে দিতে পারেন। প্রতিটা লাইন দুই-তিনবার বানিয়ে সবচেয়ে ভালোটা রাখুন।');
 const chars = lines.reduce((s, l) => s + l.say.length, 0);
 p(`4. পুরো পর্বে মোট প্রায় ${bn(chars)} অক্ষর। কয়েকবার করে বানালেও বিনামূল্যের মাসিক সীমায় সাধারণত হয়ে যায়। তবে দাম ও সীমা বদলাতে পারে, অ্যাকাউন্টে দেখে নিন।`);
 p();

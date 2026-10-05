@@ -1,4 +1,5 @@
 // Generates voice lines for an episode with the ElevenLabs API.
+// Lines use the tts text from the episode (with audio tags) when set.
 // Reads the key from the ELEVENLABS_API_KEY environment variable (never commit a key).
 //
 // Usage:
@@ -9,7 +10,7 @@
 //   --who     only lines spoken by this character (umayer, safa, ammu, narrator, everyone)
 //   --lines   only these line numbers (comma separated)
 //   --out     output folder (default public/audio/<ep>)
-//   --model   ElevenLabs model id (default eleven_v3)
+//   --model   ElevenLabs model id (default eleven_v4)
 //   --stability, --similarity  voice settings (default 0.5 / 0.75)
 import {build} from 'esbuild';
 import {mkdirSync, writeFileSync} from 'node:fs';
@@ -61,7 +62,7 @@ const jobs = ep.beats
 if (!jobs.length) throw new Error('No matching lines.');
 
 const voice = await resolveVoice(opt('voice', 'Jane'));
-const model = opt('model', 'eleven_v3');
+const model = opt('model', 'eleven_v4');
 const dir = opt('out', join('public', 'audio', id));
 mkdirSync(dir, {recursive: true});
 console.log(`Voice: ${voice.name} (${voice.id}), model: ${model}, ${jobs.length} line(s) -> ${dir}`);

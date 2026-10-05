@@ -31,7 +31,7 @@ export type Speech = {
   label?: string;
   /** How the line is spoken; overrides the speaker's mood (and the narrator's usual warm tone). */
   mood?: Mood;
-  /** The line for text-to-speech, with ElevenLabs v3 audio tags such as "[gasps] এই রে! [whispers] ...". Defaults to the text with a tag from the mood. */
+  /** The line for text-to-speech, with ElevenLabs audio tags such as "[gasps] এই রে! [whispers] ...". Defaults to the text with a tag from the mood. */
   tts?: string;
 };
 

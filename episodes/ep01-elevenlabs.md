@@ -9,9 +9,9 @@ cd video && node scripts/elevenlabs-guide.mjs ep01 > ../episodes/ep01-elevenlabs
 ## ধাপ ১: অ্যাকাউন্ট ও মডেল
 
 1. elevenlabs.io এ অ্যাকাউন্ট খুলুন।
-2. Text to Speech পাতায় মডেল হিসেবে **Eleven v3** বেছে নিন। আমার জানা মতে বাংলা শুধু v3 মডেলেই আছে। পুরনো Multilingual v2 মডেলে বাংলা নেই।
-3. লাইনের শুরুতে ইংরেজিতে বন্ধনীর ভেতরের শব্দ, যেমন `[warmly]`, `[gasps]`, `[giggles]`, হলো v3 এর "audio tag"। এগুলো পড়া হয় না, শুধু বলার ভঙ্গি ঠিক করে। একটা লাইনের মাঝখানেও ট্যাগ থাকতে পারে, তখন সেখান থেকে ভঙ্গি বদলায়। ভালো না লাগলে মুছে দিতে পারেন।
-4. পুরো পর্বে মোট প্রায় ১৫০৫ অক্ষর। কয়েকবার করে বানালেও বিনামূল্যের মাসিক সীমায় সাধারণত হয়ে যায়। তবে দাম ও সীমা বদলাতে পারে, অ্যাকাউন্টে দেখে নিন।
+2. Text to Speech পাতায় মডেল হিসেবে **Eleven v4** বেছে নিন। এতে বাংলা আছে, আর বলার ভঙ্গির নির্দেশ v3-এর চেয়ে ভালো মানে। v4 না পেলে Eleven v3 নিন, ট্যাগগুলো সেখানেও মোটামুটি চলে। পুরনো Multilingual v2 মডেলে বাংলা নেই।
+3. লাইনের শুরুতে ইংরেজিতে বন্ধনীর ভেতরের শব্দ, যেমন `[warmly]`, `[gasps]`, `[giggles]`, হলো "audio tag"। এগুলো পড়া হয় না, শুধু বলার ভঙ্গি ঠিক করে। একটা লাইনের মাঝখানেও ট্যাগ থাকতে পারে, তখন সেখান থেকে ভঙ্গি বদলায়। `[pause]` মানে একটু থামা। v4-এ ট্যাগের ভেতরে ইংরেজিতে নিজের মতো নির্দেশও লেখা যায়, যেমন `[whispers, like sharing a secret]`। ভালো না লাগলে মুছে দিতে পারেন। প্রতিটা লাইন দুই-তিনবার বানিয়ে সবচেয়ে ভালোটা রাখুন।
+4. পুরো পর্বে মোট প্রায় ১৭১৭ অক্ষর। কয়েকবার করে বানালেও বিনামূল্যের মাসিক সীমায় সাধারণত হয়ে যায়। তবে দাম ও সীমা বদলাতে পারে, অ্যাকাউন্টে দেখে নিন।
 
 ## ধাপ ২: তিনটা কণ্ঠ বানান (Voice Design)
 
@@ -84,7 +84,7 @@ A warm, gentle Bangladeshi mother in her early thirties. Soft, loving and patien
 **লাইন ১৩** → `13-umayer.mp3`
 
 ```
-[thoughtful] উমম... [sheepishly] ভুলে গেছি, মা।
+[thoughtful, scratching his head] উমম... [sheepishly] ভুলে গেছি, মা।
 ```
 
 **লাইন ২১** → `21-umayer.mp3`
@@ -96,19 +96,19 @@ A warm, gentle Bangladeshi mother in her early thirties. Soft, loving and patien
 **লাইন ২৪** → `24-umayer.mp3`
 
 ```
-[excited] এবার তুমি বলো! [warmly] আমার সাথে, ধীরে ধীরে।
+[excited] এবার তুমি বলো! [warmly, slowly] আমার সাথে, ধীরে ধীরে।
 ```
 
 **লাইন ২৫** → `25-umayer.mp3`
 
 ```
-[warmly] বিস...
+[slowly, clearly] বিস...
 ```
 
 **লাইন ২৭** → `27-umayer.mp3`
 
 ```
-[warmly] মিল...
+[slowly, clearly] মিল...
 ```
 
 **লাইন ২৯** → `29-umayer.mp3`
@@ -144,13 +144,13 @@ A warm, gentle Bangladeshi mother in her early thirties. Soft, loving and patien
 **লাইন ৩৯** → `39-umayer.mp3`
 
 ```
-[delighted] মমম! আজকে ভাত আরও মজা লাগছে!
+[savoring the taste] মমম! [delighted] আজকে ভাত আরও মজা লাগছে!
 ```
 
 **লাইন ৪৫** → `45-umayer.mp3`
 
 ```
-[curious] আজ খাওয়ার সময় তুমিও বলবে তো?
+[curious, inviting the viewer] আজ খাওয়ার সময় তুমিও বলবে তো?
 ```
 
 ### সাফা: Safa কণ্ঠে (৪টি লাইন)
@@ -164,13 +164,13 @@ A warm, gentle Bangladeshi mother in her early thirties. Soft, loving and patien
 **লাইন ৩৩** → `33-safa.mp3`
 
 ```
-[giggles] বিচমিল্লাহ!
+[clapping] [giggles] বিচমিল্লাহ!
 ```
 
 **লাইন ৪১** → `41-safa.mp3`
 
 ```
-[whispers] বিচমিল্লাহ...
+[whispers, mumbling to herself while eating] বিচমিল্লাহ...
 ```
 
 **লাইন ৪৬** → `46-safa.mp3`
@@ -202,13 +202,13 @@ A warm, gentle Bangladeshi mother in her early thirties. Soft, loving and patien
 **লাইন ৯** → `09-narrator.mp3` (বর্ণনাকারী)
 
 ```
-[gasps] এই রে! [whispers] উমায়ের কিছু একটা ভুলে গেছে।
+[gasps] এই রে! [whispers, like sharing a secret] উমায়ের কিছু একটা ভুলে গেছে।
 ```
 
 **লাইন ১০** → `10-narrator.mp3` (বর্ণনাকারী)
 
 ```
-[curious] তুমি কি বলতে পারো... কী ভুলে গেছে?
+[curious] তুমি কি বলতে পারো... [pause] কী ভুলে গেছে?
 ```
 
 **লাইন ১১** → `11-ammu.mp3`
@@ -226,7 +226,7 @@ A warm, gentle Bangladeshi mother in her early thirties. Soft, loving and patien
 **লাইন ১৪** → `14-ammu.mp3`
 
 ```
-[reassuring] আমাদের নবীজি সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম শিখিয়েছেন, খাওয়ার আগে বলতে হয়... [warmly] বিসমিল্লাহ।
+[reassuring] আমাদের নবীজি সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম শিখিয়েছেন, খাওয়ার আগে বলতে হয়... [pause] [warmly, slowly] বিসমিল্লাহ।
 ```
 
 **লাইন ১৮** → `18-ammu.mp3`
@@ -268,7 +268,7 @@ A warm, gentle Bangladeshi mother in her early thirties. Soft, loving and patien
 **লাইন ৪৪** → `44-ammu.mp3`
 
 ```
-[warmly] আজ আমরা শিখলাম: খাওয়ার আগে বিসমিল্লাহ। ডান হাতে। নিজের সামনে থেকে।
+[warmly, to the viewer] আজ আমরা শিখলাম: খাওয়ার আগে বিসমিল্লাহ। [pause] ডান হাতে। [pause] নিজের সামনে থেকে।
 ```
 
 ### একসাথে বলা লাইন (৩টি)
