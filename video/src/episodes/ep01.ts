@@ -154,7 +154,7 @@ const base: Episode = {
       kind: 'learn',
       background: 'kitchen',
       characters: [umayer({mood: 'thinking'}), safa({mood: 'calm'}), miu(), ammu()],
-      speech: {who: 'umayer', text: 'উমম... ভুলে গেছি, আম্মু।'},
+      speech: {who: 'umayer', text: 'উমম... ভুলে গেছি, মা।'},
     },
     {
       seconds: 5,

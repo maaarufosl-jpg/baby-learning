@@ -539,7 +539,7 @@ export const Character: React.FC<{placement: CharacterPlacement; prev?: Characte
 };
 
 export const characterName = (id: CharacterId): string =>
-  ({umayer: 'উমায়ের', safa: 'সাফা', ammu: 'আম্মু', abbu: 'আব্বু', nanu: 'নানু', miu: 'মিউ'})[id];
+  ({umayer: 'উমায়ের', safa: 'সাফা', ammu: 'মা', abbu: 'আব্বু', nanu: 'নানু', miu: 'মিউ'})[id];
 
 export const characterColor = (id: CharacterId): string =>
   ({umayer: colors.skyDark, safa: colors.peachDark, ammu: colors.sageDark, abbu: colors.sageDark, nanu: '#A98BB5', miu: colors.peachDark})[id];

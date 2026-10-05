@@ -27,10 +27,10 @@ const VOICE = {
     save: 'Safa',
     prompt:
       'A very soft, sweet, airy and high cartoon voice, like a tiny cute animated sidekick. Giggly, gentle and playful, says short Bengali words softly with a slight lisp. Light, bubbly and calm.',
-    preview: 'ভাইয়া! খাবো! বিচমিল্লাহ! আমিও পারি! আম্মু, দেখো!',
+    preview: 'ভাইয়া! খাবো! বিচমিল্লাহ! আমিও পারি! মা, দেখো!',
   },
   ammu: {
-    name: 'আম্মু ও বর্ণনাকারী',
+    name: 'মা ও বর্ণনাকারী',
     save: 'Ammu',
     prompt:
       'A warm, gentle Bangladeshi mother in her early thirties. Soft, loving and patient voice, speaks standard Bengali slowly and very clearly, like telling a bedtime story to her little children. Calm and kind, never stern.',
@@ -122,7 +122,7 @@ if (group.length) {
   p();
   p(`### একসাথে বলা লাইন (${bn(group.length)}টি)`);
   p();
-  p('প্রতিটা লাইন যাদের কণ্ঠে দরকার তাদের কণ্ঠে আলাদা করে বানান, যেমন `01-everyone-umayer.mp3`, `01-everyone-safa.mp3`। একই নম্বরের ফাইলগুলো আমি মিলিয়ে একসাথে বাজিয়ে দেব। সময় কম থাকলে শুধু আম্মুর কণ্ঠে একটা ফাইলই যথেষ্ট।');
+  p('প্রতিটা লাইন যাদের কণ্ঠে দরকার তাদের কণ্ঠে আলাদা করে বানান, যেমন `01-everyone-umayer.mp3`, `01-everyone-safa.mp3`। একই নম্বরের ফাইলগুলো আমি মিলিয়ে একসাথে বাজিয়ে দেব। সময় কম থাকলে শুধু মায়ের কণ্ঠে একটা ফাইলই যথেষ্ট।');
   for (const l of group) {
     p();
     p(`**লাইন ${bn(l.n)}**${l.label ? ` (${l.label})` : ''} → \`${l.file}\``);
