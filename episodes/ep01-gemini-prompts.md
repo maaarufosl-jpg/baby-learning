@@ -4,7 +4,7 @@ Gemini-এর ভিডিও টুল (Veo) একবারে প্রায
 
 ## কীভাবে ব্যবহার করবেন
 
-1. **আগে চরিত্রের ছবি বানান।** নিচের "ধাপ ১" এর প্রম্পট দিয়ে Gemini-তে উমায়ের, সাফা, আম্মু, মিউ আর রান্নাঘরের ছবি বানান। পছন্দের ছবিগুলো সেভ করে রাখুন।
+1. **আগে চরিত্রের ছবি বানান।** নিচের "ধাপ ১" এর প্রম্পট দিয়ে Gemini-তে উমায়ের, সাফা, মা, মিউ আর রান্নাঘরের ছবি বানান। পছন্দের ছবিগুলো সেভ করে রাখুন।
 2. **প্রতিটা দৃশ্যে ছবিগুলো সাথে দিন।** Gemini অ্যাপে ভিডিও বানানোর সময়, অথবা Google Flow-তে "Ingredients" হিসেবে, ওই দৃশ্যের চরিত্রদের ছবি আপলোড করুন। এতে প্রতিটা ক্লিপে চেহারা একই থাকবে।
 3. **প্রতিটা দৃশ্যের প্রম্পটের শুরুতে "স্টাইল" অংশটা রাখুন।** নিচের প্রতিটা দৃশ্যের প্রম্পটে স্টাইল আগে থেকেই জুড়ে দেওয়া আছে, শুধু পুরো বক্সটা কপি করবেন।
 4. **একেকটা দৃশ্য দুই-তিনবার বানিয়ে সবচেয়ে ভালোটা রাখুন।** ফাইলের নাম দিন `scene01.mp4`, `scene02.mp4` এভাবে।
@@ -20,8 +20,8 @@ Gemini-এর ভিডিও টুল (Veo) একবারে প্রায
 ## ইসলামিক ও নিরাপত্তার নিয়ম (প্রম্পটে আগে থেকেই আছে)
 
 - কোনো বাদ্যযন্ত্র বা ব্যাকগ্রাউন্ড মিউজিক নেই।
-- নবী, সাহাবি বা ফেরেশতার কোনো ছবি বা চরিত্র নেই। নবীজি ﷺ এর কথা শুধু আম্মুর মুখে আসে।
-- আম্মু আর সাফার হিজাব চুল, কান আর গলা ঢেকে রাখে। আম্মুর খিমার কোমর পর্যন্ত নামানো।
+- নবী, সাহাবি বা ফেরেশতার কোনো ছবি বা চরিত্র নেই। নবীজি ﷺ এর কথা শুধু মায়ের মুখে আসে।
+- মা আর সাফার হিজাব চুল, কান আর গলা ঢেকে রাখে। মায়ের খিমার কোমর পর্যন্ত নামানো।
 - ভয় দেখানো কিছু নেই।
 
 ---
@@ -42,10 +42,10 @@ Character design sheet, high-quality 3D animated family film style, soft warm li
 Character design sheet, high-quality 3D animated family film style, soft warm lighting, plain light cream background. A 2-and-a-half-year-old Bangladeshi girl named Safa: very round chubby face, big sparkling brown eyes with long lashes, tiny nose, rosy cheeks, shy sweet smile. She wears a soft pastel-pink hijab that fully covers her hair, ears and neck, with a small white flower clip on the side, a light yellow frock with tiny white dots that reaches below her knees, white leggings and small pink shoes. Full body, front view and three-quarter view, natural toddler proportions, five fingers on each hand, adorable. No text.
 ```
 
-### আম্মু
+### মা
 
 ```
-Character design sheet, high-quality 3D animated family film style, soft warm lighting, plain light cream background. A young Bangladeshi Muslim mother called Ammu: kind gentle face, warm brown eyes, soft loving smile. She wears a long flowing lavender-blue khimar hijab that covers her hair, ears, neck and chest and falls down to her waist with soft folds, over a loose sage-green abaya that reaches the floor. Very modest, graceful and calm. Full body, front view and three-quarter view, natural adult proportions, five fingers on each hand. No text.
+Character design sheet, high-quality 3D animated family film style, soft warm lighting, plain light cream background. A young Bangladeshi Muslim mother whom the children call "Ma": kind gentle face, warm brown eyes, soft loving smile. She wears a long flowing lavender-blue khimar hijab that covers her hair, ears, neck and chest and falls down to her waist with soft folds, over a loose sage-green abaya that reaches the floor. Very modest, graceful and calm. Full body, front view and three-quarter view, natural adult proportions, five fingers on each hand. No text.
 ```
 
 ### মিউ (বিড়ালছানা)
@@ -106,63 +106,63 @@ Dialogue: none. Only a soft curious "hmm" sound from the kitten.
 Camera: close-up on the hand and plate, then cut to the kitten's surprised face.
 ```
 
-### দৃশ্য ৫: আম্মু আসেন (ছবি: আম্মু, উমায়ের, রান্নাঘর)
+### দৃশ্য ৫: মা আসেন (ছবি: মা, উমায়ের, রান্নাঘর)
 
 ```
 Style: high-quality 3D animated family film for toddlers, soft warm pastel colors, gentle lighting, slow calm camera, cute and lovable characters with natural proportions and five fingers on each hand. No background music, no musical instruments, no text or subtitles on screen. Only soft natural sounds.
 
-Scene: Ammu, a kind young mother in a long lavender-blue khimar falling to her waist and a sage-green abaya, walks in from the kitchen counter with a warm smile, carrying a small bowl. She gently places her hand on Umayer's shoulder. She is calm and loving, never angry.
-Dialogue: Ammu, soft and loving, slowly, in Bengali: "উমায়ের সোনা, একটু থামো তো। খাওয়ার আগে আমরা কী বলি?"
-Camera: medium shot, slow push-in toward Ammu and Umayer.
+Scene: Ma, a kind young mother in a long lavender-blue khimar falling to her waist and a sage-green abaya, walks in from the kitchen counter with a warm smile, carrying a small bowl. She gently places her hand on Umayer's shoulder. She is calm and loving, never angry.
+Dialogue: Ma, soft and loving, slowly, in Bengali: "উমায়ের সোনা, একটু থামো তো। খাওয়ার আগে আমরা কী বলি?"
+Camera: medium shot, slow push-in toward Ma and Umayer.
 ```
 
-### দৃশ্য ৬: উমায়ের ভুলে গেছে (ছবি: উমায়ের, আম্মু, রান্নাঘর)
-
-```
-Style: high-quality 3D animated family film for toddlers, soft warm pastel colors, gentle lighting, slow calm camera, cute and lovable characters with natural proportions and five fingers on each hand. No background music, no musical instruments, no text or subtitles on screen. Only soft natural sounds.
-
-Scene: Umayer looks up at Ammu, scratches his head with a shy, thoughtful face, then smiles a little sheepishly. Ammu smiles back kindly.
-Dialogue: Umayer, thoughtful, in Bengali: "উমম... ভুলে গেছি, আম্মু।"
-Camera: close-up on Umayer's face, soft focus on Ammu behind.
-```
-
-### দৃশ্য ৭: আম্মু শেখান (ছবি: আম্মু, উমায়ের, রান্নাঘর)
+### দৃশ্য ৬: উমায়ের ভুলে গেছে (ছবি: উমায়ের, মা, রান্নাঘর)
 
 ```
 Style: high-quality 3D animated family film for toddlers, soft warm pastel colors, gentle lighting, slow calm camera, cute and lovable characters with natural proportions and five fingers on each hand. No background music, no musical instruments, no text or subtitles on screen. Only soft natural sounds.
 
-Scene: Ammu kneels down beside Umayer's chair so her face is at his level and speaks to him gently. Umayer listens carefully with big eyes. Warm sunlight from the window.
-Dialogue: Ammu, soft and clear, slowly, in Bengali: "আমাদের নবীজি সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম শিখিয়েছেন, খাওয়ার আগে বলতে হয়... বিসমিল্লাহ।"
+Scene: Umayer looks up at Ma, scratches his head with a shy, thoughtful face, then smiles a little sheepishly. Ma smiles back kindly.
+Dialogue: Umayer, thoughtful, in Bengali: "উমম... ভুলে গেছি, মা।"
+Camera: close-up on Umayer's face, soft focus on Ma behind.
+```
+
+### দৃশ্য ৭: মা শেখান (ছবি: মা, উমায়ের, রান্নাঘর)
+
+```
+Style: high-quality 3D animated family film for toddlers, soft warm pastel colors, gentle lighting, slow calm camera, cute and lovable characters with natural proportions and five fingers on each hand. No background music, no musical instruments, no text or subtitles on screen. Only soft natural sounds.
+
+Scene: Ma kneels down beside Umayer's chair so her face is at his level and speaks to him gently. Umayer listens carefully with big eyes. Warm sunlight from the window.
+Dialogue: Ma, soft and clear, slowly, in Bengali: "আমাদের নবীজি সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম শিখিয়েছেন, খাওয়ার আগে বলতে হয়... বিসমিল্লাহ।"
 Camera: two-shot at eye level, very slow push-in.
 ```
 
-### দৃশ্য ৮: দোয়া (ছবি: আম্মু, উমায়ের, রান্নাঘর)
+### দৃশ্য ৮: দোয়া (ছবি: মা, উমায়ের, রান্নাঘর)
 
 ```
 Style: high-quality 3D animated family film for toddlers, soft warm pastel colors, gentle lighting, slow calm camera, cute and lovable characters with natural proportions and five fingers on each hand. No background music, no musical instruments, no text or subtitles on screen. Only soft natural sounds.
 
-Scene: Ammu and Umayer face each other. Ammu says each part slowly and Umayer repeats after her, nodding. With each part, a few soft golden sparkles float gently in the air around them. The background softly blurs to keep focus on them. Leave empty space in the upper part of the frame.
-Dialogue: Ammu, very slowly and clearly, in Bengali: "বিস... মিল... লাহ।" Then Umayer, sweetly: "বিসমিল্লাহ!"
+Scene: Ma and Umayer face each other. Ma says each part slowly and Umayer repeats after her, nodding. With each part, a few soft golden sparkles float gently in the air around them. The background softly blurs to keep focus on them. Leave empty space in the upper part of the frame.
+Dialogue: Ma, very slowly and clearly, in Bengali: "বিস... মিল... লাহ।" Then Umayer, sweetly: "বিসমিল্লাহ!"
 Camera: static two-shot, gentle.
 ```
 
-### দৃশ্য ৯: ডান হাত (ছবি: আম্মু, উমায়ের, রান্নাঘর)
+### দৃশ্য ৯: ডান হাত (ছবি: মা, উমায়ের, রান্নাঘর)
 
 ```
 Style: high-quality 3D animated family film for toddlers, soft warm pastel colors, gentle lighting, slow calm camera, cute and lovable characters with natural proportions and five fingers on each hand. No background music, no musical instruments, no text or subtitles on screen. Only soft natural sounds.
 
-Scene: Ammu gently touches Umayer's RIGHT hand. Umayer proudly lifts his RIGHT hand high in the air with a big smile.
-Dialogue: Ammu, warm, in Bengali: "আর খাই কোন হাতে?" Umayer, excited: "ডান হাতে!"
+Scene: Ma gently touches Umayer's RIGHT hand. Umayer proudly lifts his RIGHT hand high in the air with a big smile.
+Dialogue: Ma, warm, in Bengali: "আর খাই কোন হাতে?" Umayer, excited: "ডান হাতে!"
 Camera: medium shot, slight tilt up following his raised right hand.
 ```
 
-### দৃশ্য ১০: নিজের সামনে থেকে (ছবি: আম্মু, উমায়ের, রান্নাঘর)
+### দৃশ্য ১০: নিজের সামনে থেকে (ছবি: মা, উমায়ের, রান্নাঘর)
 
 ```
 Style: high-quality 3D animated family film for toddlers, soft warm pastel colors, gentle lighting, slow calm camera, cute and lovable characters with natural proportions and five fingers on each hand. No background music, no musical instruments, no text or subtitles on screen. Only soft natural sounds.
 
-Scene: Ammu points gently to the part of the rice nearest to Umayer on his plate, and a soft golden glow appears on that front part of the plate. Umayer nods happily.
-Dialogue: Ammu, soft, in Bengali: "ঠিক! আর খাই নিজের সামনে থেকে। প্লেটের মাঝখান থেকে নয়।"
+Scene: Ma points gently to the part of the rice nearest to Umayer on his plate, and a soft golden glow appears on that front part of the plate. Umayer nods happily.
+Dialogue: Ma, soft, in Bengali: "ঠিক! আর খাই নিজের সামনে থেকে। প্লেটের মাঝখান থেকে নয়।"
 Camera: close-up on the plate, then up to Umayer's smiling face.
 ```
 
@@ -186,12 +186,12 @@ Dialogue: Safa, tiny voice: "বিচমিল্লাহ!" Umayer, happy: "�
 Camera: medium two-shot.
 ```
 
-### দৃশ্য ১৩: ঠিকমতো খাওয়া (ছবি: উমায়ের, সাফা, আম্মু, রান্নাঘর)
+### দৃশ্য ১৩: ঠিকমতো খাওয়া (ছবি: উমায়ের, সাফা, মা, রান্নাঘর)
 
 ```
 Style: high-quality 3D animated family film for toddlers, soft warm pastel colors, gentle lighting, slow calm camera, cute and lovable characters with natural proportions and five fingers on each hand. No background music, no musical instruments, no text or subtitles on screen. Only soft natural sounds.
 
-Scene: Back at the kitchen table. Umayer sits up straight, says the word, then eats rice with his RIGHT hand from the part of the plate in front of him, closing his eyes with delight. Safa eats from her small bowl with a spoon. Ammu watches, smiling proudly.
+Scene: Back at the kitchen table. Umayer sits up straight, says the word, then eats rice with his RIGHT hand from the part of the plate in front of him, closing his eyes with delight. Safa eats from her small bowl with a spoon. Ma watches, smiling proudly.
 Dialogue: Umayer, clear: "বিসমিল্লাহ!" then after eating, happy: "মমম! আজকে ভাত আরও মজা লাগছে!"
 Camera: medium shot of the table.
 ```
@@ -206,12 +206,12 @@ Dialogue: Umayer and Safa together, laughing, in Bengali: "মিউও বি�
 Camera: low angle on the kitten, then up to the laughing children.
 ```
 
-### দৃশ্য ১৫: বিদায় (ছবি: আম্মু, উমায়ের, সাফা, মিউ)
+### দৃশ্য ১৫: বিদায় (ছবি: মা, উমায়ের, সাফা, মিউ)
 
 ```
 Style: high-quality 3D animated family film for toddlers, soft warm pastel colors, gentle lighting, slow calm camera, cute and lovable characters with natural proportions and five fingers on each hand. No background music, no musical instruments, no text or subtitles on screen. Only soft natural sounds.
 
-Scene: A soft pastel mint-green background. Ammu, Umayer, Safa and Miu stand together on the LEFT half of the frame, all smiling and waving goodbye at the camera. Keep the right half of the frame empty and calm.
+Scene: A soft pastel mint-green background. Ma, Umayer, Safa and Miu stand together on the LEFT half of the frame, all smiling and waving goodbye at the camera. Keep the right half of the frame empty and calm.
 Dialogue: Umayer, cheerful: "আজ খাওয়ার সময় তুমিও বলবে তো?" Then everyone together, warmly: "আসসালামু আলাইকুম! পরের পর্বে দেখা হবে!"
 Camera: static wide shot, slow fade at the end.
 ```
