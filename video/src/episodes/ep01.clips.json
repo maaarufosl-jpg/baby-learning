@@ -36,7 +36,8 @@
     "seconds": 10.1
   },
   "10": {
-    "image": "clips/ep01/_ready/scene10.jpg"
+    "file": "clips/ep01/_ready/scene10.mp4",
+    "seconds": 10.1
   },
   "11": {
     "image": "clips/ep01/_ready/scene11.jpg"
