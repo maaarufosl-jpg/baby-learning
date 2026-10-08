@@ -8,6 +8,7 @@ import {toBn} from './Episode';
 import {DuaPanel, Footnote, QuestionMark, SilencePrompt, SpeechBubble, Star, TEXT_FONT, Title} from './Overlays';
 
 const PLACEHOLDER_SECONDS = 3;
+const INTRO_SECONDS = 3.5;
 
 /** Dua panels over full-frame artwork are drawn smaller and higher so they don't cover the characters' faces. */
 const Compact: React.FC<{children: React.ReactNode}> = ({children}) => (
@@ -25,7 +26,23 @@ export const clipScenes = (fps: number) =>
     return {n, media, frames: Math.round(seconds * fps)};
   });
 
-export const clipEpisodeFrames = (fps: number) => clipScenes(fps).reduce((s, c) => s + c.frames, 0);
+export const clipEpisodeFrames = (fps: number) => Math.round(INTRO_SECONDS * fps) + clipScenes(fps).reduce((s, c) => s + c.frames, 0);
+
+/** Opening card: series logo and episode name above the four characters. */
+const IntroCard: React.FC<{frames: number}> = ({frames}) => {
+  const frame = useCurrentFrame();
+  const {width, height} = useVideoConfig();
+  const layout = getLayout(width, height);
+  const fadeOut = interpolate(frame, [frames - 10, frames], [0, 1], {extrapolateLeft: 'clamp'});
+  const rise = interpolate(frame, [0, 24], [40, 0], {extrapolateRight: 'clamp'});
+  return (
+    <AbsoluteFill style={{background: `linear-gradient(180deg, ${colors.sky} 0%, ${colors.cream} 60%)`}}>
+      <Img src={staticFile('thumb/lineup.jpg')} style={{position: 'absolute', left: '50%', bottom: 0, width: 1500, transform: `translate(-50%, ${rise}px)`, borderRadius: '48px 48px 0 0'}} />
+      <Title layout={{...layout, titleTop: 60}} episodeLabel={`পর্ব ${toBn(ep01.number)} · ${ep01.title}`} />
+      {fadeOut > 0 && <AbsoluteFill style={{background: colors.cream, opacity: fadeOut}} />}
+    </AbsoluteFill>
+  );
+};
 
 const Window: React.FC<{frames: number; from?: number; to?: number; children: React.ReactNode}> = ({frames, from = 0, to = 1, children}) => {
   const start = Math.round(from * frames);
@@ -105,7 +122,7 @@ const Overlay: React.FC<{o: ClipOverlay; frames: number}> = ({o, frames}) => {
     case 'say':
       return (
         <Window frames={frames} from={o.from} to={o.to}>
-          <SpeechBubble speech={{who: o.who, text: o.text, label: o.label}} layout={layout} />
+          <SpeechBubble speech={{who: o.who, text: o.text, label: o.label}} layout={layout} top={o.top} />
         </Window>
       );
     case 'card':
@@ -166,13 +183,17 @@ const Scene: React.FC<{n: number; media?: SceneMedia; frames: number; first: boo
 export const ClipEpisode: React.FC = () => {
   const {fps} = useVideoConfig();
   const scenes = clipScenes(fps);
-  let from = 0;
+  const introFrames = Math.round(INTRO_SECONDS * fps);
+  let from = introFrames;
   return (
     <AbsoluteFill style={{background: colors.cream}}>
+      <Sequence durationInFrames={introFrames} name="পরিচিতি">
+        <IntroCard frames={introFrames} />
+      </Sequence>
       {scenes.map((s, i) => {
         const seq = (
           <Sequence key={s.n} from={from} durationInFrames={s.frames} name={`দৃশ্য ${s.n}`}>
-            <Scene n={s.n} media={s.media} frames={s.frames} first={i === 0} last={i === scenes.length - 1} />
+            <Scene n={s.n} media={s.media} frames={s.frames} first={false} last={i === scenes.length - 1} />
           </Sequence>
         );
         from += s.frames;

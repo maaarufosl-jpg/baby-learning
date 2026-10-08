@@ -14,7 +14,7 @@ export type ClipOverlay =
   | {type: 'footnote'; text: string}
   | {type: 'card'; from: number}
   | {type: 'question'; from: number; x?: number; y?: number}
-  | {type: 'say'; who: CharacterId | 'narrator' | 'everyone'; text: string; from: number; to: number; label?: string};
+  | {type: 'say'; who: CharacterId | 'narrator' | 'everyone'; text: string; from: number; to: number; label?: string; top?: number};
 
 export const EP01_SCENE_COUNT = 15;
 
@@ -39,7 +39,7 @@ export const EP01_IMAGE_MOVE: Record<number, {to: number; origin: [number, numbe
 export const EP01_FALLBACK_IMAGE: Record<number, number> = {4: 3, 7: 8};
 
 export const EP01_OVERLAYS: Record<number, ClipOverlay[]> = {
-  1: [{type: 'title', to: 0.55}, {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!', from: 0.55, to: 1}],
+  1: [{type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!', from: 0.15, to: 0.6, top: 860}],
   2: [
     {type: 'say', who: 'narrator', text: 'উমায়ের সারা সকাল খেলেছে।\nএখন তার খুব খিদে পেয়েছে।', from: 0, to: 0.5},
     {type: 'say', who: 'umayer', text: 'ভাত! ডিম ভাজা! আমার প্রিয়!', from: 0.5, to: 1},
