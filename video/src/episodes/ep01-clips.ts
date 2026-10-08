@@ -45,8 +45,8 @@ export const EP01_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'ভাত! ডিম ভাজা! আমার প্রিয়!', from: 0.5, to: 1},
   ],
   3: [
-    {type: 'say', who: 'safa', text: 'ভাইয়া, খাবো!', from: 0, to: 0.6},
-    {type: 'say', who: 'miu', text: 'মিউ!', from: 0.6, to: 1},
+    {type: 'say', who: 'safa', text: 'ভাইয়া, খাবো!', from: 0, to: 0.38},
+    {type: 'say', who: 'miu', text: 'মিউ!', from: 0.38, to: 0.62},
   ],
   4: [
     {type: 'say', who: 'narrator', text: 'এই রে! উমায়ের কিছু একটা ভুলে গেছে।', from: 0, to: 0.5},
