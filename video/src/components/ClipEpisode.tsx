@@ -69,6 +69,8 @@ const RepeatOverlay: React.FC<{frames: number; parts: [number, number, number]}>
   const active = starts.reduce((acc, s, i) => (frame >= s ? i : acc), -1);
   const nextStart = active >= 0 ? starts[active + 1] ?? frames : starts[0];
   const inSilence = active >= 0 && frame > starts[active] + 20 && frame < nextStart;
+  // The panel arrives just before the first syllable, so an earlier speech bubble is not hidden behind it.
+  if (frame < starts[0] - 8) return null;
   return (
     <>
       <Compact>

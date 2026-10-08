@@ -77,7 +77,7 @@ export const EP01_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'প্লেটের মাঝখান থেকে নয়।', from: 0.4, to: 0.75},
     {type: 'footnote', text: 'সহিহ বুখারি ৫৩৭৬'},
   ],
-  11: [{type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0, to: 0.25}, {type: 'repeat', parts: [0.28, 0.52, 0.76]}],
+  11: [{type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.13, to: 0.33}, {type: 'repeat', parts: [0.34, 0.47, 0.6]}],
   12: [
     {type: 'say', who: 'safa', text: 'বিচমিল্লাহ!', from: 0, to: 0.45},
     {type: 'say', who: 'umayer', text: 'সাফাও পেরেছে! তুমিও পেরেছো!', from: 0.45, to: 1},
