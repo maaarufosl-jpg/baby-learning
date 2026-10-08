@@ -27,7 +27,7 @@ export const EP01_IMAGE_SECONDS: Record<number, number> = {
 export const EP01_IMAGE_MOVE: Record<number, {to: number; origin: [number, number]}> = {
   2: {to: 1.1, origin: [35, 45]},
   3: {to: 1.08, origin: [45, 40]},
-  4: {to: 1.35, origin: [20, 58]},
+  4: {to: 1.2, origin: [50, 62]},
   6: {to: 1.08, origin: [35, 35]},
   9: {to: 1.1, origin: [65, 35]},
   10: {to: 1.12, origin: [45, 70]},
