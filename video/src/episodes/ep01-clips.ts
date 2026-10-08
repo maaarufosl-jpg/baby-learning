@@ -59,7 +59,7 @@ export const EP01_OVERLAYS: Record<number, ClipOverlay[]> = {
   ],
   6: [{type: 'say', who: 'umayer', text: 'উমম... ভুলে গেছি, মা।', from: 0.1, to: 1, top: 880}],
   7: [
-    {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ শিখিয়েছেন,\nখাওয়ার আগে বলতে হয়... বিসমিল্লাহ।', from: 0, to: 1},
+    {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ শিখিয়েছেন,\nখাওয়ার আগে বলতে হয়... বিসমিল্লাহ।', from: 0.12, to: 1, top: 740},
     {type: 'footnote', text: 'সহিহ বুখারি ৫৩৭৬, সহিহ মুসলিম ২০২২'},
   ],
   8: [{type: 'dua', mode: 'broken', from: 0.05, to: 0.7}, {type: 'dua', mode: 'full', from: 0.7, showMeaning: true}, {type: 'star', at: 0.72}],
