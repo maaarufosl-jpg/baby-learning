@@ -1,1 +1,41 @@
-{}
+{
+  "1": {
+    "image": "clips/ep01/_ready/scene01.jpg"
+  },
+  "2": {
+    "image": "clips/ep01/_ready/scene02.jpg"
+  },
+  "3": {
+    "image": "clips/ep01/_ready/scene03.jpg"
+  },
+  "5": {
+    "image": "clips/ep01/_ready/scene05.jpg"
+  },
+  "6": {
+    "image": "clips/ep01/_ready/scene06.jpg"
+  },
+  "8": {
+    "image": "clips/ep01/_ready/scene08.jpg"
+  },
+  "9": {
+    "image": "clips/ep01/_ready/scene09.jpg"
+  },
+  "10": {
+    "image": "clips/ep01/_ready/scene10.jpg"
+  },
+  "11": {
+    "image": "clips/ep01/_ready/scene11.jpg"
+  },
+  "12": {
+    "image": "clips/ep01/_ready/scene12.jpg"
+  },
+  "13": {
+    "image": "clips/ep01/_ready/scene13.jpg"
+  },
+  "14": {
+    "image": "clips/ep01/_ready/scene14.jpg"
+  },
+  "15": {
+    "image": "clips/ep01/_ready/scene15.jpg"
+  }
+}

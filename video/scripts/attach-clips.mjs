@@ -1,5 +1,7 @@
 // Prepares AI-generated scene clips (e.g. from Gemini / Veo) for an episode.
 // Put clips in public/clips/<ep>/ named scene01.mp4, scene02.mp4, ... (mp4, mov or webm; only the number matters).
+// Still images (scene01.jpg / .png / .webp) also work: they are shown with a slow camera move,
+// and their length comes from src/episodes/<ep>-clips.ts. A video wins over an image with the same number.
 // Each clip is converted to 1920x1080, 30 fps H.264 with loudness-matched AAC audio in public/clips/<ep>/_ready/,
 // and src/episodes/<ep>.clips.json is written with each scene's file and length.
 // Usage: node scripts/attach-clips.mjs ep01
@@ -16,9 +18,18 @@ if (existsSync(srcDir)) {
   mkdirSync(readyDir, {recursive: true});
   for (const name of readdirSync(srcDir).sort()) {
     const m = name.match(/(\d+)/);
-    if (!m || name.startsWith('_') || !/\.(mp4|mov|webm|mkv|m4v)$/i.test(name)) continue;
+    if (!m || name.startsWith('_')) continue;
     const n = Number(m[1]);
     const nn = String(n).padStart(2, '0');
+    if (/\.(jpe?g|png|webp)$/i.test(name)) {
+      if (map[n]?.file) continue;
+      const out = join(readyDir, `scene${nn}.jpg`);
+      execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', join(srcDir, name), '-vf', 'scale=2112:1188:force_original_aspect_ratio=increase,crop=2112:1188', '-q:v', '2', out]);
+      map[n] = {image: `clips/${id}/_ready/scene${nn}.jpg`};
+      console.log(`scene ${n}: ${name} -> still image`);
+      continue;
+    }
+    if (!/\.(mp4|mov|webm|mkv|m4v)$/i.test(name)) continue;
     const out = join(readyDir, `scene${nn}.mp4`);
     const hasAudio = execFileSync('ffprobe', ['-v', 'error', '-select_streams', 'a', '-show_entries', 'stream=index', '-of', 'csv=p=0', join(srcDir, name)]).toString().trim() !== '';
     const args = ['-loglevel', 'error', '-y', '-i', join(srcDir, name)];
