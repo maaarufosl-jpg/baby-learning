@@ -13,7 +13,7 @@ export type ClipOverlay =
   | {type: 'star'; at: number}
   | {type: 'footnote'; text: string}
   | {type: 'card'; from: number}
-  | {type: 'question'; from: number}
+  | {type: 'question'; from: number; x?: number; y?: number}
   | {type: 'say'; who: CharacterId | 'narrator' | 'everyone'; text: string; from: number; to: number; label?: string};
 
 export const EP01_SCENE_COUNT = 15;
@@ -27,7 +27,7 @@ export const EP01_IMAGE_SECONDS: Record<number, number> = {
 export const EP01_IMAGE_MOVE: Record<number, {to: number; origin: [number, number]}> = {
   2: {to: 1.1, origin: [35, 45]},
   3: {to: 1.08, origin: [45, 40]},
-  4: {to: 1.6, origin: [96, 92]},
+  4: {to: 1.35, origin: [20, 58]},
   6: {to: 1.08, origin: [35, 35]},
   9: {to: 1.1, origin: [65, 35]},
   10: {to: 1.12, origin: [45, 70]},
@@ -51,7 +51,7 @@ export const EP01_OVERLAYS: Record<number, ClipOverlay[]> = {
   4: [
     {type: 'say', who: 'narrator', text: 'এই রে! উমায়ের কিছু একটা ভুলে গেছে।', from: 0, to: 0.5},
     {type: 'say', who: 'narrator', text: 'তুমি কি বলতে পারো,\nকী ভুলে গেছে?', from: 0.5, to: 1},
-    {type: 'question', from: 0.5},
+    {type: 'question', from: 0.5, x: 330, y: 430},
   ],
   5: [
     {type: 'say', who: 'ammu', text: 'উমায়ের সোনা, একটু থামো তো।', from: 0, to: 0.45},

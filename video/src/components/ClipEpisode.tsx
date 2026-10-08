@@ -98,7 +98,7 @@ const Overlay: React.FC<{o: ClipOverlay; frames: number}> = ({o, frames}) => {
     case 'question':
       return (
         <Window frames={frames} from={o.from}>
-          <QuestionMark layout={layout} />
+          <QuestionMark layout={{...layout, questionX: o.x ?? layout.questionX, questionY: o.y ?? layout.questionY}} />
           <Html5Audio src={staticFile('sfx/pop.wav')} />
         </Window>
       );
