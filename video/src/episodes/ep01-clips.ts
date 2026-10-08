@@ -54,8 +54,8 @@ export const EP01_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'question', from: 0.5, x: 330, y: 430},
   ],
   5: [
-    {type: 'say', who: 'ammu', text: 'উমায়ের সোনা, একটু থামো তো।', from: 0, to: 0.45},
-    {type: 'say', who: 'ammu', text: 'খাওয়ার আগে আমরা কী বলি?', from: 0.45, to: 1},
+    {type: 'say', who: 'ammu', text: 'উমায়ের সোনা, একটু থামো তো।', from: 0.18, to: 0.58},
+    {type: 'say', who: 'ammu', text: 'খাওয়ার আগে আমরা কী বলি?', from: 0.58, to: 1},
   ],
   6: [{type: 'say', who: 'umayer', text: 'উমম... ভুলে গেছি, মা।', from: 0, to: 1}],
   7: [
