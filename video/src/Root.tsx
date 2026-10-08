@@ -1,5 +1,6 @@
 import React from 'react';
 import {cancelRender, Composition, continueRender, delayRender} from 'remotion';
+import {ClipEpisode, clipEpisodeFrames} from './components/ClipEpisode';
 import {EpisodeVideo, episodeFrames, PreviewReel} from './components/Episode';
 import {ep01} from './episodes/ep01';
 import {loadAllFonts} from './fonts';
@@ -29,6 +30,7 @@ const EP01_PREVIEW = [
 
 export const Root: React.FC = () => (
   <>
+    <Composition id="Ep01Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS)} fps={FPS} width={1920} height={1080} />
     <Composition
       id="Ep01"
       component={EpisodeVideo}

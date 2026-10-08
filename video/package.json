@@ -9,6 +9,8 @@
     "render:ep01-shorts": "remotion render Ep01Shorts out/ep01-shorts.mp4",
     "still:ep01": "remotion still Ep01 out/ep01-frame.png",
     "typecheck": "tsc --noEmit",
+    "attach-clips:ep01": "node scripts/attach-clips.mjs ep01",
+    "render:ep01-clips": "remotion render Ep01Clips out/ep01-clips.mp4",
     "attach-audio:ep01": "node scripts/attach-audio.mjs ep01",
     "elevenlabs:ep01": "node scripts/elevenlabs-guide.mjs ep01 > ../episodes/ep01-elevenlabs.md",
     "voice-script:ep01": "node scripts/voice-script.mjs ep01 > ../episodes/ep01-voice-script.md"

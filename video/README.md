@@ -68,6 +68,19 @@ node scripts/elevenlabs-generate.mjs ep01 --voice "Jane" --who umayer
 node scripts/attach-audio.mjs ep01 --pitch umayer=4
 ```
 
+## Gemini (Veo) দিয়ে বানানো ক্লিপ জোড়া লাগানো
+
+1. ক্লিপগুলো `public/clips/ep01/` ফোল্ডারে রাখুন: `scene01.mp4` থেকে `scene15.mp4` (দৃশ্যের নম্বর `episodes/ep01-gemini-prompts.md` অনুযায়ী)।
+2. চালান:
+
+```bash
+cd video
+npm run attach-clips:ep01   # ১০৮০p ৩০fps-এ রূপান্তর, আওয়াজ সমান করা
+npm run render:ep01-clips   # লোগো, দোয়ার প্যানেল, "এবার তুমি বলো", তারা ও শেষের কার্ডসহ পুরো পর্ব
+```
+
+কোন দৃশ্যে কোন লেখা বসবে আর কখন, তা `src/episodes/ep01-clips.ts` ফাইলে ঠিক করা যায়। যে দৃশ্যের ক্লিপ নেই, সেখানে "ক্লিপ এখনো যোগ হয়নি" লেখা দেখায়।
+
 ## নতুন পর্ব
 
 1. `src/episodes/ep01.ts` কপি করে `ep02.ts` বানান, দোয়া ও beats বদলান।
