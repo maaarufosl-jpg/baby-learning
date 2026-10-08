@@ -11,8 +11,15 @@ const PLACEHOLDER_SECONDS = 3;
 const INTRO_SECONDS = 3.5;
 
 /** Dua panels over full-frame artwork are drawn smaller and higher so they don't cover the characters' faces. */
-const Compact: React.FC<{children: React.ReactNode}> = ({children}) => (
-  <AbsoluteFill style={{transform: 'translateY(-72px) scale(0.62)', transformOrigin: '50% 0%'}}>{children}</AbsoluteFill>
+const Compact: React.FC<{children: React.ReactNode; align?: 'center' | 'right'}> = ({children, align = 'center'}) => (
+  <AbsoluteFill
+    style={{
+      transform: align === 'right' ? 'translate(-40px, -72px) scale(0.6)' : 'translateY(-72px) scale(0.62)',
+      transformOrigin: align === 'right' ? '100% 0%' : '50% 0%',
+    }}
+  >
+    {children}
+  </AbsoluteFill>
 );
 
 /** Scenes in order: own video clip, own image, a borrowed image, or a placeholder. */
@@ -89,14 +96,14 @@ const Overlay: React.FC<{o: ClipOverlay; frames: number}> = ({o, frames}) => {
     case 'dua':
       return (
         <Window frames={frames} from={o.from} to={o.to}>
-          <Compact>
+          <Compact align={o.align}>
             <DuaPanel
               dua={ep01.dua}
               display={{mode: o.mode, showMeaning: o.showMeaning}}
               layout={layout}
               beatFrames={Math.round(((o.to ?? 1) - (o.from ?? 0)) * frames)}
               hasSpeech={false}
-              animateIn={o.mode === 'broken' || o.from === undefined}
+              animateIn={o.pop ?? (o.from ?? 0) < 0.1}
             />
           </Compact>
         </Window>

@@ -28,7 +28,8 @@
     "seconds": 10.1
   },
   "8": {
-    "image": "clips/ep01/_ready/scene08.jpg"
+    "file": "clips/ep01/_ready/scene08.mp4",
+    "seconds": 10.1
   },
   "9": {
     "image": "clips/ep01/_ready/scene09.jpg"

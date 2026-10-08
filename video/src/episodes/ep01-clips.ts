@@ -8,7 +8,7 @@ import type {CharacterId} from '../types';
  */
 export type ClipOverlay =
   | {type: 'title'; to?: number}
-  | {type: 'dua'; mode: 'full' | 'broken'; from?: number; to?: number; showMeaning?: boolean}
+  | {type: 'dua'; mode: 'full' | 'broken'; from?: number; to?: number; showMeaning?: boolean; pop?: boolean; align?: 'center' | 'right'}
   | {type: 'repeat'; parts: [number, number, number]}
   | {type: 'star'; at: number}
   | {type: 'footnote'; text: string}
@@ -62,7 +62,12 @@ export const EP01_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ শিখিয়েছেন,\nখাওয়ার আগে বলতে হয়... বিসমিল্লাহ।', from: 0.12, to: 1, top: 740},
     {type: 'footnote', text: 'সহিহ বুখারি ৫৩৭৬, সহিহ মুসলিম ২০২২'},
   ],
-  8: [{type: 'dua', mode: 'broken', from: 0.05, to: 0.7}, {type: 'dua', mode: 'full', from: 0.7, showMeaning: true}, {type: 'star', at: 0.72}],
+  8: [
+    {type: 'dua', mode: 'full', from: 0.03, to: 0.28, pop: true, align: 'right'},
+    {type: 'dua', mode: 'broken', from: 0.28, to: 0.68, pop: false, align: 'right'},
+    {type: 'dua', mode: 'full', from: 0.68, showMeaning: true, pop: false, align: 'right'},
+    {type: 'star', at: 0.74},
+  ],
   9: [
     {type: 'say', who: 'ammu', text: 'আর খাই কোন হাতে?', from: 0, to: 0.5},
     {type: 'say', who: 'umayer', text: 'ডান হাতে!', from: 0.5, to: 1},
