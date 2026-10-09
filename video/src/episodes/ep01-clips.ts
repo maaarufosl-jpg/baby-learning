@@ -41,15 +41,14 @@ export const EP01_FALLBACK_IMAGE: Record<number, number> = {4: 3, 7: 8};
 export const EP01_OVERLAYS: Record<number, ClipOverlay[]> = {
   1: [{type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!', from: 0.15, to: 0.6, top: 860}],
   2: [
-    {type: 'say', who: 'narrator', text: 'উমায়ের সারা সকাল খেলেছে।\nএখন তার খুব খিদে পেয়েছে।', from: 0, to: 0.5},
-    {type: 'say', who: 'umayer', text: 'ভাত! ডিম ভাজা! আমার প্রিয়!', from: 0.5, to: 1},
+    {type: 'say', who: 'umayer', text: 'ভাত! ডিম ভাজা! আমার প্রিয়!', from: 0.12, to: 0.95},
   ],
   3: [
     {type: 'say', who: 'safa', text: 'ভাইয়া, খাবো!', from: 0, to: 0.38},
     {type: 'say', who: 'miu', text: 'মিউ!', from: 0.38, to: 0.62},
   ],
   4: [
-    {type: 'say', who: 'narrator', text: 'এই রে! উমায়ের কিছু একটা ভুলে গেছে।', from: 0, to: 0.5},
+    {type: 'say', who: 'narrator', text: 'এই রে! উমায়ের কিছু একটা ভুলে গেছে।', from: 0.06, to: 0.5},
     {type: 'say', who: 'narrator', text: 'তুমি কি বলতে পারো,\nকী ভুলে গেছে?', from: 0.5, to: 1},
     {type: 'question', from: 0.5, x: 330, y: 430},
   ],
@@ -96,6 +95,27 @@ export const EP01_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'আজ খাওয়ার সময় তুমিও বলবে তো?', from: 0.1, to: 0.45},
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম! পরের পর্বে দেখা হবে!', from: 0.45, to: 1},
     {type: 'card', from: 0.08},
+  ],
+};
+
+/**
+ * Narrated lead-in before a scene's video: the clip's first frame is held with a slow zoom
+ * while the narration plays and its text shows in a speech bubble.
+ */
+export const EP01_LEAD_IN: Record<number, {image: string; audio: string; seconds: number; text: string}> = {
+  2: {
+    image: 'clips/ep01-leadin/scene02-first.jpg',
+    audio: 'audio/ep01/narration1.wav',
+    seconds: 6.6,
+    text: 'উমায়ের সারা সকাল খেলেছে।\nএখন তার খুব খিদে পেয়েছে।',
+  },
+};
+
+/** Narration laid over a scene's video at a fraction of its length; the clip's own sound is lowered meanwhile. */
+export const EP01_VOICE_OVER: Record<number, {audio: string; at: number; seconds: number}[]> = {
+  4: [
+    {audio: 'audio/ep01/narration2a.wav', at: 0.08, seconds: 3.8},
+    {audio: 'audio/ep01/narration2b.wav', at: 0.53, seconds: 3.0},
   ],
 };
 

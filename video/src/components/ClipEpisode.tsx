@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, Html5Audio, Img, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {EP01_FALLBACK_IMAGE, EP01_IMAGE_MOVE, EP01_IMAGE_SECONDS, EP01_OVERLAYS, ep01Clips, EP01_SCENE_COUNT, type ClipOverlay, type SceneMedia} from '../episodes/ep01-clips';
+import {EP01_FALLBACK_IMAGE, EP01_IMAGE_MOVE, EP01_LEAD_IN, EP01_VOICE_OVER, EP01_IMAGE_SECONDS, EP01_OVERLAYS, ep01Clips, EP01_SCENE_COUNT, type ClipOverlay, type SceneMedia} from '../episodes/ep01-clips';
 import {ep01} from '../episodes/ep01';
 import {getLayout} from '../layout';
 import {colors} from '../theme';
@@ -30,7 +30,8 @@ export const clipScenes = (fps: number) =>
     const borrowed = !own && EP01_FALLBACK_IMAGE[n] ? ep01Clips[String(EP01_FALLBACK_IMAGE[n])] : undefined;
     const media: SceneMedia | undefined = own ?? (borrowed?.image ? {image: borrowed.image} : undefined);
     const seconds = media?.file ? media.seconds ?? PLACEHOLDER_SECONDS : EP01_IMAGE_SECONDS[n] ?? PLACEHOLDER_SECONDS;
-    return {n, media, frames: Math.round(seconds * fps)};
+    const lead = media?.file && EP01_LEAD_IN[n] ? Math.round(EP01_LEAD_IN[n].seconds * fps) : 0;
+    return {n, media, lead, frames: lead + Math.round(seconds * fps)};
   });
 
 export const clipEpisodeFrames = (fps: number) => Math.round(INTRO_SECONDS * fps) + clipScenes(fps).reduce((s, c) => s + c.frames, 0);
@@ -166,22 +167,65 @@ const StillImage: React.FC<{n: number; src: string; frames: number}> = ({n, src,
   );
 };
 
-const Scene: React.FC<{n: number; media?: SceneMedia; frames: number; first: boolean; last: boolean}> = ({n, media, frames, first, last}) => {
-  const frame = useCurrentFrame();
-  const fadeIn = interpolate(frame, [0, first ? 12 : 8], [first ? 1 : 0.6, 0], {extrapolateRight: 'clamp'});
-  const fadeOut = last ? interpolate(frame, [frames - 20, frames], [0, 1], {extrapolateLeft: 'clamp'}) : 0;
+const SceneBody: React.FC<{n: number; media?: SceneMedia; frames: number}> = ({n, media, frames}) => {
+  const {fps} = useVideoConfig();
+  const voices = EP01_VOICE_OVER[n] ?? [];
+  const windows = voices.map((v) => [Math.round(v.at * frames), Math.round(v.at * frames + v.seconds * fps)] as const);
+  const clipVolume = (f: number) => (windows.some(([s, e]) => f >= s - 6 && f <= e + 6) ? 0.25 : 1);
   return (
-    <AbsoluteFill style={{background: colors.cream}}>
+    <AbsoluteFill>
       {media?.file ? (
-        <OffthreadVideo src={staticFile(media.file)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+        <OffthreadVideo src={staticFile(media.file)} volume={clipVolume} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       ) : media?.image ? (
         <StillImage n={n} src={media.image} frames={frames} />
       ) : (
         <Placeholder n={n} />
       )}
+      {voices.map((v, i) => (
+        <Sequence key={i} from={windows[i][0]} layout="none">
+          <Html5Audio src={staticFile(v.audio)} />
+        </Sequence>
+      ))}
       {(EP01_OVERLAYS[n] ?? []).map((o, i) => (
         <Overlay key={i} o={o} frames={frames} />
       ))}
+    </AbsoluteFill>
+  );
+};
+
+const LeadIn: React.FC<{n: number; frames: number}> = ({n, frames}) => {
+  const frame = useCurrentFrame();
+  const {width, height} = useVideoConfig();
+  const layout = getLayout(width, height);
+  const lead = EP01_LEAD_IN[n];
+  const t = interpolate(frame, [0, frames], [0, 1], {extrapolateRight: 'clamp'});
+  return (
+    <AbsoluteFill style={{overflow: 'hidden'}}>
+      <Img src={staticFile(lead.image)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1 + 0.08 * t})`, transformOrigin: '30% 50%'}} />
+      <Sequence from={8} layout="none">
+        <Html5Audio src={staticFile(lead.audio)} />
+      </Sequence>
+      <Sequence from={4} durationInFrames={frames - 4} layout="none">
+        <SpeechBubble speech={{who: 'narrator', text: lead.text}} layout={layout} />
+      </Sequence>
+    </AbsoluteFill>
+  );
+};
+
+const Scene: React.FC<{n: number; media?: SceneMedia; frames: number; lead: number; first: boolean; last: boolean}> = ({n, media, frames, lead, first, last}) => {
+  const frame = useCurrentFrame();
+  const fadeIn = interpolate(frame, [0, first ? 12 : 8], [first ? 1 : 0.6, 0], {extrapolateRight: 'clamp'});
+  const fadeOut = last ? interpolate(frame, [frames - 20, frames], [0, 1], {extrapolateLeft: 'clamp'}) : 0;
+  return (
+    <AbsoluteFill style={{background: colors.cream}}>
+      {lead > 0 && (
+        <Sequence durationInFrames={lead} layout="none">
+          <LeadIn n={n} frames={lead} />
+        </Sequence>
+      )}
+      <Sequence from={lead} durationInFrames={frames - lead} layout="none">
+        <SceneBody n={n} media={media} frames={frames - lead} />
+      </Sequence>
       {fadeIn > 0 && <AbsoluteFill style={{background: colors.cream, opacity: fadeIn}} />}
       {fadeOut > 0 && <AbsoluteFill style={{background: colors.cream, opacity: fadeOut}} />}
     </AbsoluteFill>
@@ -202,7 +246,7 @@ export const ClipEpisode: React.FC = () => {
       {scenes.map((s, i) => {
         const seq = (
           <Sequence key={s.n} from={from} durationInFrames={s.frames} name={`দৃশ্য ${s.n}`}>
-            <Scene n={s.n} media={s.media} frames={s.frames} first={false} last={i === scenes.length - 1} />
+            <Scene n={s.n} media={s.media} frames={s.frames} lead={s.lead} first={false} last={i === scenes.length - 1} />
           </Sequence>
         );
         from += s.frames;
