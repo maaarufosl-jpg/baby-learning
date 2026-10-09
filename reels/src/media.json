@@ -1,0 +1,22 @@
+{
+  "reel01": {
+    "voice": {
+      "1": {
+        "file": "audio/reel01/n1.mp3",
+        "seconds": 2.12
+      },
+      "2": {
+        "file": "audio/reel01/n2.mp3",
+        "seconds": 2.12
+      },
+      "3": {
+        "file": "audio/reel01/n3.mp3",
+        "seconds": 2.27
+      },
+      "4": {
+        "file": "audio/reel01/n4.mp3",
+        "seconds": 2.69
+      }
+    }
+  }
+}

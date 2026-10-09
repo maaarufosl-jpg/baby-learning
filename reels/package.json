@@ -1,0 +1,27 @@
+{
+  "name": "nidarshan-reels",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Remotion project for short vertical Islamic nature reels (Facebook Reels / YouTube Shorts)",
+  "scripts": {
+    "studio": "remotion studio",
+    "typecheck": "tsc --noEmit",
+    "docs": "node scripts/docs.mjs",
+    "attach": "node scripts/attach.mjs",
+    "narrate": "node scripts/narrate.mjs",
+    "brand": "remotion still BrandOptions out/brand-options.png",
+    "render": "node scripts/render.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.532",
+    "@remotion/fonts": "4.0.532",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.0",
+    "typescript": "5.8.3"
+  }
+}

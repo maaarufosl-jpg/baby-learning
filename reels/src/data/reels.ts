@@ -1,0 +1,463 @@
+import {asmaReel, namesReel, textReel} from './builders';
+import {veo} from './prompt';
+import type {Reel} from './types';
+
+const HADITH_NUMBERING =
+  'হাদিস নম্বর আন্তর্জাতিকভাবে প্রচলিত গণনা অনুযায়ী (বুখারি: ফাতহুল বারি; মুসলিম: মুহাম্মাদ ফুয়াদ আব্দুল বাকি)। বাংলাদেশের ইসলামিক ফাউন্ডেশন বা অন্য বাংলা সংস্করণে নম্বর আলাদা হতে পারে।';
+const NAME_FORM = 'নামের আরবি বানানে শেষ অক্ষর থামার (ওয়াকফ) রূপে রাখা হয়েছে, যেমনটা নামের তালিকায় সাধারণত লেখা হয়।';
+
+export const reels: Reel[] = [
+  asmaReel({
+    id: 'reel01',
+    number: 1,
+    title: 'আর-রহমান: পরম দয়াময়',
+    count: '১',
+    arabic: 'الرَّحْمٰنُ',
+    bangla: 'আর-রহমান',
+    meaning: 'পরম দয়াময়',
+    explain: 'তাঁর দয়া সবকিছুকে ঘিরে আছে',
+    ayah: {
+      arabic: 'الرَّحْمٰنِ الرَّحِيمِ',
+      meaning: 'যিনি পরম দয়াময়, অতি দয়ালু',
+      source: 'সূরা আল-ফাতিহা, আয়াত ৩ (১:৩)',
+      note: 'সূরা আর-রহমান শুরুই হয়েছে এই নামে (৫৫:১)',
+    },
+    narration: {
+      intro: 'আল্লাহর সুন্দর নামগুলোর একটি।',
+      meaning: 'এর অর্থ, পরম দয়াময়।',
+      explain: 'তাঁর দয়া সবকিছুকে ঘিরে আছে।',
+      ayah: 'প্রতিদিন সূরা ফাতিহায় আমরা এই নাম পড়ি।',
+    },
+    scenes: [
+      {
+        look: 'কুয়াশা ঢাকা সবুজ পাহাড়ের ওপারে সূর্যোদয়, সোনালি আলো ধীরে ধীরে ছড়িয়ে পড়ছে',
+        prompt: veo(
+          'A golden sunrise over layers of misty green hills. The sun slowly rises from behind the far hill and warm light spreads across the valley, soft fog drifting between the hills.',
+          'a soft morning breeze and faint distant birdsong',
+        ),
+        tint: ['#F3C77B', '#2F5D47'],
+      },
+      {
+        look: 'বনের সবুজ পাতার ফাঁক দিয়ে নরম রোদ, সামনে পাথরের ওপর দিয়ে বয়ে যাওয়া স্বচ্ছ ছোট নদী',
+        prompt: veo(
+          'Warm sunbeams streaming through the green leaves of a quiet forest. In the foreground a small clear stream flows gently over smooth round stones, sparkling in the light.',
+          'gently flowing stream water and leaves rustling in a light breeze',
+        ),
+        tint: ['#B9D98F', '#1F4D3A'],
+      },
+      {
+        look: 'বিস্তীর্ণ সবুজ ধানক্ষেতে হালকা বৃষ্টি, তারপর মেঘ সরে উষ্ণ আলো',
+        prompt: veo(
+          'Light gentle rain falling over a wide green rice field. Soft grey clouds slowly part and warm sunlight begins to shine through, making the wet rice leaves glow.',
+          'soft steady rain and light wind',
+        ),
+        tint: ['#A9BDB3', '#2E5A3E'],
+      },
+    ],
+    sources: [
+      'নাম الرَّحْمٰنُ: সূরা আল-ফাতিহা ১:৩, সূরা আর-রহমান ৫৫:১ (আরও বহু জায়গায়)',
+      'ব্যাখ্যার ভিত্তি "তাঁর দয়া সবকিছুকে ঘিরে আছে": সূরা আল-আ\'রাফ ৭:১৫৬ — وَرَحْمَتِي وَسِعَتْ كُلَّ شَيْءٍ',
+    ],
+    checklist: [
+      'নামের আরবি বানান ও হরকত: الرَّحْمٰنُ',
+      'আয়াতের আরবি মুসহাফের সাথে মিলানো: الرَّحْمٰنِ الرَّحِيمِ (১:৩)',
+      'বাংলা উচ্চারণ: আর-রহমান',
+      'অর্থ: পরম দয়াময় · আয়াতের অর্থ: যিনি পরম দয়াময়, অতি দয়ালু',
+      'ব্যাখ্যা "তাঁর দয়া সবকিছুকে ঘিরে আছে" (৭:১৫৬ এর আলোকে) ঠিক আছে কি না',
+    ],
+    unsure: [
+      'আল-ফাতিহার আয়াত নম্বর: প্রচলিত (কুফি) গণনায় বিসমিল্লাহ আয়াত ১, তাই এটা ১:৩। অন্য গণনায় ১:২ বলা হয়। আমি ১:৩ দিয়েছি।',
+    ],
+  }),
+
+  namesReel({
+    id: 'reel02',
+    number: 2,
+    title: 'ছেলেদের ৪টি সুন্দর নাম',
+    heading: 'ছেলেদের ইসলামিক নাম',
+    intro: 'ছেলেদের জন্য চারটি সুন্দর নাম।',
+    names: [
+      {arabic: 'عَبْدُ اللّٰهِ', bangla: 'আব্দুল্লাহ', gender: 'ছেলে', meaning: 'আল্লাহর বান্দা', origin: 'আল্লাহর কাছে সবচেয়ে প্রিয় নাম (মুসলিম ২১৩২)', say: 'অর্থ, আল্লাহর বান্দা।'},
+      {arabic: 'عَبْدُ الرَّحْمٰنِ', bangla: 'আব্দুর রহমান', gender: 'ছেলে', meaning: 'দয়াময়ের বান্দা', origin: 'সাহাবি আব্দুর রহমান ইবনে আউফ (রা.)', say: 'অর্থ, দয়াময়ের বান্দা।'},
+      {arabic: 'يَحْيٰى', bangla: 'ইয়াহইয়া', gender: 'ছেলে', meaning: 'সে বেঁচে থাকবে', origin: 'নবী ইয়াহইয়া (আ.) · কুরআন ১৯:৭', say: 'একজন নবীর নাম। অর্থ, সে বেঁচে থাকবে।'},
+      {arabic: 'سَعْد', bangla: 'সা\'দ', gender: 'ছেলে', meaning: 'সৌভাগ্য, আনন্দ', origin: 'সাহাবি সা\'দ ইবনে আবি ওয়াক্কাস (রা.)', say: 'অর্থ, সৌভাগ্য।'},
+    ],
+    scenes: [
+      {
+        look: 'ভোরে শান্ত চওড়া নদী, পানিতে আকাশের রং, হালকা কুয়াশা',
+        prompt: veo('A wide calm river at dawn with light mist on the water. The pastel sky is reflected on the smooth surface, slow gentle ripples.', 'quiet lapping water and a soft breeze'),
+        tint: ['#F1D3A8', '#3B6E73'],
+      },
+      {
+        look: 'সবুজ পাহাড়ি ঝরনা, পাথরের ওপর দিয়ে সাদা পানি নামছে',
+        prompt: veo('A clear waterfall flowing down mossy rocks in a lush green mountain forest, white water falling into a small clear pool.', 'the steady sound of falling water'),
+        tint: ['#CFE3D2', '#24513F'],
+      },
+      {
+        look: 'সোনালি বিকেলে বাতাসে দোল খাওয়া লম্বা ঘাসের মাঠ',
+        prompt: veo('A wide meadow of tall grass swaying gently in the wind at golden hour, warm low sunlight shining through the grass tips.', 'wind moving through the grass'),
+        tint: ['#F0C987', '#5B6B3A'],
+      },
+    ],
+    sources: [
+      'আব্দুল্লাহ ও আব্দুর রহমান আল্লাহর কাছে সবচেয়ে প্রিয় নাম: সহিহ মুসলিম ২১৩২ (ইবনে উমর রা. থেকে)',
+      'ইয়াহইয়া: সূরা মারইয়াম ১৯:৭ — আল্লাহ নিজেই এই নাম রেখেছেন, আগে কারো এই নাম ছিল না',
+      'সা\'দ ইবনে আবি ওয়াক্কাস (রা.): জান্নাতের সুসংবাদপ্রাপ্ত দশ সাহাবির একজন',
+    ],
+    checklist: [
+      'চারটি নামের আরবি বানান ও হরকত: عَبْدُ اللّٰهِ · عَبْدُ الرَّحْمٰنِ · يَحْيٰى · سَعْد',
+      'বাংলা উচ্চারণ: আব্দুল্লাহ · আব্দুর রহমান · ইয়াহইয়া · সা\'দ',
+      'অর্থগুলো ঠিক আছে কি না (বিশেষ করে ইয়াহইয়া)',
+      'সূত্র: মুসলিম ২১৩২, কুরআন ১৯:৭',
+      'নামের সাথে "(রা.)", "(আ.)" ঠিক জায়গায় আছে কি না',
+    ],
+    unsure: ['ইয়াহইয়া নামের অর্থ "সে বেঁচে থাকবে" — শব্দগত অর্থ; তাফসিরে নামকরণের কারণ নিয়ে একাধিক মত আছে।', NAME_FORM, HADITH_NUMBERING],
+  }),
+
+  textReel({
+    id: 'reel03',
+    number: 3,
+    kind: 'ayah',
+    title: 'কষ্টের সাথেই স্বস্তি',
+    kicker: 'ছোট আয়াত · ১',
+    arabic: 'إِنَّ مَعَ الْعُسْرِ يُسْرًا',
+    meaning: 'নিশ্চয়ই কষ্টের সাথেই আছে স্বস্তি।',
+    source: 'সূরা আশ-শারহ, আয়াত ৬ (৯৪:৬)',
+    note: 'ঠিক আগের আয়াতেও (৯৪:৫) একই কথা এসেছে',
+    narration: {intro: 'কঠিন সময়ে মনে রাখার মতো একটি আয়াত।', meaning: 'নিশ্চয়ই কষ্টের সাথেই আছে স্বস্তি।', source: 'সূরা আশ-শারহ, ছয় নম্বর আয়াত।', note: 'আল্লাহ কথাটি পরপর দুবার বলেছেন।'},
+    scenes: [
+      {
+        look: 'পাহাড়ের ওপর ঘন ধূসর মেঘ, ধীরে চলছে',
+        prompt: veo('Heavy dark grey clouds slowly moving over a quiet mountain range, the light dim and moody, calm and not frightening.', 'low wind and a very distant soft rumble of thunder'),
+        tint: ['#6F7C86', '#2C3A44'],
+      },
+      {
+        look: 'মেঘ সরে যাচ্ছে, ফাঁক দিয়ে সূর্যের আলোর রেখা নামছে',
+        prompt: veo('The dark clouds slowly part over green mountains and bright rays of sunlight beam down through the gap, lighting up the valley.', 'gentle wind'),
+        tint: ['#D9D2B8', '#3A5A4C'],
+      },
+      {
+        look: 'বৃষ্টির পর সবুজ উপত্যকার ওপর রংধনু',
+        prompt: veo('A soft rainbow over a fresh green valley right after rain, drops glistening on the grass, clear blue sky returning.', 'dripping water and soft breeze'),
+        tint: ['#BFDCEB', '#3F7051'],
+      },
+    ],
+    sources: ['সূরা আশ-শারহ (আল-ইনশিরাহ) ৯৪:৬; আগের আয়াত ৯৪:৫ — فَإِنَّ مَعَ الْعُسْرِ يُسْرًا'],
+    checklist: ['আয়াতের আরবি ও হরকত মুসহাফের সাথে মিলানো: إِنَّ مَعَ الْعُسْرِ يُسْرًا', 'বাংলা অর্থ', 'সূরার নাম ও আয়াত নম্বর ৯৪:৬', 'নোট "আগের আয়াতেও একই কথা" ঠিক আছে কি না'],
+  }),
+
+  textReel({
+    id: 'reel04',
+    number: 4,
+    kind: 'hadith',
+    title: 'পবিত্রতা ঈমানের অর্ধেক',
+    kicker: 'ছোট হাদিস · ১',
+    arabic: 'الطُّهُورُ شَطْرُ الْإِيمَانِ',
+    meaning: 'পবিত্রতা ঈমানের অর্ধেক।',
+    source: 'সহিহ মুসলিম, হাদিস ২২৩',
+    note: 'বর্ণনাকারী: আবু মালিক আল-আশআরি (রা.)',
+    narration: {intro: 'আমাদের প্রিয় নবীজি বলেছেন,', meaning: 'পবিত্রতা ঈমানের অর্ধেক।', source: 'সহিহ মুসলিম, হাদিস দুইশো তেইশ।'},
+    scenes: [
+      {
+        look: 'পাহাড়ি ছড়ায় পাথরের ওপর দিয়ে স্বচ্ছ পানি বয়ে যাচ্ছে',
+        prompt: veo('Crystal clear water flowing over smooth stones in a shallow mountain stream, sunlight sparkling on the surface, close and calm.', 'clear flowing water'),
+        tint: ['#CDE7EA', '#2F5B5E'],
+      },
+      {
+        look: 'ভোরে সবুজ পাতার ওপর শিশিরবিন্দু, ধীরে গড়িয়ে পড়ছে',
+        prompt: veo('Macro shot of fresh dew drops on bright green leaves at early morning, one drop slowly rolling down the leaf, soft sunlight behind.', 'quiet morning air and faint distant birdsong'),
+        tint: ['#D8EBC4', '#2D5A3A'],
+      },
+      {
+        look: 'শান্ত হ্রদের পানিতে বৃষ্টির ফোঁটা, ছোট ছোট বৃত্ত',
+        prompt: veo('Soft rain falling on the still surface of a calm lake, gentle rings spreading on the water, misty green shore in the background.', 'soft rain on water'),
+        tint: ['#B8CBD0', '#2C4A4F'],
+      },
+    ],
+    sources: ['সহিহ মুসলিম ২২৩ (কিতাবুত তাহারাহ), আবু মালিক আল-আশআরি (রা.) থেকে; এটা একটি দীর্ঘ হাদিসের প্রথম বাক্য'],
+    checklist: ['আরবি ও হরকত: الطُّهُورُ شَطْرُ الْإِيمَانِ', 'বাংলা অর্থ', 'হাদিস নম্বর মুসলিম ২২৩ ও বর্ণনাকারী', 'বর্ণনায় নবীজির নামের পর দরুদ মুখে বলা হবে কি না (লেখায় ﷺ আছে)'],
+    unsure: [HADITH_NUMBERING, 'এটা দীর্ঘ হাদিসের শুরুর অংশ; রিলে শুধু প্রথম বাক্য দেখানো হয়েছে।'],
+  }),
+
+  asmaReel({
+    id: 'reel05',
+    number: 5,
+    title: 'আল-খালিক: সৃষ্টিকর্তা',
+    count: '২',
+    arabic: 'الْخَالِقُ',
+    bangla: 'আল-খালিক',
+    meaning: 'সৃষ্টিকর্তা',
+    explain: 'যিনি সবকিছু অস্তিত্বে এনেছেন',
+    ayah: {arabic: 'هُوَ اللّٰهُ الْخَالِقُ الْبَارِئُ الْمُصَوِّرُ', meaning: 'তিনিই আল্লাহ, সৃষ্টিকর্তা, উদ্ভাবক, রূপদাতা', source: 'সূরা আল-হাশর ৫৯:২৪ (আয়াতের অংশ)'},
+    narration: {intro: 'আল্লাহর সুন্দর নামগুলোর একটি।', meaning: 'এর অর্থ, সৃষ্টিকর্তা।', explain: 'পাহাড়, ফুল আর তারা, সবই তাঁর সৃষ্টি।', ayah: 'সূরা আল-হাশরের চব্বিশ নম্বর আয়াতে এই নাম এসেছে।'},
+    scenes: [
+      {
+        look: 'ভোরের আলোয় বরফঢাকা পাহাড়চূড়া',
+        prompt: veo('Snow-capped mountain peaks glowing pink and gold in the first light of dawn, thin clouds drifting below the peaks.', 'cold mountain wind'),
+        tint: ['#F2C6B4', '#34465E'],
+      },
+      {
+        look: 'বাতাসে দোলা রঙিন বুনো ফুলের মাঠ',
+        prompt: veo('A field of colourful wildflowers swaying softly in the breeze on a sunny hillside, shallow depth of field, blue sky above.', 'light breeze through flowers'),
+        tint: ['#F4D9E4', '#4E6B3C'],
+      },
+      {
+        look: 'পাহাড়ের ওপর তারাভরা রাতের আকাশ, ছায়াপথ ধীরে ঘুরছে',
+        prompt: veo('A clear starry night sky with the Milky Way slowly turning above the dark silhouette of hills, time-lapse, deep blue tones.', 'quiet night air and soft crickets'),
+        tint: ['#2B3A67', '#0E1530'],
+      },
+    ],
+    sources: ['সূরা আল-হাশর ৫৯:২৪ — هُوَ اللّٰهُ الْخَالِقُ الْبَارِئُ الْمُصَوِّرُ لَهُ الْأَسْمَاءُ الْحُسْنٰى'],
+    checklist: ['নামের আরবি ও হরকত: الْخَالِقُ', 'আয়াতাংশের আরবি মুসহাফের সাথে মিলানো', 'অর্থ: সৃষ্টিকর্তা · আল-বারি = উদ্ভাবক · আল-মুসাওয়ির = রূপদাতা', 'সূত্র ৫৯:২৪'],
+    unsure: ['শব্দে ঝিঁঝিঁর ডাক রেখেছি (কীটপতঙ্গ দেখা যাবে না)। না চাইলে প্রম্পট থেকে "soft crickets" মুছে দেবো।'],
+  }),
+
+  namesReel({
+    id: 'reel06',
+    number: 6,
+    title: 'মেয়েদের ৪টি সুন্দর নাম',
+    heading: 'মেয়েদের ইসলামিক নাম',
+    intro: 'মেয়েদের জন্য চারটি সুন্দর নাম।',
+    names: [
+      {arabic: 'خَدِيجَة', bangla: 'খাদিজা', gender: 'মেয়ে', meaning: 'সময়ের আগে জন্ম নেওয়া', origin: 'উম্মুল মুমিনিন খাদিজা (রা.)', say: 'প্রথম মুসলিম নারীর নাম।'},
+      {arabic: 'عَائِشَة', bangla: 'আয়েশা', gender: 'মেয়ে', meaning: 'প্রাণবন্ত, সুখে বেঁচে থাকা', origin: 'উম্মুল মুমিনিন আয়েশা (রা.)', say: 'অর্থ, প্রাণবন্ত।'},
+      {arabic: 'فَاطِمَة', bangla: 'ফাতিমা', gender: 'মেয়ে', meaning: 'মন্দ থেকে বিরত থাকা', origin: 'নবীজির ﷺ কন্যা ফাতিমা (রা.)', say: 'নবীজির প্রিয় কন্যার নাম।'},
+      {arabic: 'مَرْيَم', bangla: 'মারইয়াম', gender: 'মেয়ে', meaning: 'ইবাদতকারিণী', origin: 'কুরআনে তাঁর নামে সূরা আছে (১৯)', say: 'কুরআনে এই নামে একটি সূরা আছে।'},
+    ],
+    scenes: [
+      {
+        look: 'সকালের আলোয় শিশিরভেজা গোলাপি আর সাদা ফুলের বাগান',
+        prompt: veo('A garden of soft pink and white roses covered in morning dew, petals moving very slightly in the breeze, warm morning light.', 'light breeze and faint distant birdsong'),
+        tint: ['#F6D5DC', '#4F6A4A'],
+      },
+      {
+        look: 'শান্ত পুকুরে ফুটে থাকা পদ্ম আর শাপলা',
+        prompt: veo('Pink lotus flowers and water lilies floating on a calm pond, gentle ripples, soft morning light reflecting on the water.', 'quiet water and soft wind'),
+        tint: ['#F3D2DD', '#2F5D58'],
+      },
+      {
+        look: 'নীল আকাশের নিচে ডালে ফুটে থাকা সাদা ফুল, পাপড়ি উড়ছে',
+        prompt: veo('Branches full of white blossoms against a clear blue sky, a few petals drifting slowly through the air.', 'soft breeze through branches'),
+        tint: ['#E9EEF7', '#5A7898'],
+      },
+    ],
+    sources: ['খাদিজা ও আয়েশা (রা.): উম্মাহাতুল মুমিনিন', 'ফাতিমা (রা.): নবীজির ﷺ কন্যা', 'মারইয়াম: সূরা মারইয়াম (১৯), সূরা আলে ইমরান ৩:৩৬ সহ বহু আয়াতে নাম এসেছে'],
+    checklist: ['চারটি নামের আরবি বানান ও হরকত: خَدِيجَة · عَائِشَة · فَاطِمَة · مَرْيَم', 'বাংলা উচ্চারণ', 'চারটি অর্থ (নিচের অনিশ্চয়তাগুলো দেখুন)', 'সম্মানসূচক (রা.) ও ﷺ ঠিক আছে কি না'],
+    unsure: [
+      'খাদিজা = "সময়ের আগে জন্ম নেওয়া" — অভিধানগত অর্থ, প্রচলিত; যাচাই প্রয়োজন।',
+      'ফাতিমা = শব্দমূলের অর্থ "দুধ ছাড়ানো / বিরত রাখা"; "মন্দ থেকে বিরত থাকা" একটি প্রচলিত ব্যাখ্যা। আলেমের মত নিন।',
+      'মারইয়াম = আরবি মূল শব্দ নয় (হিব্রু/সুরিয়ানি); কিছু তাফসিরে অর্থ "ইবাদতকারিণী" বলা হয়েছে। নিশ্চিত নই।',
+      NAME_FORM,
+    ],
+  }),
+
+  textReel({
+    id: 'reel07',
+    number: 7,
+    kind: 'ayah',
+    title: 'আল্লাহর স্মরণে অন্তরের প্রশান্তি',
+    kicker: 'ছোট আয়াত · ২',
+    arabic: 'أَلَا بِذِكْرِ اللّٰهِ تَطْمَئِنُّ الْقُلُوبُ',
+    meaning: 'জেনে রাখো, আল্লাহর স্মরণেই অন্তর প্রশান্ত হয়।',
+    source: 'সূরা আর-রা\'দ ১৩:২৮ (আয়াতের শেষ অংশ)',
+    narration: {intro: 'মন অস্থির লাগলে এই আয়াতটি মনে করুন।', meaning: 'জেনে রাখো, আল্লাহর স্মরণেই অন্তর প্রশান্ত হয়।', source: 'সূরা আর-রা\'দ, আটাশ নম্বর আয়াত।'},
+    scenes: [
+      {
+        look: 'নীলাভ সন্ধ্যায় স্থির হ্রদে পাহাড়ের প্রতিচ্ছবি',
+        prompt: veo('A perfectly still mountain lake at blue hour, the mountains mirrored on the glassy water, very calm.', 'near silence with very soft water lapping'),
+        tint: ['#9FB5D3', '#25344F'],
+      },
+      {
+        look: 'ভোরে বনের মাঝে হ্রদের ওপর কুয়াশা ভাসছে',
+        prompt: veo('Morning mist floating slowly over a quiet forest lake at dawn, pine trees on the shore, soft pale light.', 'quiet morning air and faint distant birdsong'),
+        tint: ['#D5DDD6', '#3D5649'],
+      },
+      {
+        look: 'উপত্যকার ওপর দিয়ে ধীরে ভেসে যাওয়া সাদা মেঘ',
+        prompt: veo('White fluffy clouds drifting slowly over a wide green valley, time-lapse, cloud shadows moving gently across the land.', 'soft wind'),
+        tint: ['#CFE1EF', '#4B6E4F'],
+      },
+    ],
+    sources: ['সূরা আর-রা\'দ ১৩:২৮ — الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُمْ بِذِكْرِ اللّٰهِ ۗ أَلَا بِذِكْرِ اللّٰهِ تَطْمَئِنُّ الْقُلُوبُ'],
+    checklist: ['আয়াতাংশের আরবি ও হরকত মুসহাফের সাথে মিলানো', 'বাংলা অর্থ', 'সূত্র ১৩:২৮ (শেষ অংশ)'],
+  }),
+
+  textReel({
+    id: 'reel08',
+    number: 8,
+    kind: 'hadith',
+    title: 'ভালো কথাও সদকা',
+    kicker: 'ছোট হাদিস · ২',
+    arabic: 'الْكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ',
+    meaning: 'ভালো কথাও একটি সদকা।',
+    source: 'সহিহ বুখারি ২৯৮৯ · সহিহ মুসলিম ১০০৯',
+    note: 'বর্ণনাকারী: আবু হুরাইরা (রা.)',
+    narration: {intro: 'আমাদের প্রিয় নবীজি বলেছেন,', meaning: 'ভালো কথাও একটি সদকা।', source: 'সহিহ বুখারি ও সহিহ মুসলিম।'},
+    scenes: [
+      {
+        look: 'সবুজ মাঠের মাঝে একা দাঁড়িয়ে থাকা বড় ছায়াঘেরা গাছ',
+        prompt: veo('A single large leafy tree standing in a green meadow on a sunny morning, its branches moving gently in the breeze.', 'wind in the leaves and faint distant birdsong'),
+        tint: ['#CBE3B6', '#35603C'],
+      },
+      {
+        look: 'নিচ থেকে গাছের ডালপালা আর পাতার ফাঁকে আকাশ',
+        prompt: veo('Looking straight up into the green canopy of a tall tree, sunlight flickering through the moving leaves against a blue sky.', 'leaves rustling'),
+        tint: ['#BFE0A8', '#2C5434'],
+      },
+      {
+        look: 'পাকা ফলে ভরা গাছের ডাল, হালকা রোদ',
+        prompt: veo('Branches of a fruit tree heavy with ripe oranges glowing in soft afternoon sunlight, leaves moving slightly in the wind.', 'gentle breeze'),
+        tint: ['#F4D29A', '#3E5E34'],
+      },
+    ],
+    sources: ['সহিহ বুখারি ২৯৮৯, সহিহ মুসলিম ১০০৯ (আবু হুরাইরা রা. থেকে); দীর্ঘ হাদিসের অংশ — মূল বাক্য وَالْكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ'],
+    checklist: ['আরবি ও হরকত: الْكَلِمَةُ الطَّيِّبَةُ صَدَقَةٌ (মূল হাদিসে শুরুতে "وَ" আছে, রিলে বাদ দেওয়া হয়েছে)', 'বাংলা অর্থ', 'হাদিস নম্বর বুখারি ২৯৮৯, মুসলিম ১০০৯'],
+    unsure: [HADITH_NUMBERING, 'বুখারিতে এই বাক্যটি আরও কয়েক জায়গায় এসেছে (যেমন আদব অধ্যায়ে)। আমি ২৯৮৯ দিয়েছি।'],
+  }),
+
+  asmaReel({
+    id: 'reel09',
+    number: 9,
+    title: 'আর-রাযযাক: রিজিকদাতা',
+    count: '৩',
+    arabic: 'الرَّزَّاقُ',
+    bangla: 'আর-রাযযাক',
+    meaning: 'রিজিকদাতা',
+    explain: 'যিনি সব সৃষ্টিকে জীবিকা দেন',
+    ayah: {arabic: 'إِنَّ اللّٰهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ', meaning: 'নিশ্চয়ই আল্লাহই রিজিকদাতা, প্রবল শক্তির অধিকারী, পরাক্রমশালী।', source: 'সূরা আয-যারিয়াত ৫১:৫৮'},
+    narration: {intro: 'আল্লাহর সুন্দর নামগুলোর একটি।', meaning: 'এর অর্থ, রিজিকদাতা।', explain: 'বৃষ্টি, ফসল আর ফল, সবই তাঁর দান।', ayah: 'সূরা আয-যারিয়াতের আটান্ন নম্বর আয়াত।'},
+    scenes: [
+      {
+        look: 'সবুজ ধানক্ষেতে নরম বৃষ্টি',
+        prompt: veo('Soft rain falling on bright green rice paddies, drops landing on the young rice leaves, misty hills far away.', 'gentle rain'),
+        tint: ['#BFD7B0', '#2E5A3A'],
+      },
+      {
+        look: 'সোনালি পাকা ধানের শিষ বাতাসে দুলছে',
+        prompt: veo('Golden ripe rice stalks heavy with grain swaying in the wind at sunset, warm light, close shot.', 'wind through the rice field'),
+        tint: ['#F2CF83', '#7A6230'],
+      },
+      {
+        look: 'পাকা আমে ভরা গাছের ডাল, পাতার ফাঁকে রোদ',
+        prompt: veo('Ripe mangoes hanging from a leafy mango tree branch, sunlight filtering through the leaves, gentle movement in the breeze.', 'soft breeze and faint distant birdsong'),
+        tint: ['#E9D58E', '#3C5C2F'],
+      },
+    ],
+    sources: ['সূরা আয-যারিয়াত ৫১:৫৮ — إِنَّ اللّٰهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ'],
+    checklist: ['নামের আরবি ও হরকত: الرَّزَّاقُ', 'আয়াতের আরবি মুসহাফের সাথে মিলানো', 'বাংলা উচ্চারণ: আর-রাযযাক', 'অর্থ ও আয়াতের অনুবাদ', 'সূত্র ৫১:৫৮'],
+  }),
+
+  namesReel({
+    id: 'reel10',
+    number: 10,
+    title: 'জান্নাতের ঝরনা ও দরজার নামে নাম',
+    heading: 'জান্নাতের নামে সুন্দর নাম',
+    intro: 'জান্নাতের নদী, ঝরনা আর দরজার নামে চারটি নাম।',
+    names: [
+      {arabic: 'كَوْثَر', bangla: 'কাওসার', gender: 'ছেলে', meaning: 'প্রচুর কল্যাণ', origin: 'জান্নাতের নহর · সূরা আল-কাওসার ১০৮:১', say: 'অর্থ, প্রচুর কল্যাণ।'},
+      {arabic: 'رَيَّان', bangla: 'রাইয়ান', gender: 'ছেলে', meaning: 'পরিতৃপ্ত, তৃষ্ণা মেটা', origin: 'রোজাদারদের জান্নাতের দরজা · বুখারি ১৮৯৬', say: 'রোজাদারদের জন্য জান্নাতের দরজা।'},
+      {arabic: 'تَسْنِيم', bangla: 'তাসনিম', gender: 'মেয়ে', meaning: 'জান্নাতের একটি ঝরনা', origin: 'কুরআন, সূরা আল-মুতাফফিফিন ৮৩:২৭', say: 'জান্নাতের একটি ঝরনা।'},
+      {arabic: 'سَلْسَبِيل', bangla: 'সালসাবিল', gender: 'মেয়ে', meaning: 'সুমিষ্ট, সহজে পানযোগ্য', origin: 'জান্নাতের ঝরনা · সূরা আল-ইনসান ৭৬:১৮', say: 'জান্নাতের আরেকটি ঝরনা।'},
+    ],
+    scenes: [
+      {
+        look: 'সবুজ পাহাড় থেকে নেমে আসা ঝরনা, নিচে স্বচ্ছ জলাশয়',
+        prompt: veo('A tall graceful waterfall pouring into a clear turquoise pool surrounded by lush green plants, soft mist in the air.', 'falling water'),
+        tint: ['#BFE6E2', '#21504C'],
+      },
+      {
+        look: 'সবুজ উপত্যকার মাঝ দিয়ে এঁকেবেঁকে যাওয়া স্বচ্ছ নদী',
+        prompt: veo('A crystal clear river winding through a lush green valley in soft sunlight, slow aerial view gliding along the river.', 'flowing river and soft wind'),
+        tint: ['#CDE8D6', '#2C5D47'],
+      },
+      {
+        look: 'ফার্ন আর শ্যাওলার মাঝে পাথর থেকে উঠে আসা ছোট ঝরনাধারা',
+        prompt: veo('A small natural spring bubbling up between mossy rocks and green ferns, clear water spilling over the stones, dappled light.', 'bubbling spring water'),
+        tint: ['#D3EBC9', '#2A4E36'],
+      },
+    ],
+    sources: [
+      'কাওসার: সূরা আল-কাওসার ১০৮:১ — إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ',
+      'রাইয়ান: সহিহ বুখারি ১৮৯৬, সহিহ মুসলিম ১১৫২ (সাহল ইবনে সা\'দ রা. থেকে)',
+      'তাসনিম: সূরা আল-মুতাফফিফিন ৮৩:২৭ — وَمِزَاجُهُ مِنْ تَسْنِيمٍ',
+      'সালসাবিল: সূরা আল-ইনসান ৭৬:১৮ — عَيْنًا فِيهَا تُسَمّٰى سَلْسَبِيلًا',
+    ],
+    checklist: ['চারটি নামের আরবি বানান ও হরকত: كَوْثَر · رَيَّان · تَسْنِيم · سَلْسَبِيل', 'বাংলা উচ্চারণ', 'অর্থগুলো', 'সূত্র: ১০৮:১, বুখারি ১৮৯৬, ৮৩:২৭, ৭৬:১৮', 'কোন নাম ছেলে/মেয়ের — বাংলাদেশে প্রচলন অনুযায়ী দেওয়া, ঠিক আছে কি না'],
+    unsure: [
+      'কুরআনে শব্দগুলো "আল-কাওসার", "তাসনিমিন", "সালসাবিলান" রূপে এসেছে; নাম হিসেবে মূল রূপ দেওয়া হয়েছে।',
+      'রাইয়ান কুরআনে নয়, হাদিসে এসেছে।',
+      NAME_FORM,
+      HADITH_NUMBERING,
+    ],
+  }),
+
+  textReel({
+    id: 'reel11',
+    number: 11,
+    kind: 'ayah',
+    title: 'আমাকে স্মরণ করো',
+    kicker: 'ছোট আয়াত · ৩',
+    arabic: 'فَاذْكُرُونِي أَذْكُرْكُمْ',
+    meaning: 'সুতরাং তোমরা আমাকে স্মরণ করো, আমিও তোমাদের স্মরণ করব।',
+    source: 'সূরা আল-বাকারা ২:১৫২ (আয়াতের অংশ)',
+    narration: {intro: 'আল্লাহ তাআলা বলেন,', meaning: 'তোমরা আমাকে স্মরণ করো, আমিও তোমাদের স্মরণ করব।', source: 'সূরা আল-বাকারা, একশো বাহান্ন নম্বর আয়াত।'},
+    scenes: [
+      {
+        look: 'পাহাড়ি হ্রদের ওপর তারাভরা রাতের আকাশ',
+        prompt: veo('A deep starry night sky over a calm mountain lake, stars reflected on the water, slow time-lapse of the stars moving.', 'quiet night with soft water'),
+        tint: ['#2A3765', '#0B1229'],
+      },
+      {
+        look: 'চাঁদের আলোয় ধীরে ভেসে যাওয়া মেঘ',
+        prompt: veo('Soft clouds drifting slowly across a bright full moon in a dark blue night sky, silver light on the cloud edges.', 'gentle night wind'),
+        tint: ['#4B5C8C', '#121A38'],
+      },
+      {
+        look: 'ভোরের আগে দিগন্তে প্রথম আলো (ফজরের সময়)',
+        prompt: veo('The first light of dawn appearing on the horizon over quiet hills, deep blue sky slowly turning orange and pink, a few stars fading.', 'still early morning air and very faint distant birdsong'),
+        tint: ['#F0B48A', '#2A3456'],
+      },
+    ],
+    sources: ['সূরা আল-বাকারা ২:১৫২ — فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ'],
+    checklist: ['আয়াতাংশের আরবি ও হরকত মুসহাফের সাথে মিলানো', 'বাংলা অর্থ', 'সূত্র ২:১৫২ (আয়াতের প্রথম অংশ)'],
+  }),
+
+  textReel({
+    id: 'reel12',
+    number: 12,
+    kind: 'hadith',
+    title: 'ভাইয়ের জন্যও তা-ই চাও',
+    kicker: 'ছোট হাদিস · ৩',
+    arabic: 'لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ',
+    meaning: 'তোমাদের কেউ পূর্ণ মুমিন হবে না, যতক্ষণ না সে নিজের জন্য যা পছন্দ করে, ভাইয়ের জন্যও তা পছন্দ করে।',
+    source: 'সহিহ বুখারি ১৩ · সহিহ মুসলিম ৪৫',
+    note: 'বর্ণনাকারী: আনাস ইবনে মালিক (রা.)',
+    narration: {intro: 'আমাদের প্রিয় নবীজি বলেছেন,', meaning: 'তোমাদের কেউ পূর্ণ মুমিন হবে না, যতক্ষণ না সে নিজের জন্য যা পছন্দ করে, ভাইয়ের জন্যও তা পছন্দ করে।', source: 'সহিহ বুখারি ও সহিহ মুসলিম।'},
+    scenes: [
+      {
+        look: 'সূর্যাস্তে শান্ত সমুদ্রের ঢেউ তীরে আসছে',
+        prompt: veo('Gentle waves rolling onto an empty sandy beach at sunset, warm golden light on the wet sand, calm sea.', 'soft waves on the shore'),
+        tint: ['#F3C08F', '#3B4F6B'],
+      },
+      {
+        look: 'দুটি ছোট নদী মিলে একটি নদী হয়ে বয়ে যাচ্ছে',
+        prompt: veo('Two small clear streams meeting and joining into one river in a green forest, slow aerial view, soft light.', 'flowing water'),
+        tint: ['#C5E3D3', '#2A5244'],
+      },
+      {
+        look: 'পাশাপাশি দুটি গাছ, পেছনে সোনালি সূর্যাস্ত',
+        prompt: veo('Two trees standing side by side on a gentle hill against a golden sunset sky, grass moving softly in the wind.', 'evening breeze'),
+        tint: ['#F1BE7E', '#4A4E3A'],
+      },
+    ],
+    sources: ['সহিহ বুখারি ১৩ (কিতাবুল ঈমান), সহিহ মুসলিম ৪৫ — আনাস ইবনে মালিক (রা.) থেকে'],
+    checklist: ['আরবি ও হরকত: لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ', 'বাংলা অর্থ ("পূর্ণ মুমিন" শব্দটি ঠিক আছে কি না)', 'হাদিস নম্বর বুখারি ১৩, মুসলিম ৪৫'],
+    unsure: [HADITH_NUMBERING],
+  }),
+];
+
+export const reelById = (id: string) => {
+  const r = reels.find((x) => x.id === id);
+  if (!r) throw new Error(`Unknown reel ${id}`);
+  return r;
+};
