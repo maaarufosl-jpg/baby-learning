@@ -2,6 +2,16 @@
 
 প্রোফাইল ছবি: `video/out/profile-picture.png` (১০৮০×১০৮০, গোল করে কাটলেও নাম আর দুই চরিত্রের মুখ ভেতরে থাকে)। নতুন করে বানাতে: `cd video && npx remotion still ProfilePicture out/profile-picture.png`
 
+## ছবি
+
+| ফাইল | কোথায় | আকার |
+|---|---|---|
+| `assets/brand/profile-picture.jpg` | ফেসবুক ও ইউটিউবের প্রোফাইল ছবি | ১০৮০×১০৮০ |
+| `assets/brand/youtube-banner.jpg` | ইউটিউব চ্যানেলের ব্যানার | ২৫৬০×১৪৪০, জরুরি সব কিছু মাঝের ১৫৪৬×৪২৩ অংশে |
+| `assets/brand/facebook-cover.jpg` | ফেসবুক পেজের কভার | ১৬৪০×৬২৪, ফোনে মাঝের অংশ দেখায় |
+
+নতুন করে বানাতে: `cd video && npx remotion still YouTubeBanner out/youtube-banner.png` (অথবা `FacebookCover`, `ProfilePicture`)
+
 ## ইউটিউব: চ্যানেলের বর্ণনা
 
 ```

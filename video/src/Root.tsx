@@ -2,7 +2,7 @@ import React from 'react';
 import {cancelRender, Composition, continueRender, delayRender} from 'remotion';
 import {ClipEpisode, clipEpisodeFrames} from './components/ClipEpisode';
 import {Ep01Thumbnail} from './components/Thumbnail';
-import {ProfilePicture} from './components/Brand';
+import {FacebookCover, ProfilePicture, YouTubeBanner} from './components/Brand';
 import {EpisodeVideo, episodeFrames, PreviewReel} from './components/Episode';
 import {ep01} from './episodes/ep01';
 import {loadAllFonts} from './fonts';
@@ -32,6 +32,8 @@ const EP01_PREVIEW = [
 
 export const Root: React.FC = () => (
   <>
+    <Composition id="YouTubeBanner" component={YouTubeBanner} durationInFrames={1} fps={FPS} width={2560} height={1440} />
+    <Composition id="FacebookCover" component={FacebookCover} durationInFrames={1} fps={FPS} width={1640} height={624} />
     <Composition id="ProfilePicture" component={ProfilePicture} durationInFrames={1} fps={FPS} width={1080} height={1080} />
     <Composition id="Ep01Thumbnail" component={Ep01Thumbnail} durationInFrames={1} fps={FPS} width={1280} height={720} />
     <Composition id="Ep01Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS)} fps={FPS} width={1920} height={1080} />
