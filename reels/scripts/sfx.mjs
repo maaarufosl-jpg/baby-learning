@@ -2,7 +2,8 @@
 // Each sound is ~10 s and reused across reels. Files go to public/sfx/<name>.mp3.
 // The key comes only from the ELEVENLABS_API_KEY environment variable.
 // Usage: node scripts/sfx.mjs [name ...]   (no names = generate the missing ones)
-import {existsSync, mkdirSync, writeFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {existsSync, mkdirSync, renameSync, writeFileSync} from 'node:fs';
 
 export const SOUNDS = {
   'morning-birds': 'Calm early morning countryside ambience, soft breeze, faint distant songbirds far away, peaceful, no music',
@@ -22,6 +23,13 @@ if (!key) {
   console.error('ELEVENLABS_API_KEY is not set.');
   process.exit(1);
 }
+/** Generated ambience comes back at very different loudness; bring every file to the same level. */
+export function normalize(file) {
+  const tmp = file.replace(/\.mp3$/, '.tmp.mp3');
+  execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', file, '-af', 'loudnorm=I=-22:TP=-3:LRA=11', '-ar', '44100', '-b:a', '160k', tmp]);
+  renameSync(tmp, file);
+}
+
 mkdirSync('public/sfx', {recursive: true});
 const wanted = process.argv.slice(2);
 for (const [name, text] of Object.entries(SOUNDS)) {
@@ -34,5 +42,6 @@ for (const [name, text] of Object.entries(SOUNDS)) {
   });
   if (!res.ok) throw new Error(`${name}: ${res.status} ${await res.text()}`);
   writeFileSync(file, Buffer.from(await res.arrayBuffer()));
+  normalize(file);
   console.log(`${name}: ${file}`);
 }

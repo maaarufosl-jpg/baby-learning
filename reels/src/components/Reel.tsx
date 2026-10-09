@@ -86,7 +86,7 @@ const Ambience: React.FC<{sound: string; offset: number; duckAt: (sec: number) =
       src={staticFile(`sfx/${sound}.mp3`)}
       volume={(f) => {
         const env = Math.min(first ? 1 : f / fade, last ? 1 : (len - f) / fade, 1);
-        return Math.max(0, env) * (duckAt(offset + f / fps) ? 0.18 : 0.55);
+        return Math.max(0, env) * (duckAt(offset + f / fps) ? 0.22 : 0.8);
       }}
     />
   );
