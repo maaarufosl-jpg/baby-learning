@@ -137,7 +137,7 @@ const Overlay: React.FC<{o: ClipOverlay; frames: number}> = ({o, frames}) => {
     case 'card':
       return (
         <Window frames={frames} from={o.from}>
-          <DuaPanel dua={ep01.dua} display={{mode: 'card'}} layout={layout} beatFrames={frames} hasSpeech={false} animateIn />
+          <DuaPanel dua={ep01.dua} display={{mode: 'card'}} layout={layout.portrait ? layout : {...layout, cardCenterX: 1470, cardW: 780}} beatFrames={frames} hasSpeech={false} animateIn />
         </Window>
       );
   }

@@ -93,9 +93,9 @@ export const EP01_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'everyone', label: 'উমায়ের ও সাফা', text: 'মিউও বিসমিল্লাহ বলেছে!', from: 0.29, to: 0.75, top: 880},
   ],
   15: [
-    {type: 'say', who: 'umayer', text: 'আজ খাওয়ার সময় তুমিও বলবে তো?', from: 0, to: 0.45},
-    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.45, to: 1},
-    {type: 'card', from: 0.05},
+    {type: 'say', who: 'umayer', text: 'আজ খাওয়ার সময় তুমিও বলবে তো?', from: 0.1, to: 0.45},
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম! পরের পর্বে দেখা হবে!', from: 0.45, to: 1},
+    {type: 'card', from: 0.08},
   ],
 };
 
