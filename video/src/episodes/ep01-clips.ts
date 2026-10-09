@@ -89,8 +89,8 @@ export const EP01_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'বরকত, সোনা। আল্লাহর নাম নিলে এমনই হয়।', from: 0.68, to: 1, top: 880},
   ],
   14: [
-    {type: 'say', who: 'miu', text: 'মিউ!', from: 0, to: 0.3},
-    {type: 'say', who: 'everyone', label: 'উমায়ের ও সাফা', text: 'মিউও বিসমিল্লাহ বলেছে!', from: 0.3, to: 1},
+    {type: 'say', who: 'miu', text: 'মিউ!', from: 0.15, to: 0.29, top: 880},
+    {type: 'say', who: 'everyone', label: 'উমায়ের ও সাফা', text: 'মিউও বিসমিল্লাহ বলেছে!', from: 0.29, to: 0.75, top: 880},
   ],
   15: [
     {type: 'say', who: 'umayer', text: 'আজ খাওয়ার সময় তুমিও বলবে তো?', from: 0, to: 0.45},
