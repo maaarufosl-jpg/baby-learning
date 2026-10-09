@@ -2,6 +2,7 @@ import React from 'react';
 import {cancelRender, Composition, continueRender, delayRender} from 'remotion';
 import {ClipEpisode, clipEpisodeFrames} from './components/ClipEpisode';
 import {Ep01Thumbnail} from './components/Thumbnail';
+import {SHORT_BISMILLAH, SHORT_RIGHT_HAND, shortFrames, ShortVideo} from './components/Shorts';
 import {FacebookCover, ProfilePicture, YouTubeBanner} from './components/Brand';
 import {EpisodeVideo, episodeFrames, PreviewReel} from './components/Episode';
 import {ep01} from './episodes/ep01';
@@ -32,6 +33,8 @@ const EP01_PREVIEW = [
 
 export const Root: React.FC = () => (
   <>
+    <Composition id="ShortBismillah" component={ShortVideo} durationInFrames={shortFrames(SHORT_BISMILLAH)} fps={FPS} width={1080} height={1920} defaultProps={{spec: SHORT_BISMILLAH}} />
+    <Composition id="ShortRightHand" component={ShortVideo} durationInFrames={shortFrames(SHORT_RIGHT_HAND)} fps={FPS} width={1080} height={1920} defaultProps={{spec: SHORT_RIGHT_HAND}} />
     <Composition id="YouTubeBanner" component={YouTubeBanner} durationInFrames={1} fps={FPS} width={2560} height={1440} />
     <Composition id="FacebookCover" component={FacebookCover} durationInFrames={1} fps={FPS} width={1640} height={624} />
     <Composition id="ProfilePicture" component={ProfilePicture} durationInFrames={1} fps={FPS} width={1080} height={1080} />
