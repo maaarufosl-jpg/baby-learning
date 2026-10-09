@@ -29,7 +29,7 @@ Dialogue: Safa, tiny happy voice, in Bengali: "মজা!"
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
 
-Characters: Safa, his 2-year-old little sister with a round chubby face and big brown eyes, a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
+Characters: Safa, Umayer's 2-year-old little sister with a round chubby face and big brown eyes, a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
 
 Setting: a cozy Bangladeshi kitchen with mint-green cabinets and brass knobs, a white tiled wall, a blue pot and a yellow kettle on the stove, a rustic wooden table with a blue-and-white gingham tablecloth, wooden chairs, and a window with pink curtains and morning sunlight.
 
@@ -57,7 +57,7 @@ Dialogue: Umayer, gently, in Bengali: "খাওয়ার পর কী ব�
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
 
-Characters: Ma, their young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya; Safa, his 2-year-old little sister with a round chubby face and big brown eyes, a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes.
+Characters: Ma, their young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya; Safa, Umayer's 2-year-old little sister with a round chubby face and big brown eyes, a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes.
 
 Setting: a cozy Bangladeshi kitchen with mint-green cabinets and brass knobs, a white tiled wall, a blue pot and a yellow kettle on the stove, a rustic wooden table with a blue-and-white gingham tablecloth, wooden chairs, and a window with pink curtains and morning sunlight.
 
@@ -71,7 +71,7 @@ Dialogue: Ma, soft and loving, slowly in Bengali: "খাওয়া শেষ�
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
 
-Characters: Ma, their young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya; Safa, his 2-year-old little sister with a round chubby face and big brown eyes, a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
+Characters: Ma, their young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya; Safa, Umayer's 2-year-old little sister with a round chubby face and big brown eyes, a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
 
 Setting: a cozy Bangladeshi kitchen with mint-green cabinets and brass knobs, a white tiled wall, a blue pot and a yellow kettle on the stove, a rustic wooden table with a blue-and-white gingham tablecloth, wooden chairs, and a window with pink curtains and morning sunlight.
 
@@ -85,7 +85,7 @@ Dialogue: Ma, slowly and clearly, in Bengali: "আমাদের নবীজ�
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
 
-Characters: Ma, their young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya; Safa, his 2-year-old little sister with a round chubby face and big brown eyes, a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
+Characters: Ma, their young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya; Safa, Umayer's 2-year-old little sister with a round chubby face and big brown eyes, a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
 
 Setting: a cozy Bangladeshi kitchen with mint-green cabinets and brass knobs, a white tiled wall, a blue pot and a yellow kettle on the stove, a rustic wooden table with a blue-and-white gingham tablecloth, wooden chairs, and a window with pink curtains and morning sunlight.
 
@@ -127,7 +127,7 @@ Dialogue: Safa, tiny voice, in Bengali: "আলহামদুলিল্লা
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
 
-Characters: Safa, his 2-year-old little sister with a round chubby face and big brown eyes, a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Ma, their young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya.
+Characters: Safa, Umayer's 2-year-old little sister with a round chubby face and big brown eyes, a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Ma, their young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya.
 
 Setting: a cozy Bangladeshi kitchen with mint-green cabinets and brass knobs, a white tiled wall, a blue pot and a yellow kettle on the stove, a rustic wooden table with a blue-and-white gingham tablecloth, wooden chairs, and a window with pink curtains and morning sunlight.
 
