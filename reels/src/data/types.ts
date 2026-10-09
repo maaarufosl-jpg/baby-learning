@@ -18,13 +18,17 @@ export type Line = {style: 'kicker' | 'arabicXL' | 'arabic' | 'title' | 'body' |
 /** A block of lines shown from `from` to `to` seconds. */
 export type Card = {from: number; to: number; lines: Line[]};
 
-/** One 8-second Gemini (Veo) clip. */
+/** One 8-second scene: a drawn nature scene (or, if one is attached later, a real video clip). */
 export type Scene = {
+  /** Drawn scene key from scenes.ts. */
+  art: string;
+  /** Ambience file in public/sfx (no music). */
+  sound: string;
   /** What the scene shows, in Bengali, for the plan. */
   look: string;
-  /** English prompt to paste into Gemini. */
+  /** Optional English prompt, only if a real video clip is ever wanted instead of the drawn scene. */
   prompt: string;
-  /** Placeholder gradient (top, bottom) until the clip arrives. */
+  /** Base colours (top, bottom), used behind the scene. */
   tint: [string, string];
 };
 

@@ -6,6 +6,8 @@ import type {Card, Line, Reel} from '../data/types';
 import {ARABIC_FONT, BENGALI_FONT} from '../fonts';
 import mediaJson from '../media.json';
 import {LogoMark} from './Logo';
+import {Nature} from './Nature';
+import {SCENES} from '../data/scenes';
 
 type Media = {
   clips?: Record<string, {file: string; seconds: number}>;
@@ -74,28 +76,31 @@ const CardView: React.FC<{card: Card}> = ({card}) => {
   );
 };
 
-/** Gradient stand-in for a clip that has not arrived yet, with slow drifting light. */
-const Placeholder: React.FC<{tint: [string, string]; n: number}> = ({tint, n}) => {
-  const frame = useCurrentFrame();
-  const drift = Math.sin(frame / 60) * 6;
+/** Ambience for a drawn scene, fading in and out with the crossfade and dipping under the voice. */
+const Ambience: React.FC<{sound: string; offset: number; duckAt: (sec: number) => boolean; first: boolean; last: boolean}> = ({sound, offset, duckAt, first, last}) => {
+  const {fps} = useVideoConfig();
+  const len = SCENE_SECONDS * fps;
+  const fade = CROSSFADE * fps;
   return (
-    <AbsoluteFill style={{background: `linear-gradient(180deg, ${tint[0]} 0%, ${tint[1]} 100%)`}}>
-      <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${30 + drift}%, rgba(255,255,255,0.35), transparent 55%)`}} />
-      <div style={{position: 'absolute', bottom: 70, width: '100%', textAlign: 'center', fontFamily: BN, fontSize: 34, color: 'rgba(255,255,255,0.75)'}}>
-        দৃশ্য {toBn(n)} · ভিডিও এখনো আসেনি
-      </div>
-    </AbsoluteFill>
+    <Html5Audio
+      src={staticFile(`sfx/${sound}.mp3`)}
+      volume={(f) => {
+        const env = Math.min(first ? 1 : f / fade, last ? 1 : (len - f) / fade, 1);
+        return Math.max(0, env) * (duckAt(offset + f / fps) ? 0.18 : 0.55);
+      }}
+    />
   );
 };
 
 const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; duckAt: (sec: number) => boolean}> = ({reel, i, media, duckAt}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const scene = reel.scenes[i];
   const clip = media.clips?.[String(i + 1)];
   const offset = i * (SCENE_SECONDS - CROSSFADE);
   const fadeIn = i === 0 ? 1 : interpolate(frame, [0, CROSSFADE * fps], [0, 1], {extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill style={{opacity: fadeIn}}>
+    <AbsoluteFill style={{opacity: fadeIn, background: `linear-gradient(180deg, ${scene.tint[0]}, ${scene.tint[1]})`}}>
       {clip ? (
         <OffthreadVideo
           src={staticFile(clip.file)}
@@ -103,7 +108,10 @@ const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; duckAt: (sec: n
           style={{width: '100%', height: '100%', objectFit: 'cover'}}
         />
       ) : (
-        <Placeholder tint={reel.scenes[i].tint} n={i + 1} />
+        <>
+          <Nature scene={SCENES[scene.art]} seconds={SCENE_SECONDS} />
+          <Ambience sound={scene.sound} offset={offset} duckAt={duckAt} first={i === 0} last={i === reel.scenes.length - 1} />
+        </>
       )}
     </AbsoluteFill>
   );

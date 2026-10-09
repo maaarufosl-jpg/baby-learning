@@ -1,6 +1,7 @@
 import React from 'react';
 import {cancelRender, Composition, continueRender, delayRender} from 'remotion';
 import {BrandOptions} from './components/BrandOptions';
+import {SceneSheet} from './components/SceneSheet';
 import {REEL_SECONDS, ReelVideo} from './components/Reel';
 import {reels} from './data/reels';
 import {loadAllFonts} from './fonts';
@@ -17,6 +18,7 @@ export const Root: React.FC = () => (
     {reels.map((r) => (
       <Composition key={r.id} id={r.id} component={ReelVideo} durationInFrames={REEL_SECONDS * FPS} fps={FPS} width={1080} height={1920} defaultProps={{reel: r}} />
     ))}
+    <Composition id="SceneSheet" component={SceneSheet} durationInFrames={240} fps={FPS} width={1080} height={1920} />
     <Composition id="BrandOptions" component={BrandOptions} durationInFrames={1} fps={FPS} width={1080} height={1920} />
   </>
 );

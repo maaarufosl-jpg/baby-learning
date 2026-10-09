@@ -10,7 +10,8 @@
     "attach": "node scripts/attach.mjs",
     "narrate": "node scripts/narrate.mjs",
     "brand": "remotion still BrandOptions out/brand-options.png",
-    "render": "node scripts/render.mjs"
+    "render": "node scripts/render.mjs",
+    "sfx": "node scripts/sfx.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.532",

@@ -1,33 +1,14 @@
 # রিল ৬: মেয়েদের ৪টি সুন্দর নাম
 
-ধরন: ইসলামিক নাম · দৈর্ঘ্য: প্রায় ২৪ সেকেন্ড · খাড়া ১০৮০×১৯২০ · তিনটি ৮ সেকেন্ডের প্রকৃতির ভিডিও
+ধরন: ইসলামিক নাম · দৈর্ঘ্য: প্রায় ২৪ সেকেন্ড · খাড়া ১০৮০×১৯২০ · তিনটি ৮ সেকেন্ডের প্রকৃতির দৃশ্য
 
-## আপনার কাজ
+## দৃশ্য (কোডে আঁকা প্রকৃতি, কোনো মানুষ বা প্রাণী নেই)
 
-1. নিচের "দৃশ্য ১" এর প্রম্পট পুরোটা কপি করে Gemini-তে পেস্ট করুন। ভিডিও খাড়া (9:16) রাখুন।
-2. ভিডিও তৈরি হলে চ্যাটে পাঠান, সাথে লিখুন: "রিল ৬, দৃশ্য ১"।
-3. একইভাবে দৃশ্য ২ ও দৃশ্য ৩।
-4. মানুষ, প্রাণী, পাখি বা লেখা চলে এলে ভিডিওটা বাদ দিয়ে আবার বানান (অথবা পাঠিয়ে দিন, আমি দেখে বলব)।
-
-## Gemini প্রম্পট (একটা একটা করে কপি করুন)
-
-### দৃশ্য ১: সকালের আলোয় শিশিরভেজা গোলাপি আর সাদা ফুলের বাগান
-
-```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A garden of soft pink and white roses covered in morning dew, petals moving very slightly in the breeze, warm morning light. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — light breeze and faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
-```
-
-### দৃশ্য ২: শান্ত পুকুরে ফুটে থাকা পদ্ম আর শাপলা
-
-```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Pink lotus flowers and water lilies floating on a calm pond, gentle ripples, soft morning light reflecting on the water. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — quiet water and soft wind. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
-```
-
-### দৃশ্য ৩: নীল আকাশের নিচে ডালে ফুটে থাকা সাদা ফুল, পাপড়ি উড়ছে
-
-```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Branches full of white blossoms against a clear blue sky, a few petals drifting slowly through the air. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — soft breeze through branches. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
-```
+| দৃশ্য | কী দেখা যাবে | শব্দ |
+|---|---|---|
+| ১ | সকালের আলোয় শিশিরভেজা গোলাপি আর সাদা ফুলের বাগান | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
+| ২ | শান্ত পুকুরে ফুটে থাকা পদ্ম আর শাপলা | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
+| ৩ | নীল আকাশের নিচে ডালে ফুটে থাকা সাদা ফুল, পাপড়ি উড়ছে | গাছের পাতার মৃদু শব্দ |
 
 ## পর্দায় ও কণ্ঠে যা থাকবে
 
@@ -57,7 +38,7 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Branche
 | ০:১৮ | লেখা | কুরআনে তাঁর নামে সূরা আছে (১৯) |
 | ০:২১ | লেখা | শেষ কার্ড: লোগো, সিরিজের নাম, "পরের রিল দেখতে ফলো করুন" |
 
-পুরো সময় ভিডিওর ওপর নরম অন্ধকার স্তর থাকবে, ওপরে ছোট লোগো। ভিডিওর প্রকৃতির শব্দ বাজবে, কণ্ঠের সময় একটু কমে যাবে।
+পুরো সময় দৃশ্যের ওপর নরম অন্ধকার স্তর থাকবে, ওপরে ছোট লোগো। প্রকৃতির শব্দ বাজবে, কণ্ঠের সময় একটু কমে যাবে।
 
 ## সূত্র
 
@@ -71,8 +52,8 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Branche
 - [ ] বাংলা উচ্চারণ
 - [ ] চারটি অর্থ (নিচের অনিশ্চয়তাগুলো দেখুন)
 - [ ] সম্মানসূচক (রা.) ও ﷺ ঠিক আছে কি না
-- [ ] তিনটি ভিডিওতে কোনো মানুষ, প্রাণী, পাখি, মুখ, হাত, লেখা বা লোগো নেই
-- [ ] ভিডিওর শব্দে কোনো বাদ্যযন্ত্র বা গান নেই, শুধু প্রকৃতির শব্দ
+- [ ] দৃশ্যে কোনো মানুষ, প্রাণী বা পাখি নেই (দৃশ্যগুলো কোডে আঁকা)
+- [ ] প্রকৃতির শব্দে (AI দিয়ে তৈরি) কোনো বাদ্যযন্ত্র বা গানের মতো সুর নেই
 - [ ] বাংলা বর্ণনার (AI কণ্ঠ) প্রতিটি বাক্য শুনে ঠিক আছে
 - [ ] আরবি কণ্ঠ থাকলে উচ্চারণ ও তাজবিদ ঠিক আছে
 
