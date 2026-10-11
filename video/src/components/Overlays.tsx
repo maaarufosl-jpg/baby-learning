@@ -150,7 +150,7 @@ export const DuaPanel: React.FC<{dua: Dua; display: DuaDisplay; layout: Layout; 
       >
         {dua.arabic}
       </div>
-      <div style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: card ? 80 : 92, color: colors.inkSoft, marginTop: 6}}>
+      <div style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: card ? (dua.parts.length > 3 ? 62 : 80) : 92, color: colors.inkSoft, marginTop: 6}}>
         {dua.parts.map((p, i) => {
           const isActive = active === i;
           const dim = active !== -1 && !isActive;
