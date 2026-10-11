@@ -44,6 +44,10 @@ export const EP02_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'safa', text: 'আলহামদুলিল্লাহ!', from: 0.2, to: 0.45, top: 880},
     {type: 'say', who: 'ammu', text: 'মাশাআল্লাহ, সোনা!', from: 0.7, to: 1, top: 880},
   ],
+  11: [
+    {type: 'say', who: 'miu', text: 'মিউ!', from: 0.37, to: 0.46, top: 880},
+    {type: 'say', who: 'everyone', label: 'উমায়ের ও সাফা', text: 'মিউ, তুমিও বলো আলহামদুলিল্লাহ!', from: 0.46, to: 0.9, top: 880},
+  ],
   12: [{type: 'card', from: 0.08}],
 };
 
