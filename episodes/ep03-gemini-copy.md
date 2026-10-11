@@ -119,7 +119,7 @@ Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy 
 
 Setting: a cozy Bangladeshi kitchen with mint-green cabinets and brass knobs, a white tiled wall, a blue pot and a yellow kettle on the stove, a rustic wooden table with a blue-and-white gingham tablecloth, wooden chairs, and a window with pink curtains and morning sunlight.
 
-Action: Umayer smiles big and happily goes back to eating with his right hand. Ma watches him lovingly and nods.
+Action: Umayer smiles big and happily goes back to eating khichuri with his right hand from the front of his plate, which still has food on it. Ma watches him lovingly and nods.
 
 Dialogue: Umayer, happy, in Bengali: "এখন আবার মজা লাগছে!" Ma, smiling: "মাশাআল্লাহ! তবে সবচেয়ে ভালো, শুরুতেই বলা।"
 ```
