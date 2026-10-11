@@ -15,8 +15,11 @@ export const KIND_LABEL: Record<Kind, string> = {
  */
 export type Line = {style: 'kicker' | 'arabicXL' | 'arabic' | 'title' | 'body' | 'note' | 'source'; text: string; with?: number; delay?: number};
 
-/** Something heard in a step: Bengali narration (TTS), or a qari's recitation of an ayah (optionally only some of its words). */
-export type Say = {voice: string} | {quran: string; words?: [number, number]};
+/**
+ * Something heard in a step: Bengali narration (TTS), a qari's recitation of an ayah (optionally only some of its words),
+ * or hadith Arabic read by an Arabic TTS voice (chosen by the user; never used for Quran).
+ */
+export type Say = {voice: string} | {quran: string; words?: [number, number]} | {hadithArabic: string};
 
 /** One block of text on screen, held while its sounds play one after another (after `lead` seconds), then `hold` seconds more. */
 export type Step = {lines: Line[]; say: Say[]; lead?: number; hold?: number};

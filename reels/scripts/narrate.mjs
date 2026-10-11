@@ -1,4 +1,4 @@
-// Makes the soft, slow Bengali narration for one reel. Arabic text is never sent to an AI voice.
+// Makes the soft, slow Bengali narration for reels, and reads hadith Arabic with an Arabic voice. Quran is never sent to an AI voice.
 // Default engine: Google Cloud Text-to-Speech, native Bengali Chirp 3 HD voices (key: GOOGLE_TTS_API_KEY).
 // Optional engine: ElevenLabs (key: ELEVENLABS_API_KEY). Keys come only from the environment, never from files.
 // Usage ("all" instead of reel01 does every reel):
@@ -14,7 +14,7 @@ const argv = process.argv.slice(3);
 const opt = (name, def) => (argv.includes(`--${name}`) ? argv[argv.indexOf(`--${name}`) + 1] : def);
 const engine = opt('engine', 'google');
 const speed = Number(opt('speed', '0.9'));
-const {reels, soundKey, isQuran, buildTimeline} = await loadData();
+const {reels, soundKey, isQuran, isHadithArabic, buildTimeline} = await loadData();
 const which = process.argv[2];
 const list = which === 'all' ? reels : reels.filter((r) => r.id === which || r.number === Number(which));
 if (!list.length) {
@@ -78,6 +78,19 @@ if (engine === 'google') {
   };
 }
 
+export const ARABIC_VOICE = 'ar-XA-Chirp3-HD-Charon';
+const speakArabic = async (text) => {
+  const res = await ok(
+    await fetch('https://texttospeech.googleapis.com/v1/text:synthesize', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'X-Goog-Api-Key': need('GOOGLE_TTS_API_KEY')},
+      body: JSON.stringify({input: {text}, voice: {languageCode: 'ar-XA', name: ARABIC_VOICE}, audioConfig: {audioEncoding: 'MP3', speakingRate: 0.85, sampleRateHertz: 44100}}),
+    }),
+    'Google TTS (Arabic)',
+  );
+  return Buffer.from((await res.json()).audioContent, 'base64');
+};
+
 const media = readMedia();
 console.log(`${engine} voice ${label}, speed ${speed}`);
 for (const reel of list) {
@@ -88,6 +101,14 @@ for (const reel of list) {
   for (const [si, step] of reel.steps.entries()) {
     for (const [k, s] of step.say.entries()) {
       if (isQuran(s)) continue;
+      if (isHadithArabic(s)) {
+        // hadith Arabic only (never Quran): Google's Arabic voice the user chose
+        const file = join(dir, `a${si + 1}-${k + 1}.mp3`);
+        writeFileSync(file, await speakArabic(s.hadithArabic));
+        entry.audio[soundKey(si, k)] = {file: file.replace(/^public\//, ''), seconds: duration(file)};
+        console.log(`${reel.id} ${soundKey(si, k)} ${entry.audio[soundKey(si, k)].seconds}s  (Arabic) ${s.hadithArabic}`);
+        continue;
+      }
       if (ARABIC.test(s.voice)) throw new Error(`${reel.id} ${soundKey(si, k)} contains Arabic; Arabic is never sent to an AI voice.`);
       const file = join(dir, `v${si + 1}-${k + 1}.mp3`);
       writeFileSync(file, await speak(s.voice));

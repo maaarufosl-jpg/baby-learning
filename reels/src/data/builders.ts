@@ -81,12 +81,12 @@ export const textReel = (
     meaning: string;
     source: string;
     note?: string;
-    /** Ayah only: the recitation to play. Hadith Arabic is shown as text. */
+    /** Ayah: the qari recitation to play. Hadith: the Arabic is read by the Arabic TTS voice. */
     quran?: QuranRef;
     narration: {intro: string; meaning: string; source: string; note?: string};
   },
 ): Reel => {
-  const say: Say[] = [...(b.quran ? [recite(b.quran)] : []), {voice: b.narration.meaning}];
+  const say: Say[] = [b.quran ? recite(b.quran) : {hadithArabic: b.arabic}, {voice: b.narration.meaning}];
   const meaningAt = say.length - 1;
   if (b.narration.source) say.push({voice: b.narration.source});
   if (b.narration.note) say.push({voice: b.narration.note});
@@ -101,8 +101,7 @@ export const textReel = (
     unsure: b.unsure ?? [],
     steps: [
       {lines: [{style: 'kicker', text: b.kicker}], say: [{voice: b.narration.intro}]},
-      // without a recitation, leave time to read the Arabic before the meaning is spoken
-      {lines, say, hold: 1.2, lead: b.quran ? undefined : 3},
+      {lines, say, hold: 1.2},
     ],
   };
 };

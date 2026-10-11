@@ -145,7 +145,7 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
   // nature sound dips under the voice, and almost disappears under the recitation
   const duck = (sec: number) => {
     const s = tl.sounds.find((x) => x.file && sec >= x.at - 0.25 && sec <= x.at + x.seconds + 0.25);
-    return s ? (s.quran ? 0.12 : 0.28) : 1;
+    return s ? (s.arabic ? 0.12 : 0.28) : 1;
   };
   const sceneFrames = Math.round(tl.sceneSeconds * fps);
   const endFrom = Math.round(tl.endAt * fps);
@@ -173,7 +173,7 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
       ))}
       {tl.sounds.map((s, i) =>
         s.file ? (
-          <Sequence key={i} from={Math.round(s.at * fps)} layout="none" name={s.quran ? `তিলাওয়াত ${s.text}` : `কণ্ঠ ${i + 1}`}>
+          <Sequence key={i} from={Math.round(s.at * fps)} layout="none" name={s.quran ? `তিলাওয়াত ${s.text}` : s.arabic ? 'হাদিসের আরবি' : `কণ্ঠ ${i + 1}`}>
             <Html5Audio src={staticFile(s.file)} />
           </Sequence>
         ) : null,
