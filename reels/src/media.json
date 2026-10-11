@@ -15,11 +15,11 @@
       },
       "2-2": {
         "file": "audio/reel01/v2-2.mp3",
-        "seconds": 1.49
+        "seconds": 1.44
       },
       "2-3": {
         "file": "audio/reel01/v2-3.mp3",
-        "seconds": 2.38
+        "seconds": 2.25
       },
       "3-2": {
         "file": "audio/reel01/v3-2.mp3",
@@ -27,7 +27,7 @@
       },
       "3-3": {
         "file": "audio/reel01/v3-3.mp3",
-        "seconds": 2.69
+        "seconds": 5.3
       }
     }
   },
