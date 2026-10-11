@@ -174,8 +174,8 @@ export const SCENES: Record<string, NatureScene> = {
     layers: [
       {type: 'sky', colors: ['#5D97D6', '#9CC6EC', '#DCEBF7']},
       {type: 'clouds', count: 3, y: [0.55, 0.8], color: '#FFFFFF', opacity: 0.8, speed: 10},
-      {type: 'branch', side: 'left', y: 0.32, wood: '#5A4636', blossom: '#FFFFFF'},
-      {type: 'branch', side: 'right', y: 0.62, wood: '#4F3D30', blossom: '#FCEFF3'},
+      {type: 'branch', side: 'left', y: 0.14, wood: '#5A4636', blossom: '#FFFFFF'},
+      {type: 'branch', side: 'right', y: 0.78, wood: '#4F3D30', blossom: '#FCEFF3'},
       {type: 'petals', count: 26, color: '#FFFFFF'},
     ],
   },
@@ -228,8 +228,8 @@ export const SCENES: Record<string, NatureScene> = {
     layers: [
       {type: 'sky', colors: ['#9CC8E8', '#E7E3C3', '#F2D49B']},
       {type: 'sun', x: 0.8, y: 0.2, r: 60, color: '#FFF0C8', glow: 6},
-      {type: 'branch', side: 'left', y: 0.3, wood: '#4E3B2C', leaf: '#3E7A3A', fruit: '#F39A2F'},
-      {type: 'branch', side: 'right', y: 0.6, wood: '#4A372A', leaf: '#4A8A44', fruit: '#F4A63C'},
+      {type: 'branch', side: 'left', y: 0.14, wood: '#4E3B2C', leaf: '#3E7A3A', fruit: '#F39A2F'},
+      {type: 'branch', side: 'right', y: 0.78, wood: '#4A372A', leaf: '#4A8A44', fruit: '#F4A63C'},
     ],
   },
   'rain-paddy': {
@@ -253,8 +253,8 @@ export const SCENES: Record<string, NatureScene> = {
     layers: [
       {type: 'sky', colors: ['#9ACBE6', '#D9EBD8', '#E9E6C2']},
       {type: 'sparkle', count: 24, color: '#FFF6C0', y: [0.1, 0.9]},
-      {type: 'branch', side: 'right', y: 0.28, wood: '#4A3828', leaf: '#2F6E33', fruit: '#E9C33C', fruitShape: 'mango'},
-      {type: 'branch', side: 'left', y: 0.6, wood: '#4E3B2B', leaf: '#3A7C3B', fruit: '#D9B83A', fruitShape: 'mango'},
+      {type: 'branch', side: 'right', y: 0.14, wood: '#4A3828', leaf: '#2F6E33', fruit: '#E9C33C', fruitShape: 'mango'},
+      {type: 'branch', side: 'left', y: 0.78, wood: '#4E3B2B', leaf: '#3A7C3B', fruit: '#D9B83A', fruitShape: 'mango'},
     ],
   },
   'turquoise-falls': {

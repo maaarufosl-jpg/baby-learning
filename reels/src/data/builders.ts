@@ -111,7 +111,8 @@ export const textReel = (
   narration: [
     {at: 0.6, text: b.narration.intro},
     {at: 9.2, text: b.narration.meaning},
-    {at: 14.2, text: b.narration.source},
+    // an empty source line is left unspoken (used when the meaning is long; the source stays on screen)
+    ...(b.narration.source ? [{at: 14.2, text: b.narration.source}] : []),
     ...(b.narration.note ? [{at: 17.4, text: b.narration.note}] : []),
   ],
   arabicVoice: {at: 4, text: b.arabic},
