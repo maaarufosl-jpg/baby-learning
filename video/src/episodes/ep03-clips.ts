@@ -25,6 +25,11 @@ export const EP03_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'মন খারাপ করো না, সোনা।', from: 0.33, to: 0.53, top: 880},
     {type: 'say', who: 'ammu', text: 'এখনো বলা যায়।', from: 0.53, to: 0.85, top: 880},
   ],
+  6: [
+    {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ শিখিয়েছেন,', from: 0.12, to: 0.5, top: 880},
+    {type: 'say', who: 'ammu', text: 'শুরুতে ভুলে গেলে,\nমনে পড়লেই বলবে।', from: 0.58, to: 0.95, top: 740},
+    {type: 'footnote', text: 'আবু দাউদ ৩৭৬৭, তিরমিজি ১৮৫৮'},
+  ],
 };
 
 export const ep03Clips = clips as Record<string, SceneMedia>;
