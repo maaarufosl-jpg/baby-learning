@@ -21,6 +21,10 @@ export const EP03_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এখন কী হবে?', from: 0.18, to: 0.5, top: 880},
     {type: 'say', who: 'miu', text: 'মিউ...', from: 0.62, to: 0.76, top: 880},
   ],
+  5: [
+    {type: 'say', who: 'ammu', text: 'মন খারাপ করো না, সোনা।', from: 0.33, to: 0.53, top: 880},
+    {type: 'say', who: 'ammu', text: 'এখনো বলা যায়।', from: 0.53, to: 0.85, top: 880},
+  ],
 };
 
 export const ep03Clips = clips as Record<string, SceneMedia>;
