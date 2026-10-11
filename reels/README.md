@@ -19,7 +19,7 @@
 
 - **দৃশ্য:** প্রকৃতির দৃশ্যগুলো কোড দিয়ে আঁকা অ্যানিমেশন (`src/data/scenes.ts`, `src/components/Nature.tsx`): আকাশ, সূর্য, মেঘ, পাহাড়, নদী, ঝরনা, বৃষ্টি, ফুল, গাছ, তারা। তাই কোনো মানুষ বা প্রাণী আসার ঝুঁকি নেই। সব দৃশ্যের নমুনা: `docs/preview/scenes-all.jpg`।
 - **প্রকৃতির শব্দ:** ElevenLabs দিয়ে বানানো ১০টি শব্দ (`public/sfx/`), সব রিলে বারবার ব্যবহার হয়। কোনো মিউজিক নেই।
-- **বাংলা কণ্ঠ:** ElevenLabs। **আরবি:** শুধু লেখা, অথবা কারো রেকর্ড করা কণ্ঠ (`public/audio/reelNN/arabic.m4a`)।
+- **বাংলা কণ্ঠ:** Google-এর বাংলাভাষী কণ্ঠ (Chirp 3 HD)। নামগুলো (যেমন "আর-রহমান") বাংলা উচ্চারণে বলা হয়। **আরবি:** শুধু লেখা, অথবা কারো রেকর্ড করা কণ্ঠ (`public/audio/reelNN/arabic.m4a`)।
 - চাইলে পরে কোনো দৃশ্যের বদলে আসল ভিডিও বসানো যায় (`public/clips/reelNN/scene1.mp4`), তখন সেটাই দেখাবে।
 
 ## আপনার কাজ
@@ -31,7 +31,7 @@
 ```bash
 npm install
 npm run attach reel01      # (ঐচ্ছিক) আসল ভিডিও ক্লিপ আর আরবি রেকর্ড প্রস্তুত করে
-npm run narrate reel01     # ElevenLabs দিয়ে বাংলা বর্ণনা (ELEVENLABS_API_KEY পরিবেশ থেকে নেয়; ফাইলে কখনো রাখা হয় না)
+npm run narrate reel01     # বাংলা বর্ণনা, Google TTS (GOOGLE_TTS_API_KEY); --engine elevenlabs দিলে ElevenLabs। key শুধু পরিবেশ থেকে নেয়, ফাইলে কখনো রাখা হয় না
 npm run docs               # src/data/reels.ts থেকে docs/ আবার লেখে
 npm run brand              # লোগোর তিন বিকল্পের ছবি
 npm run sfx                # প্রকৃতির শব্দ (যেগুলো নেই সেগুলো) তৈরি করে
@@ -41,4 +41,4 @@ npm run studio             # ব্রাউজারে দেখা
 
 ক্রোম না থাকলে: `REMOTION_BROWSER_EXECUTABLE=/path/to/headless_shell npm run render reel01`।
 
-বর্ণনার কণ্ঠ: ElevenLabs `eleven_v3` মডেল, ধীর গতি (০.৯)। আরবি লেখা কখনো AI কণ্ঠে পাঠানো হয় না; স্ক্রিপ্ট আরবি অক্ষর পেলে থেমে যায়।
+বর্ণনার কণ্ঠ: Google `bn-IN-Chirp3-HD-Aoede`, ধীর গতি (০.৯)। আরবি লেখা কখনো AI কণ্ঠে পাঠানো হয় না; স্ক্রিপ্ট আরবি অক্ষর পেলে থেমে যায়। আয়াত ও হাদিসের আরবি শুধু লেখায়, অথবা মানুষের রেকর্ডে।

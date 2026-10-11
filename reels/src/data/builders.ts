@@ -47,6 +47,8 @@ export const asmaReel = (
   ],
   narration: [
     {at: 0.6, text: b.narration.intro},
+    // the name in Bengali speech, as the Bengali title appears; the Arabic itself stays text or a human recording
+    {at: 5.7, text: `${b.bangla}।`},
     {at: 8.6, text: b.narration.meaning},
     {at: 11.6, text: b.narration.explain},
     {at: 16.6, text: b.narration.ayah},
@@ -70,11 +72,11 @@ export const namesReel = (b: Base & {heading: string; intro: string; names: Baby
       lines: [
         {style: 'arabicXL', text: n.arabic},
         {style: 'title', text: `${n.bangla} · ${n.gender}`},
-        {style: 'body', text: n.meaning, at: from + 0.8},
-        {style: 'note', text: n.origin, at: from + 1.6},
+        {style: 'body', text: n.meaning, at: from + 1.4},
+        {style: 'note', text: n.origin, at: from + 2.2},
       ],
     });
-    narration.push({at: from + 0.9, text: n.say});
+    narration.push({at: from + 0.5, text: `${n.bangla}। ${n.say}`});
   });
   return {...b, kind: 'names', unsure: b.unsure ?? [], cards, narration};
 };

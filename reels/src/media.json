@@ -3,19 +3,23 @@
     "voice": {
       "1": {
         "file": "audio/reel01/n1.mp3",
-        "seconds": 2.12
+        "seconds": 2.59
       },
       "2": {
         "file": "audio/reel01/n2.mp3",
-        "seconds": 2.12
+        "seconds": 1.54
       },
       "3": {
         "file": "audio/reel01/n3.mp3",
-        "seconds": 2.27
+        "seconds": 2.25
       },
       "4": {
         "file": "audio/reel01/n4.mp3",
-        "seconds": 2.69
+        "seconds": 2.74
+      },
+      "5": {
+        "file": "audio/reel01/n5.mp3",
+        "seconds": 5.64
       }
     }
   }
