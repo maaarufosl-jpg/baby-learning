@@ -16,6 +16,11 @@ export const EP03_OVERLAYS: Record<number, ClipOverlay[]> = {
   2: [{type: 'say', who: 'umayer', text: 'মমম! খিচুড়ি খুব মজা!', from: 0.1, to: 0.7, top: 880}],
   // Trimmed to 6.4s: Gemini ended the clip with both children laughing, which clashes with the sad scene 4.
   3: [{type: 'say', who: 'umayer', text: 'ওহ! আমি তো বিসমিল্লাহ বলিনি!', from: 0.27, to: 0.8, top: 880}],
+  // Starts at 1.85s of Gemini's clip: its opening shot showed Safa without her hijab.
+  4: [
+    {type: 'say', who: 'umayer', text: 'এখন কী হবে?', from: 0.18, to: 0.5, top: 880},
+    {type: 'say', who: 'miu', text: 'মিউ...', from: 0.62, to: 0.76, top: 880},
+  ],
 };
 
 export const ep03Clips = clips as Record<string, SceneMedia>;
