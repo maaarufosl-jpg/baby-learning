@@ -7,6 +7,7 @@ import {FacebookCover, ProfilePicture, YouTubeBanner} from './components/Brand';
 import {EpisodeVideo, episodeFrames, PreviewReel} from './components/Episode';
 import {ep01} from './episodes/ep01';
 import {EP02_CONFIG} from './episodes/ep02-clips';
+import {EP03_CONFIG} from './episodes/ep03-clips';
 import {loadAllFonts} from './fonts';
 
 const FPS = 30;
@@ -42,6 +43,7 @@ export const Root: React.FC = () => (
     <Composition id="Ep01Thumbnail" component={Ep01Thumbnail} durationInFrames={1} fps={FPS} width={1280} height={720} />
     <Composition id="Ep01Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS)} fps={FPS} width={1920} height={1080} />
     <Composition id="Ep02Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP02_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP02_CONFIG}} />
+    <Composition id="Ep03Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP03_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP03_CONFIG}} />
     <Composition
       id="Ep01"
       component={EpisodeVideo}
