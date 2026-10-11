@@ -11,14 +11,19 @@ export const KIND_LABEL: Record<Kind, string> = {
  * One line of on-screen text.
  * kicker: small label · arabicXL: one big Arabic word · arabic: Arabic sentence · title: big Bengali
  * body: Bengali meaning · note: smaller Bengali · source: reference line
- * `at` (seconds from reel start) delays the line inside its card.
+ * The line appears when sound number `with` of its step starts (default: the step's start), plus `delay` seconds.
  */
-export type Line = {style: 'kicker' | 'arabicXL' | 'arabic' | 'title' | 'body' | 'note' | 'source'; text: string; at?: number};
+export type Line = {style: 'kicker' | 'arabicXL' | 'arabic' | 'title' | 'body' | 'note' | 'source'; text: string; with?: number; delay?: number};
 
-/** A block of lines shown from `from` to `to` seconds. */
-export type Card = {from: number; to: number; lines: Line[]};
+/** Something heard in a step: Bengali narration (TTS), or a qari's recitation of an ayah (optionally only some of its words). */
+export type Say = {voice: string} | {quran: string; words?: [number, number]};
 
-/** One 8-second scene: a drawn nature scene (or, if one is attached later, a real video clip). */
+/** One block of text on screen, held while its sounds play one after another (after `lead` seconds), then `hold` seconds more. */
+export type Step = {lines: Line[]; say: Say[]; lead?: number; hold?: number};
+
+/** A card placed in time (seconds), with each line's appear time. */
+export type Card = {from: number; to: number; lines: (Line & {at: number})[]};
+
 export type Scene = {
   /** Drawn scene key from scenes.ts. */
   art: string;
@@ -32,19 +37,13 @@ export type Scene = {
   tint: [string, string];
 };
 
-/** A Bengali narration line made with ElevenLabs, played at `at` seconds. */
-export type Narration = {at: number; text: string};
-
 export type Reel = {
   id: string;
   number: number;
   kind: Kind;
   title: string;
   scenes: Scene[];
-  cards: Card[];
-  narration: Narration[];
-  /** Where a recorded Arabic voice goes (seconds) and what it should say. Without a recording, the Arabic is text only. */
-  arabicVoice?: {at: number; text: string};
+  steps: Step[];
   /** Every reference shown or used, for the scholar. */
   sources: string[];
   /** Items the scholar should tick before publishing. */

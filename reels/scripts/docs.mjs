@@ -2,12 +2,14 @@
 // to docs/reelNN.md and the series list to docs/reels-list.md, all from src/data/reels.ts.
 // Usage: node scripts/docs.mjs
 import {mkdirSync, writeFileSync} from 'node:fs';
-import {loadReels} from './lib.mjs';
+import {loadData, readMedia} from './lib.mjs';
 
-const reels = await loadReels();
+const {reels, buildTimeline} = await loadData();
+const media = readMedia();
 const BN = '০১২৩৪৫৬৭৮৯';
 const bn = (x) => String(x).replace(/\d/g, (d) => BN[d]);
 const t = (s) => bn(`০:${String(Math.floor(s)).padStart(2, '0')}`);
+const len = (s) => bn(String(Math.round(s)));
 const KIND = {asma: 'আল্লাহর সুন্দর নাম', names: 'ইসলামিক নাম', ayah: 'ছোট আয়াত', hadith: 'ছোট হাদিস'};
 const SOUND = {
   'morning-birds': 'ভোরের হালকা বাতাস, দূরে পাখির ডাক',
@@ -25,24 +27,22 @@ const COMMON = [
   'দৃশ্যে কোনো মানুষ, প্রাণী বা পাখি নেই (দৃশ্যগুলো কোডে আঁকা)',
   'প্রকৃতির শব্দে (AI দিয়ে তৈরি) কোনো বাদ্যযন্ত্র বা গানের মতো সুর নেই',
   'বাংলা বর্ণনার (AI কণ্ঠ) প্রতিটি বাক্য শুনে ঠিক আছে, বিশেষ করে নামের বাংলা উচ্চারণ',
-  'আরবি কণ্ঠ থাকলে উচ্চারণ ও তাজবিদ ঠিক আছে',
+  'কুরআনের তিলাওয়াত (মিশারি রাশিদ আল-আফাসি) ঠিক জায়গা থেকে শুরু ও শেষ হয়েছে, কোনো শব্দ কাটা পড়েনি',
 ];
 
 mkdirSync('docs', {recursive: true});
 for (const r of reels) {
+  const tl = buildTimeline(r, media[r.id]);
   const rows = [];
-  for (const c of r.cards) {
-    for (const l of c.lines) rows.push({at: l.at ?? c.from, what: l.text, kind: 'লেখা'});
-  }
-  for (const n of r.narration) rows.push({at: n.at, what: n.text, kind: 'কণ্ঠ'});
-  if (r.arabicVoice) rows.push({at: r.arabicVoice.at, what: `${r.arabicVoice.text} (মানুষের রেকর্ড, না থাকলে শুধু লেখা)`, kind: 'আরবি কণ্ঠ'});
-  rows.push({at: 21.8, what: 'শেষ কার্ড: লোগো, সিরিজের নাম, "পরের রিল দেখতে ফলো করুন"', kind: 'লেখা'});
+  for (const c of tl.cards) for (const l of c.lines) rows.push({at: l.at, what: l.text, kind: 'লেখা'});
+  for (const x of tl.sounds) rows.push({at: x.at, what: x.quran ? `তিলাওয়াত (মিশারি রাশিদ আল-আফাসি): ${bn(x.text)}` : x.text, kind: x.quran ? 'কুরআন' : 'কণ্ঠ'});
+  rows.push({at: tl.endAt, what: 'শেষ কার্ড: লোগো, সিরিজের নাম, "পরের রিল দেখতে ফলো করুন"', kind: 'লেখা'});
   rows.sort((a, b) => a.at - b.at);
 
   const md = [
     `# রিল ${bn(r.number)}: ${r.title}`,
     '',
-    `ধরন: ${KIND[r.kind]} · দৈর্ঘ্য: প্রায় ২৪ সেকেন্ড · খাড়া ১০৮০×১৯২০ · তিনটি ৮ সেকেন্ডের প্রকৃতির দৃশ্য`,
+    `ধরন: ${KIND[r.kind]} · দৈর্ঘ্য: প্রায় ${len(tl.total)} সেকেন্ড · খাড়া ১০৮০×১৯২০ · তিনটি প্রকৃতির দৃশ্য`,
     '',
     '## দৃশ্য (কোডে আঁকা প্রকৃতি, কোনো মানুষ বা প্রাণী নেই)',
     '',

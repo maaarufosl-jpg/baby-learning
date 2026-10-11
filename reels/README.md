@@ -30,8 +30,9 @@
 
 ```bash
 npm install
-npm run attach reel01      # (ঐচ্ছিক) আসল ভিডিও ক্লিপ আর আরবি রেকর্ড প্রস্তুত করে
-npm run narrate reel01     # বাংলা বর্ণনা, Google TTS (GOOGLE_TTS_API_KEY); --engine elevenlabs দিলে ElevenLabs। key শুধু পরিবেশ থেকে নেয়, ফাইলে কখনো রাখা হয় না
+npm run quran all          # কুরআনের তিলাওয়াত (মিশারি আল-আফাসি) নামিয়ে কেটে নেয়
+npm run attach reel01      # (ঐচ্ছিক) আসল ভিডিও ক্লিপ প্রস্তুত করে
+npm run narrate all        # বাংলা বর্ণনা, Google TTS (GOOGLE_TTS_API_KEY); --engine elevenlabs দিলে ElevenLabs। key শুধু পরিবেশ থেকে নেয়, ফাইলে কখনো রাখা হয় না
 npm run docs               # src/data/reels.ts থেকে docs/ আবার লেখে
 npm run brand              # লোগোর তিন বিকল্পের ছবি
 npm run sfx                # প্রকৃতির শব্দ (যেগুলো নেই সেগুলো) তৈরি করে

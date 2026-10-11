@@ -3,10 +3,12 @@ import {build} from 'esbuild';
 import {execFileSync} from 'node:child_process';
 import {existsSync, readFileSync, writeFileSync} from 'node:fs';
 
-export const loadReels = async () => {
-  const out = await build({entryPoints: ['src/data/reels.ts'], bundle: true, format: 'esm', write: false, platform: 'neutral'});
-  return (await import('data:text/javascript;base64,' + Buffer.from(out.outputFiles[0].text).toString('base64'))).reels;
+/** Loads src/data (reels, buildTimeline, soundKey, isQuran) from TypeScript. */
+export const loadData = async () => {
+  const out = await build({entryPoints: ['src/data/index.ts'], bundle: true, format: 'esm', write: false, platform: 'neutral'});
+  return import('data:text/javascript;base64,' + Buffer.from(out.outputFiles[0].text).toString('base64'));
 };
+export const loadReels = async () => (await loadData()).reels;
 
 export const reelArg = async () => {
   const id = process.argv[2];

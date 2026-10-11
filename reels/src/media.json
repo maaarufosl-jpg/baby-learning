@@ -1,241 +1,265 @@
 {
   "reel01": {
-    "voice": {
-      "1": {
-        "file": "audio/reel01/n1.mp3",
+    "audio": {
+      "2-1": {
+        "file": "audio/reel01/q2-1.mp3",
+        "seconds": 4.65
+      },
+      "3-1": {
+        "file": "audio/reel01/q3-1.mp3",
+        "seconds": 4.65
+      },
+      "1-1": {
+        "file": "audio/reel01/v1-1.mp3",
         "seconds": 2.59
       },
-      "2": {
-        "file": "audio/reel01/n2.mp3",
-        "seconds": 1.54
+      "2-2": {
+        "file": "audio/reel01/v2-2.mp3",
+        "seconds": 1.49
       },
-      "3": {
-        "file": "audio/reel01/n3.mp3",
-        "seconds": 2.25
+      "2-3": {
+        "file": "audio/reel01/v2-3.mp3",
+        "seconds": 2.38
       },
-      "4": {
-        "file": "audio/reel01/n4.mp3",
-        "seconds": 2.74
+      "3-2": {
+        "file": "audio/reel01/v3-2.mp3",
+        "seconds": 2.8
       },
-      "5": {
-        "file": "audio/reel01/n5.mp3",
-        "seconds": 5.64
+      "3-3": {
+        "file": "audio/reel01/v3-3.mp3",
+        "seconds": 2.69
       }
     }
   },
   "reel02": {
-    "voice": {
-      "1": {
-        "file": "audio/reel02/n1.mp3",
-        "seconds": 2.8
+    "audio": {
+      "1-1": {
+        "file": "audio/reel02/v1-1.mp3",
+        "seconds": 2.64
       },
-      "2": {
-        "file": "audio/reel02/n2.mp3",
-        "seconds": 3.4
-      },
-      "3": {
-        "file": "audio/reel02/n3.mp3",
-        "seconds": 3.58
-      },
-      "4": {
-        "file": "audio/reel02/n4.mp3",
+      "2-1": {
+        "file": "audio/reel02/v2-1.mp3",
         "seconds": 3.34
       },
-      "5": {
-        "file": "audio/reel02/n5.mp3",
+      "3-1": {
+        "file": "audio/reel02/v3-1.mp3",
+        "seconds": 3.58
+      },
+      "4-1": {
+        "file": "audio/reel02/v4-1.mp3",
+        "seconds": 3.34
+      },
+      "5-1": {
+        "file": "audio/reel02/v5-1.mp3",
         "seconds": 2.8
       }
     }
   },
   "reel03": {
-    "voice": {
-      "1": {
-        "file": "audio/reel03/n1.mp3",
-        "seconds": 3.5
+    "audio": {
+      "2-1": {
+        "file": "audio/reel03/q2-1.mp3",
+        "seconds": 4.18
       },
-      "2": {
-        "file": "audio/reel03/n2.mp3",
-        "seconds": 2.93
+      "1-1": {
+        "file": "audio/reel03/v1-1.mp3",
+        "seconds": 3.34
       },
-      "3": {
-        "file": "audio/reel03/n3.mp3",
+      "2-2": {
+        "file": "audio/reel03/v2-2.mp3",
+        "seconds": 2.98
+      },
+      "2-3": {
+        "file": "audio/reel03/v2-3.mp3",
         "seconds": 2.8
       },
-      "4": {
-        "file": "audio/reel03/n4.mp3",
+      "2-4": {
+        "file": "audio/reel03/v2-4.mp3",
         "seconds": 2.98
       }
     }
   },
   "reel04": {
-    "voice": {
-      "1": {
-        "file": "audio/reel04/n1.mp3",
+    "audio": {
+      "1-1": {
+        "file": "audio/reel04/v1-1.mp3",
         "seconds": 2.53
       },
-      "2": {
-        "file": "audio/reel04/n2.mp3",
-        "seconds": 2.9
+      "2-1": {
+        "file": "audio/reel04/v2-1.mp3",
+        "seconds": 2.59
       },
-      "3": {
-        "file": "audio/reel04/n3.mp3",
-        "seconds": 2.98
+      "2-2": {
+        "file": "audio/reel04/v2-2.mp3",
+        "seconds": 2.9
       }
     }
   },
   "reel05": {
-    "voice": {
-      "1": {
-        "file": "audio/reel05/n1.mp3",
-        "seconds": 2.59
+    "audio": {
+      "3-1": {
+        "file": "audio/reel05/q3-1.mp3",
+        "seconds": 4.6
       },
-      "2": {
-        "file": "audio/reel05/n2.mp3",
-        "seconds": 1.44
+      "1-1": {
+        "file": "audio/reel05/v1-1.mp3",
+        "seconds": 2.64
       },
-      "3": {
-        "file": "audio/reel05/n3.mp3",
-        "seconds": 2.04
+      "2-1": {
+        "file": "audio/reel05/v2-1.mp3",
+        "seconds": 1.49
       },
-      "4": {
-        "file": "audio/reel05/n4.mp3",
-        "seconds": 3.13
+      "2-2": {
+        "file": "audio/reel05/v2-2.mp3",
+        "seconds": 2.43
       },
-      "5": {
-        "file": "audio/reel05/n5.mp3",
-        "seconds": 4.18
+      "3-2": {
+        "file": "audio/reel05/v3-2.mp3",
+        "seconds": 3.4
+      },
+      "3-3": {
+        "file": "audio/reel05/v3-3.mp3",
+        "seconds": 3.4
       }
     }
   },
   "reel06": {
-    "voice": {
-      "1": {
-        "file": "audio/reel06/n1.mp3",
+    "audio": {
+      "1-1": {
+        "file": "audio/reel06/v1-1.mp3",
         "seconds": 2.93
       },
-      "2": {
-        "file": "audio/reel06/n2.mp3",
-        "seconds": 3.68
+      "2-1": {
+        "file": "audio/reel06/v2-1.mp3",
+        "seconds": 3.53
       },
-      "3": {
-        "file": "audio/reel06/n3.mp3",
-        "seconds": 3.08
+      "3-1": {
+        "file": "audio/reel06/v3-1.mp3",
+        "seconds": 2.93
       },
-      "4": {
-        "file": "audio/reel06/n4.mp3",
-        "seconds": 3.5
+      "4-1": {
+        "file": "audio/reel06/v4-1.mp3",
+        "seconds": 3.03
       },
-      "5": {
-        "file": "audio/reel06/n5.mp3",
-        "seconds": 3.84
+      "5-1": {
+        "file": "audio/reel06/v5-1.mp3",
+        "seconds": 3.79
       }
     }
   },
   "reel07": {
-    "voice": {
-      "1": {
-        "file": "audio/reel07/n1.mp3",
-        "seconds": 3.5
+    "audio": {
+      "2-1": {
+        "file": "audio/reel07/q2-1.mp3",
+        "seconds": 7.73
       },
-      "2": {
-        "file": "audio/reel07/n2.mp3",
-        "seconds": 4.15
+      "1-1": {
+        "file": "audio/reel07/v1-1.mp3",
+        "seconds": 3.89
       },
-      "3": {
-        "file": "audio/reel07/n3.mp3",
-        "seconds": 2.8
+      "2-2": {
+        "file": "audio/reel07/v2-2.mp3",
+        "seconds": 3.63
+      },
+      "2-3": {
+        "file": "audio/reel07/v2-3.mp3",
+        "seconds": 2.74
       }
     }
   },
   "reel08": {
-    "voice": {
-      "1": {
-        "file": "audio/reel08/n1.mp3",
-        "seconds": 2.48
+    "audio": {
+      "1-1": {
+        "file": "audio/reel08/v1-1.mp3",
+        "seconds": 2.53
       },
-      "2": {
-        "file": "audio/reel08/n2.mp3",
-        "seconds": 2.33
+      "2-1": {
+        "file": "audio/reel08/v2-1.mp3",
+        "seconds": 2.38
       },
-      "3": {
-        "file": "audio/reel08/n3.mp3",
+      "2-2": {
+        "file": "audio/reel08/v2-2.mp3",
         "seconds": 3.08
       }
     }
   },
   "reel09": {
-    "voice": {
-      "1": {
-        "file": "audio/reel09/n1.mp3",
+    "audio": {
+      "3-1": {
+        "file": "audio/reel09/q3-1.mp3",
+        "seconds": 8.88
+      },
+      "1-1": {
+        "file": "audio/reel09/v1-1.mp3",
         "seconds": 2.59
       },
-      "2": {
-        "file": "audio/reel09/n2.mp3",
+      "2-1": {
+        "file": "audio/reel09/v2-1.mp3",
         "seconds": 1.54
       },
-      "3": {
-        "file": "audio/reel09/n3.mp3",
-        "seconds": 1.88
+      "2-2": {
+        "file": "audio/reel09/v2-2.mp3",
+        "seconds": 1.93
       },
-      "4": {
-        "file": "audio/reel09/n4.mp3",
-        "seconds": 3.08
-      },
-      "5": {
-        "file": "audio/reel09/n5.mp3",
-        "seconds": 3.79
+      "3-2": {
+        "file": "audio/reel09/v3-2.mp3",
+        "seconds": 4.49
       }
     }
   },
   "reel10": {
-    "voice": {
-      "1": {
-        "file": "audio/reel10/n1.mp3",
-        "seconds": 3.13
+    "audio": {
+      "1-1": {
+        "file": "audio/reel10/v1-1.mp3",
+        "seconds": 3.4
       },
-      "2": {
-        "file": "audio/reel10/n2.mp3",
-        "seconds": 3.08
+      "2-1": {
+        "file": "audio/reel10/v2-1.mp3",
+        "seconds": 2.98
       },
-      "3": {
-        "file": "audio/reel10/n3.mp3",
-        "seconds": 4.15
+      "3-1": {
+        "file": "audio/reel10/v3-1.mp3",
+        "seconds": 4.28
       },
-      "4": {
-        "file": "audio/reel10/n4.mp3",
-        "seconds": 3.19
+      "4-1": {
+        "file": "audio/reel10/v4-1.mp3",
+        "seconds": 3.4
       },
-      "5": {
-        "file": "audio/reel10/n5.mp3",
-        "seconds": 3.58
+      "5-1": {
+        "file": "audio/reel10/v5-1.mp3",
+        "seconds": 3.74
       }
     }
   },
   "reel11": {
-    "voice": {
-      "1": {
-        "file": "audio/reel11/n1.mp3",
-        "seconds": 2.14
-      },
-      "2": {
-        "file": "audio/reel11/n2.mp3",
+    "audio": {
+      "2-1": {
+        "file": "audio/reel11/q2-1.mp3",
         "seconds": 4.34
       },
-      "3": {
-        "file": "audio/reel11/n3.mp3",
-        "seconds": 3.84
+      "1-1": {
+        "file": "audio/reel11/v1-1.mp3",
+        "seconds": 2.14
+      },
+      "2-2": {
+        "file": "audio/reel11/v2-2.mp3",
+        "seconds": 4.34
+      },
+      "2-3": {
+        "file": "audio/reel11/v2-3.mp3",
+        "seconds": 3.63
       }
     }
   },
   "reel12": {
-    "voice": {
-      "1": {
-        "file": "audio/reel12/n1.mp3",
-        "seconds": 2.9
+    "audio": {
+      "1-1": {
+        "file": "audio/reel12/v1-1.mp3",
+        "seconds": 2.38
       },
-      "2": {
-        "file": "audio/reel12/n2.mp3",
-        "seconds": 7.99
+      "2-1": {
+        "file": "audio/reel12/v2-1.mp3",
+        "seconds": 8.44
       }
     }
   }

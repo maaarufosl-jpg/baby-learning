@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Html5Audio, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {ACTIVE_BRAND as B, toBn} from '../brand';
-import {END_CARD_SECONDS, SCENE_SECONDS} from '../data/builders';
+import {buildTimeline, CROSSFADE, type ReelMedia} from '../data/timeline';
 import type {Card, Line, Reel} from '../data/types';
 import {ARABIC_FONT, BENGALI_FONT} from '../fonts';
 import mediaJson from '../media.json';
@@ -9,16 +9,11 @@ import {LogoMark} from './Logo';
 import {Nature} from './Nature';
 import {SCENES} from '../data/scenes';
 
-type Media = {
-  clips?: Record<string, {file: string; seconds: number}>;
-  voice?: Record<string, {file: string; seconds: number}>;
-  arabic?: {file: string; seconds: number};
-};
-const MEDIA = mediaJson as Record<string, Media>;
+const MEDIA = mediaJson as Record<string, ReelMedia>;
+type Media = ReelMedia;
 
-/** Scenes overlap by this much so each clip fades into the next. */
-const CROSSFADE = 0.6;
-export const REEL_SECONDS = 3 * SCENE_SECONDS;
+/** The reel laid out in time from its steps and the lengths of its recorded audio. */
+export const reelTimeline = (reel: Reel) => buildTimeline(reel, MEDIA[reel.id]);
 
 const BN = `'${BENGALI_FONT}', '${ARABIC_FONT}', sans-serif`;
 const AR = `'${ARABIC_FONT}', serif`;
@@ -63,7 +58,7 @@ const CardView: React.FC<{card: Card}> = ({card}) => {
     <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', padding: '0 80px 240px', opacity: out}}>
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 22, textAlign: 'center', maxWidth: 920}}>
         {card.lines.map((l, i) => {
-          const start = ((l.at ?? card.from) - card.from) * fps;
+          const start = (l.at - card.from) * fps;
           const t = interpolate(frame, [start, start + 0.55 * fps], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
           return (
             <div key={i} style={{...lineStyle(l), textShadow: SHADOW, opacity: t, transform: `translateY(${(1 - t) * 26}px)`}}>
@@ -77,40 +72,40 @@ const CardView: React.FC<{card: Card}> = ({card}) => {
 };
 
 /** Ambience for a drawn scene, fading in and out with the crossfade and dipping under the voice. */
-const Ambience: React.FC<{sound: string; offset: number; duckAt: (sec: number) => boolean; first: boolean; last: boolean}> = ({sound, offset, duckAt, first, last}) => {
+const Ambience: React.FC<{sound: string; seconds: number; offset: number; duck: (sec: number) => number; first: boolean; last: boolean}> = ({sound, seconds, offset, duck, first, last}) => {
   const {fps} = useVideoConfig();
-  const len = SCENE_SECONDS * fps;
+  const len = seconds * fps;
   const fade = CROSSFADE * fps;
   return (
     <Html5Audio
       src={staticFile(`sfx/${sound}.mp3`)}
       volume={(f) => {
         const env = Math.min(first ? 1 : f / fade, last ? 1 : (len - f) / fade, 1);
-        return Math.max(0, env) * (duckAt(offset + f / fps) ? 0.22 : 0.8);
+        return Math.max(0, env) * 0.8 * duck(offset + f / fps);
       }}
     />
   );
 };
 
-const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; duckAt: (sec: number) => boolean}> = ({reel, i, media, duckAt}) => {
+const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; seconds: number; duck: (sec: number) => number}> = ({reel, i, media, seconds, duck}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const scene = reel.scenes[i];
   const clip = media.clips?.[String(i + 1)];
-  const offset = i * (SCENE_SECONDS - CROSSFADE);
+  const offset = i * (seconds - CROSSFADE);
   const fadeIn = i === 0 ? 1 : interpolate(frame, [0, CROSSFADE * fps], [0, 1], {extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{opacity: fadeIn, background: `linear-gradient(180deg, ${scene.tint[0]}, ${scene.tint[1]})`}}>
       {clip ? (
         <OffthreadVideo
           src={staticFile(clip.file)}
-          volume={(f) => (duckAt(offset + f / fps) ? 0.22 : 0.7)}
+          volume={(f) => 0.7 * duck(offset + f / fps)}
           style={{width: '100%', height: '100%', objectFit: 'cover'}}
         />
       ) : (
         <>
-          <Nature scene={SCENES[scene.art]} seconds={SCENE_SECONDS} />
-          <Ambience sound={scene.sound} offset={offset} duckAt={duckAt} first={i === 0} last={i === reel.scenes.length - 1} />
+          <Nature scene={SCENES[scene.art]} seconds={seconds} />
+          <Ambience sound={scene.sound} seconds={seconds} offset={offset} duck={duck} first={i === 0} last={i === reel.scenes.length - 1} />
         </>
       )}
     </AbsoluteFill>
@@ -142,21 +137,23 @@ const EndCard: React.FC = () => {
   );
 };
 
-/** One vertical reel: three nature clips under a soft dark layer, timed text cards, Bengali narration and the end card. */
+/** One vertical reel: three nature scenes under a soft dark layer, timed text cards, narration, recitation and the end card. */
 export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
   const {fps} = useVideoConfig();
   const media = MEDIA[reel.id] ?? {};
-  const voices = reel.narration.map((n, i) => ({...n, clip: media.voice?.[String(i + 1)]}));
-  const windows: [number, number][] = voices.filter((v) => v.clip).map((v) => [v.at - 0.2, v.at + v.clip!.seconds + 0.2]);
-  if (media.arabic && reel.arabicVoice) windows.push([reel.arabicVoice.at - 0.2, reel.arabicVoice.at + media.arabic.seconds + 0.2]);
-  const duckAt = (sec: number) => windows.some(([a, b]) => sec >= a && sec <= b);
-  const sceneFrames = Math.round(SCENE_SECONDS * fps);
-  const endFrom = Math.round((REEL_SECONDS - END_CARD_SECONDS) * fps);
+  const tl = buildTimeline(reel, media);
+  // nature sound dips under the voice, and almost disappears under the recitation
+  const duck = (sec: number) => {
+    const s = tl.sounds.find((x) => x.file && sec >= x.at - 0.25 && sec <= x.at + x.seconds + 0.25);
+    return s ? (s.quran ? 0.12 : 0.28) : 1;
+  };
+  const sceneFrames = Math.round(tl.sceneSeconds * fps);
+  const endFrom = Math.round(tl.endAt * fps);
   return (
     <AbsoluteFill style={{background: B.colors.deep}}>
       {reel.scenes.map((_, i) => (
-        <Sequence key={i} from={Math.round(i * (SCENE_SECONDS - CROSSFADE) * fps)} durationInFrames={sceneFrames} name={`দৃশ্য ${i + 1}`}>
-          <SceneLayer reel={reel} i={i} media={media} duckAt={duckAt} />
+        <Sequence key={i} from={Math.round(i * (tl.sceneSeconds - CROSSFADE) * fps)} durationInFrames={sceneFrames} name={`দৃশ্য ${i + 1}`}>
+          <SceneLayer reel={reel} i={i} media={media} seconds={tl.sceneSeconds} duck={duck} />
         </Sequence>
       ))}
       {/* soft dark layer so text stays readable on any footage; darkest in the middle band where text sits */}
@@ -169,22 +166,17 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
       <Sequence durationInFrames={endFrom} layout="none">
         <Header />
       </Sequence>
-      {reel.cards.map((c, i) => (
+      {tl.cards.map((c, i) => (
         <Sequence key={i} from={Math.round(c.from * fps)} durationInFrames={Math.round((c.to - c.from) * fps)} name={`লেখা ${i + 1}`}>
           <CardView card={c} />
         </Sequence>
       ))}
-      {voices.map((v, i) =>
-        v.clip ? (
-          <Sequence key={i} from={Math.round(v.at * fps)} layout="none" name={`কণ্ঠ ${i + 1}`}>
-            <Html5Audio src={staticFile(v.clip.file)} />
+      {tl.sounds.map((s, i) =>
+        s.file ? (
+          <Sequence key={i} from={Math.round(s.at * fps)} layout="none" name={s.quran ? `তিলাওয়াত ${s.text}` : `কণ্ঠ ${i + 1}`}>
+            <Html5Audio src={staticFile(s.file)} />
           </Sequence>
         ) : null,
-      )}
-      {media.arabic && reel.arabicVoice && (
-        <Sequence from={Math.round(reel.arabicVoice.at * fps)} layout="none" name="আরবি কণ্ঠ">
-          <Html5Audio src={staticFile(media.arabic.file)} />
-        </Sequence>
       )}
       <Sequence from={endFrom} name="শেষ কার্ড">
         <EndCard />

@@ -1,21 +1,26 @@
 // Makes the soft, slow Bengali narration for one reel. Arabic text is never sent to an AI voice.
 // Default engine: Google Cloud Text-to-Speech, native Bengali Chirp 3 HD voices (key: GOOGLE_TTS_API_KEY).
 // Optional engine: ElevenLabs (key: ELEVENLABS_API_KEY). Keys come only from the environment, never from files.
-// Usage:
+// Usage ("all" instead of reel01 does every reel):
 //   node scripts/narrate.mjs reel01                               # Google, default voice
 //   node scripts/narrate.mjs reel01 --voice bn-IN-Chirp3-HD-Kore --speed 0.9
 //   node scripts/narrate.mjs reel01 --engine elevenlabs --voice Sarah
-//   --out <dir> writes test files there without touching src/media.json
 import {mkdirSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
-import {duration, readMedia, reelArg, writeMedia} from './lib.mjs';
+import {duration, loadData, readMedia, writeMedia} from './lib.mjs';
 
 export const DEFAULT_VOICE = 'bn-IN-Chirp3-HD-Aoede';
 const argv = process.argv.slice(3);
 const opt = (name, def) => (argv.includes(`--${name}`) ? argv[argv.indexOf(`--${name}`) + 1] : def);
 const engine = opt('engine', 'google');
 const speed = Number(opt('speed', '0.9'));
-const reel = await reelArg();
+const {reels, soundKey, isQuran, buildTimeline} = await loadData();
+const which = process.argv[2];
+const list = which === 'all' ? reels : reels.filter((r) => r.id === which || r.number === Number(which));
+if (!list.length) {
+  console.error('Which reel? e.g. "reel01", "1" or "all".');
+  process.exit(1);
+}
 const ARABIC = /[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿]/;
 
 const need = (name) => {
@@ -73,22 +78,24 @@ if (engine === 'google') {
   };
 }
 
-const custom = opt('out', '');
-const dir = custom || join('public', 'audio', reel.id);
-mkdirSync(dir, {recursive: true});
-console.log(`${reel.id}: ${engine} voice ${label}, speed ${speed}`);
-
 const media = readMedia();
-const entry = (media[reel.id] ??= {});
-if (!custom) entry.voice = {};
-for (const [i, line] of reel.narration.entries()) {
-  if (ARABIC.test(line.text)) throw new Error(`Line ${i + 1} contains Arabic; Arabic must be a human recording.`);
-  const file = join(dir, `n${i + 1}.mp3`);
-  writeFileSync(file, await speak(line.text));
-  const seconds = duration(file);
-  if (!custom) entry.voice[i + 1] = {file: file.replace(/^public\//, ''), seconds};
-  const next = reel.narration[i + 1]?.at ?? 21.8;
-  const warn = line.at + seconds > next ? `  ⚠ runs ${(line.at + seconds - next).toFixed(1)}s into the next line` : '';
-  console.log(`n${i + 1} @${line.at}s ${seconds}s  "${line.text}"${warn}`);
+console.log(`${engine} voice ${label}, speed ${speed}`);
+for (const reel of list) {
+  const dir = join('public', 'audio', reel.id);
+  mkdirSync(dir, {recursive: true});
+  const entry = (media[reel.id] ??= {});
+  entry.audio ??= {};
+  for (const [si, step] of reel.steps.entries()) {
+    for (const [k, s] of step.say.entries()) {
+      if (isQuran(s)) continue;
+      if (ARABIC.test(s.voice)) throw new Error(`${reel.id} ${soundKey(si, k)} contains Arabic; Arabic is never sent to an AI voice.`);
+      const file = join(dir, `v${si + 1}-${k + 1}.mp3`);
+      writeFileSync(file, await speak(s.voice));
+      entry.audio[soundKey(si, k)] = {file: file.replace(/^public\//, ''), seconds: duration(file)};
+      console.log(`${reel.id} ${soundKey(si, k)} ${entry.audio[soundKey(si, k)].seconds}s  "${s.voice}"`);
+    }
+  }
+  const t = buildTimeline(reel, entry);
+  console.log(`${reel.id}: ${t.total.toFixed(1)}s${t.total > 30 ? '  ⚠ longer than 30 s' : ''}`);
 }
-if (!custom) writeMedia(media);
+writeMedia(media);

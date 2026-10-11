@@ -1,6 +1,5 @@
-// Prepares the Gemini (Veo) clips and an optional recorded Arabic voice for one reel.
-//   Clips:  public/clips/<reel>/scene1.mp4, scene2.mp4, scene3.mp4 (mp4/mov/webm; only the number matters)
-//   Arabic: public/audio/<reel>/arabic.m4a (or .mp3/.wav/.ogg/.opus/.aac) — a person's recording, never AI
+// Optional: real video clips that replace a reel's drawn scenes.
+//   Clips: public/clips/<reel>/scene1.mp4, scene2.mp4, scene3.mp4 (mp4/mov/webm; only the number matters)
 // Clips become 1080x1920, 30 fps H.264, at most 8 s, with loudness-matched natural sound in _ready/.
 // Usage: node scripts/attach.mjs reel01
 import {execFileSync} from 'node:child_process';
@@ -36,18 +35,6 @@ if (existsSync(clipDir)) {
     entry.clips[n] = {file: `clips/${reel.id}/_ready/scene${n}.mp4`, seconds: duration(out)};
     console.log(`scene ${n}: ${name} -> ${entry.clips[n].seconds}s${hasAudio ? '' : ' (no sound in clip)'}`);
   }
-}
-
-const audioDir = join('public', 'audio', reel.id);
-const arabic = existsSync(audioDir) && readdirSync(audioDir).find((f) => /^arabic\.(m4a|mp3|wav|ogg|opus|aac)$/i.test(f));
-if (arabic) {
-  const out = join(audioDir, 'arabic-ready.wav');
-  // trim silence at the start, match loudness to the narration
-  execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', join(audioDir, arabic), '-af', 'silenceremove=start_periods=1:start_threshold=-45dB,loudnorm=I=-16:TP=-1.5:LRA=11', '-ar', '48000', out]);
-  entry.arabic = {file: `audio/${reel.id}/arabic-ready.wav`, seconds: duration(out)};
-  console.log(`arabic voice: ${arabic} -> ${entry.arabic.seconds}s`);
-} else {
-  delete entry.arabic;
 }
 
 writeMedia(media);
