@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {createContext, useContext} from 'react';
 import {AbsoluteFill, Html5Audio, Img, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {EP01_FALLBACK_IMAGE, EP01_IMAGE_MOVE, EP01_LEAD_IN, EP01_VOICE_OVER, EP01_IMAGE_SECONDS, EP01_OVERLAYS, ep01Clips, EP01_SCENE_COUNT, type ClipOverlay, type SceneMedia} from '../episodes/ep01-clips';
-import {ep01} from '../episodes/ep01';
+import {EP01_CONFIG} from '../episodes/ep01-clips';
+import type {ClipConfig, ClipOverlay, SceneMedia} from '../episodes/clip-types';
 import {getLayout} from '../layout';
 import {colors} from '../theme';
 import {toBn} from './Episode';
 import {DuaPanel, Footnote, QuestionMark, SilencePrompt, SpeechBubble, Star, TEXT_FONT, Title} from './Overlays';
 
 const PLACEHOLDER_SECONDS = 3;
+
+const Cfg = createContext<ClipConfig>(EP01_CONFIG);
+const useCfg = () => useContext(Cfg);
 const INTRO_SECONDS = 3.5;
 
 /** Dua panels over full-frame artwork are drawn smaller and higher so they don't cover the characters' faces. */
@@ -23,21 +26,24 @@ const Compact: React.FC<{children: React.ReactNode; align?: 'center' | 'right'}>
 );
 
 /** Scenes in order: own video clip, own image, a borrowed image, or a placeholder. */
-export const clipScenes = (fps: number) =>
-  Array.from({length: EP01_SCENE_COUNT}, (_, i) => {
+export const clipScenes = (fps: number, cfg: ClipConfig = EP01_CONFIG) =>
+  Array.from({length: cfg.sceneCount}, (_, i) => {
     const n = i + 1;
-    const own = ep01Clips[String(n)];
-    const borrowed = !own && EP01_FALLBACK_IMAGE[n] ? ep01Clips[String(EP01_FALLBACK_IMAGE[n])] : undefined;
+    const own = cfg.clips[String(n)] ?? cfg.borrowClip?.[n];
+    const fb = cfg.fallbackImage?.[n];
+    const borrowed = !own && fb ? cfg.clips[String(fb)] : undefined;
     const media: SceneMedia | undefined = own ?? (borrowed?.image ? {image: borrowed.image} : undefined);
-    const seconds = media?.file ? media.seconds ?? PLACEHOLDER_SECONDS : EP01_IMAGE_SECONDS[n] ?? PLACEHOLDER_SECONDS;
-    const lead = media?.file && EP01_LEAD_IN[n] ? Math.round(EP01_LEAD_IN[n].seconds * fps) : 0;
+    const seconds = media?.file ? media.seconds ?? PLACEHOLDER_SECONDS : cfg.imageSeconds?.[n] ?? PLACEHOLDER_SECONDS;
+    const li = cfg.leadIn?.[n];
+    const lead = media?.file && li ? Math.round(li.seconds * fps) : 0;
     return {n, media, lead, frames: lead + Math.round(seconds * fps)};
   });
 
-export const clipEpisodeFrames = (fps: number) => Math.round(INTRO_SECONDS * fps) + clipScenes(fps).reduce((s, c) => s + c.frames, 0);
+export const clipEpisodeFrames = (fps: number, cfg: ClipConfig = EP01_CONFIG) => Math.round(INTRO_SECONDS * fps) + clipScenes(fps, cfg).reduce((s, c) => s + c.frames, 0);
 
 /** Opening card: series logo and episode name above the four characters. */
 const IntroCard: React.FC<{frames: number}> = ({frames}) => {
+  const cfg = useCfg();
   const frame = useCurrentFrame();
   const {width, height} = useVideoConfig();
   const layout = getLayout(width, height);
@@ -46,7 +52,7 @@ const IntroCard: React.FC<{frames: number}> = ({frames}) => {
   return (
     <AbsoluteFill style={{background: `linear-gradient(180deg, ${colors.sky} 0%, ${colors.cream} 60%)`}}>
       <Img src={staticFile('thumb/lineup.jpg')} style={{position: 'absolute', left: '50%', bottom: 0, width: 1500, transform: `translate(-50%, ${rise}px)`, borderRadius: '48px 48px 0 0'}} />
-      <Title layout={{...layout, titleTop: 60}} episodeLabel={`পর্ব ${toBn(ep01.number)} · ${ep01.title}`} />
+      <Title layout={{...layout, titleTop: 60}} episodeLabel={`পর্ব ${toBn(cfg.number)} · ${cfg.title}`} />
       {fadeOut > 0 && <AbsoluteFill style={{background: colors.cream, opacity: fadeOut}} />}
     </AbsoluteFill>
   );
@@ -62,46 +68,101 @@ const Window: React.FC<{frames: number; from?: number; to?: number; children: Re
   );
 };
 
-const RepeatOverlay: React.FC<{frames: number; parts: [number, number, number]}> = ({frames, parts}) => {
+const RepeatOverlay: React.FC<{frames: number; parts: number[]; until?: number; align?: 'center' | 'right'}> = ({frames, parts, until = 1, align}) => {
+  const cfg = useCfg();
   const frame = useCurrentFrame();
   const {width, height} = useVideoConfig();
   const layout = getLayout(width, height);
   const starts = parts.map((p) => Math.round(p * frames));
   const active = starts.reduce((acc, s, i) => (frame >= s ? i : acc), -1);
-  const nextStart = active >= 0 ? starts[active + 1] ?? frames : starts[0];
-  const inSilence = active >= 0 && frame > starts[active] + 20 && frame < nextStart;
+  const last = starts[starts.length - 1];
+  const silenceFrom = last + 20;
+  const silenceTo = Math.round(until * frames);
   // The panel arrives just before the first syllable, so an earlier speech bubble is not hidden behind it.
   if (frame < starts[0] - 8) return null;
   return (
     <>
-      <Compact>
-        <DuaPanel dua={ep01.dua} display={{mode: 'full', highlightPart: active >= 0 ? active : undefined}} layout={layout} beatFrames={frames} hasSpeech={false} animateIn />
+      <Compact align={align}>
+        <DuaPanel dua={cfg.dua} display={{mode: 'full', highlightPart: active >= 0 ? active : undefined}} layout={layout} beatFrames={frames} hasSpeech={false} animateIn />
       </Compact>
-      {inSilence && (
-        <Sequence from={starts[active] + 20} layout="none">
-          <SilencePrompt layout={layout} beatFrames={Math.max(30, nextStart - starts[active] - 20)} />
+      {silenceTo > silenceFrom && (
+        <Sequence from={silenceFrom} durationInFrames={silenceTo - silenceFrom} layout="none">
+          <SilencePrompt layout={layout} beatFrames={silenceTo - silenceFrom} />
         </Sequence>
       )}
     </>
   );
 };
 
+/** Lights up one syllable after another at given moments (fractions of the scene). */
+const TimedSyllables: React.FC<{frames: number; times: number[]; align?: 'center' | 'right'; pop: boolean}> = ({frames, times, align, pop}) => {
+  const cfg = useCfg();
+  const frame = useCurrentFrame();
+  const {width, height} = useVideoConfig();
+  const layout = getLayout(width, height);
+  const starts = times.map((t) => Math.round(t * frames));
+  const active = starts.reduce((acc, s, i) => (frame >= s ? i : acc), -1);
+  return (
+    <Compact align={align}>
+      <DuaPanel dua={cfg.dua} display={{mode: 'full', highlightPart: active >= 0 ? active : undefined}} layout={layout} beatFrames={frames} hasSpeech={false} animateIn={pop} />
+    </Compact>
+  );
+};
+
+/** Small reminder of the previous episode's dua. */
+const Recap: React.FC = () => {
+  const cfg = useCfg();
+  const frame = useCurrentFrame();
+  if (!cfg.previousDua) return null;
+  const pop = interpolate(frame, [0, 10], [0, 1], {extrapolateRight: 'clamp'});
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: 40,
+        left: 40,
+        opacity: pop,
+        transform: `translateY(${(1 - pop) * -20}px)`,
+        background: colors.white,
+        border: `6px solid ${colors.gold}`,
+        borderRadius: 32,
+        padding: '10px 30px 14px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: 24,
+        boxShadow: '0 10px 0 rgba(59,58,74,0.10)',
+      }}
+    >
+      <span style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: 34, color: colors.inkSoft}}>গত পর্বের দোয়া</span>
+      <span style={{fontFamily: "'Amiri', serif", fontWeight: 700, fontSize: 64, color: colors.ink, direction: 'rtl'}}>{cfg.previousDua.arabic}</span>
+      <span style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: 40, color: colors.peachDark}}>{cfg.previousDua.parts.join('-')}</span>
+    </div>
+  );
+};
+
 const Overlay: React.FC<{o: ClipOverlay; frames: number}> = ({o, frames}) => {
+  const cfg = useCfg();
   const {width, height} = useVideoConfig();
   const layout = getLayout(width, height);
   switch (o.type) {
     case 'title':
       return (
         <Window frames={frames} to={o.to ?? 0.85}>
-          <Title layout={layout} episodeLabel={`পর্ব ${toBn(ep01.number)} · ${ep01.title}`} />
+          <Title layout={layout} episodeLabel={`পর্ব ${toBn(cfg.number)} · ${cfg.title}`} />
         </Window>
       );
     case 'dua':
+      if (o.mode === 'broken' && o.times)
+        return (
+          <Window frames={frames} from={o.from} to={o.to}>
+            <TimedSyllables frames={frames} times={o.times.map((t) => t - (o.from ?? 0))} align={o.align} pop={o.pop ?? (o.from ?? 0) < 0.1} />
+          </Window>
+        );
       return (
         <Window frames={frames} from={o.from} to={o.to}>
           <Compact align={o.align}>
             <DuaPanel
-              dua={ep01.dua}
+              dua={cfg.dua}
               display={{mode: o.mode, showMeaning: o.showMeaning}}
               layout={layout}
               beatFrames={Math.round(((o.to ?? 1) - (o.from ?? 0)) * frames)}
@@ -112,7 +173,7 @@ const Overlay: React.FC<{o: ClipOverlay; frames: number}> = ({o, frames}) => {
         </Window>
       );
     case 'repeat':
-      return <RepeatOverlay frames={frames} parts={o.parts} />;
+      return <RepeatOverlay frames={frames} parts={o.parts} until={o.until} align={o.align} />;
     case 'star':
       return (
         <Window frames={frames} from={o.at} to={Math.min(1, o.at + 0.35)}>
@@ -135,10 +196,16 @@ const Overlay: React.FC<{o: ClipOverlay; frames: number}> = ({o, frames}) => {
           <SpeechBubble speech={{who: o.who, text: o.text, label: o.label}} layout={layout} top={o.top} />
         </Window>
       );
+    case 'recap':
+      return (
+        <Window frames={frames} from={o.from} to={o.to}>
+          <Recap />
+        </Window>
+      );
     case 'card':
       return (
         <Window frames={frames} from={o.from}>
-          <DuaPanel dua={ep01.dua} display={{mode: 'card'}} layout={layout.portrait ? layout : {...layout, cardCenterX: 1470, cardW: 780}} beatFrames={frames} hasSpeech={false} animateIn />
+          <DuaPanel dua={cfg.dua} display={{mode: 'card'}} layout={layout.portrait ? layout : {...layout, cardCenterX: 1470, cardW: 780}} beatFrames={frames} hasSpeech={false} animateIn />
         </Window>
       );
   }
@@ -152,8 +219,9 @@ const Placeholder: React.FC<{n: number}> = ({n}) => (
 );
 
 const StillImage: React.FC<{n: number; src: string; frames: number}> = ({n, src, frames}) => {
+  const cfg = useCfg();
   const frame = useCurrentFrame();
-  const move = EP01_IMAGE_MOVE[n] ?? {to: 1.07, origin: [n % 2 ? 40 : 60, 45] as [number, number]};
+  const move = cfg.imageMove?.[n] ?? {to: 1.07, origin: [n % 2 ? 40 : 60, 45] as [number, number]};
   const t = interpolate(frame, [0, frames], [0, 1], {extrapolateRight: 'clamp'});
   const eased = t * t * (3 - 2 * t);
   const scale = 1 + (move.to - 1) * eased;
@@ -168,8 +236,9 @@ const StillImage: React.FC<{n: number; src: string; frames: number}> = ({n, src,
 };
 
 const SceneBody: React.FC<{n: number; media?: SceneMedia; frames: number}> = ({n, media, frames}) => {
+  const cfg = useCfg();
   const {fps} = useVideoConfig();
-  const voices = EP01_VOICE_OVER[n] ?? [];
+  const voices = cfg.voiceOver?.[n] ?? [];
   const windows = voices.map((v) => [Math.round(v.at * frames), Math.round(v.at * frames + v.seconds * fps)] as const);
   const clipVolume = (f: number) => (windows.some(([s, e]) => f >= s - 6 && f <= e + 6) ? 0.25 : 1);
   return (
@@ -186,7 +255,7 @@ const SceneBody: React.FC<{n: number; media?: SceneMedia; frames: number}> = ({n
           <Html5Audio src={staticFile(v.audio)} />
         </Sequence>
       ))}
-      {(EP01_OVERLAYS[n] ?? []).map((o, i) => (
+      {(cfg.overlays[n] ?? []).map((o, i) => (
         <Overlay key={i} o={o} frames={frames} />
       ))}
     </AbsoluteFill>
@@ -194,10 +263,11 @@ const SceneBody: React.FC<{n: number; media?: SceneMedia; frames: number}> = ({n
 };
 
 const LeadIn: React.FC<{n: number; frames: number}> = ({n, frames}) => {
+  const cfg = useCfg();
   const frame = useCurrentFrame();
   const {width, height} = useVideoConfig();
   const layout = getLayout(width, height);
-  const lead = EP01_LEAD_IN[n];
+  const lead = cfg.leadIn![n];
   const t = interpolate(frame, [0, frames], [0, 1], {extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{overflow: 'hidden'}}>
@@ -232,10 +302,17 @@ const Scene: React.FC<{n: number; media?: SceneMedia; frames: number; lead: numb
   );
 };
 
-/** Episode 1 assembled from AI-generated scene clips, with title, dua panels, repeat prompt and end card on top. */
-export const ClipEpisode: React.FC = () => {
+/** An episode assembled from AI-generated scene clips, with title, dua panels, repeat prompt and end card on top. */
+export const ClipEpisode: React.FC<{cfg?: ClipConfig}> = ({cfg = EP01_CONFIG}) => (
+  <Cfg.Provider value={cfg}>
+    <ClipEpisodeBody />
+  </Cfg.Provider>
+);
+
+const ClipEpisodeBody: React.FC = () => {
+  const cfg = useCfg();
   const {fps} = useVideoConfig();
-  const scenes = clipScenes(fps);
+  const scenes = clipScenes(fps, cfg);
   const introFrames = Math.round(INTRO_SECONDS * fps);
   let from = introFrames;
   return (

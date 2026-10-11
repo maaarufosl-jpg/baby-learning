@@ -1,21 +1,14 @@
 import clips from './ep01.clips.json';
-import type {CharacterId} from '../types';
+import type {ClipConfig, ClipOverlay, SceneMedia} from './clip-types';
+import {ep01} from './ep01';
+
+export type {ClipOverlay, SceneMedia};
 
 /**
  * Overlays drawn on top of the scene clips or still images of episode 1
  * (scene numbers follow episodes/ep01-gemini-prompts.md).
  * Times are fractions of the scene's length (0 = start, 1 = end) so they still fit if a clip is longer or shorter.
  */
-export type ClipOverlay =
-  | {type: 'title'; to?: number}
-  | {type: 'dua'; mode: 'full' | 'broken'; from?: number; to?: number; showMeaning?: boolean; pop?: boolean; align?: 'center' | 'right'}
-  | {type: 'repeat'; parts: [number, number, number]}
-  | {type: 'star'; at: number}
-  | {type: 'footnote'; text: string}
-  | {type: 'card'; from: number}
-  | {type: 'question'; from: number; x?: number; y?: number}
-  | {type: 'say'; who: CharacterId | 'narrator' | 'everyone'; text: string; from: number; to: number; label?: string; top?: number};
-
 export const EP01_SCENE_COUNT = 15;
 
 /** Length of each scene when it is a still image (a video clip uses its own length). */
@@ -119,5 +112,18 @@ export const EP01_VOICE_OVER: Record<number, {audio: string; at: number; seconds
   ],
 };
 
-export type SceneMedia = {file?: string; image?: string; seconds?: number};
 export const ep01Clips = clips as Record<string, SceneMedia>;
+
+export const EP01_CONFIG: ClipConfig = {
+  number: ep01.number,
+  title: ep01.title,
+  dua: ep01.dua,
+  sceneCount: EP01_SCENE_COUNT,
+  clips: ep01Clips,
+  overlays: EP01_OVERLAYS,
+  imageSeconds: EP01_IMAGE_SECONDS,
+  imageMove: EP01_IMAGE_MOVE,
+  fallbackImage: EP01_FALLBACK_IMAGE,
+  leadIn: EP01_LEAD_IN,
+  voiceOver: EP01_VOICE_OVER,
+};
