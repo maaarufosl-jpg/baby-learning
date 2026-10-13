@@ -17,7 +17,7 @@ export type ClipOverlay =
       /** For 'broken': when each syllable lights up, as fractions of the scene. Evenly spaced if left out. */
       times?: number[];
     }
-  | {type: 'repeat'; parts: number[]; until?: number; align?: 'center' | 'right'}
+  | {type: 'repeat'; parts: number[]; until?: number; align?: 'center' | 'right'; /** Panel size, 0.62 by default. */ scale?: number}
   | {type: 'star'; at: number}
   | {type: 'footnote'; text: string}
   | {type: 'card'; from: number}

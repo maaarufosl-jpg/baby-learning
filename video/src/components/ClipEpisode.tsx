@@ -14,10 +14,10 @@ const useCfg = () => useContext(Cfg);
 const INTRO_SECONDS = 3.5;
 
 /** Dua panels over full-frame artwork are drawn smaller and higher so they don't cover the characters' faces. */
-const Compact: React.FC<{children: React.ReactNode; align?: 'center' | 'right'}> = ({children, align = 'center'}) => (
+const Compact: React.FC<{children: React.ReactNode; align?: 'center' | 'right'; scale?: number}> = ({children, align = 'center', scale}) => (
   <AbsoluteFill
     style={{
-      transform: align === 'right' ? 'translate(-40px, -72px) scale(0.6)' : 'translateY(-72px) scale(0.62)',
+      transform: align === 'right' ? `translate(-40px, -72px) scale(${scale ?? 0.6})` : `translateY(-72px) scale(${scale ?? 0.62})`,
       transformOrigin: align === 'right' ? '100% 0%' : '50% 0%',
     }}
   >
@@ -68,7 +68,7 @@ const Window: React.FC<{frames: number; from?: number; to?: number; children: Re
   );
 };
 
-const RepeatOverlay: React.FC<{frames: number; parts: number[]; until?: number; align?: 'center' | 'right'}> = ({frames, parts, until = 1, align}) => {
+const RepeatOverlay: React.FC<{frames: number; parts: number[]; until?: number; align?: 'center' | 'right'; scale?: number}> = ({frames, parts, until = 1, align, scale}) => {
   const cfg = useCfg();
   const frame = useCurrentFrame();
   const {width, height} = useVideoConfig();
@@ -82,7 +82,7 @@ const RepeatOverlay: React.FC<{frames: number; parts: number[]; until?: number; 
   if (frame < starts[0] - 8) return null;
   return (
     <>
-      <Compact align={align}>
+      <Compact align={align} scale={scale}>
         <DuaPanel dua={cfg.dua} display={{mode: 'full', highlightPart: active >= 0 ? active : undefined}} layout={layout} beatFrames={frames} hasSpeech={false} animateIn />
       </Compact>
       {silenceTo > silenceFrom && (
@@ -173,7 +173,7 @@ const Overlay: React.FC<{o: ClipOverlay; frames: number}> = ({o, frames}) => {
         </Window>
       );
     case 'repeat':
-      return <RepeatOverlay frames={frames} parts={o.parts} until={o.until} align={o.align} />;
+      return <RepeatOverlay frames={frames} parts={o.parts} until={o.until} align={o.align} scale={o.scale} />;
     case 'star':
       return (
         <Window frames={frames} from={o.at} to={Math.min(1, o.at + 0.35)}>

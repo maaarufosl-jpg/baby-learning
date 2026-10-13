@@ -150,13 +150,14 @@ export const DuaPanel: React.FC<{dua: Dua; display: DuaDisplay; layout: Layout; 
       >
         {dua.arabic}
       </div>
-      <div style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: card ? (dua.parts.length > 3 ? 62 : 80) : 92, color: colors.inkSoft, marginTop: 6}}>
+      <div style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: Math.round((card ? (dua.parts.length > 3 ? 62 : 80) : 92) * (dua.parts.join('').length > 24 ? 0.85 : 1)), color: colors.inkSoft, marginTop: 6}}>
         {dua.parts.map((p, i) => {
           const isActive = active === i;
           const dim = active !== -1 && !isActive;
           const bounce = isActive ? spring({frame: frame - partStart(i), fps: 30, config: {damping: 9}}) : 0;
           return (
-            <React.Fragment key={i}>
+            // The dash stays with the part after it, so a long dua wraps without a dash dangling at the line end.
+            <span key={i} style={{whiteSpace: 'nowrap'}}>
               {i > 0 && <span style={{opacity: 0.4}}>-</span>}
               <span
                 style={{
@@ -168,7 +169,7 @@ export const DuaPanel: React.FC<{dua: Dua; display: DuaDisplay; layout: Layout; 
               >
                 {p}
               </span>
-            </React.Fragment>
+            </span>
           );
         })}
       </div>

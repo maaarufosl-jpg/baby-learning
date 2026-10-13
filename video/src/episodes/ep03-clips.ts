@@ -30,6 +30,17 @@ export const EP03_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'শুরুতে ভুলে গেলে,\nমনে পড়লেই বলবে।', from: 0.58, to: 0.95, top: 740},
     {type: 'footnote', text: 'আবু দাউদ ৩৭৬৭, তিরমিজি ১৮৫৮'},
   ],
+  // Ma says the parts at about 1.5s, 3.3s and 3.9s; Umayer repeats the whole dua from about 4.8s.
+  7: [
+    {type: 'dua', mode: 'full', from: 0.02, to: 0.13, pop: true, align: 'right'},
+    {type: 'dua', mode: 'broken', from: 0.13, to: 0.47, pop: false, align: 'right', times: [0.15, 0.33, 0.39]},
+    {type: 'dua', mode: 'full', from: 0.47, showMeaning: true, pop: false, align: 'right'},
+    {type: 'star', at: 0.72},
+  ],
+  8: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.28},
+    {type: 'repeat', parts: [0.31, 0.51, 0.65], until: 0.95, scale: 0.48},
+  ],
 };
 
 export const ep03Clips = clips as Record<string, SceneMedia>;
