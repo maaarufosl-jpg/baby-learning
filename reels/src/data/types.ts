@@ -45,6 +45,8 @@ export type Reel = {
   number: number;
   kind: Kind;
   title: string;
+  /** Bengali narration voice for this reel, when it differs from the series default. */
+  voice?: string;
   scenes: Scene[];
   steps: Step[];
   /** Every reference shown or used, for the scholar. */

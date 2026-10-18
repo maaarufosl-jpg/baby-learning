@@ -42,14 +42,14 @@ if (engine === 'google') {
   const key = need('GOOGLE_TTS_API_KEY');
   const name = opt('voice', DEFAULT_VOICE);
   label = name;
-  speak = async (text) => {
+  speak = async (text, voiceName = name) => {
     const res = await ok(
       await fetch('https://texttospeech.googleapis.com/v1/text:synthesize', {
         method: 'POST',
         headers: {'Content-Type': 'application/json', 'X-Goog-Api-Key': key},
         body: JSON.stringify({
           input: {text},
-          voice: {languageCode: 'bn-IN', name},
+          voice: {languageCode: 'bn-IN', name: voiceName},
           audioConfig: {audioEncoding: 'MP3', speakingRate: speed, sampleRateHertz: 44100},
         }),
       }),
@@ -98,6 +98,7 @@ for (const reel of list) {
   mkdirSync(dir, {recursive: true});
   const entry = (media[reel.id] ??= {});
   entry.audio ??= {};
+  if (reel.voice && engine === 'google' && !argv.includes('--voice')) console.log(`${reel.id}: own voice ${reel.voice}`);
   for (const [si, step] of reel.steps.entries()) {
     for (const [k, s] of step.say.entries()) {
       if (isQuran(s)) continue;
@@ -111,7 +112,7 @@ for (const reel of list) {
       }
       if (ARABIC.test(s.voice)) throw new Error(`${reel.id} ${soundKey(si, k)} contains Arabic; Arabic is never sent to an AI voice.`);
       const file = join(dir, `v${si + 1}-${k + 1}.mp3`);
-      writeFileSync(file, await speak(s.voice));
+      writeFileSync(file, await speak(s.voice, reel.voice && engine === 'google' && !argv.includes('--voice') ? reel.voice : undefined));
       entry.audio[soundKey(si, k)] = {file: file.replace(/^public\//, ''), seconds: duration(file)};
       console.log(`${reel.id} ${soundKey(si, k)} ${entry.audio[soundKey(si, k)].seconds}s  "${s.voice}"`);
     }
