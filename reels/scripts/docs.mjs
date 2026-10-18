@@ -4,7 +4,7 @@
 import {mkdirSync, writeFileSync} from 'node:fs';
 import {loadData, readMedia} from './lib.mjs';
 
-const {reels, buildTimeline} = await loadData();
+const {reels, buildTimeline, CAPTIONS} = await loadData();
 const media = readMedia();
 const BN = '০১২৩৪৫৬৭৮৯';
 const bn = (x) => String(x).replace(/\d/g, (d) => BN[d]);
@@ -43,6 +43,12 @@ for (const r of reels) {
     `# রিল ${bn(r.number)}: ${r.title}`,
     '',
     `ধরন: ${KIND[r.kind]} · দৈর্ঘ্য: প্রায় ${len(tl.total)} সেকেন্ড · খাড়া ১০৮০×১৯২০ · তিনটি প্রকৃতির দৃশ্য`,
+    '',
+    '## পোস্টের ক্যাপশন (কপি করে রিলের বিবরণে দিন)',
+    '',
+    '```',
+    CAPTIONS[r.id] ?? '',
+    '```',
     '',
     '## দৃশ্য (কোডে আঁকা প্রকৃতি, কোনো মানুষ বা প্রাণী নেই)',
     '',
@@ -85,4 +91,8 @@ const list = [
   '',
 ];
 writeFileSync('docs/reels-list.md', list.join('\n'));
+writeFileSync(
+  'docs/captions.md',
+  ['# পোস্টের ক্যাপশন', '', 'প্রতিটি রিলের সাথে কপি করে বিবরণে দিন।', '', ...reels.flatMap((r) => [`## রিল ${bn(r.number)}: ${r.title}`, '', '```', CAPTIONS[r.id] ?? '', '```', ''])].join('\n'),
+);
 console.log(`Wrote ${reels.length} reel plans and docs/reels-list.md`);
