@@ -43,6 +43,11 @@ export const EP04_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'মাশাআল্লাহ।', from: 0.4, to: 0.53, top: 880},
     {type: 'say', who: 'ammu', text: 'আল্লাহ তোমাকে দেখে রাখবেন।', from: 0.53, to: 0.85, top: 880},
   ],
+  // Mirrored before 2.46s and after 5.46s, where Gemini had him on his left side; the close-up between was already right.
+  9: [
+    {type: 'say', who: 'umayer', text: 'মিউ, তুমিও ডান কাতে শোও!', from: 0.27, to: 0.56, top: 880},
+    {type: 'say', who: 'miu', text: 'মিউ...', from: 0.72, to: 0.85, top: 880},
+  ],
 };
 
 export const ep04Clips = clips as Record<string, SceneMedia>;
