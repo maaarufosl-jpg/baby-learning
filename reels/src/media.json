@@ -39,15 +39,15 @@
       },
       "1-1": {
         "file": "audio/reel03/v1-1.mp3",
-        "seconds": 3.34
+        "seconds": 3.08
       },
       "2-2": {
         "file": "audio/reel03/v2-2.mp3",
-        "seconds": 2.98
+        "seconds": 2.59
       },
       "2-3": {
         "file": "audio/reel03/v2-3.mp3",
-        "seconds": 2.8
+        "seconds": 3.19
       },
       "2-4": {
         "file": "audio/reel03/v2-4.mp3",
@@ -59,15 +59,15 @@
     "audio": {
       "1-1": {
         "file": "audio/reel04/v1-1.mp3",
-        "seconds": 2.48
+        "seconds": 2.33
       },
       "2-1": {
         "file": "audio/reel04/a2-1.mp3",
-        "seconds": 2.64
+        "seconds": 2.87
       },
       "2-2": {
         "file": "audio/reel04/v2-2.mp3",
-        "seconds": 2.69
+        "seconds": 2.59
       },
       "2-3": {
         "file": "audio/reel04/v2-3.mp3",
@@ -83,23 +83,23 @@
       },
       "1-1": {
         "file": "audio/reel05/v1-1.mp3",
-        "seconds": 2.64
+        "seconds": 2.59
       },
       "2-1": {
         "file": "audio/reel05/v2-1.mp3",
-        "seconds": 1.49
+        "seconds": 1.33
       },
       "2-2": {
         "file": "audio/reel05/v2-2.mp3",
-        "seconds": 2.43
+        "seconds": 2.09
       },
       "3-2": {
         "file": "audio/reel05/v3-2.mp3",
-        "seconds": 3.4
+        "seconds": 3.13
       },
       "3-3": {
         "file": "audio/reel05/v3-3.mp3",
-        "seconds": 3.4
+        "seconds": 3.19
       }
     }
   },
@@ -111,15 +111,15 @@
       },
       "1-1": {
         "file": "audio/reel07/v1-1.mp3",
-        "seconds": 3.89
+        "seconds": 3.4
       },
       "2-2": {
         "file": "audio/reel07/v2-2.mp3",
-        "seconds": 3.63
+        "seconds": 4.44
       },
       "2-3": {
         "file": "audio/reel07/v2-3.mp3",
-        "seconds": 2.74
+        "seconds": 2.9
       }
     }
   },
@@ -127,19 +127,19 @@
     "audio": {
       "1-1": {
         "file": "audio/reel08/v1-1.mp3",
-        "seconds": 2.53
+        "seconds": 2.33
       },
       "2-1": {
         "file": "audio/reel08/a2-1.mp3",
-        "seconds": 2.93
+        "seconds": 2.77
       },
       "2-2": {
         "file": "audio/reel08/v2-2.mp3",
-        "seconds": 2.33
+        "seconds": 2.14
       },
       "2-3": {
         "file": "audio/reel08/v2-3.mp3",
-        "seconds": 2.93
+        "seconds": 3.13
       }
     }
   },
@@ -151,19 +151,19 @@
       },
       "1-1": {
         "file": "audio/reel09/v1-1.mp3",
-        "seconds": 2.59
+        "seconds": 2.48
       },
       "2-1": {
         "file": "audio/reel09/v2-1.mp3",
-        "seconds": 1.54
+        "seconds": 1.49
       },
       "2-2": {
         "file": "audio/reel09/v2-2.mp3",
-        "seconds": 1.93
+        "seconds": 1.99
       },
       "3-2": {
         "file": "audio/reel09/v3-2.mp3",
-        "seconds": 4.49
+        "seconds": 4.83
       }
     }
   },
@@ -175,15 +175,15 @@
       },
       "1-1": {
         "file": "audio/reel11/v1-1.mp3",
-        "seconds": 2.14
+        "seconds": 1.83
       },
       "2-2": {
         "file": "audio/reel11/v2-2.mp3",
-        "seconds": 4.34
+        "seconds": 3.89
       },
       "2-3": {
         "file": "audio/reel11/v2-3.mp3",
-        "seconds": 3.63
+        "seconds": 3.89
       }
     }
   },
@@ -191,15 +191,15 @@
     "audio": {
       "1-1": {
         "file": "audio/reel12/v1-1.mp3",
-        "seconds": 2.53
+        "seconds": 2.48
       },
       "2-1": {
         "file": "audio/reel12/a2-1.mp3",
-        "seconds": 5.12
+        "seconds": 6.4
       },
       "2-2": {
         "file": "audio/reel12/v2-2.mp3",
-        "seconds": 7.76
+        "seconds": 8.49
       }
     }
   },
@@ -211,19 +211,19 @@
       },
       "2-1": {
         "file": "audio/reel02/a2-1.mp3",
-        "seconds": 1.91
+        "seconds": 1.28
       },
       "2-2": {
         "file": "audio/reel02/v2-2.mp3",
-        "seconds": 2.74
+        "seconds": 2.69
       },
       "3-1": {
         "file": "audio/reel02/a3-1.mp3",
-        "seconds": 1.65
+        "seconds": 2.27
       },
       "3-2": {
         "file": "audio/reel02/v3-2.mp3",
-        "seconds": 2.74
+        "seconds": 3.4
       }
     }
   },
@@ -231,23 +231,23 @@
     "audio": {
       "1-1": {
         "file": "audio/reel06/v1-1.mp3",
-        "seconds": 2.8
+        "seconds": 2.93
       },
       "2-1": {
         "file": "audio/reel06/a2-1.mp3",
-        "seconds": 3.08
+        "seconds": 3
       },
       "2-2": {
         "file": "audio/reel06/v2-2.mp3",
-        "seconds": 4.55
+        "seconds": 4.44
       },
       "3-1": {
         "file": "audio/reel06/a3-1.mp3",
-        "seconds": 3.08
+        "seconds": 2.93
       },
       "3-2": {
         "file": "audio/reel06/v3-2.mp3",
-        "seconds": 3.4
+        "seconds": 3.13
       }
     }
   },
@@ -255,7 +255,7 @@
     "audio": {
       "1-1": {
         "file": "audio/reel10/v1-1.mp3",
-        "seconds": 3.24
+        "seconds": 2.8
       },
       "2-1": {
         "file": "audio/reel10/a2-1.mp3",
@@ -263,15 +263,15 @@
       },
       "2-2": {
         "file": "audio/reel10/v2-2.mp3",
-        "seconds": 2.48
+        "seconds": 2.3
       },
       "3-1": {
         "file": "audio/reel10/a3-1.mp3",
-        "seconds": 2.77
+        "seconds": 2.27
       },
       "3-2": {
         "file": "audio/reel10/v3-2.mp3",
-        "seconds": 3.13
+        "seconds": 3.84
       }
     }
   }

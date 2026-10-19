@@ -8,7 +8,6 @@ const HADITH_NUMBERING =
 export const reels: Reel[] = [
   asmaReel({
     id: 'reel01',
-    voice: 'bn-IN-Chirp3-HD-Charon',
     number: 1,
     title: 'আর-রহমান: পরম দয়াময়',
     count: '১',

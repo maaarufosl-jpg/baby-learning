@@ -9,7 +9,7 @@ import {mkdirSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {duration, loadData, readMedia, writeMedia} from './lib.mjs';
 
-export const DEFAULT_VOICE = 'bn-IN-Chirp3-HD-Aoede';
+export const DEFAULT_VOICE = 'bn-IN-Chirp3-HD-Charon';
 const argv = process.argv.slice(3);
 const opt = (name, def) => (argv.includes(`--${name}`) ? argv[argv.indexOf(`--${name}`) + 1] : def);
 const engine = opt('engine', 'google');
