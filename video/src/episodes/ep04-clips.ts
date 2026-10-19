@@ -48,6 +48,11 @@ export const EP04_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'মিউ, তুমিও ডান কাতে শোও!', from: 0.27, to: 0.56, top: 880},
     {type: 'say', who: 'miu', text: 'মিউ...', from: 0.72, to: 0.85, top: 880},
   ],
+  // Mirrored: in the closing wide shot Gemini had him asleep on his left side.
+  10: [
+    {type: 'say', who: 'ammu', text: 'আসসালামু আলাইকুম, সোনা।', from: 0.28, to: 0.45, top: 880},
+    {type: 'say', who: 'umayer', text: 'ওয়ালাইকুমুস সালাম, মা।', from: 0.46, to: 0.65, top: 880},
+  ],
 };
 
 export const ep04Clips = clips as Record<string, SceneMedia>;
