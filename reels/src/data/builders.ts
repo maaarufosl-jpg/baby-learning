@@ -50,7 +50,8 @@ export const asmaReel = (
 
 /**
  * Short dua for children, short enough for one 10–14 s Gemini clip:
- * the dua (Arabic voice) with pronunciation, meaning and source → "let's say it together": the dua again, then a closing line.
+ * the dua (the qari's recitation for a Quran dua, otherwise the Arabic voice) with pronunciation, meaning and source
+ * → "let's say it together": the dua again, then a closing line.
  */
 export const duaReel = (
   b: Base & {
@@ -59,9 +60,13 @@ export const duaReel = (
     bangla: string;
     meaning: string;
     source: string;
+    /** A dua from the Quran: recited by the qari instead of the Arabic TTS voice. */
+    quran?: QuranRef;
     narration: {meaning: string; closing: string};
   },
-): Reel => ({
+): Reel => {
+  const dua: Say = b.quran ? recite(b.quran) : {hadithArabic: b.arabic};
+  return {
   ...b,
   kind: 'dua',
   unsure: b.unsure ?? [],
@@ -74,7 +79,7 @@ export const duaReel = (
         {style: 'body', text: b.meaning, with: 1},
         {style: 'source', text: b.source, with: 1, delay: 1},
       ],
-      say: [{hadithArabic: b.arabic}, {voice: b.narration.meaning}],
+      say: [dua, {voice: b.narration.meaning}],
     },
     {
       lines: [
@@ -82,10 +87,11 @@ export const duaReel = (
         {style: 'arabic', text: b.arabic},
         {style: 'title', text: b.bangla},
       ],
-      say: [{hadithArabic: b.arabic}, {voice: b.narration.closing}],
+      say: [dua, {voice: b.narration.closing}],
     },
   ],
-});
+  };
+};
 
 /** Ayah or hadith: kicker → Arabic text (recited by a qari for an ayah), meaning, reference. */
 export const textReel = (
