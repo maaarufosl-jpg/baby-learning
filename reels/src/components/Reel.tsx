@@ -114,6 +114,19 @@ const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; seconds: number
   );
 };
 
+/** Credit shown while the qari's recitation plays. */
+export const RECITER = 'তিলাওয়াত: শায়খ মিশারি রাশিদ আল-আফাসি';
+const ReciterCredit: React.FC<{frames: number}> = ({frames}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const o = interpolate(frame, [0, 0.4 * fps, frames - 0.4 * fps, frames], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  return (
+    <div style={{position: 'absolute', top: 1330, width: '100%', textAlign: 'center', opacity: o}}>
+      <span style={{fontFamily: BN, fontSize: 36, color: B.colors.soft, textShadow: SHADOW, background: 'rgba(0,0,0,0.25)', borderRadius: 999, padding: '8px 26px'}}>{RECITER}</span>
+    </div>
+  );
+};
+
 const Header: React.FC = () => (
   <div style={{position: 'absolute', top: 120, width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16, opacity: 0.92}}>
     <LogoMark brand={B} size={64} />
@@ -184,6 +197,13 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
         s.file ? (
           <Sequence key={i} from={Math.round(s.at * fps)} layout="none" name={s.quran ? `তিলাওয়াত ${s.text}` : s.arabic ? 'হাদিসের আরবি' : `কণ্ঠ ${i + 1}`}>
             <Html5Audio src={staticFile(s.file)} />
+          </Sequence>
+        ) : null,
+      )}
+      {tl.sounds.map((s, i) =>
+        s.quran && s.file ? (
+          <Sequence key={`c${i}`} from={Math.round(s.at * fps)} durationInFrames={Math.round((s.seconds + 1) * fps)} layout="none" name="কারির নাম">
+            <ReciterCredit frames={Math.round((s.seconds + 1) * fps)} />
           </Sequence>
         ) : null,
       )}
