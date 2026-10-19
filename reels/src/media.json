@@ -231,23 +231,23 @@
     "audio": {
       "1-1": {
         "file": "audio/reel06/v1-1.mp3",
-        "seconds": 2.74
+        "seconds": 2.8
       },
       "2-1": {
         "file": "audio/reel06/a2-1.mp3",
-        "seconds": 2.72
+        "seconds": 3.08
       },
       "2-2": {
         "file": "audio/reel06/v2-2.mp3",
-        "seconds": 4.28
+        "seconds": 4.55
       },
       "3-1": {
         "file": "audio/reel06/a3-1.mp3",
-        "seconds": 2.77
+        "seconds": 3.08
       },
       "3-2": {
         "file": "audio/reel06/v3-2.mp3",
-        "seconds": 3.63
+        "seconds": 3.4
       }
     }
   },
