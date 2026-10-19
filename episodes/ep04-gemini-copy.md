@@ -2,9 +2,9 @@
 
 **গল্প:** রাতে আলো নেভাতেই উমায়েরের ভয় লাগে। মা পাশে বসে বোঝান, ভয় নেই, আল্লাহ সবসময় দেখে রাখেন। তারপর শেখান নবীজি ﷺ এর মতো ডান কাতে, ডান হাত গালের নিচে রেখে শুয়ে ঘুমের দোয়া পড়তে।
 
-**আজকের দোয়া:** بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا — বিসমিকা আল্লাহুম্মা আমুতু ওয়া আহইয়া — হে আল্লাহ, তোমার নাম নিয়েই আমি ঘুমাই আর জেগে উঠি (শাব্দিক: তোমার নামেই আমি মরি ও বাঁচি; ঘুমকে ছোট মৃত্যু বলা হয়েছে)
+**আজকের দোয়া:** اللَّهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا — আল্লাহুম্মা বিসমিকা আমুতু ওয়া আহইয়া — হে আল্লাহ, তোমার নাম নিয়েই আমি ঘুমাই আর জেগে উঠি (শাব্দিক: তোমার নামেই আমি মরি ও বাঁচি; ঘুমকে ছোট মৃত্যু বলা হয়েছে)
 
-**সূত্র:** দোয়া: সহিহ বুখারি ৬৩২৪। ডান কাতে শোয়া: সহিহ বুখারি ৬৩১১। ডান হাত গালের নিচে: আবু দাউদ ৫০৪৫। (ছাড়ার আগে আলেমকে দিয়ে যাচাই করিয়ে নিন)
+**সূত্র:** দোয়া ও ডান হাত গালের নিচে রাখা: সহিহ বুখারি ৬৩১৪ (হুযায়ফা রা.)। ডান কাতে শোয়া: সহিহ বুখারি ৬৩১১। ("বিসমিকা আল্লাহুম্মা..." ক্রমেও বুখারিতে এসেছে, তবে আমাদের দেশে "আল্লাহুম্মা বিসমিকা..." বেশি প্রচলিত, তাই এটাই রাখা হলো।) (ছাড়ার আগে আলেমকে দিয়ে যাচাই করিয়ে নিন)
 
 **খেয়াল করুন:** শোবার ঘরের দৃশ্যে সাফাকে রাখা হয়নি, যাতে তাকে বিছানায় হিজাব পরে দেখাতে না হয়। সে শুধু শুরুর মাঠ আর শেষের বিদায় দৃশ্যে থাকবে। রাতের দৃশ্য উষ্ণ আলোয়, ভয়ের কিছু নেই।
 
@@ -68,7 +68,7 @@ Action: Ma gently helps Umayer turn onto his right side and place his right hand
 Dialogue: Ma, slowly and clearly, in Bengali: "আমাদের নবীজি সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম ডান কাতে শুতেন, ডান হাত গালের নিচে রেখে।"
 ```
 
-## ৬. বিসমিকা আল্লাহুম্মা আমুতু ওয়া আহইয়া
+## ৬. আল্লাহুম্মা বিসমিকা আমুতু ওয়া আহইয়া
 
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
@@ -79,7 +79,7 @@ Setting: a cozy Bangladeshi child's bedroom at night: a small wooden bed with a 
 
 Action: Umayer lies on his right side with his right hand under his cheek. Ma, sitting beside him, says each part slowly and Umayer repeats after her, while soft golden sparkles float in the warm lamplight. Leave empty space at the top right of the frame.
 
-Dialogue: In Bengali, very slowly: Ma "বিসমিকা... আল্লাহুম্মা... আমুতু... ওয়া আহইয়া", then Umayer "বিসমিকা আল্লাহুম্মা আমুতু ওয়া আহইয়া!"
+Dialogue: In Bengali, very slowly: Ma "আল্লাহুম্মা... বিসমিকা... আমুতু... ওয়া আহইয়া", then Umayer "আল্লাহুম্মা বিসমিকা আমুতু ওয়া আহইয়া!"
 ```
 
 ## ৭. এবার তুমি বলো
@@ -93,7 +93,7 @@ Setting: a plain soft pastel lavender background with gently floating light circ
 
 Action: Umayer stands on the left side of the frame, smiling, with his palms pressed together under his right cheek like a pillow. He looks straight at the camera, inviting the viewer to speak with him, and pauses with a nod after each part. Keep the middle and right of the frame empty.
 
-Dialogue: Umayer, cheerful and slow, in Bengali: "এবার তুমি বলো! বিসমিকা... আল্লাহুম্মা... আমুতু... ওয়া আহইয়া!"
+Dialogue: Umayer, cheerful and slow, in Bengali: "এবার তুমি বলো! আল্লাহুম্মা... বিসমিকা... আমুতু... ওয়া আহইয়া!"
 ```
 
 ## ৮. ভয় চলে গেল
