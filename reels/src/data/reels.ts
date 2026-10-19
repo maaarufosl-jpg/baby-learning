@@ -495,6 +495,65 @@ export const reels: Reel[] = [
     checklist: ['আরবি ও হরকত: لَا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ', 'বাংলা অর্থ ("পূর্ণ মুমিন" শব্দটি ঠিক আছে কি না)', 'হাদিস নম্বর বুখারি ১৩, মুসলিম ৪৫'],
     unsure: [HADITH_NUMBERING],
   }),
+  asmaReel({
+    id: 'reel13',
+    number: 13,
+    title: 'আর-রহিম: অতি দয়ালু',
+    count: '৪',
+    arabic: 'الرَّحِيمُ',
+    bangla: 'আর-রহিম',
+    meaning: 'অতি দয়ালু',
+    explain: 'যিনি বারবার দয়া করেন',
+    ayah: {
+      arabic: 'الرَّحْمٰنِ الرَّحِيمِ',
+      meaning: 'যিনি পরম দয়াময়, অতি দয়ালু',
+      source: 'সূরা আল-ফাতিহা, আয়াত ২',
+      note: 'সূরা ফাতিহায় আর-রহমানের ঠিক পরেই আছে আর-রহিম',
+      // quran.com counts the basmala as 1:1, so this ayah is 1:3 there
+      quran: {ref: '1:3'},
+    },
+    narration: {
+      intro: 'আল্লাহর সুন্দর নামগুলোর আরেকটি।',
+      meaning: 'এর অর্থ, অতি দয়ালু।',
+      ayah: 'সূরা ফাতিহায় আর-রহমানের ঠিক পরেই আছে আর-রহিম নাম।',
+    },
+    scenes: [
+      {
+        art: 'dawn-river',
+        sound: 'morning-birds',
+        look: 'ভোরে শান্ত চওড়া নদী, পানিতে আকাশের নরম রং',
+        prompt: veo('A wide calm river at dawn with light mist on the water. The soft pastel sky is reflected on the smooth surface, gentle ripples.', 'quiet lapping water and faint distant birdsong'),
+        tint: ['#F1D3A8', '#3B6E73'],
+      },
+      {
+        art: 'white-blossom',
+        sound: 'leaves',
+        look: 'নীল আকাশের নিচে ডালে ফুটে থাকা সাদা ফুল, পাপড়ি ভেসে যাচ্ছে',
+        prompt: veo('Branches full of white blossoms against a clear blue sky, a few petals drifting slowly through the air.', 'soft breeze through branches'),
+        tint: ['#E9EEF7', '#5A7898'],
+      },
+      {
+        art: 'rainbow-valley',
+        sound: 'morning-birds',
+        look: 'বৃষ্টির পর সবুজ উপত্যকার ওপর নরম রংধনু',
+        prompt: veo('A soft rainbow over a fresh green valley right after rain, drops glistening on the grass, clear blue sky returning.', 'dripping water and a soft breeze'),
+        tint: ['#BFDCEB', '#3F7051'],
+      },
+    ],
+    sources: [
+      'নাম الرَّحِيمُ: সূরা আল-ফাতিহা আয়াত ২ (বিসমিল্লাহ ছাড়া গণনায়; মদিনার মুসহাফে ১:৩), আরও বহু আয়াতে, যেমন সূরা আল-বাকারা ২:১৬৩',
+    ],
+    checklist: [
+      'নামের আরবি বানান ও হরকত: الرَّحِيمُ',
+      'আয়াতের আরবি মুসহাফের সাথে মিলানো: الرَّحْمٰنِ الرَّحِيمِ (আল-ফাতিহা আয়াত ২)',
+      'বাংলা উচ্চারণ: আর-রহিম',
+      'অর্থ: অতি দয়ালু · ব্যাখ্যা "যিনি বারবার দয়া করেন" ঠিক আছে কি না',
+    ],
+    unsure: [
+      'আর-রহমান ও আর-রহিমের পার্থক্য নিয়ে আলেমদের ব্যাখ্যা আছে (অনেকে বলেন আর-রহিম বিশেষ করে মুমিনদের প্রতি দয়া)। বাচ্চাদের জন্য সহজ ব্যাখ্যা "যিনি বারবার দয়া করেন" দেওয়া হয়েছে; আলেমের মত নিন।',
+      'আল-ফাতিহার আয়াত নম্বর: বাংলাদেশে প্রচলিত গণনায় এটা আয়াত ২ (রিলে এটাই লেখা); মদিনার মুসহাফে ১:৩।',
+    ],
+  }),
 ];
 
 export const reelById = (id: string) => {
