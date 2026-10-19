@@ -44,4 +44,4 @@ npm run studio             # ব্রাউজারে দেখা
 
 ক্রোম না থাকলে: `REMOTION_BROWSER_EXECUTABLE=/path/to/headless_shell npm run render reel01`।
 
-বর্ণনার কণ্ঠ: Google `bn-IN-Chirp3-HD-Charon` (ছেলের কণ্ঠ), ধীর গতি (০.৯)। বাংলা বর্ণনায় আরবি অক্ষর থাকলে স্ক্রিপ্ট থেমে যায়। কুরআন শুধু কারির তিলাওয়াতে; হাদিসের আরবি `ar-XA-Chirp3-HD-Charon` কণ্ঠে।
+বর্ণনার কণ্ঠ: Google `bn-IN-Chirp3-HD-Charon` (ছেলের কণ্ঠ), স্বাভাবিক গতি, একটু উষ্ণ করে নেওয়া। বাংলা বর্ণনায় আরবি অক্ষর থাকলে স্ক্রিপ্ট থেমে যায়। কুরআন শুধু কারির তিলাওয়াতে; হাদিসের আরবি `ar-XA-Chirp3-HD-Charon` কণ্ঠে।

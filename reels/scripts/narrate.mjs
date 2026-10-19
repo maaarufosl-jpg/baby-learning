@@ -3,9 +3,10 @@
 // Optional engine: ElevenLabs (key: ELEVENLABS_API_KEY). Keys come only from the environment, never from files.
 // Usage ("all" instead of reel01 does every reel):
 //   node scripts/narrate.mjs reel01                               # Google, default voice
-//   node scripts/narrate.mjs reel01 --voice bn-IN-Chirp3-HD-Kore --speed 0.9
+//   node scripts/narrate.mjs reel01 --voice bn-IN-Chirp3-HD-Kore --speed 1
 //   node scripts/narrate.mjs reel01 --engine elevenlabs --voice Sarah
-import {mkdirSync, writeFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {mkdirSync, renameSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {duration, loadData, readMedia, writeMedia} from './lib.mjs';
 
@@ -13,7 +14,8 @@ export const DEFAULT_VOICE = 'bn-IN-Chirp3-HD-Charon';
 const argv = process.argv.slice(3);
 const opt = (name, def) => (argv.includes(`--${name}`) ? argv[argv.indexOf(`--${name}`) + 1] : def);
 const engine = opt('engine', 'google');
-const speed = Number(opt('speed', '0.9'));
+// natural pace: slowing the voice down made it sound stretched and robotic
+const speed = Number(opt('speed', '1'));
 const {reels, soundKey, isQuran, isHadithArabic, buildTimeline} = await loadData();
 const which = process.argv[2];
 const list = which === 'all' ? reels : reels.filter((r) => r.id === which || r.number === Number(which));
@@ -84,11 +86,22 @@ const speakArabic = async (text) => {
     await fetch('https://texttospeech.googleapis.com/v1/text:synthesize', {
       method: 'POST',
       headers: {'Content-Type': 'application/json', 'X-Goog-Api-Key': need('GOOGLE_TTS_API_KEY')},
-      body: JSON.stringify({input: {text}, voice: {languageCode: 'ar-XA', name: ARABIC_VOICE}, audioConfig: {audioEncoding: 'MP3', speakingRate: 0.85, sampleRateHertz: 44100}}),
+      body: JSON.stringify({input: {text}, voice: {languageCode: 'ar-XA', name: ARABIC_VOICE}, audioConfig: {audioEncoding: 'MP3', speakingRate: 1, sampleRateHertz: 44100}}),
     }),
     'Google TTS (Arabic)',
   );
   return Buffer.from((await res.json()).audioContent, 'base64');
+};
+
+/** Softens the synthetic edge: trims rumble, adds a little warmth, tames harsh highs, evens the level, a hint of room. */
+const warm = (file) => {
+  const tmp = file.replace(/\.mp3$/, '.tmp.mp3');
+  execFileSync('ffmpeg', [
+    '-loglevel', 'error', '-y', '-i', file,
+    '-af', 'highpass=f=70,equalizer=f=180:t=q:w=1:g=2,equalizer=f=5500:t=q:w=1.5:g=-2.5,acompressor=threshold=-20dB:ratio=2:attack=15:release=250,aecho=0.85:0.6:35:0.08',
+    '-ar', '44100', '-b:a', '160k', tmp,
+  ]);
+  renameSync(tmp, file);
 };
 
 const media = readMedia();
@@ -106,6 +119,7 @@ for (const reel of list) {
         // hadith Arabic only (never Quran): Google's Arabic voice the user chose
         const file = join(dir, `a${si + 1}-${k + 1}.mp3`);
         writeFileSync(file, await speakArabic(s.hadithArabic));
+        warm(file);
         entry.audio[soundKey(si, k)] = {file: file.replace(/^public\//, ''), seconds: duration(file)};
         console.log(`${reel.id} ${soundKey(si, k)} ${entry.audio[soundKey(si, k)].seconds}s  (Arabic) ${s.hadithArabic}`);
         continue;
@@ -113,6 +127,7 @@ for (const reel of list) {
       if (ARABIC.test(s.voice)) throw new Error(`${reel.id} ${soundKey(si, k)} contains Arabic; Arabic is never sent to an AI voice.`);
       const file = join(dir, `v${si + 1}-${k + 1}.mp3`);
       writeFileSync(file, await speak(s.voice, reel.voice && engine === 'google' && !argv.includes('--voice') ? reel.voice : undefined));
+      warm(file);
       entry.audio[soundKey(si, k)] = {file: file.replace(/^public\//, ''), seconds: duration(file)};
       console.log(`${reel.id} ${soundKey(si, k)} ${entry.audio[soundKey(si, k)].seconds}s  "${s.voice}"`);
     }
