@@ -49,8 +49,8 @@ export const asmaReel = (
 });
 
 /**
- * Short dua for children: kicker → the dua (Arabic voice), pronunciation, meaning and source
- * → "let's say it together": the dua once more, then a closing line.
+ * Short dua for children, short enough for one 10–14 s Gemini clip:
+ * the dua (Arabic voice) with pronunciation, meaning and source → "let's say it together": the dua again, then a closing line.
  */
 export const duaReel = (
   b: Base & {
@@ -59,16 +59,16 @@ export const duaReel = (
     bangla: string;
     meaning: string;
     source: string;
-    narration: {intro: string; meaning: string; closing: string};
+    narration: {meaning: string; closing: string};
   },
 ): Reel => ({
   ...b,
   kind: 'dua',
   unsure: b.unsure ?? [],
   steps: [
-    {lines: [{style: 'kicker', text: `ছোট দোয়া · ${b.count}`}], say: [{voice: b.narration.intro}]},
     {
       lines: [
+        {style: 'kicker', text: b.title},
         {style: 'arabic', text: b.arabic},
         {style: 'title', text: b.bangla, delay: 0.6},
         {style: 'body', text: b.meaning, with: 1},

@@ -87,7 +87,8 @@ const Ambience: React.FC<{sound: string; seconds: number; offset: number; duck: 
   );
 };
 
-const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; seconds: number; duck: (sec: number) => number}> = ({reel, i, media, seconds, duck}) => {
+/** `need` is how long the scene must show footage (the end card covers the rest), so a slightly short clip is slowed to fit. */
+const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; seconds: number; need: number; duck: (sec: number) => number}> = ({reel, i, media, seconds, need, duck}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const scene = reel.scenes[i];
@@ -99,6 +100,7 @@ const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; seconds: number
       {clip ? (
         <OffthreadVideo
           src={staticFile(clip.file)}
+          playbackRate={Math.min(1, Math.max(0.7, clip.seconds / need))}
           volume={(f) => 0.7 * duck(offset + f / fps)}
           style={{width: '100%', height: '100%', objectFit: 'cover'}}
         />
@@ -153,7 +155,14 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
     <AbsoluteFill style={{background: B.colors.deep}}>
       {reel.scenes.map((_, i) => (
         <Sequence key={i} from={Math.round(i * (tl.sceneSeconds - CROSSFADE) * fps)} durationInFrames={sceneFrames} name={`দৃশ্য ${i + 1}`}>
-          <SceneLayer reel={reel} i={i} media={media} seconds={tl.sceneSeconds} duck={duck} />
+          <SceneLayer
+            reel={reel}
+            i={i}
+            media={media}
+            seconds={tl.sceneSeconds}
+            need={i === reel.scenes.length - 1 ? Math.min(tl.sceneSeconds, tl.endAt + 0.6 - i * (tl.sceneSeconds - CROSSFADE)) : tl.sceneSeconds}
+            duck={duck}
+          />
         </Sequence>
       ))}
       {/* soft dark layer so text stays readable on any footage; darkest in the middle band where text sits */}

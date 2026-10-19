@@ -87,14 +87,22 @@ export const reels: Reel[] = [
     meaning: 'আল্লাহর নামে (শুরু করছি)',
     source: 'সহিহ বুখারি ৫৩৭৬ · সহিহ মুসলিম ২০২২',
     narration: {
-      intro: 'খাওয়ার আগে আমরা কী বলি?',
       meaning: 'এর অর্থ, আল্লাহর নামে শুরু করছি।',
       closing: 'খাওয়ার আগে বিসমিল্লাহ বলতে ভুলবে না।',
     },
+    // one Gemini (Veo) clip for the whole reel; the drawn scene is the stand-in until it arrives
     scenes: [
-      {art: 'orange-tree', sound: 'morning-birds', look: 'পাকা কমলায় ভরা গাছের ডাল, হালকা রোদ', prompt: '', tint: ['#F4D29A', '#3E5E34']},
-      {art: 'golden-rice', sound: 'wind', look: 'সোনালি পাকা ধানের শিষ বাতাসে দুলছে', prompt: '', tint: ['#F2CF83', '#7A6230']},
-      {art: 'mango-tree', sound: 'leaves', look: 'পাকা আমে ভরা গাছের ডাল', prompt: '', tint: ['#E9D58E', '#3C5C2F']},
+      {
+        art: 'orange-tree',
+        sound: 'morning-birds',
+        look: 'সকালের নরম রোদে পাকা কমলা আর আমে ভরা গাছের ডাল, পাতা হালকা দুলছে',
+        prompt: veo(
+          'Close view of tree branches full of ripe oranges and mangoes in soft golden morning sunlight. Green leaves sway gently in a light breeze, a few dew drops sparkle on the fruit, a soft green orchard blurred in the background.',
+          'a soft morning breeze through leaves and faint distant birdsong',
+          12,
+        ),
+        tint: ['#F4D29A', '#3E5E34'],
+      },
     ],
     sources: [
       'সহিহ বুখারি ৫৩৭৬, সহিহ মুসলিম ২০২২ — উমর ইবনে আবি সালামাহ (রা.) থেকে: নবীজি ﷺ বলেছেন, يَا غُلَامُ سَمِّ اللّٰهَ وَكُلْ بِيَمِينِكَ (হে বালক, আল্লাহর নাম নাও এবং ডান হাতে খাও)',
@@ -235,7 +243,6 @@ export const reels: Reel[] = [
     meaning: 'হে আল্লাহ, তোমার নামেই আমি মরি (ঘুমাই) আর বেঁচে উঠি (জাগি)',
     source: 'সহিহ বুখারি · সহিহ মুসলিম',
     narration: {
-      intro: 'ঘুমানোর আগে আমরা এই দোয়া পড়ি।',
       meaning: 'হে আল্লাহ, তোমার নামেই আমি ঘুমাই, আর তোমার নামেই জেগে উঠি।',
       closing: 'আজ রাতে ঘুমানোর আগে এই দোয়াটা পড়বে।',
     },
@@ -384,7 +391,6 @@ export const reels: Reel[] = [
     meaning: 'হে আল্লাহ, উপকারী বৃষ্টি দাও',
     source: 'সহিহ বুখারি ১০৩২',
     narration: {
-      intro: 'বৃষ্টি পড়লে নবীজি এই দোয়া পড়তেন।',
       meaning: 'হে আল্লাহ, উপকারী বৃষ্টি দাও।',
       closing: 'এরপর বৃষ্টি এলে তুমিও এই দোয়া পড়বে।',
     },

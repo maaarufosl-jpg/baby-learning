@@ -27,7 +27,7 @@ export type Timeline = {
   /** When the end card starts, and the whole length, in seconds. */
   endAt: number;
   total: number;
-  /** Length of each of the three scenes (they overlap by CROSSFADE). */
+  /** Length of each scene (consecutive scenes overlap by CROSSFADE). */
   sceneSeconds: number;
 };
 
@@ -59,5 +59,6 @@ export const buildTimeline = (reel: Reel, media: ReelMedia = {}): Timeline => {
   });
   const endAt = t;
   const total = endAt + END_CARD_SECONDS;
-  return {cards, sounds, endAt, total, sceneSeconds: (total + 2 * CROSSFADE) / 3};
+  const n = reel.scenes.length;
+  return {cards, sounds, endAt, total, sceneSeconds: (total + (n - 1) * CROSSFADE) / n};
 };

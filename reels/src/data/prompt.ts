@@ -1,7 +1,7 @@
 /** Builds a copy-paste Gemini (Veo) prompt with the fixed safety rules at the end. */
-export const veo = (subject: string, sounds: string) =>
+export const veo = (subject: string, sounds: string, seconds = 8) =>
   [
-    'Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage.',
+    `Vertical 9:16 video, ${seconds} seconds, photorealistic cinematic nature footage.`,
     subject,
     'Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours.',
     'Keep the middle of the frame soft and uncluttered so text can be placed over it.',
