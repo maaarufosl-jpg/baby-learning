@@ -34,6 +34,10 @@ export const EP04_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'dua', mode: 'full', from: 0.55, showMeaning: true, pop: false, align: 'left', scale: 0.44},
     {type: 'star', at: 0.8},
   ],
+  7: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.28},
+    {type: 'repeat', parts: [0.3, 0.46, 0.64, 0.8], until: 1, align: 'right'},
+  ],
 };
 
 export const ep04Clips = clips as Record<string, SceneMedia>;
