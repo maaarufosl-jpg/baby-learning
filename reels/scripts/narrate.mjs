@@ -98,7 +98,7 @@ const warm = (file) => {
   const tmp = file.replace(/\.mp3$/, '.tmp.mp3');
   execFileSync('ffmpeg', [
     '-loglevel', 'error', '-y', '-i', file,
-    '-af', 'highpass=f=70,equalizer=f=180:t=q:w=1:g=2,equalizer=f=5500:t=q:w=1.5:g=-2.5,acompressor=threshold=-20dB:ratio=2:attack=15:release=250,aecho=0.85:0.6:35:0.08',
+    '-af', 'highpass=f=70,equalizer=f=180:t=q:w=1:g=2,equalizer=f=5500:t=q:w=1.5:g=-2.5,acompressor=threshold=-20dB:ratio=2:attack=15:release=250,aecho=0.85:0.6:35:0.08,loudnorm=I=-16:TP=-1.5:LRA=11',
     '-ar', '44100', '-b:a', '160k', tmp,
   ]);
   renameSync(tmp, file);
