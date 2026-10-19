@@ -1,8 +1,8 @@
-export type Kind = 'asma' | 'names' | 'ayah' | 'hadith';
+export type Kind = 'asma' | 'dua' | 'ayah' | 'hadith';
 
 export const KIND_LABEL: Record<Kind, string> = {
   asma: 'আল্লাহর সুন্দর নাম',
-  names: 'ইসলামিক নাম',
+  dua: 'ছোট দোয়া',
   ayah: 'ছোট আয়াত',
   hadith: 'ছোট হাদিস',
 };

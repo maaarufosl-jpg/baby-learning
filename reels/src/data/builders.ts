@@ -48,27 +48,42 @@ export const asmaReel = (
   ],
 });
 
-type BabyName = {arabic: string; bangla: string; gender: 'ছেলে' | 'মেয়ে'; meaning: string; origin: string; say: string};
-
-/** Baby names: one card per name; the name is said in Bengali speech, then its meaning. */
-export const namesReel = (b: Base & {heading: string; intro: string; names: BabyName[]}): Reel => ({
+/**
+ * Short dua for children: kicker → the dua (Arabic voice), pronunciation, meaning and source
+ * → "let's say it together": the dua once more, then a closing line.
+ */
+export const duaReel = (
+  b: Base & {
+    count: string;
+    arabic: string;
+    bangla: string;
+    meaning: string;
+    source: string;
+    narration: {intro: string; meaning: string; closing: string};
+  },
+): Reel => ({
   ...b,
-  kind: 'names',
+  kind: 'dua',
   unsure: b.unsure ?? [],
   steps: [
-    {lines: [{style: 'kicker', text: b.heading}], say: [{voice: b.intro}]},
-    ...b.names.map(
-      (n): Step => ({
-        lines: [
-          {style: 'arabicXL', text: n.arabic},
-          {style: 'title', text: `${n.bangla} · ${n.gender}`},
-          {style: 'body', text: n.meaning, delay: 0.9},
-          {style: 'note', text: n.origin, delay: 1.6},
-        ],
-        say: [{voice: `${n.bangla}। ${n.say}`}],
-        hold: 0.9,
-      }),
-    ),
+    {lines: [{style: 'kicker', text: `ছোট দোয়া · ${b.count}`}], say: [{voice: b.narration.intro}]},
+    {
+      lines: [
+        {style: 'arabic', text: b.arabic},
+        {style: 'title', text: b.bangla, delay: 0.6},
+        {style: 'body', text: b.meaning, with: 1},
+        {style: 'source', text: b.source, with: 1, delay: 1},
+      ],
+      say: [{hadithArabic: b.arabic}, {voice: b.narration.meaning}],
+    },
+    {
+      lines: [
+        {style: 'kicker', text: 'এসো, একসাথে বলি'},
+        {style: 'arabic', text: b.arabic},
+        {style: 'title', text: b.bangla},
+      ],
+      say: [{hadithArabic: b.arabic}, {voice: b.narration.closing}],
+    },
   ],
 });
 

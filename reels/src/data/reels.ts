@@ -1,10 +1,9 @@
-import {asmaReel, namesReel, textReel} from './builders';
+import {asmaReel, duaReel, textReel} from './builders';
 import {veo} from './prompt';
 import type {Reel} from './types';
 
 const HADITH_NUMBERING =
   'হাদিস নম্বর আন্তর্জাতিকভাবে প্রচলিত গণনা অনুযায়ী (বুখারি: ফাতহুল বারি; মুসলিম: মুহাম্মাদ ফুয়াদ আব্দুল বাকি)। বাংলাদেশের ইসলামিক ফাউন্ডেশন বা অন্য বাংলা সংস্করণে নম্বর আলাদা হতে পারে।';
-const NAME_FORM = 'নামের আরবি বানানে শেষ অক্ষর থামার (ওয়াকফ) রূপে রাখা হয়েছে, যেমনটা নামের তালিকায় সাধারণত লেখা হয়।';
 
 export const reels: Reel[] = [
   asmaReel({
@@ -79,56 +78,37 @@ export const reels: Reel[] = [
     ],
   }),
 
-  namesReel({
+  duaReel({
     id: 'reel02',
     number: 2,
-    title: 'ছেলেদের ৪টি সুন্দর নাম',
-    heading: 'ছেলেদের ইসলামিক নাম',
-    intro: 'ছেলেদের জন্য চারটি সুন্দর নাম।',
-    names: [
-      {arabic: 'عَبْدُ اللّٰهِ', bangla: 'আব্দুল্লাহ', gender: 'ছেলে', meaning: 'আল্লাহর বান্দা', origin: 'আল্লাহর কাছে সবচেয়ে প্রিয় নাম (মুসলিম ২১৩২)', say: 'অর্থ, আল্লাহর বান্দা।'},
-      {arabic: 'عَبْدُ الرَّحْمٰنِ', bangla: 'আব্দুর রহমান', gender: 'ছেলে', meaning: 'দয়াময়ের বান্দা', origin: 'সাহাবি আব্দুর রহমান ইবনে আউফ (রা.)', say: 'অর্থ, দয়াময়ের বান্দা।'},
-      {arabic: 'يَحْيٰى', bangla: 'ইয়াহইয়া', gender: 'ছেলে', meaning: 'সে বেঁচে থাকবে', origin: 'নবী ইয়াহইয়া (আ.) · কুরআন ১৯:৭', say: 'অর্থ, সে বেঁচে থাকবে।'},
-      {arabic: 'سَعْد', bangla: 'সা\'দ', gender: 'ছেলে', meaning: 'সৌভাগ্য, আনন্দ', origin: 'সাহাবি সা\'দ ইবনে আবি ওয়াক্কাস (রা.)', say: 'অর্থ, সৌভাগ্য।'},
-    ],
+    title: 'খাওয়ার আগের দোয়া',
+    count: '১',
+    arabic: 'بِسْمِ اللّٰهِ',
+    bangla: 'বিসমিল্লাহ',
+    meaning: 'আল্লাহর নামে (শুরু করছি)',
+    source: 'সহিহ বুখারি ৫৩৭৬ · সহিহ মুসলিম ২০২২',
+    narration: {
+      intro: 'খাওয়ার আগে আমরা কী বলি?',
+      meaning: 'এর অর্থ, আল্লাহর নামে শুরু করছি।',
+      closing: 'খাওয়ার আগে বিসমিল্লাহ বলতে ভুলবে না।',
+    },
     scenes: [
-      {
-        art: 'dawn-river',
-        sound: 'morning-birds',
-        look: 'ভোরে শান্ত চওড়া নদী, পানিতে আকাশের রং, হালকা কুয়াশা',
-        prompt: veo('A wide calm river at dawn with light mist on the water. The pastel sky is reflected on the smooth surface, slow gentle ripples.', 'quiet lapping water and a soft breeze'),
-        tint: ['#F1D3A8', '#3B6E73'],
-      },
-      {
-        art: 'waterfall',
-        sound: 'waterfall',
-        look: 'সবুজ পাহাড়ি ঝরনা, পাথরের ওপর দিয়ে সাদা পানি নামছে',
-        prompt: veo('A clear waterfall flowing down mossy rocks in a lush green mountain forest, white water falling into a small clear pool.', 'the steady sound of falling water'),
-        tint: ['#CFE3D2', '#24513F'],
-      },
-      {
-        art: 'golden-meadow',
-        sound: 'wind',
-        look: 'সোনালি বিকেলে বাতাসে দোল খাওয়া লম্বা ঘাসের মাঠ',
-        prompt: veo('A wide meadow of tall grass swaying gently in the wind at golden hour, warm low sunlight shining through the grass tips.', 'wind moving through the grass'),
-        tint: ['#F0C987', '#5B6B3A'],
-      },
+      {art: 'orange-tree', sound: 'morning-birds', look: 'পাকা কমলায় ভরা গাছের ডাল, হালকা রোদ', prompt: '', tint: ['#F4D29A', '#3E5E34']},
+      {art: 'golden-rice', sound: 'wind', look: 'সোনালি পাকা ধানের শিষ বাতাসে দুলছে', prompt: '', tint: ['#F2CF83', '#7A6230']},
+      {art: 'mango-tree', sound: 'leaves', look: 'পাকা আমে ভরা গাছের ডাল', prompt: '', tint: ['#E9D58E', '#3C5C2F']},
     ],
     sources: [
-      'আব্দুল্লাহ ও আব্দুর রহমান আল্লাহর কাছে সবচেয়ে প্রিয় নাম: সহিহ মুসলিম ২১৩২ (ইবনে উমর রা. থেকে)',
-      'ইয়াহইয়া: সূরা মারইয়াম ১৯:৭ — আল্লাহ নিজেই এই নাম রেখেছেন, আগে কারো এই নাম ছিল না',
-      'সা\'দ ইবনে আবি ওয়াক্কাস (রা.): জান্নাতের সুসংবাদপ্রাপ্ত দশ সাহাবির একজন',
+      'সহিহ বুখারি ৫৩৭৬, সহিহ মুসলিম ২০২২ — উমর ইবনে আবি সালামাহ (রা.) থেকে: নবীজি ﷺ বলেছেন, يَا غُلَامُ سَمِّ اللّٰهَ وَكُلْ بِيَمِينِكَ (হে বালক, আল্লাহর নাম নাও এবং ডান হাতে খাও)',
     ],
     checklist: [
-      'চারটি নামের আরবি বানান ও হরকত: عَبْدُ اللّٰهِ · عَبْدُ الرَّحْمٰنِ · يَحْيٰى · سَعْد',
-      'বাংলা উচ্চারণ: আব্দুল্লাহ · আব্দুর রহমান · ইয়াহইয়া · সা\'দ',
-      'অর্থগুলো ঠিক আছে কি না (বিশেষ করে ইয়াহইয়া)',
-      'সূত্র: মুসলিম ২১৩২, কুরআন ১৯:৭',
-      'নামের সাথে "(রা.)", "(আ.)" ঠিক জায়গায় আছে কি না',
+      'আরবি ও হরকত: بِسْمِ اللّٰهِ',
+      'বাংলা উচ্চারণ: বিসমিল্লাহ',
+      'অর্থ: আল্লাহর নামে (শুরু করছি)',
+      'সূত্র: বুখারি ৫৩৭৬, মুসলিম ২০২২ — হাদিসে "সাম্মিল্লাহ" (আল্লাহর নাম নাও) বলা হয়েছে; খাওয়ার আগে "বিসমিল্লাহ" বলা এরই প্রচলিত রূপ, ঠিক আছে কি না',
+      'আরবি কণ্ঠ (AI, Charon) এর উচ্চারণ',
     ],
-    unsure: ['ইয়াহইয়া নামের অর্থ "সে বেঁচে থাকবে" — শব্দগত অর্থ; তাফসিরে নামকরণের কারণ নিয়ে একাধিক মত আছে।', NAME_FORM, HADITH_NUMBERING],
+    unsure: [HADITH_NUMBERING],
   }),
-
   textReel({
     id: 'reel03',
     number: 3,
@@ -246,51 +226,37 @@ export const reels: Reel[] = [
     unsure: ['শব্দে ঝিঁঝিঁর ডাক রেখেছি (কীটপতঙ্গ দেখা যাবে না)। না চাইলে প্রম্পট থেকে "soft crickets" মুছে দেবো।'],
   }),
 
-  namesReel({
+  duaReel({
     id: 'reel06',
     number: 6,
-    title: 'মেয়েদের ৪টি সুন্দর নাম',
-    heading: 'মেয়েদের ইসলামিক নাম',
-    intro: 'মেয়েদের জন্য চারটি সুন্দর নাম।',
-    names: [
-      {arabic: 'خَدِيجَة', bangla: 'খাদিজা', gender: 'মেয়ে', meaning: 'সময়ের আগে জন্ম নেওয়া', origin: 'উম্মুল মুমিনিন খাদিজা (রা.)', say: 'প্রথম মুসলিম নারীর নাম।'},
-      {arabic: 'عَائِشَة', bangla: 'আয়েশা', gender: 'মেয়ে', meaning: 'প্রাণবন্ত, সুখে বেঁচে থাকা', origin: 'উম্মুল মুমিনিন আয়েশা (রা.)', say: 'অর্থ, প্রাণবন্ত।'},
-      {arabic: 'فَاطِمَة', bangla: 'ফাতিমা', gender: 'মেয়ে', meaning: 'মন্দ থেকে বিরত থাকা', origin: 'নবীজির ﷺ কন্যা ফাতিমা (রা.)', say: 'নবীজির প্রিয় কন্যার নাম।'},
-      {arabic: 'مَرْيَم', bangla: 'মারইয়াম', gender: 'মেয়ে', meaning: 'ইবাদতকারিণী', origin: 'কুরআনে তাঁর নামে সূরা আছে (১৯)', say: 'কুরআনে এই নামে একটি সূরা আছে।'},
-    ],
+    title: 'ঘুমের আগের দোয়া',
+    count: '২',
+    arabic: 'بِاسْمِكَ اللّٰهُمَّ أَمُوتُ وَأَحْيَا',
+    bangla: 'বিসমিকা আল্লাহুম্মা আমুতু ওয়া আহইয়া',
+    meaning: 'হে আল্লাহ, তোমার নামেই আমি মরি (ঘুমাই) আর বেঁচে উঠি (জাগি)',
+    source: 'সহিহ বুখারি ৬৩১২',
+    narration: {
+      intro: 'ঘুমানোর আগে আমরা এই দোয়া পড়ি।',
+      meaning: 'হে আল্লাহ, তোমার নামেই আমি ঘুমাই, আর তোমার নামেই জেগে উঠি।',
+      closing: 'আজ রাতে ঘুমানোর আগে এই দোয়াটা পড়বে।',
+    },
     scenes: [
-      {
-        art: 'rose-garden',
-        sound: 'morning-birds',
-        look: 'সকালের আলোয় শিশিরভেজা গোলাপি আর সাদা ফুলের বাগান',
-        prompt: veo('A garden of soft pink and white roses covered in morning dew, petals moving very slightly in the breeze, warm morning light.', 'light breeze and faint distant birdsong'),
-        tint: ['#F6D5DC', '#4F6A4A'],
-      },
-      {
-        art: 'lotus-pond',
-        sound: 'morning-birds',
-        look: 'শান্ত পুকুরে ফুটে থাকা পদ্ম আর শাপলা',
-        prompt: veo('Pink lotus flowers and water lilies floating on a calm pond, gentle ripples, soft morning light reflecting on the water.', 'quiet water and soft wind'),
-        tint: ['#F3D2DD', '#2F5D58'],
-      },
-      {
-        art: 'white-blossom',
-        sound: 'leaves',
-        look: 'নীল আকাশের নিচে ডালে ফুটে থাকা সাদা ফুল, পাপড়ি উড়ছে',
-        prompt: veo('Branches full of white blossoms against a clear blue sky, a few petals drifting slowly through the air.', 'soft breeze through branches'),
-        tint: ['#E9EEF7', '#5A7898'],
-      },
+      {art: 'moon-clouds', sound: 'night', look: 'চাঁদের আলোয় ধীরে ভেসে যাওয়া মেঘ', prompt: '', tint: ['#4B5C8C', '#121A38']},
+      {art: 'starry-hills', sound: 'night', look: 'পাহাড়ের ওপর তারাভরা রাতের আকাশ', prompt: '', tint: ['#2B3A67', '#0E1530']},
+      {art: 'starry-lake', sound: 'night', look: 'পাহাড়ি হ্রদের ওপর তারাভরা আকাশ', prompt: '', tint: ['#2A3765', '#0B1229']},
     ],
-    sources: ['খাদিজা ও আয়েশা (রা.): উম্মাহাতুল মুমিনিন', 'ফাতিমা (রা.): নবীজির ﷺ কন্যা', 'মারইয়াম: সূরা মারইয়াম (১৯), সূরা আলে ইমরান ৩:৩৬ সহ বহু আয়াতে নাম এসেছে'],
-    checklist: ['চারটি নামের আরবি বানান ও হরকত: خَدِيجَة · عَائِشَة · فَاطِمَة · مَرْيَم', 'বাংলা উচ্চারণ', 'চারটি অর্থ (নিচের অনিশ্চয়তাগুলো দেখুন)', 'সম্মানসূচক (রা.) ও ﷺ ঠিক আছে কি না'],
-    unsure: [
-      'খাদিজা = "সময়ের আগে জন্ম নেওয়া" — অভিধানগত অর্থ, প্রচলিত; যাচাই প্রয়োজন।',
-      'ফাতিমা = শব্দমূলের অর্থ "দুধ ছাড়ানো / বিরত রাখা"; "মন্দ থেকে বিরত থাকা" একটি প্রচলিত ব্যাখ্যা। আলেমের মত নিন।',
-      'মারইয়াম = আরবি মূল শব্দ নয় (হিব্রু/সুরিয়ানি); কিছু তাফসিরে অর্থ "ইবাদতকারিণী" বলা হয়েছে। নিশ্চিত নই।',
-      NAME_FORM,
+    sources: [
+      'সহিহ বুখারি ৬৩১২ (হুযাইফা রা. থেকে); একই দোয়া বুখারি ৬৩২৪ এবং মুসলিম ২৭১১ (বারা ইবনে আযিব রা. থেকে) এও আছে',
     ],
+    checklist: [
+      'আরবি ও হরকত: بِاسْمِكَ اللّٰهُمَّ أَمُوتُ وَأَحْيَا',
+      'বাংলা উচ্চারণ: বিসমিকা আল্লাহুম্মা আমুতু ওয়া আহইয়া',
+      'অর্থ: "মরি (ঘুমাই)" — ঘুমকে ছোট মৃত্যু বলা হয়েছে; বাচ্চাদের জন্য বর্ণনায় "ঘুমাই" বলা হয়েছে, ঠিক আছে কি না',
+      'সূত্র: বুখারি ৬৩১২',
+      'আরবি কণ্ঠ (AI, Charon) এর উচ্চারণ',
+    ],
+    unsure: ['মুসলিম ২৭১১ এর বর্ণনায় শব্দক্রম "اللّٰهُمَّ بِاسْمِكَ أَحْيَا وَبِاسْمِكَ أَمُوتُ"; রিলে বুখারির শব্দ দেওয়া হয়েছে।', HADITH_NUMBERING],
   }),
-
   textReel({
     id: 'reel07',
     number: 7,
@@ -406,56 +372,36 @@ export const reels: Reel[] = [
     checklist: ['নামের আরবি ও হরকত: الرَّزَّاقُ', 'আয়াতের আরবি মুসহাফের সাথে মিলানো', 'বাংলা উচ্চারণ: আর-রাযযাক', 'অর্থ ও আয়াতের অনুবাদ', 'সূত্র ৫১:৫৮'],
   }),
 
-  namesReel({
+  duaReel({
     id: 'reel10',
     number: 10,
-    title: 'জান্নাতের ঝরনা ও দরজার নামে নাম',
-    heading: 'জান্নাতের নামে সুন্দর নাম',
-    intro: 'জান্নাতের নামে চারটি সুন্দর নাম।',
-    names: [
-      {arabic: 'كَوْثَر', bangla: 'কাওসার', gender: 'ছেলে', meaning: 'প্রচুর কল্যাণ', origin: 'জান্নাতের নহর · সূরা আল-কাওসার ১০৮:১', say: 'অর্থ, প্রচুর কল্যাণ।'},
-      {arabic: 'رَيَّان', bangla: 'রাইয়ান', gender: 'ছেলে', meaning: 'পরিতৃপ্ত, তৃষ্ণা মেটা', origin: 'রোজাদারদের জান্নাতের দরজা · বুখারি ১৮৯৬', say: 'রোজাদারদের জন্য জান্নাতের দরজা।'},
-      {arabic: 'تَسْنِيم', bangla: 'তাসনিম', gender: 'মেয়ে', meaning: 'জান্নাতের একটি ঝরনা', origin: 'কুরআন, সূরা আল-মুতাফফিফিন ৮৩:২৭', say: 'জান্নাতের একটি ঝরনা।'},
-      {arabic: 'سَلْسَبِيل', bangla: 'সালসাবিল', gender: 'মেয়ে', meaning: 'সুমিষ্ট, সহজে পানযোগ্য', origin: 'জান্নাতের ঝরনা · সূরা আল-ইনসান ৭৬:১৮', say: 'জান্নাতের আরেকটি ঝরনা।'},
-    ],
+    title: 'বৃষ্টির সময়ের দোয়া',
+    count: '৩',
+    arabic: 'اللّٰهُمَّ صَيِّبًا نَافِعًا',
+    bangla: 'আল্লাহুম্মা সাইয়িবান নাফিআ',
+    meaning: 'হে আল্লাহ, উপকারী বৃষ্টি দাও',
+    source: 'সহিহ বুখারি ১০৩২',
+    narration: {
+      intro: 'বৃষ্টি পড়লে নবীজি এই দোয়া পড়তেন।',
+      meaning: 'হে আল্লাহ, উপকারী বৃষ্টি দাও।',
+      closing: 'এরপর বৃষ্টি এলে তুমিও এই দোয়া পড়বে।',
+    },
     scenes: [
-      {
-        art: 'turquoise-falls',
-        sound: 'waterfall',
-        look: 'সবুজ পাহাড় থেকে নেমে আসা ঝরনা, নিচে স্বচ্ছ জলাশয়',
-        prompt: veo('A tall graceful waterfall pouring into a clear turquoise pool surrounded by lush green plants, soft mist in the air.', 'falling water'),
-        tint: ['#BFE6E2', '#21504C'],
-      },
-      {
-        art: 'river-valley',
-        sound: 'stream',
-        look: 'সবুজ উপত্যকার মাঝ দিয়ে এঁকেবেঁকে যাওয়া স্বচ্ছ নদী',
-        prompt: veo('A crystal clear river winding through a lush green valley in soft sunlight, slow aerial view gliding along the river.', 'flowing river and soft wind'),
-        tint: ['#CDE8D6', '#2C5D47'],
-      },
-      {
-        art: 'spring-ferns',
-        sound: 'stream',
-        look: 'ফার্ন আর শ্যাওলার মাঝে পাথর থেকে উঠে আসা ছোট ঝরনাধারা',
-        prompt: veo('A small natural spring bubbling up between mossy rocks and green ferns, clear water spilling over the stones, dappled light.', 'bubbling spring water'),
-        tint: ['#D3EBC9', '#2A4E36'],
-      },
+      {art: 'rain-field-clear', sound: 'rain', look: 'বিস্তীর্ণ সবুজ ধানক্ষেতে হালকা বৃষ্টি, তারপর মেঘ সরে আলো', prompt: '', tint: ['#A9BDB3', '#2E5A3E']},
+      {art: 'rain-lake', sound: 'rain-water', look: 'শান্ত হ্রদের পানিতে বৃষ্টির ফোঁটা', prompt: '', tint: ['#B8CBD0', '#2C4A4F']},
+      {art: 'rain-paddy', sound: 'rain', look: 'সবুজ ধানক্ষেতে নরম বৃষ্টি', prompt: '', tint: ['#BFD7B0', '#2E5A3A']},
     ],
-    sources: [
-      'কাওসার: সূরা আল-কাওসার ১০৮:১ — إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ',
-      'রাইয়ান: সহিহ বুখারি ১৮৯৬, সহিহ মুসলিম ১১৫২ (সাহল ইবনে সা\'দ রা. থেকে)',
-      'তাসনিম: সূরা আল-মুতাফফিফিন ৮৩:২৭ — وَمِزَاجُهُ مِنْ تَسْنِيمٍ',
-      'সালসাবিল: সূরা আল-ইনসান ৭৬:১৮ — عَيْنًا فِيهَا تُسَمّٰى سَلْسَبِيلًا',
+    sources: ['সহিহ বুখারি ১০৩২ — আয়েশা (রা.) থেকে: নবীজি ﷺ বৃষ্টি দেখলে বলতেন, اللّٰهُمَّ صَيِّبًا نَافِعًا'],
+    checklist: [
+      'আরবি ও হরকত: اللّٰهُمَّ صَيِّبًا نَافِعًا',
+      'বাংলা উচ্চারণ: আল্লাহুম্মা সাইয়িবান নাফিআ',
+      'অর্থ: হে আল্লাহ, উপকারী বৃষ্টি দাও',
+      'সূত্র: বুখারি ১০৩২',
+      'বর্ণনায় "নবীজি" নামের পর দরুদ মুখে বলা হবে কি না (লেখায় ﷺ আছে)',
+      'আরবি কণ্ঠ (AI, Charon) এর উচ্চারণ',
     ],
-    checklist: ['চারটি নামের আরবি বানান ও হরকত: كَوْثَر · رَيَّان · تَسْنِيم · سَلْسَبِيل', 'বাংলা উচ্চারণ', 'অর্থগুলো', 'সূত্র: ১০৮:১, বুখারি ১৮৯৬, ৮৩:২৭, ৭৬:১৮', 'কোন নাম ছেলে/মেয়ের — বাংলাদেশে প্রচলন অনুযায়ী দেওয়া, ঠিক আছে কি না'],
-    unsure: [
-      'কুরআনে শব্দগুলো "আল-কাওসার", "তাসনিমিন", "সালসাবিলান" রূপে এসেছে; নাম হিসেবে মূল রূপ দেওয়া হয়েছে।',
-      'রাইয়ান কুরআনে নয়, হাদিসে এসেছে।',
-      NAME_FORM,
-      HADITH_NUMBERING,
-    ],
+    unsure: [HADITH_NUMBERING],
   }),
-
   textReel({
     id: 'reel11',
     number: 11,
