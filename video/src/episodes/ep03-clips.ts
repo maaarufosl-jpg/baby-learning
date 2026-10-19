@@ -46,6 +46,11 @@ export const EP03_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'মাশাআল্লাহ!', from: 0.44, to: 0.57, top: 880},
     {type: 'say', who: 'ammu', text: 'তবে সবচেয়ে ভালো, শুরুতেই বলা।', from: 0.57, to: 0.95, top: 880},
   ],
+  10: [
+    {type: 'say', who: 'safa', text: 'বিচমিল্লা!', from: 0.26, to: 0.4, top: 880},
+    {type: 'say', who: 'umayer', text: 'সাফা শুরুতেই বলেছে!', from: 0.4, to: 0.75, top: 880},
+    {type: 'star', at: 0.3},
+  ],
   11: [
     {type: 'say', who: 'everyone', label: 'উমায়ের ও সাফা', text: 'মিউ, শুরুতে বিসমিল্লাহ!', from: 0.35, to: 0.72, top: 880},
     {type: 'say', who: 'miu', text: 'মিউ!', from: 0.76, to: 0.87, top: 880},
