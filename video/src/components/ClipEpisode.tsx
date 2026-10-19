@@ -14,11 +14,16 @@ const useCfg = () => useContext(Cfg);
 const INTRO_SECONDS = 3.5;
 
 /** Dua panels over full-frame artwork are drawn smaller and higher so they don't cover the characters' faces. */
-const Compact: React.FC<{children: React.ReactNode; align?: 'center' | 'right'; scale?: number}> = ({children, align = 'center', scale}) => (
+const Compact: React.FC<{children: React.ReactNode; align?: 'center' | 'right' | 'left'; scale?: number}> = ({children, align = 'center', scale}) => (
   <AbsoluteFill
     style={{
-      transform: align === 'right' ? `translate(-40px, -72px) scale(${scale ?? 0.6})` : `translateY(-72px) scale(${scale ?? 0.62})`,
-      transformOrigin: align === 'right' ? '100% 0%' : '50% 0%',
+      transform:
+        align === 'right'
+          ? `translate(-40px, -72px) scale(${scale ?? 0.6})`
+          : align === 'left'
+            ? `translate(40px, -72px) scale(${scale ?? 0.6})`
+            : `translateY(-72px) scale(${scale ?? 0.62})`,
+      transformOrigin: align === 'right' ? '100% 0%' : align === 'left' ? '0% 0%' : '50% 0%',
     }}
   >
     {children}
@@ -68,7 +73,7 @@ const Window: React.FC<{frames: number; from?: number; to?: number; children: Re
   );
 };
 
-const RepeatOverlay: React.FC<{frames: number; parts: number[]; until?: number; align?: 'center' | 'right'; scale?: number}> = ({frames, parts, until = 1, align, scale}) => {
+const RepeatOverlay: React.FC<{frames: number; parts: number[]; until?: number; align?: 'center' | 'right' | 'left'; scale?: number}> = ({frames, parts, until = 1, align, scale}) => {
   const cfg = useCfg();
   const frame = useCurrentFrame();
   const {width, height} = useVideoConfig();
@@ -95,7 +100,7 @@ const RepeatOverlay: React.FC<{frames: number; parts: number[]; until?: number; 
 };
 
 /** Lights up one syllable after another at given moments (fractions of the scene). */
-const TimedSyllables: React.FC<{frames: number; times: number[]; align?: 'center' | 'right'; pop: boolean}> = ({frames, times, align, pop}) => {
+const TimedSyllables: React.FC<{frames: number; times: number[]; align?: 'center' | 'right' | 'left'; pop: boolean; scale?: number}> = ({frames, times, align, pop, scale}) => {
   const cfg = useCfg();
   const frame = useCurrentFrame();
   const {width, height} = useVideoConfig();
@@ -103,7 +108,7 @@ const TimedSyllables: React.FC<{frames: number; times: number[]; align?: 'center
   const starts = times.map((t) => Math.round(t * frames));
   const active = starts.reduce((acc, s, i) => (frame >= s ? i : acc), -1);
   return (
-    <Compact align={align}>
+    <Compact align={align} scale={scale}>
       <DuaPanel dua={cfg.dua} display={{mode: 'full', highlightPart: active >= 0 ? active : undefined}} layout={layout} beatFrames={frames} hasSpeech={false} animateIn={pop} />
     </Compact>
   );
@@ -155,12 +160,12 @@ const Overlay: React.FC<{o: ClipOverlay; frames: number}> = ({o, frames}) => {
       if (o.mode === 'broken' && o.times)
         return (
           <Window frames={frames} from={o.from} to={o.to}>
-            <TimedSyllables frames={frames} times={o.times.map((t) => t - (o.from ?? 0))} align={o.align} pop={o.pop ?? (o.from ?? 0) < 0.1} />
+            <TimedSyllables frames={frames} times={o.times.map((t) => t - (o.from ?? 0))} align={o.align} pop={o.pop ?? (o.from ?? 0) < 0.1} scale={o.scale} />
           </Window>
         );
       return (
         <Window frames={frames} from={o.from} to={o.to}>
-          <Compact align={o.align}>
+          <Compact align={o.align} scale={o.scale}>
             <DuaPanel
               dua={cfg.dua}
               display={{mode: o.mode, showMeaning: o.showMeaning}}

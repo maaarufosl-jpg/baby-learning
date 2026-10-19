@@ -13,11 +13,13 @@ export type ClipOverlay =
       to?: number;
       showMeaning?: boolean;
       pop?: boolean;
-      align?: 'center' | 'right';
+      align?: 'center' | 'right' | 'left';
       /** For 'broken': when each syllable lights up, as fractions of the scene. Evenly spaced if left out. */
       times?: number[];
+      /** Panel size: 0.6 at the side, 0.62 in the middle by default. */
+      scale?: number;
     }
-  | {type: 'repeat'; parts: number[]; until?: number; align?: 'center' | 'right'; /** Panel size, 0.62 by default. */ scale?: number}
+  | {type: 'repeat'; parts: number[]; until?: number; align?: 'center' | 'right' | 'left'; /** Panel size, 0.62 by default. */ scale?: number}
   | {type: 'star'; at: number}
   | {type: 'footnote'; text: string}
   | {type: 'card'; from: number}

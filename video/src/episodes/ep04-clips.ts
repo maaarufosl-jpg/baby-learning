@@ -23,6 +23,17 @@ export const EP04_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'ওটা তো মিউয়ের ছায়া, সোনা।', from: 0.12, to: 0.38, top: 880},
     {type: 'say', who: 'ammu', text: 'ভয় নেই, আল্লাহ সবসময়\nআমাদের দেখে রাখেন।', from: 0.4, to: 0.7, top: 740},
   ],
+  // Scenes 5 and 6 are mirrored: Gemini laid Umayer on his left side, and flipping puts him on his right side.
+  5: [
+    {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ ডান কাতে শুতেন,', from: 0.12, to: 0.55, top: 880},
+    {type: 'say', who: 'ammu', text: 'ডান হাত গালের নিচে রেখে।', from: 0.6, to: 0.92, top: 880},
+    {type: 'footnote', text: 'সহিহ বুখারি ৬৩১১, ৬৩১৪'},
+  ],
+  6: [
+    {type: 'dua', mode: 'broken', from: 0.03, to: 0.55, pop: true, align: 'left', scale: 0.44, times: [0.05, 0.21, 0.32, 0.43]},
+    {type: 'dua', mode: 'full', from: 0.55, showMeaning: true, pop: false, align: 'left', scale: 0.44},
+    {type: 'star', at: 0.8},
+  ],
 };
 
 export const ep04Clips = clips as Record<string, SceneMedia>;
