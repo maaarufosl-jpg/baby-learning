@@ -14,6 +14,11 @@ export const EP04_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'recap', from: 0.62, to: 1},
   ],
   2: [{type: 'say', who: 'umayer', text: 'মা, অন্ধকারে আমার ভয় লাগে।', from: 0.48, to: 0.85, top: 880}],
+  // The "scary" shape on the wall turned out to be Miu's shadow.
+  3: [
+    {type: 'say', who: 'umayer', text: 'ওটা কী?', from: 0.44, to: 0.58, top: 880},
+    {type: 'say', who: 'miu', text: 'মিউ!', from: 0.71, to: 0.8, top: 880},
+  ],
 };
 
 export const ep04Clips = clips as Record<string, SceneMedia>;

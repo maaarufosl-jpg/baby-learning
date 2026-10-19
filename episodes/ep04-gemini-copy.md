@@ -45,13 +45,13 @@ Dialogue: Umayer, in a small whisper, in Bengali: "ওটা কী?"
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
 
-Characters: Ma, the children's young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi and white pajama trousers.
+Characters: Ma, the children's young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi and white pajama trousers; Miu, a small fluffy orange tabby kitten with big green eyes and a white chest.
 
 Setting: a cozy Bangladeshi child's bedroom at night: a small wooden bed with a soft blue-and-white quilt and a white pillow, a warm glowing night lamp on a wooden bedside table, a window with pink curtains showing a crescent moon and stars, pale mint-green walls; the room feels calm, warm and safe, never scary.
 
-Action: Ma sits on the edge of the bed, smiles, points gently at the curtain to show it is only the curtain moving, then softly holds Umayer's hand. Umayer relaxes a little.
+Action: Ma sits on the edge of the bed, smiles, points gently at Miu sitting at the foot of the bed to show the shadow on the wall was only Miu's, then softly holds Umayer's hand. Umayer relaxes and smiles a little.
 
-Dialogue: Ma, soft and loving, slowly in Bengali: "ওটা তো পর্দা, সোনা। ভয় নেই, আল্লাহ সবসময় আমাদের দেখে রাখেন।"
+Dialogue: Ma, soft and loving, slowly in Bengali: "ওটা তো মিউয়ের ছায়া, সোনা। ভয় নেই, আল্লাহ সবসময় আমাদের দেখে রাখেন।"
 ```
 
 ## ৫. ডান কাতে শোয়া
