@@ -554,6 +554,67 @@ export const reels: Reel[] = [
       'আল-ফাতিহার আয়াত নম্বর: বাংলাদেশে প্রচলিত গণনায় এটা আয়াত ২ (রিলে এটাই লেখা); মদিনার মুসহাফে ১:৩।',
     ],
   }),
+  asmaReel({
+    id: 'reel14',
+    number: 14,
+    title: 'আস-সালাম: শান্তিদাতা',
+    count: '৫',
+    arabic: 'السَّلَامُ',
+    bangla: 'আস-সালাম',
+    meaning: 'শান্তিদাতা',
+    explain: 'যিনি শান্তি দেন, যাঁর মধ্যে কোনো দোষ নেই',
+    ayah: {
+      arabic: 'الْمَلِكُ الْقُدُّوسُ السَّلَامُ',
+      meaning: 'অধিপতি, মহাপবিত্র, শান্তিদাতা',
+      source: 'সূরা আল-হাশর ৫৯:২৩ (আয়াতের অংশ)',
+      note: 'সালাম দিয়ে আমরা একে অপরের জন্য শান্তি চাই',
+      quran: {ref: '59:23', words: [8, 10]},
+    },
+    narration: {
+      intro: 'আল্লাহর সুন্দর নামগুলোর আরেকটি।',
+      meaning: 'এর অর্থ, শান্তিদাতা।',
+      ayah: 'আমরা যখন সালাম দিই, তখন একে অপরের জন্য শান্তি চাই।',
+    },
+    scenes: [
+      {
+        art: 'misty-lake',
+        sound: 'morning-birds',
+        look: 'ভোরে বনের মাঝে শান্ত হ্রদের ওপর কুয়াশা ভাসছে',
+        prompt: veo('Morning mist floating slowly over a quiet forest lake at dawn, pine trees on the shore, soft pale light.', 'quiet morning air and faint distant birdsong'),
+        tint: ['#D5DDD6', '#3D5649'],
+      },
+      {
+        art: 'clouds-valley',
+        sound: 'wind',
+        look: 'সবুজ উপত্যকার ওপর দিয়ে ধীরে ভেসে যাওয়া সাদা মেঘ',
+        prompt: veo('White fluffy clouds drifting slowly over a wide green valley, cloud shadows moving gently across the land.', 'soft wind'),
+        tint: ['#CFE1EF', '#4B6E4F'],
+      },
+      {
+        art: 'lotus-pond',
+        sound: 'morning-birds',
+        look: 'শান্ত পুকুরে ফুটে থাকা পদ্ম আর শাপলা',
+        prompt: veo('Pink lotus flowers and water lilies floating on a calm pond, gentle ripples, soft morning light reflecting on the water.', 'quiet water and soft wind'),
+        tint: ['#F3D2DD', '#2F5D58'],
+      },
+    ],
+    sources: [
+      'সূরা আল-হাশর ৫৯:২৩ — هُوَ اللّٰهُ الَّذِي لَا إِلٰهَ إِلَّا هُوَ الْمَلِكُ الْقُدُّوسُ السَّلَامُ ...',
+      'নবীজি ﷺ বলেছেন, إِنَّ اللّٰهَ هُوَ السَّلَامُ (নিশ্চয়ই আল্লাহই আস-সালাম) — সহিহ বুখারি ৮৩১ (তাশাহহুদের হাদিস, ইবনে মাসউদ রা. থেকে)',
+    ],
+    checklist: [
+      'নামের আরবি বানান ও হরকত: السَّلَامُ',
+      'আয়াতাংশের আরবি মুসহাফের সাথে মিলানো: الْمَلِكُ الْقُدُّوسُ السَّلَامُ (৫৯:২৩, শব্দ ৮–১০)',
+      'বাংলা উচ্চারণ: আস-সালাম',
+      'অর্থ: শান্তিদাতা · ব্যাখ্যা "যিনি শান্তি দেন, যাঁর মধ্যে কোনো দোষ নেই"',
+      'আয়াতাংশের অনুবাদ: অধিপতি, মহাপবিত্র, শান্তিদাতা',
+      'সালামের সাথে নামটির সম্পর্ক যেভাবে বলা হয়েছে ("সালাম দিয়ে একে অপরের জন্য শান্তি চাই") ঠিক আছে কি না',
+    ],
+    unsure: [
+      'তিলাওয়াত আয়াতের মাঝখান থেকে (শব্দ ৮–১০) কাটা; কারি টানা পড়েন, তাই শেষটা একটু হঠাৎ থামতে পারে। শুনে দেখবেন।',
+      HADITH_NUMBERING,
+    ],
+  }),
 ];
 
 export const reelById = (id: string) => {
