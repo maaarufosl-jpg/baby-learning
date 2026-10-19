@@ -8,6 +8,33 @@
 তোমরা আমাকে স্মরণ করো, আমিও তোমাদের স্মরণ করব ✨ (সূরা আল-বাকারা, আয়াত ১৫২) #কুরআনের_আয়াত #নিদর্শন #IslamicReels
 ```
 
+## Gemini ভিডিও (৩টি, প্রতিটি ৮ সেকেন্ড)
+
+1. "ভিডিও ১" এর প্রম্পট পুরোটা কপি করে Gemini-তে দিন। ভিডিও খাড়া (9:16) রাখুন।
+2. ভিডিও তৈরি হলে চ্যাটে পাঠান, লিখুন: "রিল ১১, ভিডিও ১"।
+3. একইভাবে পরের ভিডিও।
+4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
+
+### ভিডিও ১: পাহাড়ি হ্রদের ওপর তারাভরা রাতের আকাশ
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A deep starry night sky over a calm mountain lake, stars reflected on the water, slow time-lapse of the stars moving. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — quiet night with soft water. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ২: চাঁদের আলোয় ধীরে ভেসে যাওয়া মেঘ
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Soft clouds drifting slowly across a bright full moon in a dark blue night sky, silver light on the cloud edges. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — gentle night wind. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ৩: ভোরের আগে দিগন্তে প্রথম আলো (ফজরের সময়)
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. The first light of dawn appearing on the horizon over quiet hills, deep blue sky slowly turning orange and pink, a few stars fading. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — still early morning air and very faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
+
 ## দৃশ্য (কোনো মানুষ বা প্রাণী নেই)
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |

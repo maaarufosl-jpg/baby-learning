@@ -8,6 +8,33 @@
 জেনে রাখো, আল্লাহর স্মরণেই অন্তর প্রশান্ত হয় 🌙 (সূরা আর-রা'দ, আয়াত ২৮) #কুরআনের_আয়াত #নিদর্শন #IslamicReels
 ```
 
+## Gemini ভিডিও (৩টি, প্রতিটি ৮ সেকেন্ড)
+
+1. "ভিডিও ১" এর প্রম্পট পুরোটা কপি করে Gemini-তে দিন। ভিডিও খাড়া (9:16) রাখুন।
+2. ভিডিও তৈরি হলে চ্যাটে পাঠান, লিখুন: "রিল ৭, ভিডিও ১"।
+3. একইভাবে পরের ভিডিও।
+4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
+
+### ভিডিও ১: নীলাভ সন্ধ্যায় স্থির হ্রদে পাহাড়ের প্রতিচ্ছবি
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A perfectly still mountain lake at blue hour, the mountains mirrored on the glassy water, very calm. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — near silence with very soft water lapping. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ২: ভোরে বনের মাঝে হ্রদের ওপর কুয়াশা ভাসছে
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Morning mist floating slowly over a quiet forest lake at dawn, pine trees on the shore, soft pale light. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — quiet morning air and faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ৩: উপত্যকার ওপর দিয়ে ধীরে ভেসে যাওয়া সাদা মেঘ
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. White fluffy clouds drifting slowly over a wide green valley, time-lapse, cloud shadows moving gently across the land. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — soft wind. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
+
 ## দৃশ্য (কোনো মানুষ বা প্রাণী নেই)
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |

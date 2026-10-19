@@ -8,6 +8,33 @@
 আল্লাহর সুন্দর নাম আল-খালিক, অর্থ সৃষ্টিকর্তা ⛰️ (সূরা আল-হাশর, আয়াত ২৪) #আসমাউল_হুসনা #নিদর্শন #IslamicReels
 ```
 
+## Gemini ভিডিও (৩টি, প্রতিটি ৮ সেকেন্ড)
+
+1. "ভিডিও ১" এর প্রম্পট পুরোটা কপি করে Gemini-তে দিন। ভিডিও খাড়া (9:16) রাখুন।
+2. ভিডিও তৈরি হলে চ্যাটে পাঠান, লিখুন: "রিল ৫, ভিডিও ১"।
+3. একইভাবে পরের ভিডিও।
+4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
+
+### ভিডিও ১: ভোরের আলোয় বরফঢাকা পাহাড়চূড়া
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Snow-capped mountain peaks glowing pink and gold in the first light of dawn, thin clouds drifting below the peaks. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — cold mountain wind. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ২: বাতাসে দোলা রঙিন বুনো ফুলের মাঠ
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A field of colourful wildflowers swaying softly in the breeze on a sunny hillside, shallow depth of field, blue sky above. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — light breeze through flowers. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ৩: পাহাড়ের ওপর তারাভরা রাতের আকাশ, ছায়াপথ ধীরে ঘুরছে
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A clear starry night sky with the Milky Way slowly turning above the dark silhouette of hills, time-lapse, deep blue tones. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — quiet night air and soft crickets. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
+
 ## দৃশ্য (কোনো মানুষ বা প্রাণী নেই)
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |

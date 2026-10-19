@@ -8,6 +8,33 @@
 পবিত্রতা ঈমানের অর্ধেক 💧 (সহিহ মুসলিম, হাদিস ২২৩) #হাদিস #নিদর্শন #IslamicReels
 ```
 
+## Gemini ভিডিও (৩টি, প্রতিটি ৮ সেকেন্ড)
+
+1. "ভিডিও ১" এর প্রম্পট পুরোটা কপি করে Gemini-তে দিন। ভিডিও খাড়া (9:16) রাখুন।
+2. ভিডিও তৈরি হলে চ্যাটে পাঠান, লিখুন: "রিল ৪, ভিডিও ১"।
+3. একইভাবে পরের ভিডিও।
+4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
+
+### ভিডিও ১: পাহাড়ি ছড়ায় পাথরের ওপর দিয়ে স্বচ্ছ পানি বয়ে যাচ্ছে
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Crystal clear water flowing over smooth stones in a shallow mountain stream, sunlight sparkling on the surface, close and calm. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — clear flowing water. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ২: ভোরে সবুজ পাতার ওপর শিশিরবিন্দু, ধীরে গড়িয়ে পড়ছে
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Macro shot of fresh dew drops on bright green leaves at early morning, one drop slowly rolling down the leaf, soft sunlight behind. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — quiet morning air and faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ৩: শান্ত হ্রদের পানিতে বৃষ্টির ফোঁটা, ছোট ছোট বৃত্ত
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Soft rain falling on the still surface of a calm lake, gentle rings spreading on the water, misty green shore in the background. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — soft rain on water. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
+
 ## দৃশ্য (কোনো মানুষ বা প্রাণী নেই)
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |

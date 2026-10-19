@@ -8,6 +8,33 @@
 নিজের জন্য যা পছন্দ, ভাইয়ের জন্যও তা পছন্দ না করা পর্যন্ত কেউ পূর্ণ মুমিন হয় না 🌅 (সহিহ বুখারি ১৩, সহিহ মুসলিম ৪৫) #হাদিস #নিদর্শন #IslamicReels
 ```
 
+## Gemini ভিডিও (৩টি, প্রতিটি ৮ সেকেন্ড)
+
+1. "ভিডিও ১" এর প্রম্পট পুরোটা কপি করে Gemini-তে দিন। ভিডিও খাড়া (9:16) রাখুন।
+2. ভিডিও তৈরি হলে চ্যাটে পাঠান, লিখুন: "রিল ১২, ভিডিও ১"।
+3. একইভাবে পরের ভিডিও।
+4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
+
+### ভিডিও ১: সূর্যাস্তে শান্ত সমুদ্রের ঢেউ তীরে আসছে
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Gentle waves rolling onto an empty sandy beach at sunset, warm golden light on the wet sand, calm sea. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — soft waves on the shore. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ২: দুটি ছোট নদী মিলে একটি নদী হয়ে বয়ে যাচ্ছে
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Two small clear streams meeting and joining into one river in a green forest, slow aerial view, soft light. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — flowing water. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ৩: পাশাপাশি দুটি গাছ, পেছনে সোনালি সূর্যাস্ত
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Two trees standing side by side on a gentle hill against a golden sunset sky, grass moving softly in the wind. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — evening breeze. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
+
 ## দৃশ্য (কোনো মানুষ বা প্রাণী নেই)
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |

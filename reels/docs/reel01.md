@@ -8,6 +8,33 @@
 আল্লাহর সুন্দর নাম আর-রহমান, অর্থ পরম দয়াময়, যা আমরা প্রতি নামাজে সূরা ফাতিহায় পড়ি 🌄 (সূরা আল-ফাতিহা, আয়াত ২) #আসমাউল_হুসনা #নিদর্শন #IslamicReels
 ```
 
+## Gemini ভিডিও (৩টি, প্রতিটি ৮ সেকেন্ড)
+
+1. "ভিডিও ১" এর প্রম্পট পুরোটা কপি করে Gemini-তে দিন। ভিডিও খাড়া (9:16) রাখুন।
+2. ভিডিও তৈরি হলে চ্যাটে পাঠান, লিখুন: "রিল ১, ভিডিও ১"।
+3. একইভাবে পরের ভিডিও।
+4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
+
+### ভিডিও ১: কুয়াশা ঢাকা সবুজ পাহাড়ের ওপারে সূর্যোদয়, সোনালি আলো ধীরে ধীরে ছড়িয়ে পড়ছে
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A golden sunrise over layers of misty green hills. The sun slowly rises from behind the far hill and warm light spreads across the valley, soft fog drifting between the hills. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — a soft morning breeze and faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ২: বনের সবুজ পাতার ফাঁক দিয়ে নরম রোদ, সামনে পাথরের ওপর দিয়ে বয়ে যাওয়া স্বচ্ছ ছোট নদী
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Warm sunbeams streaming through the green leaves of a quiet forest. In the foreground a small clear stream flows gently over smooth round stones, sparkling in the light. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — gently flowing stream water and leaves rustling in a light breeze. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ৩: বিস্তীর্ণ সবুজ ধানক্ষেতে হালকা বৃষ্টি, তারপর মেঘ সরে উষ্ণ আলো
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Light gentle rain falling over a wide green rice field. Soft grey clouds slowly part and warm sunlight begins to shine through, making the wet rice leaves glow. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — soft steady rain and light wind. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
+
 ## দৃশ্য (কোনো মানুষ বা প্রাণী নেই)
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |

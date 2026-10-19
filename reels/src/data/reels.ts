@@ -90,18 +90,27 @@ export const reels: Reel[] = [
       meaning: 'এর অর্থ, আল্লাহর নামে শুরু করছি।',
       closing: 'খাওয়ার আগে বিসমিল্লাহ বলতে ভুলবে না।',
     },
-    // one Gemini (Veo) clip for the whole reel; the drawn scene is the stand-in until it arrives
+    // two 8 s Gemini (Veo) clips; the drawn scenes stand in until they arrive
     scenes: [
       {
         art: 'orange-tree',
         sound: 'morning-birds',
-        look: 'সকালের নরম রোদে পাকা কমলা আর আমে ভরা গাছের ডাল, পাতা হালকা দুলছে',
+        look: 'সকালের নরম রোদে পাকা কমলায় ভরা গাছের ডাল, পাতা হালকা দুলছে',
         prompt: veo(
-          'Close view of tree branches full of ripe oranges and mangoes in soft golden morning sunlight. Green leaves sway gently in a light breeze, a few dew drops sparkle on the fruit, a soft green orchard blurred in the background.',
+          'Close view of a tree branch full of ripe oranges in soft golden morning sunlight. Green leaves sway gently in a light breeze and a few dew drops sparkle on the fruit, a soft green orchard blurred in the background.',
           'a soft morning breeze through leaves and faint distant birdsong',
-          12,
         ),
         tint: ['#F4D29A', '#3E5E34'],
+      },
+      {
+        art: 'mango-tree',
+        sound: 'leaves',
+        look: 'পাতার ফাঁকে রোদ, ডালে ঝুলছে পাকা আম',
+        prompt: veo(
+          'Ripe yellow mangoes hanging from a leafy mango tree branch, warm sunlight filtering through the green leaves, the branch moving very slightly in the breeze.',
+          'leaves rustling softly in a light breeze',
+        ),
+        tint: ['#E9D58E', '#3C5C2F'],
       },
     ],
     sources: [

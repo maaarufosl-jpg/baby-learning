@@ -8,6 +8,33 @@
 আল্লাহর সুন্দর নাম আর-রাযযাক, অর্থ রিজিকদাতা 🌾 (সূরা আয-যারিয়াত, আয়াত ৫৮) #আসমাউল_হুসনা #নিদর্শন #IslamicReels
 ```
 
+## Gemini ভিডিও (৩টি, প্রতিটি ৮ সেকেন্ড)
+
+1. "ভিডিও ১" এর প্রম্পট পুরোটা কপি করে Gemini-তে দিন। ভিডিও খাড়া (9:16) রাখুন।
+2. ভিডিও তৈরি হলে চ্যাটে পাঠান, লিখুন: "রিল ৯, ভিডিও ১"।
+3. একইভাবে পরের ভিডিও।
+4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
+
+### ভিডিও ১: সবুজ ধানক্ষেতে নরম বৃষ্টি
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Soft rain falling on bright green rice paddies, drops landing on the young rice leaves, misty hills far away. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — gentle rain. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ২: সোনালি পাকা ধানের শিষ বাতাসে দুলছে
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Golden ripe rice stalks heavy with grain swaying in the wind at sunset, warm light, close shot. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — wind through the rice field. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ৩: পাকা আমে ভরা গাছের ডাল, পাতার ফাঁকে রোদ
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Ripe mangoes hanging from a leafy mango tree branch, sunlight filtering through the leaves, gentle movement in the breeze. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — soft breeze and faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
+
 ## দৃশ্য (কোনো মানুষ বা প্রাণী নেই)
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |

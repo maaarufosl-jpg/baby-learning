@@ -1,6 +1,6 @@
 # রিল ২: খাওয়ার আগের দোয়া
 
-ধরন: ছোট দোয়া · দৈর্ঘ্য: প্রায় ১৬ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ১টি প্রকৃতির দৃশ্য
+ধরন: ছোট দোয়া · দৈর্ঘ্য: প্রায় ১৬ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ২টি প্রকৃতির দৃশ্য
 
 ## পোস্টের ক্যাপশন (কপি করে রিলের বিবরণে দিন)
 
@@ -8,23 +8,33 @@
 খাওয়ার আগে বলি: বিসমিল্লাহ (بِسْمِ اللّٰهِ) 🍊 (সহিহ বুখারি ৫৩৭৬) #ছোট_দোয়া #নিদর্শন #IslamicReels
 ```
 
-## Gemini ভিডিও (একটাই, ১০–১৪ সেকেন্ড)
+## Gemini ভিডিও (২টি, প্রতিটি ৮ সেকেন্ড)
 
-1. নিচের প্রম্পট পুরোটা কপি করে Gemini-তে দিন। ভিডিও খাড়া (9:16) রাখুন।
-2. ভিডিও তৈরি হলে চ্যাটে পাঠান, লিখুন: "রিল ২"।
-3. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
+1. "ভিডিও ১" এর প্রম্পট পুরোটা কপি করে Gemini-তে দিন। ভিডিও খাড়া (9:16) রাখুন।
+2. ভিডিও তৈরি হলে চ্যাটে পাঠান, লিখুন: "রিল ২, ভিডিও ১"।
+3. একইভাবে পরের ভিডিও।
+4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
+
+### ভিডিও ১: সকালের নরম রোদে পাকা কমলায় ভরা গাছের ডাল, পাতা হালকা দুলছে
 
 ```
-Vertical 9:16 video, 12 seconds, photorealistic cinematic nature footage. Close view of tree branches full of ripe oranges and mangoes in soft golden morning sunlight. Green leaves sway gently in a light breeze, a few dew drops sparkle on the fruit, a soft green orchard blurred in the background. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — a soft morning breeze through leaves and faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Close view of a tree branch full of ripe oranges in soft golden morning sunlight. Green leaves sway gently in a light breeze and a few dew drops sparkle on the fruit, a soft green orchard blurred in the background. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — a soft morning breeze through leaves and faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
 ```
 
-ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়। রিলের লেখা ও কণ্ঠ শেষ হয় প্রায় ১৪ সেকেন্ডে; ১০–১২ সেকেন্ডের ভিডিও হলে একটু ধীর করে মিলিয়ে নেওয়া হবে।
+### ভিডিও ২: পাতার ফাঁকে রোদ, ডালে ঝুলছে পাকা আম
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Ripe yellow mangoes hanging from a leafy mango tree branch, warm sunlight filtering through the green leaves, the branch moving very slightly in the breeze. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — leaves rustling softly in a light breeze. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
 
 ## দৃশ্য (কোনো মানুষ বা প্রাণী নেই)
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |
 |---|---|---|
-| ১ | সকালের নরম রোদে পাকা কমলা আর আমে ভরা গাছের ডাল, পাতা হালকা দুলছে | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
+| ১ | সকালের নরম রোদে পাকা কমলায় ভরা গাছের ডাল, পাতা হালকা দুলছে | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
+| ২ | পাতার ফাঁকে রোদ, ডালে ঝুলছে পাকা আম | গাছের পাতার মৃদু শব্দ |
 
 ## পর্দায় ও কণ্ঠে যা থাকবে
 
