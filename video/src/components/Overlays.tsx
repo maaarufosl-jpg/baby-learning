@@ -142,7 +142,8 @@ export const DuaPanel: React.FC<{dua: Dua; display: DuaDisplay; layout: Layout; 
         style={{
           fontFamily: `'${ARABIC_FONT}', serif`,
           fontWeight: 700,
-          fontSize: card ? 150 : 170,
+          // A long dua is set smaller on the narrow end card so it stays on one line.
+          fontSize: card ? (dua.arabic.length > 20 ? 96 : 150) : 170,
           lineHeight: 1.35,
           color: colors.ink,
           direction: 'rtl',
@@ -150,7 +151,7 @@ export const DuaPanel: React.FC<{dua: Dua; display: DuaDisplay; layout: Layout; 
       >
         {dua.arabic}
       </div>
-      <div style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: Math.round((card ? (dua.parts.length > 3 ? 62 : 80) : 92) * (dua.parts.join('').length > 24 ? 0.85 : 1)), color: colors.inkSoft, marginTop: 6}}>
+      <div style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: Math.round((card ? (dua.parts.length > 3 ? 62 : 80) : 92) * (dua.parts.join('').length > 24 ? (card ? 0.72 : 0.85) : 1)), color: colors.inkSoft, marginTop: 6}}>
         {dua.parts.map((p, i) => {
           const isActive = active === i;
           const dim = active !== -1 && !isActive;

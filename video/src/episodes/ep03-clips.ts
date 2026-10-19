@@ -55,6 +55,12 @@ export const EP03_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'everyone', label: 'উমায়ের ও সাফা', text: 'মিউ, শুরুতে বিসমিল্লাহ!', from: 0.35, to: 0.72, top: 880},
     {type: 'say', who: 'miu', text: 'মিউ!', from: 0.76, to: 0.87, top: 880},
   ],
+  // Gemini said "পাব" for "পর্বে" in the goodbye, so that line's sound comes from episode 2's goodbye (see the commit).
+  12: [
+    {type: 'say', who: 'umayer', text: 'ভুলে গেলে, মনে পড়লেই বলবে তো?', from: 0.13, to: 0.38},
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.46, to: 0.86},
+    {type: 'card', from: 0.08},
+  ],
 };
 
 export const ep03Clips = clips as Record<string, SceneMedia>;
