@@ -6,6 +6,8 @@
 
 **সূত্র:** দোয়া ও ডান হাত গালের নিচে রাখা: সহিহ বুখারি ৬৩১৪ (হুযায়ফা রা.)। ডান কাতে শোয়া: সহিহ বুখারি ৬৩১১। ("বিসমিকা আল্লাহুম্মা..." ক্রমেও বুখারিতে এসেছে, তবে আমাদের দেশে "আল্লাহুম্মা বিসমিকা..." বেশি প্রচলিত, তাই এটাই রাখা হলো।) (ছাড়ার আগে আলেমকে দিয়ে যাচাই করিয়ে নিন)
 
+**ডান কাত:** Gemini অনেক সময় বাম কাতে শুইয়ে দেয়। তাই প্রম্পটে লেখা আছে বালিশ ফ্রেমের বাম দিকে আর উমায়েরের মুখ ক্যামেরার দিকে। এভাবে শুলে সে ডান কাতেই থাকে। ভিডিওতে বালিশ ডান দিকে থাকলে বুঝবেন বাম কাত হয়েছে।
+
 **খেয়াল করুন:** শোবার ঘরের দৃশ্যে সাফাকে রাখা হয়নি, যাতে তাকে বিছানায় হিজাব পরে দেখাতে না হয়। সে শুধু শুরুর মাঠ আর শেষের বিদায় দৃশ্যে থাকবে। রাতের দৃশ্য উষ্ণ আলোয়, ভয়ের কিছু নেই।
 
 **দৃশ্য ১ বানাতে হবে না।** পর্ব ১-এর শুরুর সবুজ মাঠের ভিডিওটাই আবার ব্যবহার করব। শুরুতে পর্ব ৩-এর দোয়া এক ঝলক মনে করিয়ে দেব।
@@ -63,7 +65,7 @@ Characters: Ma, the children's young mother with a kind gentle face, wearing a l
 
 Setting: a cozy Bangladeshi child's bedroom at night: a small wooden bed with a soft blue-and-white quilt and a white pillow, a warm glowing night lamp on a wooden bedside table, a window with pink curtains showing a crescent moon and stars, pale mint-green walls; the room feels calm, warm and safe, never scary.
 
-Action: Ma gently helps Umayer turn onto his right side and place his right hand under his right cheek. Umayer copies her carefully and smiles.
+Action: Ma gently helps Umayer turn onto his right side and place his right hand under his right cheek. He ends lying on his RIGHT side facing the camera, with the pillow and his head on the LEFT side of the frame and his feet toward the right, his right arm underneath him and his right hand under his right cheek. Umayer copies her carefully and smiles.
 
 Dialogue: Ma, slowly and clearly, in Bengali: "আমাদের নবীজি সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম ডান কাতে শুতেন, ডান হাত গালের নিচে রেখে।"
 ```
@@ -77,7 +79,7 @@ Characters: Ma, the children's young mother with a kind gentle face, wearing a l
 
 Setting: a cozy Bangladeshi child's bedroom at night: a small wooden bed with a soft blue-and-white quilt and a white pillow, a warm glowing night lamp on a wooden bedside table, a window with pink curtains showing a crescent moon and stars, pale mint-green walls; the room feels calm, warm and safe, never scary.
 
-Action: Umayer lies on his right side with his right hand under his cheek. Ma, sitting beside him, says each part slowly and Umayer repeats after her, while soft golden sparkles float in the warm lamplight. Leave empty space at the top right of the frame.
+Action: Umayer is lying on his RIGHT side facing the camera, with the pillow and his head on the LEFT side of the frame and his feet toward the right, his right arm underneath him and his right hand under his right cheek. Ma, sitting beside him, says each part slowly and Umayer repeats after her, while soft golden sparkles float in the warm lamplight. Leave empty space at the top right of the frame.
 
 Dialogue: In Bengali, very slowly: Ma "আল্লাহুম্মা... বিসমিকা... আমুতু... ওয়া আহইয়া", then Umayer "আল্লাহুম্মা বিসমিকা আমুতু ওয়া আহইয়া!"
 ```
@@ -105,7 +107,7 @@ Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy 
 
 Setting: a cozy Bangladeshi child's bedroom at night: a small wooden bed with a soft blue-and-white quilt and a white pillow, a warm glowing night lamp on a wooden bedside table, a window with pink curtains showing a crescent moon and stars, pale mint-green walls; the room feels calm, warm and safe, never scary.
 
-Action: Umayer lies on his right side with his hand under his cheek, smiling and calm, his eyes getting sleepy. Ma strokes his shoulder lovingly.
+Action: Umayer is lying on his RIGHT side facing the camera, with the pillow and his head on the LEFT side of the frame and his feet toward the right, his right arm underneath him and his right hand under his right cheek, smiling and calm, his eyes getting sleepy. Ma strokes his shoulder lovingly.
 
 Dialogue: Umayer, softly, in Bengali: "এখন আর ভয় লাগছে না।" Ma, smiling: "মাশাআল্লাহ। আল্লাহ তোমাকে দেখে রাখবেন।"
 ```
@@ -119,7 +121,7 @@ Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy 
 
 Setting: a cozy Bangladeshi child's bedroom at night: a small wooden bed with a soft blue-and-white quilt and a white pillow, a warm glowing night lamp on a wooden bedside table, a window with pink curtains showing a crescent moon and stars, pale mint-green walls; the room feels calm, warm and safe, never scary.
 
-Action: Miu curls up at the foot of the bed and gives a big yawn. Umayer, lying on his right side, lifts his head a little and giggles softly. Miu flops over onto its right side.
+Action: Miu curls up at the foot of the bed and gives a big yawn. Umayer, lying on his RIGHT side facing the camera, with the pillow and his head on the LEFT side of the frame and his feet toward the right, his right arm underneath him and his right hand under his right cheek, lifts his head a little and giggles softly. Miu flops over onto its right side.
 
 Dialogue: Umayer, whispering and giggling, in Bengali: "মিউ, তুমিও ডান কাতে শোও!" Miu, sleepy: a tiny soft meow.
 ```
@@ -147,7 +149,7 @@ Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy 
 
 Setting: a cozy Bangladeshi child's bedroom at night: a small wooden bed with a soft blue-and-white quilt and a white pillow, a warm glowing night lamp on a wooden bedside table, a window with pink curtains showing a crescent moon and stars, pale mint-green walls; the room feels calm, warm and safe, never scary.
 
-Action: A calm, slow shot: Umayer sleeps peacefully on his right side with his hand under his cheek and a little smile. Miu sleeps curled at the foot of the bed. The crescent moon shines through the window and the curtain moves softly.
+Action: A calm, slow shot: Umayer sleeps peacefully with a little smile, lying on his RIGHT side facing the camera, with the pillow and his head on the LEFT side of the frame and his feet toward the right, his right arm underneath him and his right hand under his right cheek. Miu sleeps curled at the foot of the bed. The crescent moon shines through the window and the curtain moves softly.
 
 Dialogue: No speech. Only soft night sounds: gentle crickets and a quiet breeze.
 ```
