@@ -23,6 +23,11 @@ export const EP05_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এসো, একটা দোয়া শেখাই।', from: 0.5, to: 0.78, top: 880},
   ],
   5: [{type: 'say', who: 'umayer', text: 'ঘুম থেকে উঠে আমরা\nআল্লাহর শুকরিয়া করি।', from: 0.09, to: 0.45, top: 740}],
+  6: [
+    {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ ঘুম থেকে উঠে', from: 0.29, to: 0.55, top: 880},
+    {type: 'say', who: 'ammu', text: 'এই দোয়া পড়তেন।', from: 0.56, to: 0.78, top: 880},
+    {type: 'footnote', text: 'সহিহ বুখারি ৬৩১২, ৬৩১৪'},
+  ],
 };
 
 export const ep05Clips = clips as Record<string, SceneMedia>;
@@ -53,5 +58,6 @@ export const EP05_CONFIG: ClipConfig = {
     3: [0.3, 6.55],
     4: [0.4, 8.5],
     5: [0.6, 6.6],
+    6: [1.0, 7.9],
   },
 };
