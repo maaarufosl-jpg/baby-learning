@@ -28,6 +28,14 @@ export const EP05_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'এই দোয়া পড়তেন।', from: 0.56, to: 0.78, top: 880},
     {type: 'footnote', text: 'সহিহ বুখারি ৬৩১২, ৬৩১৪'},
   ],
+  // Umayer says the parts at about 1.1s, 1.8s and 2.9s, then Safa at about 4.5s, 5.7s and 6.7s.
+  // The panel also hides an empty white box Gemini drew at the top right.
+  7: [
+    {type: 'dua', mode: 'broken', from: 0.02, to: 0.43, pop: true, align: 'right', times: [0.11, 0.18, 0.29]},
+    {type: 'dua', mode: 'broken', from: 0.43, to: 0.73, pop: false, align: 'right', times: [0.45, 0.56, 0.66]},
+    {type: 'dua', mode: 'full', from: 0.73, showMeaning: true, pop: false, align: 'right'},
+    {type: 'star', at: 0.75},
+  ],
 };
 
 export const ep05Clips = clips as Record<string, SceneMedia>;
@@ -59,5 +67,6 @@ export const EP05_CONFIG: ClipConfig = {
     4: [0.4, 8.5],
     5: [0.6, 6.6],
     6: [1.0, 7.9],
+    7: [0.5, 8.0],
   },
 };
