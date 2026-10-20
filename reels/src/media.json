@@ -335,23 +335,23 @@
       },
       "1-1": {
         "file": "audio/reel15/v1-1.mp3",
-        "seconds": 2.59
+        "seconds": 3.11
       },
       "2-1": {
         "file": "audio/reel15/v2-1.mp3",
-        "seconds": 1.78
+        "seconds": 1.72
       },
       "2-2": {
         "file": "audio/reel15/v2-2.mp3",
-        "seconds": 3.42
+        "seconds": 3.89
       },
       "3-2": {
         "file": "audio/reel15/v3-2.mp3",
-        "seconds": 4.62
+        "seconds": 4.31
       },
       "3-3": {
         "file": "audio/reel15/v3-3.mp3",
-        "seconds": 4.49
+        "seconds": 5.17
       }
     }
   }
