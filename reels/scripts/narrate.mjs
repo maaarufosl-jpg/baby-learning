@@ -14,8 +14,8 @@ export const DEFAULT_VOICE = 'bn-IN-Chirp3-HD-Charon';
 const argv = process.argv.slice(3);
 const opt = (name, def) => (argv.includes(`--${name}`) ? argv[argv.indexOf(`--${name}`) + 1] : def);
 const engine = opt('engine', 'google');
-// natural pace: slowing the voice down made it sound stretched and robotic
-const speed = Number(opt('speed', '1'));
+// a little slower than normal for children; commas become real pauses (below) so it does not just sound stretched
+const speed = Number(opt('speed', '0.88'));
 const {reels, soundKey, isQuran, isHadithArabic, buildTimeline} = await loadData();
 const which = process.argv[2];
 const list = which === 'all' ? reels : reels.filter((r) => r.id === which || r.number === Number(which));
@@ -50,7 +50,8 @@ if (engine === 'google') {
         method: 'POST',
         headers: {'Content-Type': 'application/json', 'X-Goog-Api-Key': key},
         body: JSON.stringify({
-          input: {text},
+          // Chirp 3 HD markup: a short pause after each comma
+          input: text.includes(',') ? {markup: text.replace(/,\s*/g, ', [pause short] ')} : {text},
           voice: {languageCode: 'bn-IN', name: voiceName},
           audioConfig: {audioEncoding: 'MP3', speakingRate: speed, sampleRateHertz: 44100},
         }),
