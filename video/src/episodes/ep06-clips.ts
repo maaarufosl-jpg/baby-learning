@@ -22,13 +22,6 @@ export const EP06_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'একটা দোয়া পড়তেন।', from: 0.67, to: 0.9, top: 880},
     {type: 'footnote', text: 'সহিহ বুখারি ১৪২, সহিহ মুসলিম ৩৭৫'},
   ],
-  // Ma says each part and Umayer echoes it. The clip is cut to 2.2-7.0s: before that they said "বিসমিল্লাহ",
-  // and after it Umayer repeated the whole line with "বিসমিল্লাহ", which this episode does not teach.
-  5: [
-    {type: 'dua', mode: 'broken', from: 0.2, to: 0.62, pop: true, align: 'right', times: [0.22, 0.39, 0.56]},
-    {type: 'dua', mode: 'full', from: 0.62, showMeaning: true, pop: false, align: 'right'},
-    {type: 'star', at: 0.64},
-  ],
 };
 
 export const ep06Clips = clips as Record<string, SceneMedia>;
@@ -38,9 +31,9 @@ export const EP06_CONFIG: ClipConfig = {
   title: 'বাথরুমে যাওয়ার আগে',
   dua: {
     name: 'বাথরুমে ঢোকার দোয়া',
-    arabic: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ',
-    parts: ['আল্লাহুম্মা', 'ইন্নী আউযু', 'বিকা'],
-    meaning: 'হে আল্লাহ, আমি তোমার কাছে আশ্রয় চাই',
+    arabic: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ',
+    parts: ['আল্লাহুম্মা ইন্নী আউযু বিকা', 'মিনাল খুবুসি', 'ওয়াল খাবাইস'],
+    meaning: 'হে আল্লাহ, আমি তোমার কাছে সব খারাপ থেকে আশ্রয় চাই',
     source: 'সহিহ বুখারি ১৪২, সহিহ মুসলিম ৩৭৫',
   },
   previousDua: EP05_CONFIG.dua,
@@ -56,6 +49,5 @@ export const EP06_CONFIG: ClipConfig = {
     2: [1.0, 7.8],
     3: [0.5, 8.0],
     4: [1.2, 9.2],
-    5: [2.2, 7.0],
   },
 };

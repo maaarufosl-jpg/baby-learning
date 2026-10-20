@@ -2,11 +2,9 @@
 
 **গল্প:** খেলার মাঝে উমায়ের তাড়াহুড়ো করে বাথরুমে দৌড়ায়, দরজায় এসে গুলিয়ে ফেলে কোন পা আগে দেবে। মা এসে শেখান ঢোকার আগের দোয়া আর বাম পা দিয়ে ঢোকা। বের হওয়ার দোয়া থাকবে পর্ব ৭-এ।
 
-**আজকের দোয়া (ছোটদের অংশ):** اللَّهُمَّ إِنِّي أَعُوذُ بِكَ — আল্লাহুম্মা ইন্নী আউযু বিকা — হে আল্লাহ, আমি তোমার কাছে আশ্রয় চাই (বুখারি-মুসলিমের বর্ণনায় শুরুতে "বিসমিল্লাহ" নেই, তাই পর্বে রাখা হয়নি)
+**আজকের দোয়া:** اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ — আল্লাহুম্মা ইন্নী আউযু বিকা মিনাল খুবুসি ওয়াল খাবাইস — হে আল্লাহ, আমি তোমার কাছে সব খারাপ (খারাপ জিন ও শয়তান) থেকে আশ্রয় চাই। (বুখারি-মুসলিমের বর্ণনায় শুরুতে "বিসমিল্লাহ" নেই, তাই পর্বে রাখা হয়নি।)
 
-**পূর্ণ দোয়া (বাবা-মায়ের জন্য, বর্ণনায় দেব):** اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ — আল্লাহুম্মা ইন্নী আউযু বিকা মিনাল খুবুসি ওয়াল খাবাইস
-
-**সূত্র:** সহিহ বুখারি ১৪২, সহিহ মুসলিম ৩৭৫। বাম পায়ে ঢোকার আদব আলেমদের থেকে প্রচলিত; ছাড়ার আগে আলেমকে দিয়ে দোয়া, উচ্চারণ, সূত্র ও ছোটদের অংশ শেখানো ঠিক কিনা যাচাই করিয়ে নিন।
+**সূত্র:** সহিহ বুখারি ১৪২, সহিহ মুসলিম ৩৭৫। বাম পায়ে ঢোকার আদব আলেমদের থেকে প্রচলিত; ছাড়ার আগে আলেমকে দিয়ে দোয়া, উচ্চারণ ও সূত্র যাচাই করিয়ে নিন।
 
 **খেয়াল করুন:** বাথরুমের ভেতর কখনো দেখানো হবে না, শুধু বাইরে থেকে দরজা। পর্ব ছোট রাখতে এবার ১১টা দৃশ্য (দৃশ্য ১ আগের মাঠের ভিডিও)।
 
@@ -56,7 +54,7 @@ Action: Ma walks up the hallway, smiles kindly and kneels beside Umayer at the b
 Dialogue: Ma, softly, in Bengali: "থামো সোনা। আমাদের নবীজি সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম বাথরুমে ঢোকার আগে একটা দোয়া পড়তেন।"
 ```
 
-## ৫. আল্লাহুম্মা ইন্নী আউযু বিকা
+## ৫. আল্লাহুম্মা ইন্নী আউযু বিকা মিনাল খুবুসি ওয়াল খাবাইস
 
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
@@ -65,23 +63,25 @@ Characters: Ma, the children's young mother with a kind gentle face, wearing a l
 
 Setting: a bright clean Bangladeshi home hallway in the daytime: pale mint-green walls, a closed white bathroom door with a small towel hook beside it, a potted plant and a small rug; the inside of the bathroom is never shown.
 
-Action: Ma says each part slowly and Umayer repeats after her, nodding, while soft golden sparkles float around them. Keep the characters low and to the left so the top right of the frame shows only the plain wall, with no boxes, signs or frames there.
+Action: Ma says each part slowly and Umayer repeats each part right after her, nodding, while soft golden sparkles float around them. Keep the characters low and to the left so the top right of the frame shows only the plain wall, with no boxes, signs or frames there.
 
-Dialogue: In Bengali, very slowly: Ma "আল্লাহুম্মা... ইন্নী আউযু... বিকা", then Umayer "আল্লাহুম্মা ইন্নী আউযু বিকা!"
+Dialogue: In Bengali, very slowly, Ma says a part and Umayer repeats it: "আল্লাহুম্মা ইন্নী আউযু বিকা..." "মিনাল খুবুসি..." "ওয়াল খাবাইস।"
 ```
 
 ## ৬. বাম পা আগে
 
+শুধু পা দেখানো হয়, মুখ নয়, যাতে Gemini চেহারা বদলাতে না পারে।
+
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
 
-Characters: Ma, the children's young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
+Characters: Umayer, a 4-year-old Bangladeshi boy wearing white pajama trousers and small brown sandals; only his feet and lower legs are seen. Ma, the children's young mother, is heard but not seen; only her gentle hand in a sage-green sleeve appears, pointing.
 
-Setting: a bright clean Bangladeshi home hallway in the daytime: pale mint-green walls, a closed white bathroom door with a small towel hook beside it, a potted plant and a small rug; the inside of the bathroom is never shown.
+Setting: a bright clean Bangladeshi home hallway in the daytime: a small soft rug on a light wooden floor in front of a closed white bathroom door; the door stays closed the whole time and the inside of the bathroom is never shown.
 
-Action: Camera low and behind Umayer. He stands facing the white bathroom door with his back to the camera. Ma, beside him, points to his LEFT foot. Umayer lifts his LEFT foot, which is on the LEFT side of the frame, high and steps it forward toward the door first, then smiles at Ma. The bathroom door stays closed the whole time and is never opened.
+Action: Low close-up shot from behind Umayer, showing only his feet and lower legs facing the closed white door. Ma's hand in a sage-green sleeve points down at his LEFT foot, which is on the LEFT side of the frame. Umayer lifts his LEFT foot and steps it forward first, then brings his right foot next to it. No faces are shown.
 
-Dialogue: Ma, clearly, in Bengali: "আর ঢুকি বাম পা দিয়ে।"
+Dialogue: Ma, clearly and warmly, in Bengali: "আর ঢুকি বাম পা দিয়ে।"
 ```
 
 ## ৭. এবার তুমি বলো
@@ -95,7 +95,7 @@ Setting: a plain soft pastel sky-blue background with gently floating light circ
 
 Action: Umayer stands on the left side of the frame, smiling, and looks straight at the camera, inviting the viewer to speak with him, pausing with a nod after each part. Keep the middle and right of the frame empty.
 
-Dialogue: Umayer, cheerful and slow, in Bengali: "এবার তুমি বলো! আল্লাহুম্মা... ইন্নী আউযু... বিকা!"
+Dialogue: Umayer, cheerful and slow, in Bengali: "এবার তুমি বলো! আল্লাহুম্মা ইন্নী আউযু বিকা... মিনাল খুবুসি... ওয়াল খাবাইস!"
 ```
 
 ## ৮. সাফাও শেখে
