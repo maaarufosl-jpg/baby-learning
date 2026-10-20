@@ -79,7 +79,7 @@ Characters: Ma, the children's young mother with a kind gentle face, wearing a l
 
 Setting: a bright clean Bangladeshi home hallway in the daytime: pale mint-green walls, a closed white bathroom door with a small towel hook beside it, a potted plant and a small rug; the inside of the bathroom is never shown.
 
-Action: Camera low and behind Umayer. He stands facing the white bathroom door with his back to the camera. Ma, beside him, points to his LEFT foot. Umayer lifts his LEFT foot, which is on the LEFT side of the frame, and steps forward toward the doorway first. The door opens only a little and inside there is only soft light.
+Action: Camera low and behind Umayer. He stands facing the white bathroom door with his back to the camera. Ma, beside him, points to his LEFT foot. Umayer lifts his LEFT foot, which is on the LEFT side of the frame, high and steps it forward toward the door first, then smiles at Ma. The bathroom door stays closed the whole time and is never opened.
 
 Dialogue: Ma, clearly, in Bengali: "আর ঢুকি বাম পা দিয়ে।"
 ```
