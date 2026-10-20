@@ -404,4 +404,25 @@ export const SCENES: Record<string, NatureScene> = {
       {type: 'ridge', kind: 'hills', y: 0.96, amp: 0.1, color: '#2A2232', seed: 353, drift: 6},
     ],
   },
+  'valley-lake': {
+    layers: [
+      {type: 'sky', colors: ['#7FB0D8', '#B9D6E6', '#E3EEE6']},
+      {type: 'clouds', count: 4, y: [0.06, 0.22], color: '#FFFFFF', opacity: 0.75, speed: 8},
+      {type: 'ridge', kind: 'mountains', y: 0.48, amp: 0.26, color: '#6F8E8A', seed: 361, snow: '#EEF3F2'},
+      {type: 'ridge', kind: 'mountains', y: 0.55, amp: 0.16, color: '#4E6F66', seed: 362},
+      {type: 'ridge', kind: 'forest', y: 0.57, amp: 0.05, color: '#2F5444', seed: 363},
+      {type: 'water', y: 0.57, colors: ['#8FB8C4', '#24504F'], shimmer: '#F2FAFA', mirror: '#4E6F66'},
+    ],
+  },
+  'snowy-pines': {
+    zoom: 0.05,
+    layers: [
+      {type: 'sky', colors: ['#AFC0D2', '#D3DEE6', '#EEF2F2']},
+      {type: 'ridge', kind: 'forest', y: 0.42, amp: 0.14, color: '#8FA3AE', seed: 371, drift: 2},
+      {type: 'mist', y: 0.42, color: '#F1F4F6', opacity: 0.7},
+      {type: 'ridge', kind: 'forest', y: 0.62, amp: 0.22, color: '#4F6872', seed: 372, drift: 4},
+      {type: 'ridge', kind: 'forest', y: 0.9, amp: 0.2, color: '#2E4650', seed: 374, drift: 7},
+      {type: 'petals', count: 70, color: '#FFFFFF'},
+    ],
+  },
 };

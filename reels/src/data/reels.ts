@@ -678,6 +678,67 @@ export const reels: Reel[] = [
       HADITH_NUMBERING,
     ],
   }),
+  asmaReel({
+    id: 'reel15',
+    theme: 'mint',
+    number: 15,
+    title: 'আল-মুহাইমিন: রক্ষণাবেক্ষণকারী',
+    count: '৬',
+    arabic: 'الْمُهَيْمِنُ',
+    bangla: 'আল-মুহাইমিন',
+    meaning: 'রক্ষণাবেক্ষণকারী',
+    explain: 'যিনি সবকিছু দেখে রাখেন আর হেফাজত করেন',
+    ayah: {
+      arabic: 'الْمُؤْمِنُ الْمُهَيْمِنُ',
+      meaning: 'নিরাপত্তাদাতা, রক্ষণাবেক্ষণকারী',
+      source: 'সূরা আল-হাশর ৫৯:২৩ (আয়াতের অংশ)',
+      note: 'আব্দুল মুহাইমিন নামের অর্থ: আল-মুহাইমিনের বান্দা',
+      quran: {ref: '59:23', words: [11, 12]},
+    },
+    narration: {
+      intro: 'আল্লাহর সুন্দর নামগুলোর আরেকটি।',
+      meaning: 'এর অর্থ, রক্ষণাবেক্ষণকারী।',
+      ayah: 'আব্দুল মুহাইমিন নামের অর্থ, আল-মুহাইমিনের বান্দা।',
+    },
+    scenes: [
+      {
+        art: 'valley-lake',
+        sound: 'mountain-wind',
+        look: 'চারদিকে পাহাড়ে ঘেরা শান্ত হ্রদ',
+        prompt: veo('A calm lake in a green valley surrounded by tall protective mountains, the peaks reflected on the still water, soft daylight.', 'gentle mountain wind and quiet water'),
+        tint: ['#B9D6E6', '#24504F'],
+      },
+      {
+        art: 'snowy-pines',
+        sound: 'night',
+        look: 'নরম তুষারপাতে পাইন গাছের বন',
+        prompt: veo('Soft snow falling slowly over a quiet pine forest, layers of snowy trees fading into pale mist.', 'very quiet still air'),
+        tint: ['#D3DEE6', '#2E4650'],
+      },
+      {
+        art: 'spring-ferns',
+        sound: 'stream',
+        look: 'ফার্ন আর শ্যাওলার মাঝে পাথর থেকে উঠে আসা ছোট ঝরনাধারা',
+        prompt: veo('A small natural spring bubbling up between mossy rocks and green ferns, clear water spilling over the stones, dappled light.', 'bubbling spring water'),
+        tint: ['#D3EBC9', '#2A4E36'],
+      },
+    ],
+    sources: [
+      'সূরা আল-হাশর ৫৯:২৩ — ... الْمَلِكُ الْقُدُّوسُ السَّلَامُ الْمُؤْمِنُ الْمُهَيْمِنُ الْعَزِيزُ الْجَبَّارُ الْمُتَكَبِّرُ ...',
+    ],
+    checklist: [
+      'নামের আরবি বানান ও হরকত: الْمُهَيْمِنُ',
+      'আয়াতাংশের আরবি মুসহাফের সাথে মিলানো: الْمُؤْمِنُ الْمُهَيْمِنُ (৫৯:২৩, শব্দ ১১–১২)',
+      'বাংলা উচ্চারণ: আল-মুহাইমিন',
+      'অর্থ: রক্ষণাবেক্ষণকারী · ব্যাখ্যা "যিনি সবকিছু দেখে রাখেন আর হেফাজত করেন"',
+      'আয়াতাংশের অনুবাদ: নিরাপত্তাদাতা, রক্ষণাবেক্ষণকারী',
+      '"আব্দুল মুহাইমিন নামের অর্থ: আল-মুহাইমিনের বান্দা" ঠিক আছে কি না',
+    ],
+    unsure: [
+      'তিলাওয়াত আয়াতের মাঝখান থেকে (শব্দ ১১–১২) কাটা; কারি টানা পড়েন, তাই শুরু ও শেষ একটু হঠাৎ লাগতে পারে।',
+      'আল-মুহাইমিনের অর্থ নিয়ে একাধিক ব্যাখ্যা আছে (সাক্ষী, তত্ত্বাবধায়ক, রক্ষক); বাচ্চাদের জন্য "রক্ষণাবেক্ষণকারী" দেওয়া হয়েছে।',
+    ],
+  }),
 ];
 
 // every drawn scene belongs to one reel only, so no two reels look alike
