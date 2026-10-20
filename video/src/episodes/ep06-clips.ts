@@ -1,0 +1,43 @@
+import clips from './ep06.clips.json';
+import type {ClipConfig, ClipOverlay, SceneMedia} from './clip-types';
+import {EP05_CONFIG} from './ep05-clips';
+
+/**
+ * Episode 6 "বাথরুমে যাওয়ার আগে" from Gemini clips (scene numbers follow episodes/ep06-gemini-copy.md).
+ * Times are fractions of the whole clip (0 = start, 1 = end), before trimming.
+ */
+export const EP06_SCENE_COUNT = 11;
+
+export const EP06_OVERLAYS: Record<number, ClipOverlay[]> = {
+  1: [
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!', from: 0.15, to: 0.6, top: 860},
+    {type: 'recap', from: 0.62, to: 1},
+  ],
+  2: [{type: 'say', who: 'umayer', text: 'মা, আমি বাথরুমে যাব!', from: 0.54, to: 0.76, top: 880}],
+};
+
+export const ep06Clips = clips as Record<string, SceneMedia>;
+
+export const EP06_CONFIG: ClipConfig = {
+  number: 6,
+  title: 'বাথরুমে যাওয়ার আগে',
+  dua: {
+    name: 'বাথরুমে ঢোকার দোয়া',
+    arabic: 'بِسْمِ اللَّهِ، اللَّهُمَّ إِنِّي أَعُوذُ بِكَ',
+    parts: ['বিসমিল্লাহ', 'আল্লাহুম্মা', 'ইন্নী আউযু', 'বিকা'],
+    meaning: 'আল্লাহর নামে; হে আল্লাহ, আমি তোমার কাছে আশ্রয় চাই',
+    source: 'সহিহ বুখারি ১৪২, মুসলিম ৩৭৫, তিরমিজি ৬০৬',
+  },
+  previousDua: EP05_CONFIG.dua,
+  sceneCount: EP06_SCENE_COUNT,
+  clips: ep06Clips,
+  overlays: EP06_OVERLAYS,
+  // The opening greeting is shared with episode 1.
+  borrowClip: {1: {file: 'clips/ep01/_ready/scene01.mp4', seconds: 10.1}},
+  introSeconds: 2.5,
+  // Seconds of each Gemini clip to keep, so the episode stays short.
+  trim: {
+    1: [0.3, 8.9],
+    2: [1.0, 7.8],
+  },
+};
