@@ -18,6 +18,10 @@ export const EP05_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'সকাল হয়ে গেছে!', from: 0.72, to: 0.9, top: 880},
   ],
   3: [{type: 'say', who: 'safa', text: 'উঁউঁ... ভাইয়া...', from: 0.15, to: 0.4, top: 880}],
+  4: [
+    {type: 'say', who: 'umayer', text: 'কাঁদে না, সাফা।', from: 0.29, to: 0.48, top: 880},
+    {type: 'say', who: 'umayer', text: 'এসো, একটা দোয়া শেখাই।', from: 0.5, to: 0.78, top: 880},
+  ],
 };
 
 export const ep05Clips = clips as Record<string, SceneMedia>;
@@ -46,5 +50,6 @@ export const EP05_CONFIG: ClipConfig = {
     2: [1.0, 8.85],
     // Ends on Umayer's worried face: after 6.6s Gemini had Umayer also say "ভাইয়া".
     3: [0.3, 6.55],
+    4: [0.4, 8.5],
   },
 };
