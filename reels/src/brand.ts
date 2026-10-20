@@ -1,5 +1,5 @@
 /** Series identity. Three proposals; ACTIVE_BRAND is the one every reel uses. */
-export type BrandId = 'nidarshan' | 'bhorer-alo' | 'sobuj-tasbih';
+export type BrandId = 'chotto-mumin' | 'nidarshan' | 'bhorer-alo' | 'sobuj-tasbih';
 
 export type Brand = {
   id: BrandId;
@@ -18,6 +18,13 @@ export type Brand = {
 };
 
 export const BRANDS: Record<BrandId, Brand> = {
+  // the user's Facebook page; same colours and mark as the nidarshan proposal
+  'chotto-mumin': {
+    id: 'chotto-mumin',
+    name: 'ছোট্ট মুমিন',
+    tagline: 'প্রকৃতির মাঝে আল্লাহর কথা',
+    colors: {deep: '#163A2E', accent: '#E6BE6A', text: '#FBF7EC', soft: '#D9E4DA'},
+  },
   nidarshan: {
     id: 'nidarshan',
     name: 'নিদর্শন',
@@ -38,7 +45,7 @@ export const BRANDS: Record<BrandId, Brand> = {
   },
 };
 
-export const ACTIVE_BRAND: Brand = BRANDS.nidarshan;
+export const ACTIVE_BRAND: Brand = BRANDS['chotto-mumin'];
 
 const BN_DIGITS = '০১২৩৪৫৬৭৮৯';
 export const toBn = (n: number | string) => String(n).replace(/\d/g, (d) => BN_DIGITS[Number(d)]);

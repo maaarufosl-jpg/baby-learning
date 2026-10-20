@@ -8,7 +8,7 @@ export const LogoMark: React.FC<{brand: Brand; size: number; draw?: number}> = (
   const common = {fill: 'none', stroke: c, strokeWidth: 5, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const};
   return (
     <svg width={size} height={size} viewBox="0 0 200 200">
-      {brand.id === 'nidarshan' && (
+      {(brand.id === 'nidarshan' || brand.id === 'chotto-mumin') && (
         <>
           {/* mihrab arch framing a sunrise over two hills */}
           <path d="M45 175 V95 Q45 40 100 22 Q155 40 155 95 V175 Z" {...common} style={dash(480)} />

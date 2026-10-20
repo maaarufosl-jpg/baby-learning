@@ -7,7 +7,9 @@ import {LogoMark} from './Logo';
 /** One still showing the three proposed identities side by side, for choosing on a phone. */
 export const BrandOptions: React.FC = () => (
   <AbsoluteFill style={{flexDirection: 'column'}}>
-    {Object.values(BRANDS).map((b, i) => (
+    {Object.values(BRANDS)
+      .filter((b) => b.id !== 'chotto-mumin')
+      .map((b, i) => (
       <div
         key={b.id}
         style={{

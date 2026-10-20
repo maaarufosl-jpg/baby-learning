@@ -1,5 +1,5 @@
 /** One-line post text for Facebook Reels / YouTube Shorts, one per reel (copy-paste ready). */
-const TAGS = '#নিদর্শন #IslamicReels';
+const TAGS = '#ছোট্ট_মুমিন #IslamicReels';
 
 export const CAPTIONS: Record<string, string> = {
   reel01: `আল্লাহর সুন্দর নাম আর-রহমান, অর্থ পরম দয়াময়, যা আমরা প্রতি নামাজে সূরা ফাতিহায় পড়ি 🌄 (সূরা আল-ফাতিহা, আয়াত ২) #আসমাউল_হুসনা ${TAGS}`,
