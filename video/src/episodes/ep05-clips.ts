@@ -26,6 +26,16 @@ export const EP05_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'এই দোয়া পড়তেন।', from: 0.56, to: 0.78, top: 880},
     {type: 'footnote', text: 'সহিহ বুখারি ৬৩১২, ৬৩১৪'},
   ],
+  // Umayer says each part (about 0.3s, 3.4s, 6.0s) and Safa repeats it right after.
+  7: [
+    {type: 'dua', mode: 'broken', from: 0.0, to: 0.8, pop: true, align: 'right', scale: 0.5, times: [0.03, 0.34, 0.6]},
+    {type: 'dua', mode: 'full', from: 0.8, showMeaning: true, pop: false, align: 'right', scale: 0.5},
+    {type: 'star', at: 0.84},
+  ],
+  8: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.02, to: 0.15},
+    {type: 'repeat', parts: [0.17, 0.42, 0.56], until: 1, scale: 0.44},
+  ],
   9: [
     {type: 'say', who: 'safa', text: 'আলহামদুলিল্লা... আহইয়ানা!', from: 0.13, to: 0.37, top: 880},
     {type: 'say', who: 'umayer', text: 'মাশাআল্লাহ, সাফা!', from: 0.39, to: 0.56, top: 880},
@@ -74,6 +84,8 @@ export const EP05_CONFIG: ClipConfig = {
     4: [0.4, 8.5],
     5: [0.6, 6.6],
     6: [1.0, 7.9],
+    7: [0.1, 10.0],
+    8: [0, 10.0],
     9: [1.0, 7.0],
     10: [0.8, 7.6],
     11: [0.3, 7.8],
