@@ -1,0 +1,47 @@
+import clips from './ep05.clips.json';
+import type {ClipConfig, ClipOverlay, SceneMedia} from './clip-types';
+import {EP04_CONFIG} from './ep04-clips';
+
+/**
+ * Episode 5 "সকালে উঠে" from Gemini clips (scene numbers follow episodes/ep05-gemini-copy.md).
+ * Times are fractions of the whole clip (0 = start, 1 = end), before trimming.
+ */
+export const EP05_SCENE_COUNT = 12;
+
+export const EP05_OVERLAYS: Record<number, ClipOverlay[]> = {
+  1: [
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!', from: 0.15, to: 0.6, top: 860},
+    {type: 'recap', from: 0.62, to: 1},
+  ],
+  2: [
+    {type: 'say', who: 'umayer', text: 'আলহামদু লিল্লাহিল্লাযী আহইয়ানা!', from: 0.32, to: 0.68, top: 880},
+    {type: 'say', who: 'umayer', text: 'সকাল হয়ে গেছে!', from: 0.72, to: 0.9, top: 880},
+  ],
+};
+
+export const ep05Clips = clips as Record<string, SceneMedia>;
+
+export const EP05_CONFIG: ClipConfig = {
+  number: 5,
+  title: 'সকালে উঠে',
+  dua: {
+    name: 'ঘুম থেকে উঠার দোয়া',
+    arabic: 'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا',
+    parts: ['আলহামদু', 'লিল্লাহিল্লাযী', 'আহইয়ানা'],
+    meaning: 'সব প্রশংসা আল্লাহর, যিনি আমাদের জাগিয়ে তুললেন',
+    source: 'সহিহ বুখারি ৬৩১২, ৬৩১৪',
+  },
+  previousDua: EP04_CONFIG.dua,
+  sceneCount: EP05_SCENE_COUNT,
+  clips: ep05Clips,
+  overlays: EP05_OVERLAYS,
+  // The opening greeting is shared with episode 1.
+  borrowClip: {1: {file: 'clips/ep01/_ready/scene01.mp4', seconds: 10.1}},
+  introSeconds: 2.5,
+  // Seconds of each Gemini clip to keep, so the episode stays short.
+  trim: {
+    1: [0.3, 8.9],
+    // Gemini dissolves to another angle at about 9s.
+    2: [1.0, 8.85],
+  },
+};
