@@ -65,7 +65,7 @@ Characters: Ma, the children's young mother with a kind gentle face, wearing a l
 
 Setting: a bright clean Bangladeshi home hallway in the daytime: pale mint-green walls, a closed white bathroom door with a small towel hook beside it, a potted plant and a small rug; the inside of the bathroom is never shown.
 
-Action: Ma says each part slowly and Umayer repeats after her, nodding, while soft golden sparkles float around them. Leave empty space at the top right of the frame.
+Action: Ma says each part slowly and Umayer repeats after her, nodding, while soft golden sparkles float around them. Keep the characters low and to the left so the top right of the frame shows only the plain wall, with no boxes, signs or frames there.
 
 Dialogue: In Bengali, very slowly: Ma "বিসমিল্লাহ... আল্লাহুম্মা... ইন্নী আউযু... বিকা", then Umayer "বিসমিল্লাহ, আল্লাহুম্মা ইন্নী আউযু বিকা!"
 ```
