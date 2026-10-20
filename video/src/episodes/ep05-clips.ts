@@ -13,6 +13,8 @@ export const EP05_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!', from: 0.15, to: 0.6, top: 860},
     {type: 'recap', from: 0.62, to: 1},
   ],
+  // Umayer says the full dua on waking: parts at about 3.8s, 5.9s and 8.1s.
+  2: [{type: 'say', who: 'umayer', text: "আলহামদু লিল্লাহিল্লাযী আহইয়ানা,\nবা'দা মা আমাতানা, ওয়া ইলাইহিন নুশূর!", from: 0.37, to: 0.98, top: 740}],
   3: [{type: 'say', who: 'safa', text: 'উঁউঁ... ভাইয়া...', from: 0.15, to: 0.4, top: 880}],
   4: [
     {type: 'say', who: 'umayer', text: 'কাঁদে না, সাফা।', from: 0.29, to: 0.48, top: 880},
