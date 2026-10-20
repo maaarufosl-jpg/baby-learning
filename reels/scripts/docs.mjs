@@ -36,7 +36,7 @@ for (const r of reels) {
   const rows = [];
   for (const c of tl.cards) for (const l of c.lines) rows.push({at: l.at, what: l.text, kind: 'লেখা'});
   for (const x of tl.sounds) rows.push({at: x.at, what: x.quran ? `তিলাওয়াত (মিশারি রাশিদ আল-আফাসি): ${bn(x.text)}` : x.text, kind: x.quran ? 'কুরআন' : 'কণ্ঠ'});
-  rows.push({at: tl.endAt, what: 'শেষ কার্ড: লোগো, সিরিজের নাম, "পরের রিল দেখতে ফলো করুন"', kind: 'লেখা'});
+  rows.push({at: tl.endAt, what: 'দৃশ্য ধীরে মিলিয়ে যায় (শেষ কার্ড নেই)', kind: 'শেষ'});
   rows.sort((a, b) => a.at - b.at);
 
   const md = [

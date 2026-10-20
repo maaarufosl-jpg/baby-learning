@@ -134,25 +134,14 @@ const Header: React.FC = () => (
   </div>
 );
 
-const EndCard: React.FC = () => {
+/** The scene fades softly to dark at the very end; there is no end card. */
+const FadeOut: React.FC<{frames: number}> = ({frames}) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const bg = interpolate(frame, [0, 0.5 * fps], [0, 1], {extrapolateRight: 'clamp'});
-  const draw = interpolate(frame, [0.2 * fps, 1.3 * fps], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const text = interpolate(frame, [0.6 * fps, 1.1 * fps], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  return (
-    <AbsoluteFill style={{background: B.colors.deep, opacity: bg, alignItems: 'center', justifyContent: 'center', paddingBottom: 200}}>
-      <LogoMark brand={B} size={300} draw={draw} />
-      <div style={{opacity: text, textAlign: 'center', marginTop: 30}}>
-        <div style={{fontFamily: BN, fontWeight: 700, fontSize: 120, color: B.colors.text}}>{B.name}</div>
-        <div style={{fontFamily: BN, fontSize: 50, color: B.colors.accent, marginTop: 6}}>{B.tagline}</div>
-        <div style={{fontFamily: BN, fontSize: 40, color: B.colors.soft, marginTop: 40}}>পরের রিল দেখতে ফলো করুন</div>
-      </div>
-    </AbsoluteFill>
-  );
+  const o = interpolate(frame, [0, frames], [0, 1], {extrapolateRight: 'clamp'});
+  return <AbsoluteFill style={{background: B.colors.deep, opacity: o}} />;
 };
 
-/** One vertical reel: three nature scenes under a soft dark layer, timed text cards, narration, recitation and the end card. */
+/** One vertical reel: nature scenes under a soft dark layer, timed text cards, narration and recitation, fading out at the end. */
 export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
   const {fps} = useVideoConfig();
   const media = MEDIA[reel.id] ?? {};
@@ -185,7 +174,7 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
             'linear-gradient(180deg, rgba(6,16,12,0.35) 0%, rgba(6,16,12,0.42) 22%, rgba(6,16,12,0.58) 45%, rgba(6,16,12,0.5) 70%, rgba(6,16,12,0.3) 100%)',
         }}
       />
-      <Sequence durationInFrames={endFrom} layout="none">
+      <Sequence layout="none">
         <Header />
       </Sequence>
       {tl.cards.map((c, i) => (
@@ -207,8 +196,8 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
           </Sequence>
         ) : null,
       )}
-      <Sequence from={endFrom} name="শেষ কার্ড">
-        <EndCard />
+      <Sequence from={endFrom} name="মিলিয়ে যাওয়া">
+        <FadeOut frames={Math.round((tl.total - tl.endAt) * fps)} />
       </Sequence>
     </AbsoluteFill>
   );

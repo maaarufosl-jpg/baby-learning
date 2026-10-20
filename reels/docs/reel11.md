@@ -1,6 +1,6 @@
 # রিল ১১: আমাকে স্মরণ করো
 
-ধরন: ছোট আয়াত · দৈর্ঘ্য: প্রায় ২১ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ৩টি প্রকৃতির দৃশ্য
+ধরন: ছোট আয়াত · দৈর্ঘ্য: প্রায় ১৯ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ৩টি প্রকৃতির দৃশ্য
 
 ## পোস্টের ক্যাপশন (কপি করে রিলের বিবরণে দিন)
 
@@ -21,10 +21,10 @@
 Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A deep starry night sky over a calm mountain lake, stars reflected on the water, slow time-lapse of the stars moving. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — quiet night with soft water. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
 ```
 
-### ভিডিও ২: চাঁদের আলোয় ধীরে ভেসে যাওয়া মেঘ
+### ভিডিও ২: তারাভরা আকাশের নিচে মরুভূমির বালিয়াড়ি
 
 ```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Soft clouds drifting slowly across a bright full moon in a dark blue night sky, silver light on the cloud edges. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — gentle night wind. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Gentle sand dunes under a vast starry night sky with a thin moon, the Milky Way glowing above, very still. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — very soft desert night wind. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
 ```
 
 ### ভিডিও ৩: ভোরের আগে দিগন্তে প্রথম আলো (ফজরের সময়)
@@ -40,7 +40,7 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. The fir
 | দৃশ্য | কী দেখা যাবে | শব্দ |
 |---|---|---|
 | ১ | পাহাড়ি হ্রদের ওপর তারাভরা রাতের আকাশ | শান্ত রাতের বাতাস |
-| ২ | চাঁদের আলোয় ধীরে ভেসে যাওয়া মেঘ | শান্ত রাতের বাতাস |
+| ২ | তারাভরা আকাশের নিচে মরুভূমির বালিয়াড়ি | শান্ত রাতের বাতাস |
 | ৩ | ভোরের আগে দিগন্তে প্রথম আলো (ফজরের সময়) | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
 
 ## পর্দায় ও কণ্ঠে যা থাকবে
@@ -55,7 +55,7 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. The fir
 | ০:০৮ | কণ্ঠ | তোমরা আমাকে স্মরণ করো, আমিও তোমাদের স্মরণ করব। |
 | ০:১২ | লেখা | সূরা আল-বাকারা ২:১৫২ (আয়াতের অংশ) |
 | ০:১২ | কণ্ঠ | সূরা আল-বাকারা, একশো বাহান্ন নম্বর আয়াত। |
-| ০:১৭ | লেখা | শেষ কার্ড: লোগো, সিরিজের নাম, "পরের রিল দেখতে ফলো করুন" |
+| ০:১৭ | শেষ | দৃশ্য ধীরে মিলিয়ে যায় (শেষ কার্ড নেই) |
 
 পুরো সময় দৃশ্যের ওপর নরম অন্ধকার স্তর থাকবে, ওপরে ছোট লোগো। প্রকৃতির শব্দ বাজবে, কণ্ঠের সময় একটু কমে যাবে।
 

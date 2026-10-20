@@ -342,4 +342,66 @@ export const SCENES: Record<string, NatureScene> = {
       {type: 'grass', y: 0.74, color: '#2C2A33', height: 0.04, count: 140, tip: '#4A4452'},
     ],
   },
+  'rain-forest': {
+    layers: [
+      {type: 'sky', colors: ['#7D8C89', '#A2B2AA', '#C3CEC2']},
+      {type: 'ridge', kind: 'forest', y: 0.38, amp: 0.14, color: '#6F8A7C', seed: 301, drift: 2},
+      {type: 'mist', y: 0.38, color: '#DDE4DE', opacity: 0.7, count: 6},
+      {type: 'ridge', kind: 'forest', y: 0.58, amp: 0.2, color: '#3F6450', seed: 302, drift: 4},
+      {type: 'mist', y: 0.6, color: '#D5DED6', opacity: 0.5},
+      {type: 'ridge', kind: 'forest', y: 0.85, amp: 0.22, color: '#22402F', seed: 303, drift: 7},
+      {type: 'rain', count: 150, opacity: 0.5},
+    ],
+  },
+  'rain-river': {
+    layers: [
+      {type: 'sky', colors: ['#8A9AA3', '#AEBBBE', '#C8D2CF']},
+      {type: 'ridge', kind: 'hills', y: 0.4, amp: 0.07, color: '#7F978C', seed: 311},
+      {type: 'grass', y: 0.42, color: '#5D8A60', height: 0.02, count: 70},
+      {type: 'river', color: '#9FB9BE', shimmer: '#EEF5F5', from: 0.42, width: 1.0, seed: 2.5},
+      {type: 'rain', count: 140, opacity: 0.5},
+      {type: 'mist', y: 0.43, color: '#E2E8E4', opacity: 0.6},
+    ],
+  },
+  'rain-meadow': {
+    layers: [
+      {type: 'sky', colors: ['#9AA7AE', '#C3CBC6', '#DCE2D6'], to: ['#A9C3D8', '#E2E3C8', '#F3EBC6']},
+      {type: 'clouds', count: 6, y: [0.05, 0.3], color: '#99A3A8', opacity: 0.85, speed: 6, size: 1.3, part: true},
+      {type: 'ridge', kind: 'hills', y: 0.55, amp: 0.07, color: '#86A887', seed: 321, drift: 3},
+      {type: 'grass', y: 0.58, color: '#5F9358', height: 0.06, count: 180, tip: '#8CC074', seed: 6},
+      {type: 'flowers', y: 0.62, colors: ['#FFFFFF', '#F7D46A', '#C9B6EC'], count: 50, size: 18, seed: 7},
+      {type: 'rain', count: 120, opacity: 0.45},
+    ],
+  },
+  'night-river': {
+    zoom: 0.04,
+    layers: [
+      {type: 'sky', colors: ['#0B1230', '#1B2856', '#2E4078']},
+      {type: 'stars', count: 140, bottom: 0.45},
+      {type: 'moon', x: 0.7, y: 0.18, r: 60},
+      {type: 'ridge', kind: 'forest', y: 0.46, amp: 0.1, color: '#111A33', seed: 331, drift: 2},
+      {type: 'grass', y: 0.47, color: '#0E1730', height: 0.02, count: 60},
+      {type: 'river', color: '#33467A', shimmer: '#C9D6FF', from: 0.46, width: 1.0, seed: 4.5},
+    ],
+  },
+  'dusk-lake': {
+    layers: [
+      {type: 'sky', colors: ['#3E4677', '#B07A8C', '#EBA77E'], to: ['#2A3060', '#8E6382', '#D58C72']},
+      {type: 'sun', x: 0.4, y: 0.47, r: 55, color: '#FFD49A', glow: 7, rise: -0.04},
+      {type: 'ridge', kind: 'hills', y: 0.5, amp: 0.06, color: '#4C4061', seed: 341},
+      {type: 'water', y: 0.5, colors: ['#C98E8A', '#2E3358'], shimmer: '#FFE0C2', sunX: 0.4},
+      {type: 'mist', y: 0.52, color: '#E7B9A4', opacity: 0.35},
+    ],
+  },
+  'desert-night': {
+    zoom: 0.03,
+    layers: [
+      {type: 'sky', colors: ['#080C22', '#18224A', '#33416F']},
+      {type: 'stars', count: 240, milky: true, bottom: 0.62},
+      {type: 'moon', x: 0.25, y: 0.2, r: 40},
+      {type: 'ridge', kind: 'hills', y: 0.7, amp: 0.08, color: '#5B4E5C', seed: 351, drift: 2},
+      {type: 'ridge', kind: 'hills', y: 0.82, amp: 0.1, color: '#3E3446', seed: 352, drift: 4},
+      {type: 'ridge', kind: 'hills', y: 0.96, amp: 0.1, color: '#2A2232', seed: 353, drift: 6},
+    ],
+  },
 };

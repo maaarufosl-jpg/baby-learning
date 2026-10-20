@@ -94,18 +94,18 @@ export const reels: Reel[] = [
     },
     scenes: [
       {
-        art: 'sunrise-hills',
-        sound: 'morning-birds',
-        look: 'কুয়াশা ঢাকা সবুজ পাহাড়ের ওপারে সূর্যোদয়',
-        prompt: veo('A golden sunrise over layers of misty green hills, warm light slowly spreading across the valley.', 'a soft morning breeze and faint distant birdsong'),
-        tint: ['#F3C77B', '#2F5D47'],
+        art: 'golden-meadow',
+        sound: 'wind',
+        look: 'সোনালি বিকেলে বাতাসে দোল খাওয়া লম্বা ঘাসের মাঠ',
+        prompt: veo('A wide meadow of tall grass swaying gently in the wind at golden hour, warm low sunlight shining through the grass tips.', 'wind moving through the grass'),
+        tint: ['#F0C987', '#5B6B3A'],
       },
       {
-        art: 'forest-stream',
-        sound: 'stream',
-        look: 'বনের পাতার ফাঁক দিয়ে নরম রোদ, সামনে স্বচ্ছ ছোট নদী',
-        prompt: veo('Warm sunbeams streaming through the green leaves of a quiet forest, a small clear stream flowing over smooth stones.', 'gently flowing stream water'),
-        tint: ['#B9D98F', '#1F4D3A'],
+        art: 'rose-garden',
+        sound: 'morning-birds',
+        look: 'সকালের আলোয় শিশিরভেজা গোলাপি আর সাদা ফুলের বাগান',
+        prompt: veo('A garden of soft pink and white roses covered in morning dew, petals moving very slightly in the breeze, warm morning light.', 'light breeze and faint distant birdsong'),
+        tint: ['#F6D5DC', '#4F6A4A'],
       },
     ],
     sources: [
@@ -255,9 +255,27 @@ export const reels: Reel[] = [
       closing: 'আজ রাতে ঘুমানোর আগে এই দোয়াটা পড়বে।',
     },
     scenes: [
-      {art: 'moon-clouds', sound: 'night', look: 'চাঁদের আলোয় ধীরে ভেসে যাওয়া মেঘ', prompt: '', tint: ['#4B5C8C', '#121A38']},
-      {art: 'starry-hills', sound: 'night', look: 'পাহাড়ের ওপর তারাভরা রাতের আকাশ', prompt: '', tint: ['#2B3A67', '#0E1530']},
-      {art: 'starry-lake', sound: 'night', look: 'পাহাড়ি হ্রদের ওপর তারাভরা আকাশ', prompt: '', tint: ['#2A3765', '#0B1229']},
+      {
+        art: 'dusk-lake',
+        sound: 'night',
+        look: 'সন্ধ্যায় শান্ত হ্রদে ডুবন্ত সূর্যের আলো',
+        prompt: veo('A calm lake at dusk, the setting sun glowing softly on the water, purple and orange sky slowly darkening.', 'quiet evening air and soft lapping water'),
+        tint: ['#B07A8C', '#2E3358'],
+      },
+      {
+        art: 'moon-clouds',
+        sound: 'night',
+        look: 'চাঁদের আলোয় ধীরে ভেসে যাওয়া মেঘ',
+        prompt: veo('Soft clouds drifting slowly across a bright full moon in a dark blue night sky, silver light on the cloud edges.', 'gentle night wind'),
+        tint: ['#4B5C8C', '#121A38'],
+      },
+      {
+        art: 'night-river',
+        sound: 'stream',
+        look: 'চাঁদের আলোয় বনের মাঝ দিয়ে বয়ে যাওয়া নদী',
+        prompt: veo('A quiet river winding through a dark forest under a bright moon and stars, moonlight shimmering on the water.', 'softly flowing water at night'),
+        tint: ['#2E4078', '#0B1230'],
+      },
     ],
     sources: [
       'ঘুমের এই দোয়া সহিহ বুখারি ৬৩১২ ও ৬৩২৪ (হুযাইফা রা.) এবং সহিহ মুসলিম ২৭১১ (বারা ইবনে আযিব রা.) এ এসেছে; বর্ণনাভেদে শব্দক্রম আলাদা',
@@ -403,9 +421,27 @@ export const reels: Reel[] = [
       closing: 'এরপর বৃষ্টি এলে তুমিও এই দোয়া পড়বে।',
     },
     scenes: [
-      {art: 'rain-field-clear', sound: 'rain', look: 'বিস্তীর্ণ সবুজ ধানক্ষেতে হালকা বৃষ্টি, তারপর মেঘ সরে আলো', prompt: '', tint: ['#A9BDB3', '#2E5A3E']},
-      {art: 'rain-lake', sound: 'rain-water', look: 'শান্ত হ্রদের পানিতে বৃষ্টির ফোঁটা', prompt: '', tint: ['#B8CBD0', '#2C4A4F']},
-      {art: 'rain-paddy', sound: 'rain', look: 'সবুজ ধানক্ষেতে নরম বৃষ্টি', prompt: '', tint: ['#BFD7B0', '#2E5A3A']},
+      {
+        art: 'rain-forest',
+        sound: 'rain',
+        look: 'কুয়াশা ঢাকা পাহাড়ি বনে নরম বৃষ্টি',
+        prompt: veo('Gentle rain falling over a misty green hill forest, layers of trees fading into soft fog.', 'soft steady rain on leaves'),
+        tint: ['#A2B2AA', '#22402F'],
+      },
+      {
+        art: 'rain-river',
+        sound: 'rain-water',
+        look: 'সবুজ মাঠের মাঝ দিয়ে বয়ে যাওয়া নদীতে বৃষ্টি',
+        prompt: veo('Light rain falling on a calm river winding through green fields, rings spreading on the water, soft grey sky.', 'rain falling on water'),
+        tint: ['#AEBBBE', '#5D8A60'],
+      },
+      {
+        art: 'rain-meadow',
+        sound: 'rain',
+        look: 'ফুলের মাঠে বৃষ্টি, তারপর মেঘ সরে আলো',
+        prompt: veo('Soft rain over a green meadow dotted with small white and yellow flowers, clouds slowly parting and warm light returning.', 'gentle rain and a light breeze'),
+        tint: ['#C3CBC6', '#5F9358'],
+      },
     ],
     sources: ['সহিহ বুখারি ১০৩২ — আয়েশা (রা.) থেকে: নবীজি ﷺ বৃষ্টি দেখলে বলতেন, اللّٰهُمَّ صَيِّبًا نَافِعًا'],
     checklist: [
@@ -438,11 +474,11 @@ export const reels: Reel[] = [
         tint: ['#2A3765', '#0B1229'],
       },
       {
-        art: 'moon-clouds',
+        art: 'desert-night',
         sound: 'night',
-        look: 'চাঁদের আলোয় ধীরে ভেসে যাওয়া মেঘ',
-        prompt: veo('Soft clouds drifting slowly across a bright full moon in a dark blue night sky, silver light on the cloud edges.', 'gentle night wind'),
-        tint: ['#4B5C8C', '#121A38'],
+        look: 'তারাভরা আকাশের নিচে মরুভূমির বালিয়াড়ি',
+        prompt: veo('Gentle sand dunes under a vast starry night sky with a thin moon, the Milky Way glowing above, very still.', 'very soft desert night wind'),
+        tint: ['#18224A', '#2A2232'],
       },
       {
         art: 'fajr-horizon',
@@ -532,11 +568,11 @@ export const reels: Reel[] = [
         tint: ['#E9EEF7', '#5A7898'],
       },
       {
-        art: 'rainbow-valley',
-        sound: 'morning-birds',
-        look: 'বৃষ্টির পর সবুজ উপত্যকার ওপর নরম রংধনু',
-        prompt: veo('A soft rainbow over a fresh green valley right after rain, drops glistening on the grass, clear blue sky returning.', 'dripping water and a soft breeze'),
-        tint: ['#BFDCEB', '#3F7051'],
+        art: 'waterfall',
+        sound: 'waterfall',
+        look: 'সবুজ পাহাড়ি ঝরনা, পাথরের ওপর দিয়ে সাদা পানি নামছে',
+        prompt: veo('A clear waterfall flowing down mossy rocks in a lush green mountain forest, white water falling into a small clear pool.', 'the steady sound of falling water'),
+        tint: ['#CFE3D2', '#24513F'],
       },
     ],
     sources: [
@@ -576,25 +612,25 @@ export const reels: Reel[] = [
     },
     scenes: [
       {
-        art: 'misty-lake',
-        sound: 'morning-birds',
-        look: 'ভোরে বনের মাঝে শান্ত হ্রদের ওপর কুয়াশা ভাসছে',
-        prompt: veo('Morning mist floating slowly over a quiet forest lake at dawn, pine trees on the shore, soft pale light.', 'quiet morning air and faint distant birdsong'),
-        tint: ['#D5DDD6', '#3D5649'],
-      },
-      {
-        art: 'clouds-valley',
-        sound: 'wind',
-        look: 'সবুজ উপত্যকার ওপর দিয়ে ধীরে ভেসে যাওয়া সাদা মেঘ',
-        prompt: veo('White fluffy clouds drifting slowly over a wide green valley, cloud shadows moving gently across the land.', 'soft wind'),
-        tint: ['#CFE1EF', '#4B6E4F'],
-      },
-      {
         art: 'lotus-pond',
         sound: 'morning-birds',
         look: 'শান্ত পুকুরে ফুটে থাকা পদ্ম আর শাপলা',
         prompt: veo('Pink lotus flowers and water lilies floating on a calm pond, gentle ripples, soft morning light reflecting on the water.', 'quiet water and soft wind'),
         tint: ['#F3D2DD', '#2F5D58'],
+      },
+      {
+        art: 'turquoise-falls',
+        sound: 'waterfall',
+        look: 'সবুজ পাহাড় থেকে নেমে আসা ঝরনা, নিচে স্বচ্ছ নীলচে জলাশয়',
+        prompt: veo('A tall graceful waterfall pouring into a clear turquoise pool surrounded by lush green plants, soft mist in the air.', 'falling water'),
+        tint: ['#BFE6E2', '#21504C'],
+      },
+      {
+        art: 'river-valley',
+        sound: 'stream',
+        look: 'সবুজ উপত্যকার মাঝ দিয়ে এঁকেবেঁকে যাওয়া স্বচ্ছ নদী',
+        prompt: veo('A crystal clear river winding through a lush green valley in soft sunlight, slow aerial view gliding along the river.', 'flowing river and soft wind'),
+        tint: ['#CDE8D6', '#2C5D47'],
       },
     ],
     sources: [
@@ -615,6 +651,15 @@ export const reels: Reel[] = [
     ],
   }),
 ];
+
+// every drawn scene belongs to one reel only, so no two reels look alike
+const seen = new Map<string, string>();
+for (const r of reels) {
+  for (const sc of r.scenes) {
+    if (seen.has(sc.art)) throw new Error(`Scene "${sc.art}" is used in both ${seen.get(sc.art)} and ${r.id}; give each reel its own scenes.`);
+    seen.set(sc.art, r.id);
+  }
+}
 
 export const reelById = (id: string) => {
   const r = reels.find((x) => x.id === id);

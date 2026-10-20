@@ -1,6 +1,6 @@
 # রিল ১৩: আর-রহিম: অতি দয়ালু
 
-ধরন: আল্লাহর সুন্দর নাম · দৈর্ঘ্য: প্রায় ২৬ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ৩টি প্রকৃতির দৃশ্য
+ধরন: আল্লাহর সুন্দর নাম · দৈর্ঘ্য: প্রায় ২৪ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ৩টি প্রকৃতির দৃশ্য
 
 ## পোস্টের ক্যাপশন (কপি করে রিলের বিবরণে দিন)
 
@@ -27,10 +27,10 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A wide 
 Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Branches full of white blossoms against a clear blue sky, a few petals drifting slowly through the air. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — soft breeze through branches. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
 ```
 
-### ভিডিও ৩: বৃষ্টির পর সবুজ উপত্যকার ওপর নরম রংধনু
+### ভিডিও ৩: সবুজ পাহাড়ি ঝরনা, পাথরের ওপর দিয়ে সাদা পানি নামছে
 
 ```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A soft rainbow over a fresh green valley right after rain, drops glistening on the grass, clear blue sky returning. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — dripping water and a soft breeze. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A clear waterfall flowing down mossy rocks in a lush green mountain forest, white water falling into a small clear pool. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — the steady sound of falling water. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
 ```
 
 ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
@@ -41,7 +41,7 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A soft 
 |---|---|---|
 | ১ | ভোরে শান্ত চওড়া নদী, পানিতে আকাশের নরম রং | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
 | ২ | নীল আকাশের নিচে ডালে ফুটে থাকা সাদা ফুল, পাপড়ি ভেসে যাচ্ছে | গাছের পাতার মৃদু শব্দ |
-| ৩ | বৃষ্টির পর সবুজ উপত্যকার ওপর নরম রংধনু | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
+| ৩ | সবুজ পাহাড়ি ঝরনা, পাথরের ওপর দিয়ে সাদা পানি নামছে | ঝরনার পানি |
 
 ## পর্দায় ও কণ্ঠে যা থাকবে
 
@@ -62,7 +62,7 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A soft 
 | ০:১৪ | কণ্ঠ | যিনি পরম দয়াময়, অতি দয়ালু |
 | ০:১৭ | লেখা | সূরা ফাতিহায় আর-রহমানের ঠিক পরেই আছে আর-রহিম |
 | ০:১৭ | কণ্ঠ | সূরা ফাতিহায় আর-রহমানের ঠিক পরেই আছে আর-রহিম নাম। |
-| ০:২২ | লেখা | শেষ কার্ড: লোগো, সিরিজের নাম, "পরের রিল দেখতে ফলো করুন" |
+| ০:২২ | শেষ | দৃশ্য ধীরে মিলিয়ে যায় (শেষ কার্ড নেই) |
 
 পুরো সময় দৃশ্যের ওপর নরম অন্ধকার স্তর থাকবে, ওপরে ছোট লোগো। প্রকৃতির শব্দ বাজবে, কণ্ঠের সময় একটু কমে যাবে।
 

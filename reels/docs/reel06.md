@@ -1,6 +1,6 @@
 # রিল ৬: ঘুমের আগের দোয়া
 
-ধরন: ছোট দোয়া · দৈর্ঘ্য: প্রায় ২২ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ৩টি প্রকৃতির দৃশ্য
+ধরন: ছোট দোয়া · দৈর্ঘ্য: প্রায় ২০ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ৩টি প্রকৃতির দৃশ্য
 
 ## পোস্টের ক্যাপশন (কপি করে রিলের বিবরণে দিন)
 
@@ -8,13 +8,40 @@
 ঘুমের আগের দোয়া: আল্লাহুম্মা বিসমিকা আমুতু ওয়া আহইয়া 🌙 (সহিহ হাদিস, বুখারি ও মুসলিম) #ছোট_দোয়া #নিদর্শন #IslamicReels
 ```
 
+## Gemini ভিডিও (৩টি, প্রতিটি ৮ সেকেন্ড)
+
+1. "ভিডিও ১" এর প্রম্পট পুরোটা কপি করে Gemini-তে দিন। ভিডিও খাড়া (9:16) রাখুন।
+2. ভিডিও তৈরি হলে চ্যাটে পাঠান, লিখুন: "রিল ৬, ভিডিও ১"।
+3. একইভাবে পরের ভিডিও।
+4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
+
+### ভিডিও ১: সন্ধ্যায় শান্ত হ্রদে ডুবন্ত সূর্যের আলো
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A calm lake at dusk, the setting sun glowing softly on the water, purple and orange sky slowly darkening. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — quiet evening air and soft lapping water. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ২: চাঁদের আলোয় ধীরে ভেসে যাওয়া মেঘ
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Soft clouds drifting slowly across a bright full moon in a dark blue night sky, silver light on the cloud edges. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — gentle night wind. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ৩: চাঁদের আলোয় বনের মাঝ দিয়ে বয়ে যাওয়া নদী
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A quiet river winding through a dark forest under a bright moon and stars, moonlight shimmering on the water. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — softly flowing water at night. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
+
 ## দৃশ্য (কোনো মানুষ বা প্রাণী নেই)
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |
 |---|---|---|
-| ১ | চাঁদের আলোয় ধীরে ভেসে যাওয়া মেঘ | শান্ত রাতের বাতাস |
-| ২ | পাহাড়ের ওপর তারাভরা রাতের আকাশ | শান্ত রাতের বাতাস |
-| ৩ | পাহাড়ি হ্রদের ওপর তারাভরা আকাশ | শান্ত রাতের বাতাস |
+| ১ | সন্ধ্যায় শান্ত হ্রদে ডুবন্ত সূর্যের আলো | শান্ত রাতের বাতাস |
+| ২ | চাঁদের আলোয় ধীরে ভেসে যাওয়া মেঘ | শান্ত রাতের বাতাস |
+| ৩ | চাঁদের আলোয় বনের মাঝ দিয়ে বয়ে যাওয়া নদী | ছোট নদীর পানির শব্দ |
 
 ## পর্দায় ও কণ্ঠে যা থাকবে
 
@@ -32,7 +59,7 @@
 | ০:১০ | লেখা | আল্লাহুম্মা বিসমিকা আমুতু ওয়া আহইয়া |
 | ০:১০ | কণ্ঠ | اللّٰهُمَّ بِاسْمِكَ أَمُوتُ وَأَحْيَا |
 | ০:১৩ | কণ্ঠ | আজ রাতে ঘুমানোর আগে এই দোয়াটা পড়বে। |
-| ০:১৯ | লেখা | শেষ কার্ড: লোগো, সিরিজের নাম, "পরের রিল দেখতে ফলো করুন" |
+| ০:১৯ | শেষ | দৃশ্য ধীরে মিলিয়ে যায় (শেষ কার্ড নেই) |
 
 পুরো সময় দৃশ্যের ওপর নরম অন্ধকার স্তর থাকবে, ওপরে ছোট লোগো। প্রকৃতির শব্দ বাজবে, কণ্ঠের সময় একটু কমে যাবে।
 

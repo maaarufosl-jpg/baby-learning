@@ -1,6 +1,6 @@
 # রিল ২: জ্ঞান বাড়ানোর দোয়া
 
-ধরন: ছোট দোয়া · দৈর্ঘ্য: প্রায় ২০ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ২টি প্রকৃতির দৃশ্য
+ধরন: ছোট দোয়া · দৈর্ঘ্য: প্রায় ১৯ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ২টি প্রকৃতির দৃশ্য
 
 ## পোস্টের ক্যাপশন (কপি করে রিলের বিবরণে দিন)
 
@@ -15,16 +15,16 @@
 3. একইভাবে পরের ভিডিও।
 4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
 
-### ভিডিও ১: কুয়াশা ঢাকা সবুজ পাহাড়ের ওপারে সূর্যোদয়
+### ভিডিও ১: সোনালি বিকেলে বাতাসে দোল খাওয়া লম্বা ঘাসের মাঠ
 
 ```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A golden sunrise over layers of misty green hills, warm light slowly spreading across the valley. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — a soft morning breeze and faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A wide meadow of tall grass swaying gently in the wind at golden hour, warm low sunlight shining through the grass tips. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — wind moving through the grass. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
 ```
 
-### ভিডিও ২: বনের পাতার ফাঁক দিয়ে নরম রোদ, সামনে স্বচ্ছ ছোট নদী
+### ভিডিও ২: সকালের আলোয় শিশিরভেজা গোলাপি আর সাদা ফুলের বাগান
 
 ```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Warm sunbeams streaming through the green leaves of a quiet forest, a small clear stream flowing over smooth stones. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — gently flowing stream water. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A garden of soft pink and white roses covered in morning dew, petals moving very slightly in the breeze, warm morning light. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — light breeze and faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
 ```
 
 ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
@@ -33,8 +33,8 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Warm su
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |
 |---|---|---|
-| ১ | কুয়াশা ঢাকা সবুজ পাহাড়ের ওপারে সূর্যোদয় | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
-| ২ | বনের পাতার ফাঁক দিয়ে নরম রোদ, সামনে স্বচ্ছ ছোট নদী | ছোট নদীর পানির শব্দ |
+| ১ | সোনালি বিকেলে বাতাসে দোল খাওয়া লম্বা ঘাসের মাঠ | ঘাসের ওপর বাতাস |
+| ২ | সকালের আলোয় শিশিরভেজা গোলাপি আর সাদা ফুলের বাগান | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
 
 ## পর্দায় ও কণ্ঠে যা থাকবে
 
@@ -52,7 +52,7 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Warm su
 | ০:০৯ | লেখা | রাব্বি যিদনি ইলমা |
 | ০:০৯ | কুরআন | তিলাওয়াত (মিশারি রাশিদ আল-আফাসি): ২০:১১৪ (শব্দ ১৫–১৭) |
 | ০:১৪ | কণ্ঠ | পড়তে বসার আগে এই দোয়াটা পড়বে। |
-| ০:১৭ | লেখা | শেষ কার্ড: লোগো, সিরিজের নাম, "পরের রিল দেখতে ফলো করুন" |
+| ০:১৭ | শেষ | দৃশ্য ধীরে মিলিয়ে যায় (শেষ কার্ড নেই) |
 
 পুরো সময় দৃশ্যের ওপর নরম অন্ধকার স্তর থাকবে, ওপরে ছোট লোগো। প্রকৃতির শব্দ বাজবে, কণ্ঠের সময় একটু কমে যাবে।
 

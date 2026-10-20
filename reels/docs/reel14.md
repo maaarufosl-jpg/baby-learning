@@ -1,6 +1,6 @@
 # রিল ১৪: আস-সালাম: শান্তিদাতা
 
-ধরন: আল্লাহর সুন্দর নাম · দৈর্ঘ্য: প্রায় ২৪ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ৩টি প্রকৃতির দৃশ্য
+ধরন: আল্লাহর সুন্দর নাম · দৈর্ঘ্য: প্রায় ২৩ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ৩টি প্রকৃতির দৃশ্য
 
 ## পোস্টের ক্যাপশন (কপি করে রিলের বিবরণে দিন)
 
@@ -15,22 +15,22 @@
 3. একইভাবে পরের ভিডিও।
 4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
 
-### ভিডিও ১: ভোরে বনের মাঝে শান্ত হ্রদের ওপর কুয়াশা ভাসছে
-
-```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Morning mist floating slowly over a quiet forest lake at dawn, pine trees on the shore, soft pale light. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — quiet morning air and faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
-```
-
-### ভিডিও ২: সবুজ উপত্যকার ওপর দিয়ে ধীরে ভেসে যাওয়া সাদা মেঘ
-
-```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. White fluffy clouds drifting slowly over a wide green valley, cloud shadows moving gently across the land. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — soft wind. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
-```
-
-### ভিডিও ৩: শান্ত পুকুরে ফুটে থাকা পদ্ম আর শাপলা
+### ভিডিও ১: শান্ত পুকুরে ফুটে থাকা পদ্ম আর শাপলা
 
 ```
 Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Pink lotus flowers and water lilies floating on a calm pond, gentle ripples, soft morning light reflecting on the water. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — quiet water and soft wind. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ২: সবুজ পাহাড় থেকে নেমে আসা ঝরনা, নিচে স্বচ্ছ নীলচে জলাশয়
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A tall graceful waterfall pouring into a clear turquoise pool surrounded by lush green plants, soft mist in the air. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — falling water. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+```
+
+### ভিডিও ৩: সবুজ উপত্যকার মাঝ দিয়ে এঁকেবেঁকে যাওয়া স্বচ্ছ নদী
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A crystal clear river winding through a lush green valley in soft sunlight, slow aerial view gliding along the river. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — flowing river and soft wind. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
 ```
 
 ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
@@ -39,9 +39,9 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Pink lo
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |
 |---|---|---|
-| ১ | ভোরে বনের মাঝে শান্ত হ্রদের ওপর কুয়াশা ভাসছে | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
-| ২ | সবুজ উপত্যকার ওপর দিয়ে ধীরে ভেসে যাওয়া সাদা মেঘ | ঘাসের ওপর বাতাস |
-| ৩ | শান্ত পুকুরে ফুটে থাকা পদ্ম আর শাপলা | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
+| ১ | শান্ত পুকুরে ফুটে থাকা পদ্ম আর শাপলা | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
+| ২ | সবুজ পাহাড় থেকে নেমে আসা ঝরনা, নিচে স্বচ্ছ নীলচে জলাশয় | ঝরনার পানি |
+| ৩ | সবুজ উপত্যকার মাঝ দিয়ে এঁকেবেঁকে যাওয়া স্বচ্ছ নদী | ছোট নদীর পানির শব্দ |
 
 ## পর্দায় ও কণ্ঠে যা থাকবে
 
@@ -62,7 +62,7 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Pink lo
 | ০:১৩ | কণ্ঠ | অধিপতি, মহাপবিত্র, শান্তিদাতা |
 | ০:১৬ | লেখা | সালাম দিয়ে আমরা একে অপরের জন্য শান্তি চাই |
 | ০:১৬ | কণ্ঠ | আমরা যখন সালাম দিই, তখন একে অপরের জন্য শান্তি চাই। |
-| ০:২১ | লেখা | শেষ কার্ড: লোগো, সিরিজের নাম, "পরের রিল দেখতে ফলো করুন" |
+| ০:২১ | শেষ | দৃশ্য ধীরে মিলিয়ে যায় (শেষ কার্ড নেই) |
 
 পুরো সময় দৃশ্যের ওপর নরম অন্ধকার স্তর থাকবে, ওপরে ছোট লোগো। প্রকৃতির শব্দ বাজবে, কণ্ঠের সময় একটু কমে যাবে।
 

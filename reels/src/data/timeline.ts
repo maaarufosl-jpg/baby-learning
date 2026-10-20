@@ -14,7 +14,8 @@ export const START = 0.4;
 const GAP = 0.35;
 const HOLD = 0.6;
 const STEP_GAP = 0.35;
-export const END_CARD_SECONDS = 2.6;
+/** After the last text, the scene stays a moment and fades out (no end card). */
+export const OUTRO_SECONDS = 1.2;
 export const CROSSFADE = 0.6;
 
 /** Rough length before the audio exists, so previews and docs still have a timeline. */
@@ -24,7 +25,7 @@ export type Timeline = {
   cards: Card[];
   /** `arabic` marks recitation or hadith Arabic, under which the nature sound almost disappears. */
   sounds: {at: number; seconds: number; file?: string; quran: boolean; arabic: boolean; text: string}[];
-  /** When the end card starts, and the whole length, in seconds. */
+  /** When the last text ends (the fade-out starts), and the whole length, in seconds. */
   endAt: number;
   total: number;
   /** Length of each scene (consecutive scenes overlap by CROSSFADE). */
@@ -58,7 +59,7 @@ export const buildTimeline = (reel: Reel, media: ReelMedia = {}): Timeline => {
     t = to + STEP_GAP;
   });
   const endAt = t;
-  const total = endAt + END_CARD_SECONDS;
+  const total = endAt + OUTRO_SECONDS;
   const n = reel.scenes.length;
   return {cards, sounds, endAt, total, sceneSeconds: (total + (n - 1) * CROSSFADE) / n};
 };
