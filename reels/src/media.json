@@ -310,20 +310,20 @@
   "reel04": {
     "audio": {
       "1-1": {
-        "file": "audio/reel04/v1-1.mp3",
-        "seconds": 2.56
+        "file": "audio/reel04/q1-1.mp3",
+        "seconds": 6.14
       },
       "2-1": {
-        "file": "audio/reel04/a2-1.mp3",
-        "seconds": 2.59
+        "file": "audio/reel04/q2-1.mp3",
+        "seconds": 6.14
+      },
+      "1-2": {
+        "file": "audio/reel04/v1-2.mp3",
+        "seconds": 8.96
       },
       "2-2": {
         "file": "audio/reel04/v2-2.mp3",
-        "seconds": 3.11
-      },
-      "2-3": {
-        "file": "audio/reel04/v2-3.mp3",
-        "seconds": 3.6
+        "seconds": 3.58
       }
     }
   }
