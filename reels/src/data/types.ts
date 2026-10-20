@@ -45,6 +45,8 @@ export type Reel = {
   number: number;
   kind: Kind;
   title: string;
+  /** Colour theme (themes.ts); each reel has its own so reels do not all look the same. */
+  theme: import('./themes').ThemeName;
   /** Bengali narration voice for this reel, when it differs from the series default. */
   voice?: string;
   scenes: Scene[];

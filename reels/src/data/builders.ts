@@ -1,6 +1,7 @@
+import type {ThemeName} from './themes';
 import type {Kind, Line, Reel, Say, Scene, Step} from './types';
 
-type Base = {id: string; number: number; title: string; voice?: string; scenes: Scene[]; sources: string[]; checklist: string[]; unsure?: string[]};
+type Base = {id: string; number: number; title: string; theme: ThemeName; voice?: string; scenes: Scene[]; sources: string[]; checklist: string[]; unsure?: string[]};
 /** A qari recitation: verse key and, for part of an ayah, the word range (1-based, inclusive). */
 export type QuranRef = {ref: string; words?: [number, number]};
 const recite = (q: QuranRef): Say => ({quran: q.ref, words: q.words});

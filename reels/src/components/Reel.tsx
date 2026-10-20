@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Html5Audio, interpolate, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {ACTIVE_BRAND as B, toBn} from '../brand';
+import {THEMES, type Theme} from '../data/themes';
 import {buildTimeline, CROSSFADE, type ReelMedia} from '../data/timeline';
 import type {Card, Line, Reel} from '../data/types';
 import {ARABIC_FONT, BENGALI_FONT} from '../fonts';
@@ -21,27 +22,27 @@ const SHADOW = '0 2px 18px rgba(0,0,0,0.6), 0 0 4px rgba(0,0,0,0.35)';
 
 const arabicSize = (t: string) => (t.length <= 24 ? 112 : t.length <= 44 ? 92 : 76);
 
-const lineStyle = (l: Line): React.CSSProperties => {
+const lineStyle = (l: Line, T: Theme): React.CSSProperties => {
   switch (l.style) {
     case 'kicker':
-      return {fontFamily: BN, fontWeight: 600, fontSize: 54, color: B.colors.accent, letterSpacing: 1};
+      return {fontFamily: BN, fontWeight: 600, fontSize: 54, color: T.accent, letterSpacing: 1};
     case 'arabicXL':
-      return {fontFamily: AR, fontWeight: 700, fontSize: l.text.length > 10 ? 150 : 200, color: B.colors.accent, direction: 'rtl', lineHeight: 1.6};
+      return {fontFamily: AR, fontWeight: 700, fontSize: l.text.length > 10 ? 150 : 200, color: T.accent, direction: 'rtl', lineHeight: 1.6};
     case 'arabic':
-      return {fontFamily: AR, fontWeight: 700, fontSize: arabicSize(l.text), color: B.colors.accent, direction: 'rtl', lineHeight: 1.75};
+      return {fontFamily: AR, fontWeight: 700, fontSize: arabicSize(l.text), color: T.accent, direction: 'rtl', lineHeight: 1.75};
     case 'title':
       return {fontFamily: BN, fontWeight: 700, fontSize: 92, color: B.colors.text, lineHeight: 1.25};
     case 'body':
       return {fontFamily: BN, fontWeight: 600, fontSize: 64, color: B.colors.text, lineHeight: 1.4};
     case 'note':
-      return {fontFamily: BN, fontWeight: 400, fontSize: 44, color: B.colors.soft, lineHeight: 1.4};
+      return {fontFamily: BN, fontWeight: 400, fontSize: 44, color: T.soft, lineHeight: 1.4};
     case 'source':
       return {
         fontFamily: BN,
         fontWeight: 600,
         fontSize: 42,
-        color: B.colors.accent,
-        border: `2px solid ${B.colors.accent}88`,
+        color: T.accent,
+        border: `2px solid ${T.accent}88`,
         borderRadius: 999,
         padding: '8px 30px',
         background: 'rgba(0,0,0,0.25)',
@@ -49,7 +50,7 @@ const lineStyle = (l: Line): React.CSSProperties => {
   }
 };
 
-const CardView: React.FC<{card: Card}> = ({card}) => {
+const CardView: React.FC<{card: Card; theme: Theme}> = ({card, theme}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const len = (card.to - card.from) * fps;
@@ -61,7 +62,7 @@ const CardView: React.FC<{card: Card}> = ({card}) => {
           const start = (l.at - card.from) * fps;
           const t = interpolate(frame, [start, start + 0.55 * fps], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
           return (
-            <div key={i} style={{...lineStyle(l), textShadow: SHADOW, opacity: t, transform: `translateY(${(1 - t) * 26}px)`}}>
+            <div key={i} style={{...lineStyle(l, theme), textShadow: SHADOW, opacity: t, transform: `translateY(${(1 - t) * 26}px)`}}>
               {l.text}
             </div>
           );
@@ -116,29 +117,29 @@ const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; seconds: number
 
 /** Credit shown while the qari's recitation plays. */
 export const RECITER = 'তিলাওয়াত: শায়খ মিশারি রাশিদ আল-আফাসি';
-const ReciterCredit: React.FC<{frames: number}> = ({frames}) => {
+const ReciterCredit: React.FC<{frames: number; theme: Theme}> = ({frames, theme}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const o = interpolate(frame, [0, 0.4 * fps, frames - 0.4 * fps, frames], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <div style={{position: 'absolute', top: 1330, width: '100%', textAlign: 'center', opacity: o}}>
-      <span style={{fontFamily: BN, fontSize: 36, color: B.colors.soft, textShadow: SHADOW, background: 'rgba(0,0,0,0.25)', borderRadius: 999, padding: '8px 26px'}}>{RECITER}</span>
+      <span style={{fontFamily: BN, fontSize: 36, color: theme.soft, textShadow: SHADOW, background: 'rgba(0,0,0,0.25)', borderRadius: 999, padding: '8px 26px'}}>{RECITER}</span>
     </div>
   );
 };
 
-const Header: React.FC = () => (
+const Header: React.FC<{theme: Theme}> = ({theme}) => (
   <div style={{position: 'absolute', top: 120, width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16, opacity: 0.92}}>
-    <LogoMark brand={B} size={64} />
+    <LogoMark brand={{...B, colors: {...B.colors, accent: theme.accent}}} size={64} />
     <span style={{fontFamily: BN, fontWeight: 700, fontSize: 44, color: B.colors.text, textShadow: SHADOW}}>{B.name}</span>
   </div>
 );
 
 /** The scene fades softly to dark at the very end; there is no end card. */
-const FadeOut: React.FC<{frames: number}> = ({frames}) => {
+const FadeOut: React.FC<{frames: number; theme: Theme}> = ({frames, theme}) => {
   const frame = useCurrentFrame();
   const o = interpolate(frame, [0, frames], [0, 1], {extrapolateRight: 'clamp'});
-  return <AbsoluteFill style={{background: B.colors.deep, opacity: o}} />;
+  return <AbsoluteFill style={{background: `rgb(${theme.shade})`, opacity: o}} />;
 };
 
 /** One vertical reel: nature scenes under a soft dark layer, timed text cards, narration and recitation, fading out at the end. */
@@ -146,6 +147,8 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
   const {fps} = useVideoConfig();
   const media = MEDIA[reel.id] ?? {};
   const tl = buildTimeline(reel, media);
+  const T = THEMES[reel.theme];
+  const shade = (a: number) => `rgba(${T.shade},${a})`;
   // nature sound dips under the voice, and almost disappears under the recitation
   const duck = (sec: number) => {
     const s = tl.sounds.find((x) => x.file && sec >= x.at - 0.25 && sec <= x.at + x.seconds + 0.25);
@@ -171,15 +174,15 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
       <AbsoluteFill
         style={{
           background:
-            'linear-gradient(180deg, rgba(6,16,12,0.35) 0%, rgba(6,16,12,0.42) 22%, rgba(6,16,12,0.58) 45%, rgba(6,16,12,0.5) 70%, rgba(6,16,12,0.3) 100%)',
+            `linear-gradient(180deg, ${shade(0.35)} 0%, ${shade(0.42)} 22%, ${shade(0.58)} 45%, ${shade(0.5)} 70%, ${shade(0.3)} 100%)`,
         }}
       />
       <Sequence layout="none">
-        <Header />
+        <Header theme={T} />
       </Sequence>
       {tl.cards.map((c, i) => (
         <Sequence key={i} from={Math.round(c.from * fps)} durationInFrames={Math.round((c.to - c.from) * fps)} name={`লেখা ${i + 1}`}>
-          <CardView card={c} />
+          <CardView card={c} theme={T} />
         </Sequence>
       ))}
       {tl.sounds.map((s, i) =>
@@ -192,12 +195,12 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
       {tl.sounds.map((s, i) =>
         s.quran && s.file ? (
           <Sequence key={`c${i}`} from={Math.round(s.at * fps)} durationInFrames={Math.round((s.seconds + 1) * fps)} layout="none" name="কারির নাম">
-            <ReciterCredit frames={Math.round((s.seconds + 1) * fps)} />
+            <ReciterCredit frames={Math.round((s.seconds + 1) * fps)} theme={T} />
           </Sequence>
         ) : null,
       )}
       <Sequence from={endFrom} name="মিলিয়ে যাওয়া">
-        <FadeOut frames={Math.round((tl.total - tl.endAt) * fps)} />
+        <FadeOut frames={Math.round((tl.total - tl.endAt) * fps)} theme={T} />
       </Sequence>
     </AbsoluteFill>
   );

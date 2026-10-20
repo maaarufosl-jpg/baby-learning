@@ -8,6 +8,7 @@ const HADITH_NUMBERING =
 export const reels: Reel[] = [
   asmaReel({
     id: 'reel01',
+    theme: 'gold',
     number: 1,
     title: 'আর-রহমান: পরম দয়াময়',
     count: '১',
@@ -79,6 +80,7 @@ export const reels: Reel[] = [
 
   duaReel({
     id: 'reel02',
+    theme: 'gold',
     number: 2,
     title: 'জ্ঞান বাড়ানোর দোয়া',
     count: '১',
@@ -126,6 +128,7 @@ export const reels: Reel[] = [
 
   textReel({
     id: 'reel03',
+    theme: 'sky',
     number: 3,
     kind: 'ayah',
     title: 'কষ্টের সাথেই স্বস্তি',
@@ -165,6 +168,7 @@ export const reels: Reel[] = [
 
   textReel({
     id: 'reel04',
+    theme: 'mint',
     number: 4,
     kind: 'hadith',
     title: 'পবিত্রতা ঈমানের অর্ধেক',
@@ -204,6 +208,7 @@ export const reels: Reel[] = [
 
   asmaReel({
     id: 'reel05',
+    theme: 'rose',
     number: 5,
     title: 'আল-খালিক: সৃষ্টিকর্তা',
     count: '২',
@@ -243,6 +248,7 @@ export const reels: Reel[] = [
 
   duaReel({
     id: 'reel06',
+    theme: 'violet',
     number: 6,
     title: 'ঘুমের আগের দোয়া',
     count: '২',
@@ -294,6 +300,7 @@ export const reels: Reel[] = [
   }),
   textReel({
     id: 'reel07',
+    theme: 'sky',
     number: 7,
     kind: 'ayah',
     title: 'আল্লাহর স্মরণে অন্তরের প্রশান্তি',
@@ -332,6 +339,7 @@ export const reels: Reel[] = [
 
   textReel({
     id: 'reel08',
+    theme: 'orange',
     number: 8,
     kind: 'hadith',
     title: 'ভালো কথাও সদকা',
@@ -371,6 +379,7 @@ export const reels: Reel[] = [
 
   asmaReel({
     id: 'reel09',
+    theme: 'lime',
     number: 9,
     title: 'আর-রাযযাক: রিজিকদাতা',
     count: '৩',
@@ -409,6 +418,7 @@ export const reels: Reel[] = [
 
   duaReel({
     id: 'reel10',
+    theme: 'mint',
     number: 10,
     title: 'বৃষ্টির সময়ের দোয়া',
     count: '৩',
@@ -456,6 +466,7 @@ export const reels: Reel[] = [
   }),
   textReel({
     id: 'reel11',
+    theme: 'coral',
     number: 11,
     kind: 'ayah',
     title: 'আমাকে স্মরণ করো',
@@ -494,6 +505,7 @@ export const reels: Reel[] = [
 
   textReel({
     id: 'reel12',
+    theme: 'orange',
     number: 12,
     kind: 'hadith',
     title: 'ভাইয়ের জন্যও তা-ই চাও',
@@ -532,6 +544,7 @@ export const reels: Reel[] = [
   }),
   asmaReel({
     id: 'reel13',
+    theme: 'rose',
     number: 13,
     title: 'আর-রহিম: অতি দয়ালু',
     count: '৪',
@@ -591,6 +604,7 @@ export const reels: Reel[] = [
   }),
   asmaReel({
     id: 'reel14',
+    theme: 'violet',
     number: 14,
     title: 'আস-সালাম: শান্তিদাতা',
     count: '৫',
