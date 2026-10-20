@@ -2,11 +2,11 @@
 
 **গল্প:** খেলার মাঝে উমায়ের তাড়াহুড়ো করে বাথরুমে দৌড়ায়, দরজায় এসে গুলিয়ে ফেলে কোন পা আগে দেবে। মা এসে শেখান ঢোকার আগের দোয়া আর বাম পা দিয়ে ঢোকা। বের হওয়ার দোয়া থাকবে পর্ব ৭-এ।
 
-**আজকের দোয়া (ছোটদের অংশ):** بِسْمِ اللَّهِ، اللَّهُمَّ إِنِّي أَعُوذُ بِكَ — বিসমিল্লাহ, আল্লাহুম্মা ইন্নী আউযু বিকা — আল্লাহর নামে; হে আল্লাহ, আমি তোমার কাছে আশ্রয় চাই
+**আজকের দোয়া (ছোটদের অংশ):** اللَّهُمَّ إِنِّي أَعُوذُ بِكَ — আল্লাহুম্মা ইন্নী আউযু বিকা — হে আল্লাহ, আমি তোমার কাছে আশ্রয় চাই (বুখারি-মুসলিমের বর্ণনায় শুরুতে "বিসমিল্লাহ" নেই, তাই পর্বে রাখা হয়নি)
 
-**পূর্ণ দোয়া (বাবা-মায়ের জন্য, বর্ণনায় দেব):** بِسْمِ اللَّهِ، اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ — ... মিনাল খুবুসি ওয়াল খাবাইস
+**পূর্ণ দোয়া (বাবা-মায়ের জন্য, বর্ণনায় দেব):** اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ — আল্লাহুম্মা ইন্নী আউযু বিকা মিনাল খুবুসি ওয়াল খাবাইস
 
-**সূত্র:** সহিহ বুখারি ১৪২, সহিহ মুসলিম ৩৭৫ (দোয়া); তিরমিজি ৬০৬ (বিসমিল্লাহ)। বাম পায়ে ঢোকার আদব আলেমদের থেকে প্রচলিত; ছাড়ার আগে আলেমকে দিয়ে দোয়া, উচ্চারণ, সূত্র ও ছোটদের অংশ শেখানো ঠিক কিনা যাচাই করিয়ে নিন।
+**সূত্র:** সহিহ বুখারি ১৪২, সহিহ মুসলিম ৩৭৫। বাম পায়ে ঢোকার আদব আলেমদের থেকে প্রচলিত; ছাড়ার আগে আলেমকে দিয়ে দোয়া, উচ্চারণ, সূত্র ও ছোটদের অংশ শেখানো ঠিক কিনা যাচাই করিয়ে নিন।
 
 **খেয়াল করুন:** বাথরুমের ভেতর কখনো দেখানো হবে না, শুধু বাইরে থেকে দরজা। পর্ব ছোট রাখতে এবার ১১টা দৃশ্য (দৃশ্য ১ আগের মাঠের ভিডিও)।
 
@@ -56,7 +56,7 @@ Action: Ma walks up the hallway, smiles kindly and kneels beside Umayer at the b
 Dialogue: Ma, softly, in Bengali: "থামো সোনা। আমাদের নবীজি সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম বাথরুমে ঢোকার আগে একটা দোয়া পড়তেন।"
 ```
 
-## ৫. বিসমিল্লাহ, আল্লাহুম্মা ইন্নী আউযু বিকা
+## ৫. আল্লাহুম্মা ইন্নী আউযু বিকা
 
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
@@ -67,7 +67,7 @@ Setting: a bright clean Bangladeshi home hallway in the daytime: pale mint-green
 
 Action: Ma says each part slowly and Umayer repeats after her, nodding, while soft golden sparkles float around them. Keep the characters low and to the left so the top right of the frame shows only the plain wall, with no boxes, signs or frames there.
 
-Dialogue: In Bengali, very slowly: Ma "বিসমিল্লাহ... আল্লাহুম্মা... ইন্নী আউযু... বিকা", then Umayer "বিসমিল্লাহ, আল্লাহুম্মা ইন্নী আউযু বিকা!"
+Dialogue: In Bengali, very slowly: Ma "আল্লাহুম্মা... ইন্নী আউযু... বিকা", then Umayer "আল্লাহুম্মা ইন্নী আউযু বিকা!"
 ```
 
 ## ৬. বাম পা আগে
@@ -95,7 +95,7 @@ Setting: a plain soft pastel sky-blue background with gently floating light circ
 
 Action: Umayer stands on the left side of the frame, smiling, and looks straight at the camera, inviting the viewer to speak with him, pausing with a nod after each part. Keep the middle and right of the frame empty.
 
-Dialogue: Umayer, cheerful and slow, in Bengali: "এবার তুমি বলো! বিসমিল্লাহ... আল্লাহুম্মা... ইন্নী আউযু... বিকা!"
+Dialogue: Umayer, cheerful and slow, in Bengali: "এবার তুমি বলো! আল্লাহুম্মা... ইন্নী আউযু... বিকা!"
 ```
 
 ## ৮. সাফাও শেখে
