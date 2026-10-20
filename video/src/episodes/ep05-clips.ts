@@ -36,6 +36,15 @@ export const EP05_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'dua', mode: 'full', from: 0.73, showMeaning: true, pop: false, align: 'right'},
     {type: 'star', at: 0.75},
   ],
+  8: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.03, to: 0.16},
+    {type: 'repeat', parts: [0.26, 0.44, 0.68], until: 1, scale: 0.5},
+  ],
+  9: [
+    {type: 'say', who: 'safa', text: 'আলহামদুলিল্লা... আহইয়ানা!', from: 0.13, to: 0.37, top: 880},
+    {type: 'say', who: 'umayer', text: 'মাশাআল্লাহ, সাফা!', from: 0.39, to: 0.56, top: 880},
+    {type: 'star', at: 0.2},
+  ],
 };
 
 export const ep05Clips = clips as Record<string, SceneMedia>;
@@ -68,5 +77,8 @@ export const EP05_CONFIG: ClipConfig = {
     5: [0.6, 6.6],
     6: [1.0, 7.9],
     7: [0.5, 8.0],
+    // Keeps its ending: the pause for the child to say it.
+    8: [0.1, 10.1],
+    9: [1.0, 7.0],
   },
 };
