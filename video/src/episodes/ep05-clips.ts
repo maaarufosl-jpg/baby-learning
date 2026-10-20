@@ -53,6 +53,12 @@ export const EP05_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'safa', text: 'মিউ, তুমিও বলো!', from: 0.19, to: 0.42, top: 880},
     {type: 'say', who: 'miu', text: 'মিউ!', from: 0.67, to: 0.77, top: 880},
   ],
+  // Gemini said "পাব" for "পর্বে"; from 6.15s to 8s the sound is episode 2's goodbye line.
+  12: [
+    {type: 'say', who: 'umayer', text: 'সকালে উঠে তুমিও বলবে তো?', from: 0.13, to: 0.36},
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.41, to: 0.8},
+    {type: 'card', from: 0.08},
+  ],
 };
 
 export const ep05Clips = clips as Record<string, SceneMedia>;
@@ -90,5 +96,6 @@ export const EP05_CONFIG: ClipConfig = {
     9: [1.0, 7.0],
     10: [0.8, 7.6],
     11: [0.3, 7.8],
+    12: [0.3, 9.8],
   },
 };
