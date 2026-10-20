@@ -14,8 +14,8 @@ export const START = 0.4;
 const GAP = 0.35;
 const HOLD = 0.6;
 const STEP_GAP = 0.35;
-/** After the last text, the scene stays a moment and fades out (no end card). */
-export const OUTRO_SECONDS = 1.2;
+/** After the last text the scene fades out and the page name shows for about 1.5 s (no follow card). */
+export const OUTRO_SECONDS = 2.4;
 export const CROSSFADE = 0.6;
 
 /** Rough length before the audio exists, so previews and docs still have a timeline. */

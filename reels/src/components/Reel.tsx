@@ -138,8 +138,18 @@ const Header: React.FC<{theme: Theme}> = ({theme}) => (
 /** The scene fades softly to dark at the very end; there is no end card. */
 const FadeOut: React.FC<{frames: number; theme: Theme}> = ({frames, theme}) => {
   const frame = useCurrentFrame();
-  const o = interpolate(frame, [0, frames], [0, 1], {extrapolateRight: 'clamp'});
-  return <AbsoluteFill style={{background: `rgb(${theme.shade})`, opacity: o}} />;
+  const {fps} = useVideoConfig();
+  const o = interpolate(frame, [0, 0.7 * fps], [0, 0.85], {extrapolateRight: 'clamp'});
+  const name = interpolate(frame, [0.6 * fps, 1 * fps], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  return (
+    <AbsoluteFill style={{background: `rgba(${theme.shade},${o})`, alignItems: 'center', justifyContent: 'center', paddingBottom: 200}}>
+      {/* only the page name, for about a second and a half */}
+      <div style={{opacity: name, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20}}>
+        <LogoMark brand={{...B, colors: {...B.colors, accent: theme.accent}}} size={150} />
+        <div style={{fontFamily: BN, fontWeight: 700, fontSize: 96, color: B.colors.text, textShadow: SHADOW}}>{B.name}</div>
+      </div>
+    </AbsoluteFill>
+  );
 };
 
 /** One vertical reel: nature scenes under a soft dark layer, timed text cards, narration and recitation, fading out at the end. */
@@ -177,7 +187,7 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
             `linear-gradient(180deg, ${shade(0.35)} 0%, ${shade(0.42)} 22%, ${shade(0.58)} 45%, ${shade(0.5)} 70%, ${shade(0.3)} 100%)`,
         }}
       />
-      <Sequence layout="none">
+      <Sequence durationInFrames={endFrom} layout="none">
         <Header theme={T} />
       </Sequence>
       {tl.cards.map((c, i) => (
