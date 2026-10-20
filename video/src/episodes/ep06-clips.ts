@@ -14,6 +14,14 @@ export const EP06_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'recap', from: 0.62, to: 1},
   ],
   2: [{type: 'say', who: 'umayer', text: 'মা, আমি বাথরুমে যাব!', from: 0.54, to: 0.76, top: 880}],
+  // Gemini opened the door onto the toilet at 3.25-3.96s; that part is cut out of the clip itself.
+  3: [{type: 'say', who: 'umayer', text: 'কোন পা আগে দেব?', from: 0.57, to: 0.75, top: 880}],
+  4: [
+    {type: 'say', who: 'ammu', text: 'থামো সোনা।', from: 0.28, to: 0.39, top: 880},
+    {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ বাথরুমে ঢোকার আগে', from: 0.41, to: 0.66, top: 880},
+    {type: 'say', who: 'ammu', text: 'একটা দোয়া পড়তেন।', from: 0.67, to: 0.9, top: 880},
+    {type: 'footnote', text: 'সহিহ বুখারি ১৪২, মুসলিম ৩৭৫, তিরমিজি ৬০৬'},
+  ],
 };
 
 export const ep06Clips = clips as Record<string, SceneMedia>;
@@ -39,5 +47,7 @@ export const EP06_CONFIG: ClipConfig = {
   trim: {
     1: [0.3, 8.9],
     2: [1.0, 7.8],
+    3: [0.5, 8.0],
+    4: [1.2, 9.2],
   },
 };
