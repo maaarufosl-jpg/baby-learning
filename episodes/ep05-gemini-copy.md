@@ -2,11 +2,11 @@
 
 **গল্প:** সকালে উঠেই উমায়ের দোয়া পড়ে। তখন সাফা ঘুম ঘুম চোখে কাঁদতে কাঁদতে আসে। ভাইয়া তার চোখ মুছে দেয়, আর প্রথমবার শিক্ষক হয়ে তাকে ঘুম থেকে উঠার দোয়া শেখায়। মা খুশি হয়ে বলেন, "আজ আমার উমায়ের ছোট্ট শিক্ষক!"
 
-**আজকের দোয়া (ছোটদের অংশ):** الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا — আলহামদু লিল্লাহিল্লাযী আহইয়ানা — সব প্রশংসা আল্লাহর, যিনি আমাদের জাগিয়ে তুললেন
+**আজকের দোয়া (পুরো):** الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ — আলহামদু লিল্লাহিল্লাযী আহইয়ানা বা'দা মা আমাতানা ওয়া ইলাইহিন নুশূর — সব প্রশংসা আল্লাহর, যিনি ঘুমের পর আমাদের জাগালেন; আর তাঁর কাছেই ফিরে যাব
 
-**পূর্ণ দোয়া (বাবা-মায়ের জন্য, বর্ণনায় দেব):** الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ — আলহামদু লিল্লাহিল্লাযী আহইয়ানা বা'দা মা আমাতানা ওয়া ইলাইহিন নুশূর
+**বদল:** প্রথমে শুধু প্রথম অংশ শেখানো হচ্ছিল; এখন পুরো দোয়া। তাই দৃশ্য ২, ৭ ও ৮ নতুন প্রম্পটে আবার বানাতে হবে (নিচের প্রম্পটগুলো নতুন)।
 
-**সূত্র:** সহিহ বুখারি ৬৩১২, ৬৩১৪ (ছাড়ার আগে আলেমকে দিয়ে দোয়া, উচ্চারণ ও নম্বর যাচাই করিয়ে নিন; দোয়ার শুধু প্রথম অংশ শেখানো ঠিক আছে কিনা সেটাও জিজ্ঞেস করে নিন)
+**সূত্র:** সহিহ বুখারি ৬৩১২, ৬৩১৪ (ছাড়ার আগে আলেমকে দিয়ে দোয়া, উচ্চারণ ও নম্বর যাচাই করিয়ে নিন;)
 
 **খেয়াল করুন:** সাফাকে বিছানায় দেখানো হয়নি, সে ঘুম থেকে উঠে হেঁটে ঘরে আসে। তাই হিজাব পরা স্বাভাবিক লাগবে। হিজাবের নিচে সাদা আন্ডার-ক্যাপ লেখা আছে, যাতে চুল না দেখা যায়।
 
@@ -23,9 +23,9 @@ Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy 
 
 Setting: a cozy Bangladeshi child's bedroom in the early morning: bright golden sunlight streaming through a window with the pink curtains drawn open, a small wooden bed with a soft blue-and-white quilt and a white pillow, a wooden bedside table with a lamp, pale mint-green walls, little birds chirping outside.
 
-Action: Umayer opens his eyes in bed, stretches his arms happily, sits up and smiles at the morning sun.
+Action: Umayer opens his eyes in bed, stretches his arms happily, sits up and smiles at the morning sun, then says the morning dua slowly and happily.
 
-Dialogue: Umayer, cheerful and slow, in Bengali: "আলহামদু লিল্লাহিল্লাযী আহইয়ানা! সকাল হয়ে গেছে!"
+Dialogue: Umayer, cheerful and slow, in Bengali: "আলহামদু লিল্লাহিল্লাযী আহইয়ানা, বা'দা মা আমাতানা, ওয়া ইলাইহিন নুশূর!"
 ```
 
 ## ৩. সাফা কাঁদছে
@@ -84,7 +84,7 @@ Action: Ma stands smiling at the bedroom door, then walks in and kneels beside t
 Dialogue: Ma, slowly and clearly, in Bengali: "আমাদের নবীজি সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম ঘুম থেকে উঠে এই দোয়া পড়তেন।"
 ```
 
-## ৭. আলহামদু লিল্লাহিল্লাযী আহইয়ানা
+## ৭. পুরো দোয়া শেখা
 
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
@@ -93,9 +93,9 @@ Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy 
 
 Setting: a cozy Bangladeshi child's bedroom in the early morning: bright golden sunlight streaming through a window with the pink curtains drawn open, a small wooden bed with a soft blue-and-white quilt and a white pillow, a wooden bedside table with a lamp, pale mint-green walls, little birds chirping outside.
 
-Action: Umayer says each part slowly and Safa repeats after him in her sweet toddler way, nodding, while soft golden sparkles float in the morning sunlight. Leave empty space at the top right of the frame.
+Action: Umayer says each part slowly and Safa repeats each part after him in her sweet toddler way, nodding, while soft golden sparkles float in the morning sunlight. Keep the characters low and to the left so the top right of the frame shows only the plain wall, with no boxes, signs or frames there.
 
-Dialogue: In Bengali, very slowly: Umayer "আলহামদু... লিল্লাহিল্লাযী... আহইয়ানা", then Safa, tiny voice: "আলহামদু... লিল্লা... আহইয়ানা!"
+Dialogue: In Bengali, very slowly, Umayer says a part and Safa repeats it in a tiny voice: "আলহামদু লিল্লাহিল্লাযী আহইয়ানা..." "বা'দা মা আমাতানা..." "ওয়া ইলাইহিন নুশূর।"
 ```
 
 ## ৮. এবার তুমি বলো
@@ -109,7 +109,7 @@ Setting: a plain soft pastel sunny-yellow background with gently floating light 
 
 Action: Umayer stands on the left side of the frame and Safa on the right, both smiling. Umayer looks straight at the camera, inviting the viewer to speak with him, and pauses with a nod after each part. Keep the middle of the frame empty.
 
-Dialogue: Umayer, cheerful and slow, in Bengali: "এবার তুমি বলো! আলহামদু... লিল্লাহিল্লাযী... আহইয়ানা!"
+Dialogue: Umayer, cheerful and slow, in Bengali: "এবার তুমি বলো! আলহামদু লিল্লাহিল্লাযী আহইয়ানা... বা'দা মা আমাতানা... ওয়া ইলাইহিন নুশূর!"
 ```
 
 ## ৯. সাফার হাসি
