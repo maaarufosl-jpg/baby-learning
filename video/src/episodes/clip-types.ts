@@ -45,4 +45,11 @@ export type ClipConfig = {
   voiceOver?: Record<number, {audio: string; at: number; seconds: number}[]>;
   /** Use another episode's clip for a scene, e.g. the shared opening. */
   borrowClip?: Record<number, SceneMedia>;
+  /**
+   * Keep only [start, end] seconds of a scene's clip, to cut slow openings and endings.
+   * Overlay times stay fractions of the whole clip, so they need no change.
+   */
+  trim?: Record<number, [number, number]>;
+  /** Length of the opening title card in seconds (3.5 if left out). */
+  introSeconds?: number;
 };

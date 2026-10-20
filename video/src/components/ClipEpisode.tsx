@@ -41,10 +41,16 @@ export const clipScenes = (fps: number, cfg: ClipConfig = EP01_CONFIG) =>
     const seconds = media?.file ? media.seconds ?? PLACEHOLDER_SECONDS : cfg.imageSeconds?.[n] ?? PLACEHOLDER_SECONDS;
     const li = cfg.leadIn?.[n];
     const lead = media?.file && li ? Math.round(li.seconds * fps) : 0;
-    return {n, media, lead, frames: lead + Math.round(seconds * fps)};
+    const full = Math.round(seconds * fps);
+    const cut = media?.file ? cfg.trim?.[n] : undefined;
+    const skip = cut ? Math.round(cut[0] * fps) : 0;
+    const kept = cut ? Math.min(full, Math.round(cut[1] * fps)) - skip : full;
+    return {n, media, lead, skip, full, frames: lead + kept};
   });
 
-export const clipEpisodeFrames = (fps: number, cfg: ClipConfig = EP01_CONFIG) => Math.round(INTRO_SECONDS * fps) + clipScenes(fps, cfg).reduce((s, c) => s + c.frames, 0);
+const introFramesOf = (fps: number, cfg: ClipConfig) => Math.round((cfg.introSeconds ?? INTRO_SECONDS) * fps);
+
+export const clipEpisodeFrames = (fps: number, cfg: ClipConfig = EP01_CONFIG) => introFramesOf(fps, cfg) + clipScenes(fps, cfg).reduce((s, c) => s + c.frames, 0);
 
 /** Opening card: series logo and episode name above the four characters. */
 const IntroCard: React.FC<{frames: number}> = ({frames}) => {
@@ -240,29 +246,35 @@ const StillImage: React.FC<{n: number; src: string; frames: number}> = ({n, src,
   );
 };
 
-const SceneBody: React.FC<{n: number; media?: SceneMedia; frames: number}> = ({n, media, frames}) => {
+/**
+ * One scene's clip with its voice-overs and overlays. `skip` frames are cut from the start of the clip;
+ * overlays and voice-overs are timed against the whole clip (`full` frames), so they are shifted back by `skip`.
+ */
+const SceneBody: React.FC<{n: number; media?: SceneMedia; frames: number; skip: number; full: number}> = ({n, media, frames, skip, full}) => {
   const cfg = useCfg();
   const {fps} = useVideoConfig();
   const voices = cfg.voiceOver?.[n] ?? [];
-  const windows = voices.map((v) => [Math.round(v.at * frames), Math.round(v.at * frames + v.seconds * fps)] as const);
-  const clipVolume = (f: number) => (windows.some(([s, e]) => f >= s - 6 && f <= e + 6) ? 0.25 : 1);
+  const windows = voices.map((v) => [Math.round(v.at * full), Math.round(v.at * full + v.seconds * fps)] as const);
+  const clipVolume = (f: number) => (windows.some(([s, e]) => f + skip >= s - 6 && f + skip <= e + 6) ? 0.25 : 1);
   return (
     <AbsoluteFill>
       {media?.file ? (
-        <OffthreadVideo src={staticFile(media.file)} volume={clipVolume} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+        <OffthreadVideo src={staticFile(media.file)} startFrom={skip} volume={clipVolume} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       ) : media?.image ? (
         <StillImage n={n} src={media.image} frames={frames} />
       ) : (
         <Placeholder n={n} />
       )}
-      {voices.map((v, i) => (
-        <Sequence key={i} from={windows[i][0]} layout="none">
-          <Html5Audio src={staticFile(v.audio)} />
-        </Sequence>
-      ))}
-      {(cfg.overlays[n] ?? []).map((o, i) => (
-        <Overlay key={i} o={o} frames={frames} />
-      ))}
+      <Sequence from={-skip} layout="none">
+        {voices.map((v, i) => (
+          <Sequence key={i} from={windows[i][0]} layout="none">
+            <Html5Audio src={staticFile(v.audio)} />
+          </Sequence>
+        ))}
+        {(cfg.overlays[n] ?? []).map((o, i) => (
+          <Overlay key={i} o={o} frames={full} />
+        ))}
+      </Sequence>
     </AbsoluteFill>
   );
 };
@@ -287,7 +299,16 @@ const LeadIn: React.FC<{n: number; frames: number}> = ({n, frames}) => {
   );
 };
 
-const Scene: React.FC<{n: number; media?: SceneMedia; frames: number; lead: number; first: boolean; last: boolean}> = ({n, media, frames, lead, first, last}) => {
+const Scene: React.FC<{n: number; media?: SceneMedia; frames: number; lead: number; skip: number; full: number; first: boolean; last: boolean}> = ({
+  n,
+  media,
+  frames,
+  lead,
+  skip,
+  full,
+  first,
+  last,
+}) => {
   const frame = useCurrentFrame();
   const fadeIn = interpolate(frame, [0, first ? 12 : 8], [first ? 1 : 0.6, 0], {extrapolateRight: 'clamp'});
   const fadeOut = last ? interpolate(frame, [frames - 20, frames], [0, 1], {extrapolateLeft: 'clamp'}) : 0;
@@ -299,7 +320,7 @@ const Scene: React.FC<{n: number; media?: SceneMedia; frames: number; lead: numb
         </Sequence>
       )}
       <Sequence from={lead} durationInFrames={frames - lead} layout="none">
-        <SceneBody n={n} media={media} frames={frames - lead} />
+        <SceneBody n={n} media={media} frames={frames - lead} skip={skip} full={media?.file ? full : frames - lead} />
       </Sequence>
       {fadeIn > 0 && <AbsoluteFill style={{background: colors.cream, opacity: fadeIn}} />}
       {fadeOut > 0 && <AbsoluteFill style={{background: colors.cream, opacity: fadeOut}} />}
@@ -318,7 +339,7 @@ const ClipEpisodeBody: React.FC = () => {
   const cfg = useCfg();
   const {fps} = useVideoConfig();
   const scenes = clipScenes(fps, cfg);
-  const introFrames = Math.round(INTRO_SECONDS * fps);
+  const introFrames = introFramesOf(fps, cfg);
   let from = introFrames;
   return (
     <AbsoluteFill style={{background: colors.cream}}>
@@ -328,7 +349,7 @@ const ClipEpisodeBody: React.FC = () => {
       {scenes.map((s, i) => {
         const seq = (
           <Sequence key={s.n} from={from} durationInFrames={s.frames} name={`দৃশ্য ${s.n}`}>
-            <Scene n={s.n} media={s.media} frames={s.frames} lead={s.lead} first={false} last={i === scenes.length - 1} />
+            <Scene n={s.n} media={s.media} frames={s.frames} lead={s.lead} skip={s.skip} full={s.full} first={false} last={i === scenes.length - 1} />
           </Sequence>
         );
         from += s.frames;

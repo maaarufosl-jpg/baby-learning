@@ -78,4 +78,21 @@ export const EP04_CONFIG: ClipConfig = {
   overlays: EP04_OVERLAYS,
   // The opening greeting is shared with episode 1.
   borrowClip: {1: {file: 'clips/ep01/_ready/scene01.mp4', seconds: 10.1}},
+  introSeconds: 2.5,
+  // Seconds of each Gemini clip to keep: slow starts and endings are cut so the episode stays short.
+  // The repeat-after-me scene keeps its ending, which is the pause for the child to speak.
+  trim: {
+    1: [0.3, 8.9],
+    2: [1.2, 8.4],
+    3: [1.0, 8.0],
+    4: [0.9, 7.2],
+    5: [0.9, 9.0],
+    6: [0.2, 8.6],
+    7: [0.8, 10.1],
+    8: [1.2, 8.7],
+    9: [0.6, 8.7],
+    10: [1.0, 7.6],
+    11: [0, 5.5],
+    12: [0.2, 8.6],
+  },
 };
