@@ -16,11 +16,16 @@ export const asmaReel = (
     explain: string;
     /** An ayah that is the name alone (like 55:1), recited when the name appears, with its reference. */
     nameAyah?: {ref: string; source: string};
-    ayah: {arabic: string; meaning: string; source: string; note?: string; quran: QuranRef};
+    /** `spokenMeaning: false` keeps a long ayah meaning on screen only. */
+    ayah: {arabic: string; meaning: string; source: string; note?: string; quran: QuranRef; spokenMeaning?: boolean};
     /** `ayah` is said after the ayah's meaning; leave it empty when the meaning is long (the source stays on screen). */
     narration: {intro: string; meaning: string; ayah: string};
   },
-): Reel => ({
+): Reel => {
+  const spoken = b.ayah.spokenMeaning !== false;
+  // the line the ayah meaning appears with: its spoken meaning, or the recitation itself
+  const meaningAt = spoken ? 1 : 0;
+  return {
   ...b,
   kind: 'asma',
   unsure: b.unsure ?? [],
@@ -40,14 +45,15 @@ export const asmaReel = (
     {
       lines: [
         {style: 'arabic', text: b.ayah.arabic},
-        {style: 'body', text: b.ayah.meaning, with: 1},
-        {style: 'source', text: b.ayah.source, with: 1},
-        ...(b.ayah.note ? [{style: 'note' as const, text: b.ayah.note, with: b.narration.ayah ? 2 : 1, delay: b.narration.ayah ? 0 : 2}] : []),
+        {style: 'body', text: b.ayah.meaning, with: meaningAt, delay: spoken ? 0 : 2},
+        {style: 'source', text: b.ayah.source, with: meaningAt, delay: spoken ? 0 : 2.5},
+        ...(b.ayah.note ? [{style: 'note' as const, text: b.ayah.note, with: b.narration.ayah ? meaningAt + 1 : meaningAt, delay: b.narration.ayah ? 0 : 3}] : []),
       ],
-      say: [recite(b.ayah.quran), {voice: b.ayah.meaning}, ...(b.narration.ayah ? [{voice: b.narration.ayah}] : [])],
+      say: [recite(b.ayah.quran), ...(spoken ? [{voice: b.ayah.meaning}] : []), ...(b.narration.ayah ? [{voice: b.narration.ayah}] : [])],
     },
   ],
-});
+  };
+};
 
 /**
  * Short dua for children, short enough for one 10–14 s Gemini clip:

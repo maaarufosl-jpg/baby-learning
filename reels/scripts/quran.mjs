@@ -41,7 +41,7 @@ const span = (verse, words) => {
   if (startIdx < 0) throw new Error(`${verse.verse_key}: word ${words[0]} not in timings`);
   // keep the tail of the last word (madd and waqf) unless the next word follows immediately
   const next = segs[endIdx + 1];
-  const end = next ? Math.min(segs[endIdx][2] + 250, next[1] + 60) : verse.timestamp_to;
+  const end = next ? Math.min(segs[endIdx][2] + 250, next[1] + 200) : verse.timestamp_to;
   return [Math.max(verse.timestamp_from, segs[startIdx][1] - 60), end];
 };
 
@@ -60,10 +60,13 @@ for (const reel of list) {
       if (!verse) throw new Error(`${s.quran} not found`);
       const [from, to] = span(verse, s.words);
       const len = (to - from) / 1000;
+      // a cut that stops mid-ayah (the qari reads on) fades out more gently
+      const maxWord = Math.max(...verse.segments.map((x) => x[0]));
+      const fadeOut = !s.words || s.words[1] >= maxWord ? 0.18 : 0.5;
       const out = join(dir, `q${si + 1}-${k + 1}.mp3`);
       execFileSync('ffmpeg', [
         '-loglevel', 'error', '-y', '-ss', String(from / 1000), '-t', String(len), '-i', ch.audio_url,
-        '-af', `afade=t=in:d=0.04,afade=t=out:st=${Math.max(0, len - 0.18)}:d=0.18,loudnorm=I=-16:TP=-1.5:LRA=11`,
+        '-af', `afade=t=in:d=0.04,afade=t=out:st=${Math.max(0, len - fadeOut)}:d=${fadeOut},loudnorm=I=-16:TP=-1.5:LRA=11`,
         '-ar', '44100', '-b:a', '160k', out,
       ]);
       entry.audio[soundKey(si, k)] = {file: out.replace(/^public\//, ''), seconds: duration(out)};

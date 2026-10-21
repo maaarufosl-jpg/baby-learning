@@ -331,27 +331,23 @@
     "audio": {
       "3-1": {
         "file": "audio/reel15/q3-1.mp3",
-        "seconds": 2.48
+        "seconds": 12.15
       },
       "1-1": {
         "file": "audio/reel15/v1-1.mp3",
-        "seconds": 3.11
+        "seconds": 2.8
       },
       "2-1": {
         "file": "audio/reel15/v2-1.mp3",
-        "seconds": 1.72
+        "seconds": 1.62
       },
       "2-2": {
         "file": "audio/reel15/v2-2.mp3",
-        "seconds": 3.89
+        "seconds": 3.53
       },
       "3-2": {
         "file": "audio/reel15/v3-2.mp3",
-        "seconds": 4.31
-      },
-      "3-3": {
-        "file": "audio/reel15/v3-3.mp3",
-        "seconds": 5.17
+        "seconds": 4.94
       }
     }
   }
