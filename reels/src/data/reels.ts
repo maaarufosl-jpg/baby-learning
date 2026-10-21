@@ -316,7 +316,7 @@ export const reels: Reel[] = [
 
   textReel({
     id: 'reel07',
-    theme: 'sky',
+    theme: 'teal',
     number: 7,
     kind: 'ayah',
     title: 'আল্লাহর স্মরণে অন্তরের প্রশান্তি',
@@ -325,7 +325,7 @@ export const reels: Reel[] = [
     meaning: 'জেনে রাখো, আল্লাহর স্মরণেই অন্তর প্রশান্ত হয়।',
     source: 'সূরা আর-রা\'দ ১৩:২৮ (আয়াতের শেষ অংশ)',
     quran: {ref: '13:28', words: [7, 11]},
-    narration: {intro: 'মন অস্থির লাগলে এই আয়াতটি মনে করুন।', meaning: 'জেনে রাখো, আল্লাহর স্মরণেই অন্তর প্রশান্ত হয়।', source: 'সূরা আর-রা\'দ, আটাশ নম্বর আয়াত।'},
+    narration: {intro: 'মন অস্থির লাগলে, এই আয়াতটি মনে করো।', meaning: 'জেনে রাখো, আল্লাহর স্মরণেই, অন্তর প্রশান্ত হয়।', source: 'সূরা আর-রা\'দ, আটাশ নম্বর আয়াত।'},
     scenes: [
       {
         art: 'bluehour-lake',

@@ -13,6 +13,8 @@ export const THEMES = {
   violet: {accent: '#C9B5F2', soft: '#E2DBF4', shade: '16,10,30'},
   lime: {accent: '#D8E68A', soft: '#E6EDCC', shade: '14,20,6'},
   coral: {accent: '#F49C8E', soft: '#F3D9D4', shade: '28,10,10'},
+  teal: {accent: '#7FD6D0', soft: '#D2EEEC', shade: '4,18,22'},
+  peach: {accent: '#F7C9A0', soft: '#F5E6D8', shade: '24,14,10'},
 } satisfies Record<string, Theme>;
 
 export type ThemeName = keyof typeof THEMES;
