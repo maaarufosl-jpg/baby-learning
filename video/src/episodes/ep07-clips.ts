@@ -13,6 +13,8 @@ export const EP07_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!', from: 0.15, to: 0.6, top: 860},
     {type: 'recap', from: 0.62, to: 1},
   ],
+  // Seen from above as he walks down the frame, the foot on the left of the frame is his right foot, and it crosses first.
+  2: [{type: 'say', who: 'ammu', text: 'বের হওয়ার সময় ডান পা আগে।', from: 0.27, to: 0.62, top: 880}],
   3: [{type: 'say', who: 'ammu', text: 'আর বের হয়ে কী বলি, জানো?', from: 0.29, to: 0.65, top: 880}],
 };
 
@@ -38,6 +40,7 @@ export const EP07_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     1: [0.3, 8.9],
+    2: [0.8, 7.2],
     3: [1.5, 7.8],
   },
 };
