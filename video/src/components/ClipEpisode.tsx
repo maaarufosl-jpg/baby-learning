@@ -49,8 +49,27 @@ export const clipScenes = (fps: number, cfg: ClipConfig = EP01_CONFIG) =>
   });
 
 const introFramesOf = (fps: number, cfg: ClipConfig) => Math.round((cfg.introSeconds ?? INTRO_SECONDS) * fps);
+const teaserFramesOf = (fps: number, cfg: ClipConfig) => (cfg.teaser ? Math.round((cfg.teaser.to - cfg.teaser.from) * fps) : 0);
 
-export const clipEpisodeFrames = (fps: number, cfg: ClipConfig = EP01_CONFIG) => introFramesOf(fps, cfg) + clipScenes(fps, cfg).reduce((s, c) => s + c.frames, 0);
+export const clipEpisodeFrames = (fps: number, cfg: ClipConfig = EP01_CONFIG) =>
+  teaserFramesOf(fps, cfg) + introFramesOf(fps, cfg) + clipScenes(fps, cfg).reduce((s, c) => s + c.frames, 0);
+
+/** The teaser before the title card: a moment from one scene, with its sound and an optional speech bubble. */
+const Teaser: React.FC<{frames: number}> = ({frames}) => {
+  const cfg = useCfg();
+  const {fps, width, height} = useVideoConfig();
+  const frame = useCurrentFrame();
+  const t = cfg.teaser!;
+  const media = cfg.clips[String(t.scene)];
+  const fadeOut = interpolate(frame, [frames - 6, frames], [0, 1], {extrapolateLeft: 'clamp'});
+  return (
+    <AbsoluteFill style={{background: colors.cream}}>
+      {media?.file && <OffthreadVideo src={staticFile(media.file)} startFrom={Math.round(t.from * fps)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />}
+      {t.say && <SpeechBubble speech={{who: t.say.who, text: t.say.text}} layout={getLayout(width, height)} top={880} />}
+      {fadeOut > 0 && <AbsoluteFill style={{background: colors.cream, opacity: fadeOut}} />}
+    </AbsoluteFill>
+  );
+};
 
 /** Opening card: series logo and episode name above the four characters. */
 const IntroCard: React.FC<{frames: number}> = ({frames}) => {
@@ -341,11 +360,17 @@ const ClipEpisodeBody: React.FC = () => {
   const cfg = useCfg();
   const {fps} = useVideoConfig();
   const scenes = clipScenes(fps, cfg);
+  const teaserFrames = teaserFramesOf(fps, cfg);
   const introFrames = introFramesOf(fps, cfg);
-  let from = introFrames;
+  let from = teaserFrames + introFrames;
   return (
     <AbsoluteFill style={{background: colors.cream}}>
-      <Sequence durationInFrames={introFrames} name="পরিচিতি">
+      {teaserFrames > 0 && (
+        <Sequence durationInFrames={teaserFrames} name="শুরুর ঝলক">
+          <Teaser frames={teaserFrames} />
+        </Sequence>
+      )}
+      <Sequence from={teaserFrames} durationInFrames={introFrames} name="পরিচিতি">
         <IntroCard frames={introFrames} />
       </Sequence>
       {scenes.map((s, i) => {

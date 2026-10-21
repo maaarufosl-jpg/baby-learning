@@ -52,4 +52,9 @@ export type ClipConfig = {
   trim?: Record<number, [number, number]>;
   /** Length of the opening title card in seconds (3.5 if left out). */
   introSeconds?: number;
+  /**
+   * A few seconds of one scene's clip played before the title card, to catch viewers who are scrolling.
+   * `from` and `to` are seconds in that scene's clip; `say` adds a speech bubble.
+   */
+  teaser?: {scene: number; from: number; to: number; say?: {who: CharacterId | 'narrator' | 'everyone'; text: string}};
 };

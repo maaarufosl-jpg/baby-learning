@@ -73,6 +73,8 @@ export const EP06_CONFIG: ClipConfig = {
   // The opening greeting is shared with episode 1.
   borrowClip: {1: {file: 'clips/ep01/_ready/scene01.mp4', seconds: 10.1}},
   introSeconds: 2.5,
+  // Umayer puzzling over which foot goes first, before the title card.
+  teaser: {scene: 3, from: 5.0, to: 7.3, say: {who: 'umayer', text: 'কোন পা আগে দেব?'}},
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     1: [0.3, 8.9],
