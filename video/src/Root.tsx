@@ -1,7 +1,7 @@
 import React from 'react';
 import {cancelRender, Composition, continueRender, delayRender} from 'remotion';
 import {ClipEpisode, clipEpisodeFrames} from './components/ClipEpisode';
-import {Ep01Thumbnail} from './components/Thumbnail';
+import {Ep01Thumbnail, EPISODE_THUMBNAILS, EpisodeThumbnail} from './components/Thumbnail';
 import {SHORT_BISMILLAH, SHORT_RIGHT_HAND, shortFrames, ShortVideo} from './components/Shorts';
 import {FacebookCover, ProfilePicture, YouTubeBanner} from './components/Brand';
 import {EpisodeVideo, episodeFrames, PreviewReel} from './components/Episode';
@@ -45,6 +45,9 @@ export const Root: React.FC = () => (
     <Composition id="FacebookCover" component={FacebookCover} durationInFrames={1} fps={FPS} width={1640} height={624} />
     <Composition id="ProfilePicture" component={ProfilePicture} durationInFrames={1} fps={FPS} width={1080} height={1080} />
     <Composition id="Ep01Thumbnail" component={Ep01Thumbnail} durationInFrames={1} fps={FPS} width={1280} height={720} />
+    {EPISODE_THUMBNAILS.map((t) => (
+      <Composition key={t.number} id={`Ep0${t.number}Thumbnail`} component={EpisodeThumbnail} durationInFrames={1} fps={FPS} width={1280} height={720} defaultProps={t} />
+    ))}
     <Composition id="Ep01Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS)} fps={FPS} width={1920} height={1080} />
     <Composition id="Ep02Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP02_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP02_CONFIG}} />
     <Composition id="Ep03Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP03_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP03_CONFIG}} />
