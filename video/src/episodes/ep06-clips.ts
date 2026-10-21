@@ -47,6 +47,11 @@ export const EP06_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'মিউ, তুমিও বাম পা আগে!', from: 0.26, to: 0.56, top: 880},
     {type: 'say', who: 'miu', text: 'মিউ!', from: 0.68, to: 0.77, top: 880},
   ],
+  11: [
+    {type: 'say', who: 'umayer', text: 'বাথরুমে ঢোকার আগে\nতুমিও বলবে তো?', from: 0.05, to: 0.44},
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.49, to: 0.86},
+    {type: 'card', from: 0.08},
+  ],
 };
 
 export const ep06Clips = clips as Record<string, SceneMedia>;
@@ -82,5 +87,6 @@ export const EP06_CONFIG: ClipConfig = {
     // Ends before the last shot, where an open door at the left showed the toilet.
     9: [0.6, 6.1],
     10: [0.3, 8.0],
+    11: [0.3, 9.8],
   },
 };
