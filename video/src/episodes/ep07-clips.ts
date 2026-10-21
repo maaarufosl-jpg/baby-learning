@@ -21,6 +21,20 @@ export const EP07_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'গুফরানাক।', from: 0.52, to: 0.84, top: 880},
     {type: 'footnote', text: 'আবু দাউদ ৩০, তিরমিজি ৭'},
   ],
+  5: [
+    {type: 'dua', mode: 'broken', from: 0.07, to: 0.63, pop: true, align: 'right', scale: 0.5, times: [0.089, 0.238, 0.396]},
+    {type: 'dua', mode: 'full', from: 0.63, showMeaning: true, pop: false, align: 'right', scale: 0.5},
+    {type: 'star', at: 0.66},
+  ],
+  6: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.04, to: 0.17},
+    {type: 'repeat', parts: [0.356, 0.416, 0.495], until: 1, align: 'right'},
+  ],
+  7: [
+    {type: 'say', who: 'safa', text: 'গুফরানাক!', from: 0.29, to: 0.42, top: 880},
+    {type: 'say', who: 'umayer', text: 'সাফাও পেরেছে!', from: 0.43, to: 0.64, top: 880},
+  ],
+  8: [{type: 'say', who: 'ammu', text: 'এবার সাবান দিয়ে হাত ধুই।', from: 0.14, to: 0.45, top: 880}],
 };
 
 export const ep07Clips = clips as Record<string, SceneMedia>;
@@ -48,5 +62,10 @@ export const EP07_CONFIG: ClipConfig = {
     2: [0.8, 7.2],
     3: [1.5, 7.8],
     4: [0.6, 8.6],
+    5: [0.6, 9.0],
+    // Keeps most of its ending: the pause for the child to say it.
+    6: [0.3, 9.6],
+    7: [1.3, 7.8],
+    8: [0.5, 7.6],
   },
 };
