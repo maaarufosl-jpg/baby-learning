@@ -23,6 +23,7 @@ export const reels: Reel[] = [
       note: 'নামাজে সূরা ফাতিহায় আমরা এই আয়াত পড়ি, এখানেই আছে আর-রহমান নাম',
       // quran.com counts the basmala as 1:1, so this ayah is 1:3 there
       quran: {ref: '1:3'},
+      spokenMeaning: false,
     },
     nameAyah: {ref: '55:1', source: 'সূরা আর-রহমান, আয়াত ১ (৫৫:১)'},
     narration: {
