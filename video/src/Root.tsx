@@ -11,6 +11,7 @@ import {EP03_CONFIG} from './episodes/ep03-clips';
 import {EP04_CONFIG} from './episodes/ep04-clips';
 import {EP05_CONFIG} from './episodes/ep05-clips';
 import {EP06_CONFIG} from './episodes/ep06-clips';
+import {EP07_CONFIG} from './episodes/ep07-clips';
 import {loadAllFonts} from './fonts';
 
 const FPS = 30;
@@ -50,6 +51,7 @@ export const Root: React.FC = () => (
     <Composition id="Ep04Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP04_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP04_CONFIG}} />
     <Composition id="Ep05Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP05_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP05_CONFIG}} />
     <Composition id="Ep06Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP06_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP06_CONFIG}} />
+    <Composition id="Ep07Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP07_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP07_CONFIG}} />
     <Composition
       id="Ep01"
       component={EpisodeVideo}
