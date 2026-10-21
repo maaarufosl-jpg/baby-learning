@@ -125,6 +125,7 @@ const Recap: React.FC = () => {
   const cfg = useCfg();
   const frame = useCurrentFrame();
   if (!cfg.previousDua) return null;
+  const long = cfg.previousDua.arabic.length > 34;
   const pop = interpolate(frame, [0, 10], [0, 1], {extrapolateRight: 'clamp'});
   return (
     <div
@@ -144,9 +145,10 @@ const Recap: React.FC = () => {
         boxShadow: '0 10px 0 rgba(59,58,74,0.10)',
       }}
     >
-      <span style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: 34, color: colors.inkSoft}}>গত পর্বের দোয়া</span>
-      <span style={{fontFamily: "'Amiri', serif", fontWeight: 700, fontSize: 64, color: colors.ink, direction: 'rtl'}}>{cfg.previousDua.arabic}</span>
-      <span style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: 40, color: colors.peachDark}}>{cfg.previousDua.parts.join('-')}</span>
+      <span style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: 34, color: colors.inkSoft, whiteSpace: 'nowrap'}}>গত পর্বের দোয়া</span>
+      <span style={{fontFamily: "'Amiri', serif", fontWeight: 700, fontSize: long ? 40 : 64, color: colors.ink, direction: 'rtl', whiteSpace: 'nowrap'}}>{cfg.previousDua.arabic}</span>
+      {/* A long dua keeps only its Arabic, so the pill stays one line above the characters' heads. */}
+      {!long && <span style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: 40, color: colors.peachDark}}>{cfg.previousDua.parts.join('-')}</span>}
     </div>
   );
 };
