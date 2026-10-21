@@ -131,30 +131,6 @@
       }
     }
   },
-  "reel06": {
-    "audio": {
-      "1-1": {
-        "file": "audio/reel06/v1-1.mp3",
-        "seconds": 2.93
-      },
-      "2-1": {
-        "file": "audio/reel06/a2-1.mp3",
-        "seconds": 3
-      },
-      "2-2": {
-        "file": "audio/reel06/v2-2.mp3",
-        "seconds": 4.44
-      },
-      "3-1": {
-        "file": "audio/reel06/a3-1.mp3",
-        "seconds": 2.93
-      },
-      "3-2": {
-        "file": "audio/reel06/v3-2.mp3",
-        "seconds": 3.13
-      }
-    }
-  },
   "reel10": {
     "audio": {
       "1-1": {
@@ -348,6 +324,26 @@
       "3-3": {
         "file": "audio/reel05/v3-3.mp3",
         "seconds": 4.26
+      }
+    }
+  },
+  "reel06": {
+    "audio": {
+      "1-1": {
+        "file": "audio/reel06/q1-1.mp3",
+        "seconds": 3.21
+      },
+      "2-1": {
+        "file": "audio/reel06/q2-1.mp3",
+        "seconds": 3.21
+      },
+      "1-2": {
+        "file": "audio/reel06/v1-2.mp3",
+        "seconds": 4.75
+      },
+      "2-2": {
+        "file": "audio/reel06/v2-2.mp3",
+        "seconds": 4.91
       }
     }
   }
