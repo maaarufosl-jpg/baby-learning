@@ -45,6 +45,35 @@ const span = (verse, words) => {
   return [Math.max(verse.timestamp_from, segs[startIdx][1] - 60), end];
 };
 
+/**
+ * Moves a mid-ayah start into the qari's pause when there is one nearby (quran.com timings can sit a little before
+ * it, which drags in the tail of the previous word). Looks from 0.3 s before to 0.9 s after the start.
+ */
+const snapStart = (url, ms) => {
+  const from = Math.max(0, ms / 1000 - 0.3);
+  const raw = execFileSync('ffmpeg', ['-loglevel', 'error', '-ss', String(from), '-t', '1.2', '-i', url, '-ac', '1', '-ar', '8000', '-f', 's16le', '-']);
+  const pcm = new Int16Array(raw.buffer, raw.byteOffset, Math.floor(raw.length / 2));
+  const win = 400; // 50 ms
+  const db = [];
+  for (let i = 0; i + win <= pcm.length; i += win) {
+    let sum = 0;
+    for (let j = i; j < i + win; j++) sum += pcm[j] * pcm[j];
+    db.push(20 * Math.log10(Math.sqrt(sum / win) / 32768 + 1e-9));
+  }
+  // the last moment of a quiet run (at least 150 ms under -32 dB), just before the voice comes back
+  let run = 0;
+  for (let k = 0; k < db.length; k++) {
+    if (db[k] < -32) run++;
+    else {
+      // only a pause that begins near the timed start, so the first word itself is never skipped
+      const runStart = from + (k - run) * 0.05;
+      if (run >= 3 && runStart <= ms / 1000 + 0.4) return Math.round((from + k * 0.05 - 0.06) * 1000);
+      run = 0;
+    }
+  }
+  return ms;
+};
+
 const media = readMedia();
 for (const reel of list) {
   const entry = (media[reel.id] ??= {});
@@ -58,7 +87,8 @@ for (const reel of list) {
       const ch = await chapter(sura);
       const verse = ch.verse_timings.find((v) => v.verse_key === s.quran);
       if (!verse) throw new Error(`${s.quran} not found`);
-      const [from, to] = span(verse, s.words);
+      const [rawFrom, to] = span(verse, s.words);
+      const from = s.words && s.words[0] > 1 ? snapStart(ch.audio_url, rawFrom) : rawFrom;
       const len = (to - from) / 1000;
       // a cut that stops mid-ayah (the qari reads on) fades out more gently
       const maxWord = Math.max(...verse.segments.map((x) => x[0]));
