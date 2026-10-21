@@ -16,6 +16,11 @@ export const EP07_OVERLAYS: Record<number, ClipOverlay[]> = {
   // Seen from above as he walks down the frame, the foot on the left of the frame is his right foot, and it crosses first.
   2: [{type: 'say', who: 'ammu', text: 'বের হওয়ার সময় ডান পা আগে।', from: 0.27, to: 0.62, top: 880}],
   3: [{type: 'say', who: 'ammu', text: 'আর বের হয়ে কী বলি, জানো?', from: 0.29, to: 0.65, top: 880}],
+  4: [
+    {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ বাথরুম থেকে\nবের হয়ে বলতেন,', from: 0.08, to: 0.46, top: 740},
+    {type: 'say', who: 'ammu', text: 'গুফরানাক।', from: 0.52, to: 0.84, top: 880},
+    {type: 'footnote', text: 'আবু দাউদ ৩০, তিরমিজি ৭'},
+  ],
 };
 
 export const ep07Clips = clips as Record<string, SceneMedia>;
@@ -42,5 +47,6 @@ export const EP07_CONFIG: ClipConfig = {
     1: [0.3, 8.9],
     2: [0.8, 7.2],
     3: [1.5, 7.8],
+    4: [0.6, 8.6],
   },
 };
