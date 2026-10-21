@@ -34,6 +34,15 @@ export const EP06_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.03, to: 0.2},
     {type: 'repeat', parts: [0.23, 0.55, 0.72], until: 1, align: 'right'},
   ],
+  // Mirrored: facing the camera, Safa lifted her right foot.
+  8: [
+    {type: 'say', who: 'safa', text: 'বাম পা!', from: 0.13, to: 0.32, top: 880},
+    {type: 'say', who: 'umayer', text: 'মাশাআল্লাহ, সাফা!', from: 0.52, to: 0.7, top: 880},
+  ],
+  9: [
+    {type: 'say', who: 'ammu', text: 'মাশাআল্লাহ!', from: 0.23, to: 0.35, top: 880},
+    {type: 'say', who: 'ammu', text: 'আর বের হওয়ার দোয়া\nশিখব পরের পর্বে।', from: 0.37, to: 0.6, top: 740},
+  ],
 };
 
 export const ep06Clips = clips as Record<string, SceneMedia>;
@@ -65,5 +74,8 @@ export const EP06_CONFIG: ClipConfig = {
     6: [1.5, 5.05],
     // Keeps its ending: the pause for the child to say it.
     7: [0.1, 10.0],
+    8: [0.9, 7.2],
+    // Ends before the last shot, where an open door at the left showed the toilet.
+    9: [0.6, 6.1],
   },
 };
