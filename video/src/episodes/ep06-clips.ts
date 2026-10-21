@@ -22,6 +22,12 @@ export const EP06_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'একটা দোয়া পড়তেন।', from: 0.67, to: 0.9, top: 880},
     {type: 'footnote', text: 'সহিহ বুখারি ১৪২, সহিহ মুসলিম ৩৭৫'},
   ],
+  // Ma says the parts at about 0.6s, 2.0s and 3.0s; then they go over it again together.
+  5: [
+    {type: 'dua', mode: 'broken', from: 0.03, to: 0.45, pop: true, align: 'right', scale: 0.5, times: [0.06, 0.2, 0.3]},
+    {type: 'dua', mode: 'full', from: 0.45, showMeaning: true, pop: false, align: 'right', scale: 0.5},
+    {type: 'star', at: 0.5},
+  ],
 };
 
 export const ep06Clips = clips as Record<string, SceneMedia>;
@@ -49,5 +55,6 @@ export const EP06_CONFIG: ClipConfig = {
     2: [1.0, 7.8],
     3: [0.5, 8.0],
     4: [1.2, 9.2],
+    5: [0.4, 9.8],
   },
 };
