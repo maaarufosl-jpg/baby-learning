@@ -43,6 +43,10 @@ export const EP06_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'মাশাআল্লাহ!', from: 0.23, to: 0.35, top: 880},
     {type: 'say', who: 'ammu', text: 'আর বের হওয়ার দোয়া\nশিখব পরের পর্বে।', from: 0.37, to: 0.6, top: 740},
   ],
+  10: [
+    {type: 'say', who: 'umayer', text: 'মিউ, তুমিও বাম পা আগে!', from: 0.26, to: 0.56, top: 880},
+    {type: 'say', who: 'miu', text: 'মিউ!', from: 0.68, to: 0.77, top: 880},
+  ],
 };
 
 export const ep06Clips = clips as Record<string, SceneMedia>;
@@ -77,5 +81,6 @@ export const EP06_CONFIG: ClipConfig = {
     8: [0.9, 7.2],
     // Ends before the last shot, where an open door at the left showed the toilet.
     9: [0.6, 6.1],
+    10: [0.3, 8.0],
   },
 };
