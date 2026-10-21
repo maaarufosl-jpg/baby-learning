@@ -28,6 +28,8 @@ export const EP06_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'dua', mode: 'full', from: 0.45, showMeaning: true, pop: false, align: 'right', scale: 0.5},
     {type: 'star', at: 0.5},
   ],
+  // Mirrored: Gemini pointed at and lifted his right foot; seen from behind, the flip makes it his left foot.
+  6: [{type: 'say', who: 'ammu', text: 'আর ঢুকি বাম পা দিয়ে।', from: 0.18, to: 0.5, top: 880}],
 };
 
 export const ep06Clips = clips as Record<string, SceneMedia>;
@@ -56,5 +58,6 @@ export const EP06_CONFIG: ClipConfig = {
     3: [0.5, 8.0],
     4: [1.2, 9.2],
     5: [0.4, 9.8],
+    6: [1.5, 5.05],
   },
 };
