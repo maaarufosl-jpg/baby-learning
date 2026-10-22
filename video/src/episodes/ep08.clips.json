@@ -6,5 +6,13 @@
   "3": {
     "file": "clips/ep08/_ready/scene03.mp4",
     "seconds": 10.1
+  },
+  "4": {
+    "file": "clips/ep08/_ready/scene04.mp4",
+    "seconds": 10.1
+  },
+  "5": {
+    "file": "clips/ep08/_ready/scene05.mp4",
+    "seconds": 10.1
   }
 }

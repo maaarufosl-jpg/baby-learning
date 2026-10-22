@@ -54,6 +54,20 @@ Action: Close-up shot from behind Umayer, framed from the shoulders down, no hea
 Dialogue: Ma, clearly and warmly, in Bengali: "আগে ডান হাত, তারপর বাম হাত।"
 ```
 
+## ৪. ডান হাত আগে (নতুন, সামনে থেকে)
+
+```
+8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
+
+Characters: Umayer, a 4-year-old Bangladeshi boy wearing a plain white sleeveless vest and white pajama trousers; he is seen only from the chest down, from the front. Ma, the children's mother, is seen only as her hands in sage-green sleeves.
+
+Setting: a bright cozy Bangladeshi bedroom in the daytime with cream walls and soft morning sunlight.
+
+Action: Close-up shot from the front, framed from the chest down, no faces shown. Ma's hands hold the new cream-colored panjabi with golden embroidery bunched up like a pullover in front of him. Umayer pushes his RIGHT hand, which is on the LEFT side of the frame, into the right sleeve first and his little hand pops out of the cuff; then his left hand, on the right side of the frame, goes into the left sleeve. He keeps both arms stretched out in the sleeves.
+
+Dialogue: Ma, clearly and warmly, in Bengali: "আগে ডান হাত, তারপর বাম হাত।"
+```
+
 ## ৫. নবীজির শেখানো
 
 ```
