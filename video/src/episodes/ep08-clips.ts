@@ -17,6 +17,11 @@ export const EP08_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'তোমার জন্য নতুন পাঞ্জাবি!', from: 0.16, to: 0.37, top: 880},
     {type: 'say', who: 'umayer', text: 'আমার জন্য? কী সুন্দর!', from: 0.55, to: 0.86, top: 880},
   ],
+  // The close-up (1.58-3.17s) is mirrored: Gemini put his right arm in first, but here he hurries with the left.
+  3: [
+    {type: 'say', who: 'ammu', text: 'আস্তে, আস্তে!', from: 0.32, to: 0.46, top: 880},
+    {type: 'say', who: 'ammu', text: 'জামা পরার সময় আগে ডান হাত।', from: 0.47, to: 0.76, top: 880},
+  ],
 };
 
 export const ep08Clips = clips as Record<string, SceneMedia>;
@@ -42,5 +47,7 @@ export const EP08_CONFIG: ClipConfig = {
   trim: {
     1: [0.3, 8.9],
     2: [1.0, 8.9],
+    // Keeps the end, where he puts his right arm in first.
+    3: [0.8, 10.0],
   },
 };
