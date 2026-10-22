@@ -35,6 +35,15 @@ export const EP07_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'সাফাও পেরেছে!', from: 0.43, to: 0.64, top: 880},
   ],
   8: [{type: 'say', who: 'ammu', text: 'এবার সাবান দিয়ে হাত ধুই।', from: 0.14, to: 0.45, top: 880}],
+  9: [
+    {type: 'say', who: 'miu', text: 'মিউ!', from: 0.46, to: 0.58, top: 880},
+    {type: 'say', who: 'umayer', text: 'মিউ, তুমিও হাত ধোবে?', from: 0.6, to: 0.82, top: 880},
+  ],
+  10: [
+    {type: 'say', who: 'umayer', text: 'বাথরুম থেকে বের হয়ে\nতুমিও বলবে তো?', from: 0.1, to: 0.37},
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.4, to: 0.76},
+    {type: 'card', from: 0.08},
+  ],
 };
 
 export const ep07Clips = clips as Record<string, SceneMedia>;
@@ -56,6 +65,8 @@ export const EP07_CONFIG: ClipConfig = {
   // The opening greeting is shared with episode 1.
   borrowClip: {1: {file: 'clips/ep01/_ready/scene01.mp4', seconds: 10.1}},
   introSeconds: 2.5,
+  // Before the logo: Miu jumps back from the water drop.
+  teaser: {scene: 9, from: 4.5, to: 6.6, say: {who: 'miu', text: 'মিউ!'}},
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     1: [0.3, 8.9],
@@ -67,5 +78,7 @@ export const EP07_CONFIG: ClipConfig = {
     6: [0.3, 9.6],
     7: [1.3, 7.8],
     8: [0.5, 7.6],
+    9: [1.0, 8.4],
+    10: [0.6, 8.6],
   },
 };
