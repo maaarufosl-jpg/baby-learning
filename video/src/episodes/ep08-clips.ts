@@ -23,7 +23,7 @@ export const EP08_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'জামা পরার সময় আগে ডান হাত।', from: 0.47, to: 0.76, top: 880},
   ],
   // Seen from behind, the right of the frame is his right: the right sleeve goes on first.
-  4: [{type: 'say', who: 'ammu', text: 'আগে ডান হাত, তারপর বাম হাত।', from: 0.12, to: 0.44, top: 880}],
+  4: [{type: 'say', who: 'ammu', text: 'আগে ডান হাত, তারপর বাম হাত।', from: 0.12, to: 0.35, top: 880}],
   5: [
     {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ নতুন কাপড় পরে\nআল্লাহর শুকরিয়া করতে শিখিয়েছেন।', from: 0.24, to: 0.84, top: 740},
     {type: 'footnote', text: 'আবু দাউদ ৪০২৩, তিরমিজি ৩৪৫৮'},
@@ -55,8 +55,8 @@ export const EP08_CONFIG: ClipConfig = {
     2: [1.0, 8.9],
     // Keeps the end, where he puts his right arm in first.
     3: [0.8, 10.0],
-    // Ends before Gemini slid the panjabi under his vest.
-    4: [0.4, 4.5],
+    // Ends once the right sleeve is on and the left arm reaches out, before the panjabi shows it is on back to front.
+    4: [0.4, 3.5],
     5: [0.2, 8.8],
   },
 };
