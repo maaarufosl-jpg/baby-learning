@@ -607,6 +607,7 @@ export const reels: Reel[] = [
       note: 'সূরা ফাতিহায় আর-রহমানের ঠিক পরেই আছে আর-রহিম',
       // quran.com counts the basmala as 1:1, so this ayah is 1:3 there
       quran: {ref: '1:3'},
+      spokenMeaning: false,
     },
     narration: {
       intro: 'আল্লাহর সুন্দর নামগুলোর আরেকটি।',
