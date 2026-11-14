@@ -41,6 +41,11 @@ export const EP08_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.01, to: 0.15},
     {type: 'repeat', parts: [0.168, 0.376, 0.475, 0.693, 0.871], until: 1, align: 'right'},
   ],
+  // Mirrored: turned toward Umayer, Safa got her left sleeve first.
+  9: [
+    {type: 'say', who: 'umayer', text: 'সাফা, আগে ডান হাত!', from: 0.19, to: 0.4, top: 880},
+    {type: 'say', who: 'safa', text: 'ডান হাত!', from: 0.73, to: 0.88, top: 880},
+  ],
 };
 
 export const ep08Clips = clips as Record<string, SceneMedia>;
@@ -74,5 +79,6 @@ export const EP08_CONFIG: ClipConfig = {
     6: [0.6, 8.5],
     7: [0, 10.0],
     8: [0, 10.0],
+    9: [1.4, 9.6],
   },
 };
