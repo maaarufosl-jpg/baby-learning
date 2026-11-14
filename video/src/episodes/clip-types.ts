@@ -18,6 +18,8 @@ export type ClipOverlay =
       times?: number[];
       /** Panel size: 0.6 at the side, 0.62 in the middle by default. */
       scale?: number;
+      /** For 'broken': leave out the Arabic line, so a long dua's panel stays short. */
+      hideArabic?: boolean;
     }
   | {type: 'repeat'; parts: number[]; until?: number; align?: 'center' | 'right' | 'left'; /** Panel size, 0.62 by default. */ scale?: number}
   | {type: 'star'; at: number}

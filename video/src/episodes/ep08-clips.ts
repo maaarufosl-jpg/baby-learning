@@ -28,6 +28,19 @@ export const EP08_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ নতুন কাপড় পরে\nআল্লাহর শুকরিয়া করতে শিখিয়েছেন।', from: 0.24, to: 0.84, top: 740},
     {type: 'footnote', text: 'আবু দাউদ ৪০২৩, তিরমিজি ৩৪৫৮'},
   ],
+  // The dua is taught over scenes 6 and 7: here Ma says the first two parts.
+  // The panel leaves out the Arabic while the parts are taught, so it stays clear of Umayer's head.
+  6: [{type: 'dua', mode: 'broken', from: 0.07, to: 1, pop: true, align: 'right', scale: 0.5, hideArabic: true, times: [0.099, 0.515]}],
+  // The first two parts never light here (9 is past the end of the scene).
+  7: [
+    {type: 'dua', mode: 'broken', from: 0, to: 1, pop: false, align: 'right', scale: 0.5, hideArabic: true, times: [9, 9, 0.01, 0.267, 0.485]},
+    // The full panel with the meaning would cover Umayer here, so the meaning comes as a caption instead.
+    {type: 'say', who: 'narrator', label: 'অর্থ', text: 'সব প্রশংসা আল্লাহর, যিনি আমাকে এই কাপড় পরালেন,\nআর আমার কোনো শক্তি-সামর্থ্য ছাড়াই আমাকে তা দিলেন', from: 0.76, to: 1, top: 860},
+  ],
+  8: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.01, to: 0.15},
+    {type: 'repeat', parts: [0.168, 0.376, 0.475, 0.693, 0.871], until: 1, align: 'right'},
+  ],
 };
 
 export const ep08Clips = clips as Record<string, SceneMedia>;
@@ -58,5 +71,8 @@ export const EP08_CONFIG: ClipConfig = {
     // Ends once the right sleeve is on and the left arm reaches out, before the panjabi shows it is on back to front.
     4: [0.4, 3.5],
     5: [0.2, 8.8],
+    6: [0.6, 8.5],
+    7: [0, 10.0],
+    8: [0, 10.0],
   },
 };

@@ -41,6 +41,8 @@ export type DuaDisplay = {
   /** Highlight only this part (used in the repeat-after-me segment). */
   highlightPart?: number;
   showMeaning?: boolean;
+  /** Leave out the Arabic line, so a long dua's panel stays short while its parts are taught. */
+  hideArabic?: boolean;
 };
 
 export type Beat = {

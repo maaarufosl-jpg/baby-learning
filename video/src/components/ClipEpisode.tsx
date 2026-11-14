@@ -125,7 +125,7 @@ const RepeatOverlay: React.FC<{frames: number; parts: number[]; until?: number; 
 };
 
 /** Lights up one syllable after another at given moments (fractions of the scene). */
-const TimedSyllables: React.FC<{frames: number; times: number[]; align?: 'center' | 'right' | 'left'; pop: boolean; scale?: number}> = ({frames, times, align, pop, scale}) => {
+const TimedSyllables: React.FC<{frames: number; times: number[]; align?: 'center' | 'right' | 'left'; pop: boolean; scale?: number; hideArabic?: boolean}> = ({frames, times, align, pop, scale, hideArabic}) => {
   const cfg = useCfg();
   const frame = useCurrentFrame();
   const {width, height} = useVideoConfig();
@@ -134,7 +134,7 @@ const TimedSyllables: React.FC<{frames: number; times: number[]; align?: 'center
   const active = starts.reduce((acc, s, i) => (frame >= s ? i : acc), -1);
   return (
     <Compact align={align} scale={scale}>
-      <DuaPanel dua={cfg.dua} display={{mode: 'full', highlightPart: active >= 0 ? active : undefined}} layout={layout} beatFrames={frames} hasSpeech={false} animateIn={pop} />
+      <DuaPanel dua={cfg.dua} display={{mode: 'full', highlightPart: active >= 0 ? active : undefined, hideArabic}} layout={layout} beatFrames={frames} hasSpeech={false} animateIn={pop} />
     </Compact>
   );
 };
@@ -187,7 +187,7 @@ const Overlay: React.FC<{o: ClipOverlay; frames: number}> = ({o, frames}) => {
       if (o.mode === 'broken' && o.times)
         return (
           <Window frames={frames} from={o.from} to={o.to}>
-            <TimedSyllables frames={frames} times={o.times.map((t) => t - (o.from ?? 0))} align={o.align} pop={o.pop ?? (o.from ?? 0) < 0.1} scale={o.scale} />
+            <TimedSyllables frames={frames} times={o.times.map((t) => t - (o.from ?? 0))} align={o.align} pop={o.pop ?? (o.from ?? 0) < 0.1} scale={o.scale} hideArabic={o.hideArabic} />
           </Window>
         );
       return (

@@ -138,7 +138,7 @@ export const DuaPanel: React.FC<{dua: Dua; display: DuaDisplay; layout: Layout; 
       >
         {card ? 'আজকের দোয়া' : dua.name}
       </div>
-      <div
+      {!display.hideArabic && <div
         style={{
           fontFamily: `'${ARABIC_FONT}', serif`,
           fontWeight: 700,
@@ -150,8 +150,8 @@ export const DuaPanel: React.FC<{dua: Dua; display: DuaDisplay; layout: Layout; 
         }}
       >
         {dua.arabic}
-      </div>
-      <div style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: Math.round((card ? (dua.parts.length > 3 ? 62 : 80) : 92) * (dua.parts.join('').length > 24 ? (card ? 0.72 : 0.85) : 1)), color: colors.inkSoft, marginTop: 6}}>
+      </div>}
+      <div style={{fontFamily: TEXT_FONT, fontWeight: 700, fontSize: Math.round((card ? (dua.parts.length > 3 ? 62 : 80) : 92) * (dua.parts.join('').length > 60 ? (card ? 0.62 : 0.7) : dua.parts.join('').length > 24 ? (card ? 0.72 : 0.85) : 1)), color: colors.inkSoft, marginTop: 6}}>
         {dua.parts.map((p, i) => {
           const isActive = active === i;
           const dim = active !== -1 && !isActive;
@@ -164,7 +164,8 @@ export const DuaPanel: React.FC<{dua: Dua; display: DuaDisplay; layout: Layout; 
                 style={{
                   display: 'inline-block',
                   color: isActive ? colors.peachDark : dim ? '#B9B8C4' : colors.ink,
-                  transform: `scale(${1 + bounce * 0.22}) translateY(${-bounce * 6}px)`,
+                  // A long part grows less, so it does not spill over its neighbours.
+                  transform: `scale(${1 + bounce * (p.length > 10 ? 0.06 : 0.22)}) translateY(${-bounce * 6}px)`,
                   padding: '0 6px',
                 }}
               >
