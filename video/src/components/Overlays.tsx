@@ -143,7 +143,7 @@ export const DuaPanel: React.FC<{dua: Dua; display: DuaDisplay; layout: Layout; 
           fontFamily: `'${ARABIC_FONT}', serif`,
           fontWeight: 700,
           // A long dua is set smaller on the narrow end card so it stays on one line.
-          fontSize: card ? (dua.arabic.length > 34 ? 80 : dua.arabic.length > 20 ? 96 : 150) : dua.arabic.length > 50 ? 104 : dua.arabic.length > 34 ? 136 : 170,
+          fontSize: card ? (dua.arabic.length > 60 ? 60 : dua.arabic.length > 34 ? 80 : dua.arabic.length > 20 ? 96 : 150) : dua.arabic.length > 50 ? 104 : dua.arabic.length > 34 ? 136 : 170,
           lineHeight: 1.35,
           color: colors.ink,
           direction: 'rtl',
@@ -176,7 +176,7 @@ export const DuaPanel: React.FC<{dua: Dua; display: DuaDisplay; layout: Layout; 
         })}
       </div>
       {(display.showMeaning || card) && (
-        <div style={{fontFamily: TEXT_FONT, fontWeight: 600, fontSize: card ? 46 : 50, color: colors.ink, marginTop: 14}}>
+        <div style={{fontFamily: TEXT_FONT, fontWeight: 600, fontSize: card ? (dua.meaning.length > 60 ? 38 : 46) : 50, color: colors.ink, marginTop: 14}}>
           {dua.meaning}
         </div>
       )}
