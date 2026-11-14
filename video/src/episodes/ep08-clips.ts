@@ -46,6 +46,10 @@ export const EP08_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'সাফা, আগে ডান হাত!', from: 0.19, to: 0.4, top: 880},
     {type: 'say', who: 'safa', text: 'ডান হাত!', from: 0.73, to: 0.88, top: 880},
   ],
+  10: [
+    {type: 'say', who: 'miu', text: 'মিউ!', from: 0.37, to: 0.47, top: 880},
+    {type: 'say', who: 'umayer', text: 'মিউও নতুন জামা পরেছে!', from: 0.5, to: 0.82, top: 880},
+  ],
 };
 
 export const ep08Clips = clips as Record<string, SceneMedia>;
@@ -67,6 +71,8 @@ export const EP08_CONFIG: ClipConfig = {
   // The opening greeting is shared with episode 1.
   borrowClip: {1: {file: 'clips/ep01/_ready/scene01.mp4', seconds: 10.1}},
   introSeconds: 2.5,
+  // Before the logo: Miu shows off her new ribbon bow.
+  teaser: {scene: 10, from: 3.4, to: 5.4, say: {who: 'miu', text: 'মিউ!'}},
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     1: [0.3, 8.9],
@@ -80,5 +86,6 @@ export const EP08_CONFIG: ClipConfig = {
     7: [0, 10.0],
     8: [0, 10.0],
     9: [1.4, 9.6],
+    10: [1.5, 8.9],
   },
 };
