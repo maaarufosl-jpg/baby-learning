@@ -834,6 +834,48 @@ export const reels: Reel[] = [
     ],
     unsure: ['"আল-আহাদ" নামটি আসমাউল হুসনার প্রচলিত তালিকায় আছে; কুরআনে শব্দটি "আহাদ" রূপে (১১২:১) এসেছে।'],
   }),
+  duaReel({
+    id: 'reel17',
+    theme: 'teal',
+    number: 17,
+    title: 'নামাজি হওয়ার দোয়া',
+    count: '৪',
+    arabic: 'رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي',
+    bangla: 'রাব্বিজ আলনি মুকিমাস সালাতি ওয়া মিন যুররিয়্যাতি',
+    meaning: 'হে আমার রব, আমাকে আর আমার সন্তানদের নামাজ কায়েমকারী বানাও',
+    source: 'সূরা ইবরাহিম, আয়াত ৪০',
+    // start of 14:40 to the pause after "dhurriyyati"; measured by ear because quran.com's first-word timing is off
+    quran: {ref: '14:40', words: [1, 6], ms: [976000, 983300]},
+    narration: {
+      meaning: 'এর অর্থ, হে আমার রব, আমাকে নামাজি বানাও।',
+      closing: 'নামাজের পরে, এই দোয়াটা পড়বে।',
+    },
+    scenes: [
+      {
+        art: 'dawn-field',
+        sound: 'morning-birds',
+        look: 'ভোরে ঘাসের মাঠের ওপারে সূর্য উঠছে',
+        prompt: veo('Sunrise over a quiet grassy field at dawn, soft pink and gold light, dew sparkling on the grass.', 'still morning air and faint distant birdsong'),
+        tint: ['#B886A0', '#4F6B4A'],
+      },
+      {
+        art: 'mist-valley',
+        sound: 'wind',
+        look: 'সকালের কুয়াশা ঢাকা সবুজ উপত্যকা',
+        prompt: veo('Soft morning mist drifting through a green valley of hills and forest, gentle sunlight above.', 'soft morning wind'),
+        tint: ['#D9E2E6', '#2F4B38'],
+      },
+    ],
+    sources: ['সূরা ইবরাহিম ১৪:৪০ — رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِن ذُرِّيَّتِي ۚ رَبَّنَا وَتَقَبَّلْ دُعَاءِ; ইবরাহিম (আ.) এর দোয়া'],
+    checklist: [
+      'আরবি ও হরকত: رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِنْ ذُرِّيَّتِي',
+      'বাংলা উচ্চারণ: রাব্বিজ আলনি মুকিমাস সালাতি ওয়া মিন যুররিয়্যাতি',
+      'অর্থ: হে আমার রব, আমাকে আর আমার সন্তানদের নামাজ কায়েমকারী বানাও',
+      'বাচ্চাদের জন্য সহজ কথা "আমাকে নামাজি বানাও" ঠিক আছে কি না',
+      'সূত্র: সূরা ইবরাহিম, আয়াত ৪০ (প্রথম অংশ)',
+    ],
+    unsure: ['quran.com এর প্রথম শব্দের সময় ভুল ছিল; তিলাওয়াতের অংশ কানে মেপে নেওয়া (৯৭৬.০–৯৮৩.৩ সেকেন্ড)। শুনে দেখবেন শুরু ও শেষ ঠিক আছে কি না।'],
+  }),
 ];
 
 // every drawn scene belongs to one reel only, so no two reels look alike

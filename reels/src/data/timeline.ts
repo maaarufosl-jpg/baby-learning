@@ -7,7 +7,7 @@ export type ReelMedia = {
 };
 
 export const soundKey = (step: number, sound: number) => `${step + 1}-${sound + 1}`;
-export const isQuran = (s: Say): s is {quran: string; words?: [number, number]} => 'quran' in s;
+export const isQuran = (s: Say): s is {quran: string; words?: [number, number]; ms?: [number, number]} => 'quran' in s;
 export const isHadithArabic = (s: Say): s is {hadithArabic: string} => 'hadithArabic' in s;
 
 export const START = 0.4;

@@ -87,12 +87,13 @@ for (const reel of list) {
       const ch = await chapter(sura);
       const verse = ch.verse_timings.find((v) => v.verse_key === s.quran);
       if (!verse) throw new Error(`${s.quran} not found`);
-      const [rawFrom, to] = span(verse, s.words);
-      const from = s.words && s.words[0] > 1 ? snapStart(ch.audio_url, rawFrom) : rawFrom;
+      // a hand-measured cut wins where quran.com's word timings are off
+      const [rawFrom, to] = s.ms ?? span(verse, s.words);
+      const from = !s.ms && s.words && s.words[0] > 1 ? snapStart(ch.audio_url, rawFrom) : rawFrom;
       const len = (to - from) / 1000;
       // a cut that stops mid-ayah (the qari reads on) fades out more gently
       const maxWord = Math.max(...verse.segments.map((x) => x[0]));
-      const fadeOut = !s.words || s.words[1] >= maxWord ? 0.18 : 0.5;
+      const fadeOut = !s.words || s.words[1] >= maxWord || s.ms ? 0.18 : 0.5;
       const out = join(dir, `q${si + 1}-${k + 1}.mp3`);
       execFileSync('ffmpeg', [
         '-loglevel', 'error', '-y', '-ss', String(from / 1000), '-t', String(len), '-i', ch.audio_url,

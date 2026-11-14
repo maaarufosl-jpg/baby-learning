@@ -452,4 +452,24 @@ export const SCENES: Record<string, NatureScene> = {
       {type: 'water', y: 0.55, colors: ['#26386E', '#070C22'], shimmer: '#DDE6FF', sunX: 0.5},
     ],
   },
+  'dawn-field': {
+    layers: [
+      {type: 'sky', colors: ['#2C3A6B', '#B886A0', '#F6C59A'], to: ['#5C7FB8', '#E7A9A0', '#FBDDB2']},
+      {type: 'sun', x: 0.62, y: 0.5, r: 55, color: '#FFE7B8', glow: 8, rise: 0.05},
+      {type: 'ridge', kind: 'hills', y: 0.54, amp: 0.05, color: '#6E6A86', seed: 401},
+      {type: 'grass', y: 0.56, color: '#4F6B4A', height: 0.07, count: 220, tip: '#C9B27A', seed: 9},
+      {type: 'sparkle', count: 30, color: '#FFF1D0', y: [0.55, 1]},
+    ],
+  },
+  'mist-valley': {
+    layers: [
+      {type: 'sky', colors: ['#9DB7D6', '#D9E2E6', '#F3EEE0']},
+      {type: 'sun', x: 0.3, y: 0.24, r: 50, color: '#FFF6DC', glow: 7},
+      {type: 'ridge', kind: 'hills', y: 0.5, amp: 0.1, color: '#8EA597', seed: 411, drift: 2},
+      {type: 'mist', y: 0.5, color: '#F4F5F0', opacity: 0.8, count: 7},
+      {type: 'ridge', kind: 'forest', y: 0.68, amp: 0.12, color: '#55745F', seed: 412, drift: 4},
+      {type: 'mist', y: 0.68, color: '#EEF1EA', opacity: 0.6},
+      {type: 'ridge', kind: 'hills', y: 0.9, amp: 0.08, color: '#2F4B38', seed: 413, drift: 6},
+    ],
+  },
 };
