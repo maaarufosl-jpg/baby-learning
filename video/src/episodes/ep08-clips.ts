@@ -50,6 +50,13 @@ export const EP08_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'miu', text: 'মিউ!', from: 0.37, to: 0.47, top: 880},
     {type: 'say', who: 'umayer', text: 'মিউও নতুন জামা পরেছে!', from: 0.5, to: 0.82, top: 880},
   ],
+  // Gemini said the salam twice and skipped the goodbye: the second salam (6.4-8.3s) is muted
+  // and "পরের পর্বে দেখা হবে" from episode 2's goodbye is laid in its place.
+  11: [
+    {type: 'say', who: 'umayer', text: 'নতুন জামা পরে\nতুমিও বলবে তো?', from: 0.11, to: 0.38},
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.45, to: 0.85},
+    {type: 'card', from: 0.08},
+  ],
 };
 
 export const ep08Clips = clips as Record<string, SceneMedia>;
@@ -87,5 +94,6 @@ export const EP08_CONFIG: ClipConfig = {
     8: [0, 10.0],
     9: [1.4, 9.6],
     10: [1.5, 8.9],
+    11: [0.6, 8.9],
   },
 };
