@@ -425,4 +425,31 @@ export const SCENES: Record<string, NatureScene> = {
       {type: 'petals', count: 70, color: '#FFFFFF'},
     ],
   },
+  'desert-day': {
+    layers: [
+      {type: 'sky', colors: ['#6FA8DA', '#BBD6EA', '#F3E2C2']},
+      {type: 'sun', x: 0.5, y: 0.3, r: 70, color: '#FFF4D2', glow: 6},
+      {type: 'ridge', kind: 'hills', y: 0.62, amp: 0.08, color: '#E3B97E', seed: 381, drift: 2},
+      {type: 'ridge', kind: 'hills', y: 0.76, amp: 0.1, color: '#D49D5E', seed: 382, drift: 4},
+      {type: 'ridge', kind: 'hills', y: 0.92, amp: 0.1, color: '#B97F45', seed: 383, drift: 6},
+    ],
+  },
+  'single-peak': {
+    layers: [
+      {type: 'sky', colors: ['#3F5C8E', '#C89AA6', '#F4D2B0'], to: ['#5F86BE', '#E7B9A6', '#F9E3C2']},
+      {type: 'clouds', count: 3, y: [0.12, 0.25], color: '#F5D2C2', opacity: 0.6, speed: 8},
+      {type: 'ridge', kind: 'mountains', y: 0.72, amp: 0.42, color: '#5A5F7E', seed: 391, snow: '#F6E8E6'},
+      {type: 'mist', y: 0.7, color: '#F1D9D2', opacity: 0.5},
+      {type: 'ridge', kind: 'hills', y: 0.9, amp: 0.06, color: '#2F3550', seed: 392, drift: 4},
+    ],
+  },
+  'sea-moon': {
+    zoom: 0.04,
+    layers: [
+      {type: 'sky', colors: ['#0A1230', '#1A2A5C', '#33498A']},
+      {type: 'stars', count: 60, bottom: 0.4},
+      {type: 'moon', x: 0.5, y: 0.17, r: 70},
+      {type: 'water', y: 0.55, colors: ['#26386E', '#070C22'], shimmer: '#DDE6FF', sunX: 0.5},
+    ],
+  },
 };

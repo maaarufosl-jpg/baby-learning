@@ -778,6 +778,62 @@ export const reels: Reel[] = [
       'আল-মুহাইমিনের অর্থ নিয়ে একাধিক ব্যাখ্যা আছে (সাক্ষী, তত্ত্বাবধায়ক, রক্ষক); বাচ্চাদের জন্য "রক্ষণাবেক্ষণকারী" দেওয়া হয়েছে।',
     ],
   }),
+  asmaReel({
+    id: 'reel16',
+    theme: 'gold',
+    number: 16,
+    title: 'আল-আহাদ: আল্লাহ এক',
+    count: '৭',
+    arabic: 'الْأَحَدُ',
+    bangla: 'আল-আহাদ',
+    meaning: 'এক',
+    explain: 'আল্লাহ একজনই, তাঁর মতো কেউ নেই',
+    ayah: {
+      arabic: 'قُلْ هُوَ اللّٰهُ أَحَدٌ',
+      meaning: 'বলো, তিনিই আল্লাহ, এক ও অদ্বিতীয়।',
+      source: 'সূরা আল-ইখলাস, আয়াত ১',
+      note: 'নামাজে আমরা এই সূরা পড়ি',
+      quran: {ref: '112:1'},
+      spokenMeaning: false,
+    },
+    narration: {
+      intro: 'আল্লাহর সুন্দর নামগুলোর আরেকটি।',
+      meaning: 'এর অর্থ, এক। আল্লাহ একজনই, তাঁর মতো কেউ নেই।',
+      ayah: 'সূরা ইখলাসের প্রথম আয়াতেই, এই কথাটা আছে।',
+    },
+    scenes: [
+      {
+        art: 'desert-day',
+        sound: 'wind',
+        look: 'নীল আকাশে একা সূর্য, নিচে সোনালি বালিয়াড়ি',
+        prompt: veo('A single bright sun in a clear blue sky above soft golden sand dunes, gentle wind moving fine sand.', 'soft desert wind'),
+        tint: ['#BBD6EA', '#B97F45'],
+      },
+      {
+        art: 'single-peak',
+        sound: 'mountain-wind',
+        look: 'ভোরের আলোয় একটা উঁচু বরফঢাকা পাহাড়চূড়া',
+        prompt: veo('One tall snow-capped mountain peak glowing in soft dawn light, thin mist at its foot, calm sky.', 'cool mountain wind'),
+        tint: ['#C89AA6', '#2F3550'],
+      },
+      {
+        art: 'sea-moon',
+        sound: 'waves',
+        look: 'রাতের শান্ত সমুদ্রের ওপর একটা পূর্ণ চাঁদ',
+        prompt: veo('A single full moon above a calm night sea, its silver light shimmering in a path across the water.', 'gentle sea waves at night'),
+        tint: ['#1A2A5C', '#070C22'],
+      },
+    ],
+    sources: ['সূরা আল-ইখলাস ১১২:১ — قُلْ هُوَ اللّٰهُ أَحَدٌ'],
+    checklist: [
+      'নামের আরবি বানান ও হরকত: الْأَحَدُ',
+      'আয়াতের আরবি মুসহাফের সাথে মিলানো: قُلْ هُوَ اللّٰهُ أَحَدٌ',
+      'বাংলা উচ্চারণ: আল-আহাদ',
+      'অর্থ: এক · ব্যাখ্যা "আল্লাহ একজনই, তাঁর মতো কেউ নেই"',
+      'আয়াতের অনুবাদ: বলো, তিনিই আল্লাহ, এক ও অদ্বিতীয়',
+    ],
+    unsure: ['"আল-আহাদ" নামটি আসমাউল হুসনার প্রচলিত তালিকায় আছে; কুরআনে শব্দটি "আহাদ" রূপে (১১২:১) এসেছে।'],
+  }),
 ];
 
 // every drawn scene belongs to one reel only, so no two reels look alike

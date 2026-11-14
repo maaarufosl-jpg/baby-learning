@@ -354,5 +354,33 @@
         "seconds": 4.62
       }
     }
+  },
+  "reel16": {
+    "audio": {
+      "3-1": {
+        "file": "audio/reel16/q3-1.mp3",
+        "seconds": 3.03
+      },
+      "1-1": {
+        "file": "audio/reel16/v1-1.mp3",
+        "seconds": 2.59
+      },
+      "2-1": {
+        "file": "audio/reel16/v2-1.mp3",
+        "seconds": 1.41
+      },
+      "2-2": {
+        "file": "audio/reel16/v2-2.mp3",
+        "seconds": 5.69
+      },
+      "3-2": {
+        "file": "audio/reel16/v3-2.mp3",
+        "seconds": 4.26
+      },
+      "3-3": {
+        "file": "audio/reel16/v3-3.mp3",
+        "seconds": 4.31
+      }
+    }
   }
 }
