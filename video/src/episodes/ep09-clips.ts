@@ -40,6 +40,11 @@ export const EP09_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.03, to: 0.15},
     {type: 'repeat', parts: [0.257, 0.505, 0.733], until: 1, align: 'right'},
   ],
+  // Episode 7's goodbye stands in until this episode's own is made: same outfits, kept from the salam on.
+  9: [
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
+    {type: 'card', from: 0.38},
+  ],
 };
 
 export const ep09Clips = clips as Record<string, SceneMedia>;
@@ -59,7 +64,7 @@ export const EP09_CONFIG: ClipConfig = {
   clips: ep09Clips,
   overlays: EP09_OVERLAYS,
   // The opening greeting is shared with episode 1.
-  borrowClip: {1: {file: 'clips/ep01/_ready/scene01.mp4', seconds: 10.1}},
+  borrowClip: {1: {file: 'clips/ep01/_ready/scene01.mp4', seconds: 10.1}, 9: {file: 'clips/ep07/_ready/scene10.mp4', seconds: 10.1}},
   introSeconds: 2.5,
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
@@ -72,5 +77,6 @@ export const EP09_CONFIG: ClipConfig = {
     7: [2.4, 9.6],
     // Keeps the pause at the end for the child to say it.
     8: [0.2, 9.8],
+    9: [3.8, 8.6],
   },
 };
