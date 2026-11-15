@@ -36,6 +36,10 @@ export const EP09_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'rafi', text: 'আমার নাম রাফি!', from: 0.52, to: 0.68, top: 880},
     {type: 'say', who: 'umayer', text: 'আমি উমায়ের! চলো একসাথে খেলি!', from: 0.71, to: 0.95, top: 880},
   ],
+  8: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.03, to: 0.15},
+    {type: 'repeat', parts: [0.257, 0.505, 0.733], until: 1, align: 'right'},
+  ],
 };
 
 export const ep09Clips = clips as Record<string, SceneMedia>;
@@ -66,5 +70,7 @@ export const EP09_CONFIG: ClipConfig = {
     5: [0, 9.8],
     6: [1.0, 9.9],
     7: [2.4, 9.6],
+    // Keeps the pause at the end for the child to say it.
+    8: [0.2, 9.8],
   },
 };
