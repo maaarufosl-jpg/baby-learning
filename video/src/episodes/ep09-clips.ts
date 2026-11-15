@@ -28,6 +28,10 @@ export const EP09_OVERLAYS: Record<number, ClipOverlay[]> = {
     // No star here: beside this wide panel it would cover the meaning.
     {type: 'dua', mode: 'full', from: 0.86, showMeaning: true, pop: false, align: 'right', scale: 0.44},
   ],
+  6: [
+    {type: 'say', who: 'umayer', text: 'আসসালামু আলাইকুম\nওয়া রাহমাতুল্লাহি ওয়া বারাকাতুহ!', from: 0.25, to: 0.58, top: 760},
+    {type: 'say', who: 'rafi', text: 'ওয়া আলাইকুমুস সালাম\nওয়া রাহমাতুল্লাহি ওয়া বারাকাতুহ!', from: 0.61, to: 0.97, top: 760},
+  ],
 };
 
 export const ep09Clips = clips as Record<string, SceneMedia>;
@@ -56,5 +60,6 @@ export const EP09_CONFIG: ClipConfig = {
     3: [1.8, 7.4],
     4: [1.0, 8.6],
     5: [0, 9.8],
+    6: [1.0, 9.9],
   },
 };

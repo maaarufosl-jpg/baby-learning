@@ -1,4 +1,4 @@
-export type CharacterId = 'umayer' | 'safa' | 'ammu' | 'abbu' | 'nanu' | 'miu';
+export type CharacterId = 'umayer' | 'safa' | 'ammu' | 'abbu' | 'nanu' | 'miu' | 'rafi';
 export type Mood = 'happy' | 'excited' | 'surprised' | 'thinking' | 'calm' | 'sad';
 export type BackgroundId = 'kitchen' | 'plain' | 'outdoor';
 export type ArmPose = 'down' | 'up' | 'wave' | 'reach' | 'eat';
