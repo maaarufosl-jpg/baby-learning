@@ -23,6 +23,11 @@ export const EP09_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'যে আগে সালাম দেয়,\nসে আল্লাহর সবচেয়ে কাছের।', from: 0.49, to: 0.82, top: 740},
     {type: 'footnote', text: 'আবু দাউদ ৫১৯৭'},
   ],
+  5: [
+    {type: 'dua', mode: 'broken', from: 0, to: 0.86, pop: true, align: 'right', scale: 0.5, times: [0.03, 0.317, 0.594]},
+    // No star here: beside this wide panel it would cover the meaning.
+    {type: 'dua', mode: 'full', from: 0.86, showMeaning: true, pop: false, align: 'right', scale: 0.44},
+  ],
 };
 
 export const ep09Clips = clips as Record<string, SceneMedia>;
@@ -50,5 +55,6 @@ export const EP09_CONFIG: ClipConfig = {
     2: [0.5, 8.4],
     3: [1.8, 7.4],
     4: [1.0, 8.6],
+    5: [0, 9.8],
   },
 };
