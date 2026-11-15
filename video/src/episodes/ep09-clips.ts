@@ -32,6 +32,10 @@ export const EP09_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'আসসালামু আলাইকুম\nওয়া রাহমাতুল্লাহি ওয়া বারাকাতুহ!', from: 0.25, to: 0.58, top: 760},
     {type: 'say', who: 'rafi', text: 'ওয়া আলাইকুমুস সালাম\nওয়া রাহমাতুল্লাহি ওয়া বারাকাতুহ!', from: 0.61, to: 0.97, top: 760},
   ],
+  7: [
+    {type: 'say', who: 'rafi', text: 'আমার নাম রাফি!', from: 0.52, to: 0.68, top: 880},
+    {type: 'say', who: 'umayer', text: 'আমি উমায়ের! চলো একসাথে খেলি!', from: 0.71, to: 0.95, top: 880},
+  ],
 };
 
 export const ep09Clips = clips as Record<string, SceneMedia>;
@@ -61,5 +65,6 @@ export const EP09_CONFIG: ClipConfig = {
     4: [1.0, 8.6],
     5: [0, 9.8],
     6: [1.0, 9.9],
+    7: [2.4, 9.6],
   },
 };
