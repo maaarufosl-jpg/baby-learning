@@ -6,7 +6,7 @@ import {EP08_CONFIG} from './ep08-clips';
  * Episode 9 "সালাম দিলে বন্ধু হয়" from Gemini clips (scene numbers follow episodes/ep09-gemini-copy.md).
  * Times are fractions of the whole clip (0 = start, 1 = end), before trimming.
  */
-export const EP09_SCENE_COUNT = 11;
+export const EP09_SCENE_COUNT = 9;
 
 export const EP09_OVERLAYS: Record<number, ClipOverlay[]> = {
   1: [

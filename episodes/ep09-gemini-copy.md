@@ -1,6 +1,6 @@
 # পর্ব ৯: সালাম দিলে বন্ধু হয় — Gemini-তে শুধু কপি-পেস্ট
 
-**গল্প:** পার্কে নতুন একটা ছেলে, রাফি, একা বসে আছে। উমায়ের লজ্জায় মায়ের পেছনে লুকায়। মা শেখান, আগে সালাম দিলে বন্ধু হয়, আর পুরো সালাম। উমায়ের সাহস করে সালাম দেয়, রাফি জবাব দেয়, দুজনে বন্ধু হয়ে যায়। সাফাও সালাম দেয়, আর বাসায় ফিরে উমায়ের মিউকেও সালাম দেয়!
+**গল্প:** পার্কে নতুন একটা ছেলে, রাফি, একা বসে আছে। উমায়ের লজ্জায় মায়ের পেছনে লুকায়। মা শেখান, আগে সালাম দিলে বন্ধু হয়, আর পুরো সালাম। উমায়ের সাহস করে সালাম দেয়, রাফি জবাব দেয়, দুজনে বন্ধু হয়ে যায়। 
 
 **আজকের দোয়া:** السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ — আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহি ওয়া বারাকাতুহ — তোমার ওপর শান্তি, আল্লাহর রহমত ও বরকত বর্ষিত হোক
 
@@ -8,7 +8,7 @@
 
 **সূত্র:** আগে সালাম দেওয়া: আবু দাউদ ৫১৯৭। পুরো সালামে বেশি সওয়াব: আবু দাউদ ৫১৯৫, তিরমিজি ২৬৮৯। চেনা-অচেনা সবাইকে সালাম: সহিহ বুখারি ১২। ছাড়ার আগে আলেমকে দিয়ে যাচাই করিয়ে নিন।
 
-**খেয়াল করুন:** নতুন চরিত্র রাফি (সবুজ শার্ট, কোঁকড়া চুল)। প্রতিটা দৃশ্যে তার বর্ণনা একই রাখা হয়েছে। দৃশ্য ১০-এ বাসার দরজা, বাকি সব পার্কে। এবার মোট ১১টা দৃশ্য।
+**খেয়াল করুন:** নতুন চরিত্র রাফি (সবুজ শার্ট, কোঁকড়া চুল)। প্রতিটা দৃশ্যে তার বর্ণনা একই রাখা হয়েছে। পর্ব ছোট রাখতে সাফা আর মিউয়ের দৃশ্য বাদ দেওয়া হয়েছে। এবার মোট ৯টা দৃশ্য।
 
 **দৃশ্য ১ বানাতে হবে না।** পর্ব ১-এর শুরুর সবুজ মাঠের ভিডিওটাই আবার ব্যবহার করব। শুরুতে পর্ব ৮-এর দোয়া এক ঝলক মনে করিয়ে দেব।
 
@@ -112,35 +112,7 @@ Action: Umayer stands on the left side of the frame, smiling, and looks straight
 Dialogue: Umayer, cheerful and slow, in Bengali: "এবার তুমি বলো! আসসালামু আলাইকুম... ওয়া রাহমাতুল্লাহি... ওয়া বারাকাতুহ!"
 ```
 
-## ৯. সাফাও সালাম দেয়
-
-```
-8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
-
-Characters: Safa, Umayer's 2-year-old little sister with a round chubby face and big brown eyes, wearing a white under-cap and a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Rafi, a friendly 4-year-old Bangladeshi boy with short curly black hair, big dark eyes and a round face, wearing a light green half-sleeve shirt, navy blue trousers and white sneakers; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
-
-Setting: a bright green neighborhood park in Bangladesh in the late afternoon: soft grass, a small red slide, a set of swings, a paved path, leafy trees and flower bushes, with warm golden sunlight.
-
-Action: Safa toddles up to Rafi and Umayer near the slide, waves her little hand at Rafi and says the greeting proudly in her sweet toddler way. Rafi kneels down to her height, smiles and answers, and Umayer claps.
-
-Dialogue: Safa, tiny voice, in Bengali: "আসসালামু আলাইকুম!" Rafi, gently: "ওয়া আলাইকুমুস সালাম!"
-```
-
-## ১০. মিউকেও সালাম
-
-```
-8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
-
-Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals; Miu, a small fluffy orange tabby kitten with big green eyes and a white chest.
-
-Setting: the front door of a cozy Bangladeshi home in the evening, seen from inside: a light wooden door opening in, cream walls, a small shoe rack and a doormat, with warm lamp light.
-
-Action: Umayer comes home through the front door and sees Miu sitting on the doormat waiting for him. He bends down and greets Miu. Miu tilts her head and answers with a loud meow. Umayer giggles.
-
-Dialogue: Umayer, in Bengali: "মিউ, আসসালামু আলাইকুম!" Miu: a loud "meow!" Umayer, giggling: "মিউ তো মিয়াও দিয়েই জবাব দেয়!"
-```
-
-## ১১. বিদায়
+## ৯. বিদায়
 
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text or subtitles on screen.
