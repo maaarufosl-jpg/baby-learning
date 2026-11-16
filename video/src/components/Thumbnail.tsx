@@ -2,6 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Img, staticFile} from 'remotion';
 import {colors} from '../theme';
 import {TEXT_FONT} from './Overlays';
+import {toBn} from './Episode';
 
 /** YouTube thumbnail: the family at the table, a big question, and the series label. */
 export const Ep01Thumbnail: React.FC = () => (
@@ -92,7 +93,7 @@ export const EpisodeThumbnail: React.FC<{image: string; line1: string; line2: st
           fontSize: 40,
         }}
       >
-        ছোট্ট মুমিন · পর্ব {'০১২৩৪৫৬৭৮৯'[number]}
+        ছোট্ট মুমিন · পর্ব {toBn(number)}
       </div>
     </AbsoluteFill>
   );
@@ -108,4 +109,5 @@ export const EPISODE_THUMBNAILS = [
   {number: 7, image: 'thumb/ep07-bg.jpg', line1: 'বাথরুম থেকে', line2: 'বের হয়ে কী বলি?', corner: 'tr' as Corner},
   {number: 8, image: 'thumb/ep08-bg.jpg', line1: 'নতুন জামা পরে', line2: 'কী বলি?', corner: 'tr' as Corner},
   {number: 9, image: 'thumb/ep09-bg.jpg', line1: 'সালাম দিলে', line2: 'কী হয়?', corner: 'tl' as Corner},
+  {number: 10, image: 'thumb/ep10-bg.jpg', line1: 'হাঁচি দিলে', line2: 'কী বলি?', corner: 'tl' as Corner},
 ];

@@ -49,7 +49,7 @@ export const Root: React.FC = () => (
     <Composition id="ProfilePicture" component={ProfilePicture} durationInFrames={1} fps={FPS} width={1080} height={1080} />
     <Composition id="Ep01Thumbnail" component={Ep01Thumbnail} durationInFrames={1} fps={FPS} width={1280} height={720} />
     {EPISODE_THUMBNAILS.map((t) => (
-      <Composition key={t.number} id={`Ep0${t.number}Thumbnail`} component={EpisodeThumbnail} durationInFrames={1} fps={FPS} width={1280} height={720} defaultProps={t} />
+      <Composition key={t.number} id={`Ep${String(t.number).padStart(2, "0")}Thumbnail`} component={EpisodeThumbnail} durationInFrames={1} fps={FPS} width={1280} height={720} defaultProps={t} />
     ))}
     <Composition id="Ep01Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS)} fps={FPS} width={1920} height={1080} />
     <Composition id="Ep02Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP02_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP02_CONFIG}} />
