@@ -29,6 +29,13 @@ export const EP10_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'dua', mode: 'broken', from: 0.2, to: 1, pop: true, align: 'right', scale: 0.55, times: [0.267, 0.396]},
     {type: 'say', who: 'narrator', label: 'অর্থ', text: 'ইয়ারহামুকাল্লাহ: আল্লাহ তোমার ওপর রহম করুন', from: 0.42, to: 1, top: 880},
   ],
+  // Gemini wrote "Umayer" in the top left for the first two seconds; it is painted over in the source clip.
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.03, to: 0.15},
+    {type: 'say', who: 'umayer', text: 'হাঁচি দিলে...', from: 0.23, to: 0.42, top: 880},
+    {type: 'say', who: 'umayer', text: 'কেউ হাঁচি দিলে...', from: 0.65, to: 0.81, top: 880},
+    {type: 'repeat', parts: [0.426, 0.812], until: 1, align: 'right'},
+  ],
 };
 
 export const ep10Clips = clips as Record<string, SceneMedia>;
@@ -56,5 +63,6 @@ export const EP10_CONFIG: ClipConfig = {
     3: [1.0, 9.6],
     // Ends before Umayer's long laugh and Ma's second "ইয়ারহামুকাল্লাহ".
     4: [0.6, 6.0],
+    5: [0.2, 9.9],
   },
 };
