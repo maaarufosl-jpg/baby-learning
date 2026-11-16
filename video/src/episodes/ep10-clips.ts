@@ -24,6 +24,11 @@ export const EP10_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'আর যে শোনে, সে বলে ইয়ারহামুকাল্লাহ।', from: 0.66, to: 0.93, top: 880},
     {type: 'footnote', text: 'সহিহ বুখারি ৬২২৪'},
   ],
+  // Umayer says the first word after his sneeze, Ma answers with the second.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.2, to: 1, pop: true, align: 'right', scale: 0.55, times: [0.267, 0.396]},
+    {type: 'say', who: 'narrator', label: 'অর্থ', text: 'ইয়ারহামুকাল্লাহ: আল্লাহ তোমার ওপর রহম করুন', from: 0.42, to: 1, top: 880},
+  ],
 };
 
 export const ep10Clips = clips as Record<string, SceneMedia>;
@@ -49,5 +54,7 @@ export const EP10_CONFIG: ClipConfig = {
   trim: {
     2: [0.8, 8.8],
     3: [1.0, 9.6],
+    // Ends before Umayer's long laugh and Ma's second "ইয়ারহামুকাল্লাহ".
+    4: [0.6, 6.0],
   },
 };
