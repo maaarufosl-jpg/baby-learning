@@ -876,6 +876,50 @@ export const reels: Reel[] = [
     ],
     unsure: ['quran.com এর প্রথম শব্দের সময় ভুল ছিল; তিলাওয়াতের অংশ কানে মেপে নেওয়া (৯৭৬.০–৯৮৩.৩ সেকেন্ড)। শুনে দেখবেন শুরু ও শেষ ঠিক আছে কি না।'],
   }),
+  textReel({
+    id: 'reel18',
+    theme: 'orange',
+    number: 18,
+    kind: 'ayah',
+    title: 'আল্লাহ ধৈর্যশীলদের সাথে আছেন',
+    kicker: 'ছোট আয়াত · ৭',
+    arabic: 'إِنَّ اللّٰهَ مَعَ الصَّابِرِينَ',
+    meaning: 'নিশ্চয়ই আল্লাহ ধৈর্যশীলদের সাথে আছেন।',
+    source: 'সূরা আল-বাকারা, আয়াত ১৫৩',
+    note: 'তাই রাগ না করে আমরা ধৈর্য ধরবো',
+    // the qari pauses before "inna"; the ayah ends here
+    quran: {ref: '2:153', words: [7, 10]},
+    narration: {
+      intro: 'কষ্ট হলে বা অপেক্ষা করতে হলে, এই আয়াতটা মনে রাখবে।',
+      meaning: 'যারা ধৈর্য ধরে, আল্লাহ তাদের সাথে থাকেন।',
+      source: 'সূরা আল-বাকারা, একশো তিপ্পান্ন নম্বর আয়াত।',
+      note: 'তাই রাগ না করে, আমরা ধৈর্য ধরবো।',
+    },
+    scenes: [
+      {
+        art: 'autumn-forest',
+        sound: 'leaves',
+        look: 'শরতের কমলা-লাল বন, পাতা ঝরে পড়ছে',
+        prompt: veo('An autumn forest with orange and red trees, leaves slowly drifting down in a light breeze, warm soft light.', 'leaves rustling and falling'),
+        tint: ['#E9D2B0', '#7A3E24'],
+      },
+      {
+        art: 'dawn-cove',
+        sound: 'waves',
+        look: 'ভোরে পাহাড়ঘেরা শান্ত সমুদ্র-তীর',
+        prompt: veo('A calm cove at dawn with gentle waves reaching the sandy shore, dark cliffs on the side and a soft rising sun.', 'gentle waves on the shore'),
+        tint: ['#D9A3A2', '#3A3F58'],
+      },
+    ],
+    sources: ['সূরা আল-বাকারা ২:১৫৩ — يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ ۚ إِنَّ اللّٰهَ مَعَ الصَّابِرِينَ'],
+    checklist: [
+      'আয়াতাংশের আরবি ও হরকত মুসহাফের সাথে মিলানো: إِنَّ اللّٰهَ مَعَ الصَّابِرِينَ',
+      'অনুবাদ: নিশ্চয়ই আল্লাহ ধৈর্যশীলদের সাথে আছেন',
+      'বাচ্চাদের জন্য সহজ কথা ও শিক্ষা ("রাগ না করে ধৈর্য ধরবো") ঠিক আছে কি না',
+      'সূত্র: সূরা আল-বাকারা, আয়াত ১৫৩ (শেষ অংশ)',
+    ],
+    unsure: [],
+  }),
 ];
 
 // every drawn scene belongs to one reel only, so no two reels look alike

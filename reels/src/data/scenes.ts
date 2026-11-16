@@ -472,4 +472,23 @@ export const SCENES: Record<string, NatureScene> = {
       {type: 'ridge', kind: 'hills', y: 0.9, amp: 0.08, color: '#2F4B38', seed: 413, drift: 6},
     ],
   },
+  'autumn-forest': {
+    layers: [
+      {type: 'sky', colors: ['#8FB3D6', '#E9D2B0', '#F3C48C']},
+      {type: 'ridge', kind: 'forest', y: 0.42, amp: 0.14, color: '#C9824A', seed: 421, drift: 2},
+      {type: 'ridge', kind: 'forest', y: 0.6, amp: 0.2, color: '#A85A32', seed: 422, drift: 4},
+      {type: 'ridge', kind: 'forest', y: 0.8, amp: 0.2, color: '#7A3E24', seed: 423, drift: 6},
+      {type: 'grass', y: 0.92, color: '#5E3A22', height: 0.04, count: 80, tip: '#B5703E'},
+      {type: 'petals', count: 40, color: '#E08A3C'},
+    ],
+  },
+  'dawn-cove': {
+    layers: [
+      {type: 'sky', colors: ['#4B5F92', '#D9A3A2', '#F7D7AE'], to: ['#6B8BC0', '#EBB9A6', '#FBE6C0']},
+      {type: 'sun', x: 0.35, y: 0.5, r: 55, color: '#FFE6B4', glow: 7, rise: 0.04},
+      {type: 'ridge', kind: 'hills', y: 0.53, amp: 0.04, color: '#5A5874', seed: 431},
+      {type: 'water', y: 0.53, colors: ['#D9A894', '#3E5378'], shimmer: '#FFEBD2', sunX: 0.35},
+      {type: 'waves', y: 0.82, sea: '#6C7EA0', foam: '#FFF2E4', sand: '#CFAE8C'},
+    ],
+  },
 };

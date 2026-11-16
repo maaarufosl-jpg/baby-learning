@@ -402,5 +402,29 @@
         "seconds": 2.98
       }
     }
+  },
+  "reel18": {
+    "audio": {
+      "2-1": {
+        "file": "audio/reel18/q2-1.mp3",
+        "seconds": 5.49
+      },
+      "1-1": {
+        "file": "audio/reel18/v1-1.mp3",
+        "seconds": 5.17
+      },
+      "2-2": {
+        "file": "audio/reel18/v2-2.mp3",
+        "seconds": 3.94
+      },
+      "2-3": {
+        "file": "audio/reel18/v2-3.mp3",
+        "seconds": 4.68
+      },
+      "2-4": {
+        "file": "audio/reel18/v2-4.mp3",
+        "seconds": 3.47
+      }
+    }
   }
 }
