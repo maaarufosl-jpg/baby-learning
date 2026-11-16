@@ -491,4 +491,22 @@ export const SCENES: Record<string, NatureScene> = {
       {type: 'waves', y: 0.82, sea: '#6C7EA0', foam: '#FFF2E4', sand: '#CFAE8C'},
     ],
   },
+  'sunflower-field': {
+    layers: [
+      {type: 'sky', colors: ['#5E9BD8', '#A9CDEB', '#E4F0F2']},
+      {type: 'clouds', count: 4, y: [0.06, 0.24], color: '#FFFFFF', opacity: 0.85, speed: 9},
+      {type: 'ridge', kind: 'hills', y: 0.5, amp: 0.05, color: '#7FA55E', seed: 441},
+      {type: 'grass', y: 0.5, color: '#4E7E3C', height: 0.05, count: 120, tip: '#7FB05A'},
+      {type: 'flowers', y: 0.52, colors: ['#F6C431', '#F2B21E', '#F8D44C'], count: 90, size: 40, seed: 11},
+    ],
+  },
+  'tea-hills': {
+    layers: [
+      {type: 'sky', colors: ['#B8D2E0', '#DCE8E4', '#F1F2E6']},
+      {type: 'mist', y: 0.36, color: '#F4F6F1', opacity: 0.7},
+      {type: 'ridge', kind: 'hills', y: 0.42, amp: 0.1, color: '#8DB48A', seed: 451, drift: 2},
+      {type: 'field', y: 0.5, colors: ['#7FB06A', '#3E7A3E'], rows: 18, stalk: '#5C9A50'},
+      {type: 'sparkle', count: 24, color: '#FFFFFF', y: [0.5, 1]},
+    ],
+  },
 };

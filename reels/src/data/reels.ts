@@ -920,6 +920,47 @@ export const reels: Reel[] = [
     ],
     unsure: [],
   }),
+  duaReel({
+    id: 'reel19',
+    theme: 'rose',
+    number: 19,
+    title: 'কাজ সহজ হওয়ার দোয়া',
+    count: '৫',
+    arabic: 'وَيَسِّرْ لِي أَمْرِي',
+    bangla: 'ওয়া ইয়াসসির লি আমরি',
+    meaning: 'আর আমার কাজ সহজ করে দাও',
+    source: 'সূরা ত্ব-হা, আয়াত ২৬',
+    // the whole ayah
+    quran: {ref: '20:26'},
+    narration: {
+      meaning: 'এর অর্থ, হে আল্লাহ, আমার কাজ সহজ করে দাও।',
+      closing: 'পড়া বা কোনো কাজ কঠিন লাগলে, এই দোয়াটা পড়বে।',
+    },
+    scenes: [
+      {
+        art: 'sunflower-field',
+        sound: 'wind',
+        look: 'নীল আকাশের নিচে সূর্যমুখী ফুলের মাঠ',
+        prompt: veo('A bright field of sunflowers swaying gently under a clear blue sky with soft white clouds.', 'light summer breeze'),
+        tint: ['#A9CDEB', '#4E7E3C'],
+      },
+      {
+        art: 'tea-hills',
+        sound: 'morning-birds',
+        look: 'সকালের কুয়াশায় সবুজ চা-বাগানের পাহাড়',
+        prompt: veo('Rows of green tea bushes on gentle hills in soft morning mist, calm and fresh.', 'quiet morning air and faint distant birdsong'),
+        tint: ['#DCE8E4', '#3E7A3E'],
+      },
+    ],
+    sources: ['সূরা ত্ব-হা ২০:২৬ — وَيَسِّرْ لِي أَمْرِي; মূসা (আ.) এর দোয়া, আগের আয়াত رَبِّ اشْرَحْ لِي صَدْرِي (রিল ৬)'],
+    checklist: [
+      'আরবি ও হরকত: وَيَسِّرْ لِي أَمْرِي',
+      'বাংলা উচ্চারণ: ওয়া ইয়াসসির লি আমরি',
+      'অর্থ: আর আমার কাজ সহজ করে দাও',
+      'সূত্র: সূরা ত্ব-হা, আয়াত ২৬',
+    ],
+    unsure: [],
+  }),
 ];
 
 // every drawn scene belongs to one reel only, so no two reels look alike
