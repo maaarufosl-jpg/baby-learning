@@ -40,10 +40,11 @@ export const EP10_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'safa', text: 'হাচ্চু! আলহামদুলিল্লাহ!', from: 0.18, to: 0.46, top: 880},
     {type: 'say', who: 'umayer', text: 'ইয়ারহামুকাল্লাহ!', from: 0.48, to: 0.72, top: 880},
   ],
-  // Ends before Safa says the salam a second time.
+  // Gemini had Safa repeat the salam and skipped the goodbye: from 5.5s the clip's sound is muted
+  // and "পরের পর্বে দেখা হবে" from episode 2's goodbye is laid in its place.
   7: [
     {type: 'say', who: 'umayer', text: 'হাঁচি দিলে\nতুমিও বলবে তো?', from: 0.11, to: 0.3},
-    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.36, to: 0.69},
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.36, to: 0.74},
     {type: 'card', from: 0.08},
   ],
 };
@@ -75,6 +76,6 @@ export const EP10_CONFIG: ClipConfig = {
     4: [0.6, 6.0],
     5: [0.2, 9.9],
     6: [1.3, 7.4],
-    7: [0.8, 6.95],
+    7: [0.8, 7.6],
   },
 };
