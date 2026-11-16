@@ -40,10 +40,11 @@ export const EP10_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'safa', text: 'হাচ্চু! আলহামদুলিল্লাহ!', from: 0.18, to: 0.46, top: 880},
     {type: 'say', who: 'umayer', text: 'ইয়ারহামুকাল্লাহ!', from: 0.48, to: 0.72, top: 880},
   ],
-  // Episode 7's goodbye stands in until this episode's own is made: same outfits, kept from the salam on.
+  // Ends before Safa says the salam a second time.
   7: [
-    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
-    {type: 'card', from: 0.38},
+    {type: 'say', who: 'umayer', text: 'হাঁচি দিলে\nতুমিও বলবে তো?', from: 0.11, to: 0.3},
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.36, to: 0.69},
+    {type: 'card', from: 0.08},
   ],
 };
 
@@ -64,7 +65,7 @@ export const EP10_CONFIG: ClipConfig = {
   clips: ep10Clips,
   overlays: EP10_OVERLAYS,
   // The opening greeting is a short cut of episode 1's first scene (public/clips/shared/opener.mp4).
-  borrowClip: {1: {file: 'clips/shared/opener.mp4', seconds: 4.1}, 7: {file: 'clips/ep07/_ready/scene10.mp4', seconds: 10.1}},
+  borrowClip: {1: {file: 'clips/shared/opener.mp4', seconds: 4.1}},
   introSeconds: 2.5,
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
@@ -74,6 +75,6 @@ export const EP10_CONFIG: ClipConfig = {
     4: [0.6, 6.0],
     5: [0.2, 9.9],
     6: [1.3, 7.4],
-    7: [3.8, 8.6],
+    7: [0.8, 6.95],
   },
 };
