@@ -9,9 +9,10 @@ import {EP08_CONFIG} from './ep08-clips';
 export const EP09_SCENE_COUNT = 9;
 
 export const EP09_OVERLAYS: Record<number, ClipOverlay[]> = {
+  // The short shared opener: the salam, then the recap; Miu's meows are cut.
   1: [
-    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!', from: 0.15, to: 0.6, top: 860},
-    {type: 'recap', from: 0.62, to: 1},
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!', from: 0.08, to: 0.55, top: 860},
+    {type: 'recap', from: 0.45, to: 1},
   ],
   2: [
     {type: 'say', who: 'ammu', text: 'ওই দেখো, নতুন একজন এসেছে!', from: 0.23, to: 0.47, top: 880},
@@ -63,12 +64,11 @@ export const EP09_CONFIG: ClipConfig = {
   sceneCount: EP09_SCENE_COUNT,
   clips: ep09Clips,
   overlays: EP09_OVERLAYS,
-  // The opening greeting is shared with episode 1.
-  borrowClip: {1: {file: 'clips/ep01/_ready/scene01.mp4', seconds: 10.1}, 9: {file: 'clips/ep07/_ready/scene10.mp4', seconds: 10.1}},
+  // The opening greeting is a short cut of episode 1's first scene (public/clips/shared/opener.mp4).
+  borrowClip: {1: {file: 'clips/shared/opener.mp4', seconds: 4.1}, 9: {file: 'clips/ep07/_ready/scene10.mp4', seconds: 10.1}},
   introSeconds: 2.5,
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
-    1: [0.3, 8.9],
     2: [0.5, 8.4],
     3: [1.8, 7.4],
     4: [1.0, 8.6],
