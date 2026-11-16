@@ -41,6 +41,13 @@ export const EP11_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'safa', text: 'আলহামদুলিল্লাহ!', from: 0.38, to: 0.54, top: 880},
     {type: 'say', who: 'umayer', text: 'সাফাও পেরেছে!', from: 0.58, to: 0.74, top: 880},
   ],
+  // Gemini repeated the salam: from 5.7s the clip's sound is muted and
+  // "পরের পর্বে দেখা হবে" from episode 2's goodbye is laid in its place.
+  7: [
+    {type: 'say', who: 'umayer', text: 'তুমিও বসে পানি খাবে তো?', from: 0.13, to: 0.32},
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.76},
+    {type: 'card', from: 0.08},
+  ],
 };
 
 export const ep11Clips = clips as Record<string, SceneMedia>;
@@ -69,5 +76,6 @@ export const EP11_CONFIG: ClipConfig = {
     4: [0.6, 6.0],
     5: [0.8, 10.0],
     6: [0.8, 7.6],
+    7: [0.9, 7.8],
   },
 };
