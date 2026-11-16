@@ -35,6 +35,12 @@ export const EP11_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'পানি খাওয়ার পরে...', from: 0.7, to: 0.84, top: 880},
     {type: 'repeat', parts: [0.545, 0.861], until: 1, align: 'right'},
   ],
+  // Turned toward Umayer, Safa holds the cup in her near hand, her right.
+  6: [
+    {type: 'say', who: 'safa', text: 'বিসমিল্লাহ!', from: 0.12, to: 0.24, top: 880},
+    {type: 'say', who: 'safa', text: 'আলহামদুলিল্লাহ!', from: 0.38, to: 0.54, top: 880},
+    {type: 'say', who: 'umayer', text: 'সাফাও পেরেছে!', from: 0.58, to: 0.74, top: 880},
+  ],
 };
 
 export const ep11Clips = clips as Record<string, SceneMedia>;
@@ -62,5 +68,6 @@ export const EP11_CONFIG: ClipConfig = {
     3: [0.8, 8.0],
     4: [0.6, 6.0],
     5: [0.8, 10.0],
+    6: [0.8, 7.6],
   },
 };
