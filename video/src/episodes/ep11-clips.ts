@@ -29,6 +29,12 @@ export const EP11_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'narrator', label: 'অর্থ', text: 'বিসমিল্লাহ: আল্লাহর নামে', from: 0.32, to: 0.6, top: 880},
     {type: 'say', who: 'narrator', label: 'অর্থ', text: 'আলহামদুলিল্লাহ: সব প্রশংসা আল্লাহর', from: 0.66, to: 1, top: 880},
   ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.23},
+    {type: 'say', who: 'umayer', text: 'পানি খাওয়ার আগে...', from: 0.3, to: 0.47, top: 880},
+    {type: 'say', who: 'umayer', text: 'পানি খাওয়ার পরে...', from: 0.7, to: 0.84, top: 880},
+    {type: 'repeat', parts: [0.545, 0.861], until: 1, align: 'right'},
+  ],
 };
 
 export const ep11Clips = clips as Record<string, SceneMedia>;
@@ -55,5 +61,6 @@ export const EP11_CONFIG: ClipConfig = {
     2: [0.3, 8.6],
     3: [0.8, 8.0],
     4: [0.6, 6.0],
+    5: [0.8, 10.0],
   },
 };
