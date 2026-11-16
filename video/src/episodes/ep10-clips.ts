@@ -18,6 +18,12 @@ export const EP10_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'হা... হা... হাঁচ্চু!', from: 0.2, to: 0.4, top: 880},
     {type: 'say', who: 'ammu', text: 'হাঁচি দিলে হাত দিয়ে মুখ ঢাকতে হয়!', from: 0.61, to: 0.87, top: 880},
   ],
+  3: [
+    {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ শিখিয়েছেন,', from: 0.13, to: 0.35, top: 880},
+    {type: 'say', who: 'ammu', text: 'হাঁচি দিলে বলি আলহামদুলিল্লাহ।', from: 0.36, to: 0.64, top: 880},
+    {type: 'say', who: 'ammu', text: 'আর যে শোনে, সে বলে ইয়ারহামুকাল্লাহ।', from: 0.66, to: 0.93, top: 880},
+    {type: 'footnote', text: 'সহিহ বুখারি ৬২২৪'},
+  ],
 };
 
 export const ep10Clips = clips as Record<string, SceneMedia>;
@@ -42,5 +48,6 @@ export const EP10_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [0.8, 8.8],
+    3: [1.0, 9.6],
   },
 };
