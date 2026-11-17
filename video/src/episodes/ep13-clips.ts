@@ -24,6 +24,10 @@ export const EP13_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'আল্লাহুম্মা সাইয়িবান নাফিআ।', from: 0.56, to: 0.8, top: 880},
     {type: 'footnote', text: 'সহিহ বুখারি ১০৩২'},
   ],
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.05, to: 0.82, pop: true, align: 'right', scale: 0.55, times: [0.109, 0.356, 0.584]},
+    {type: 'dua', mode: 'full', from: 0.82, showMeaning: true, pop: false, align: 'right', scale: 0.55},
+  ],
 };
 
 export const ep13Clips = clips as Record<string, SceneMedia>;
@@ -49,5 +53,6 @@ export const EP13_CONFIG: ClipConfig = {
   trim: {
     2: [0.6, 7.2],
     3: [0.9, 8.2],
+    4: [0.6, 9.6],
   },
 };
