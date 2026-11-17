@@ -28,6 +28,11 @@ export const EP12_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'dua', mode: 'broken', from: 0.05, to: 0.68, pop: true, align: 'right', scale: 0.55, times: [0.109, 0.446]},
     {type: 'dua', mode: 'full', from: 0.68, showMeaning: true, pop: false, align: 'right', scale: 0.55},
   ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.03, to: 0.15},
+    {type: 'say', who: 'umayer', text: 'কেউ কিছু দিলে...', from: 0.24, to: 0.42, top: 880},
+    {type: 'repeat', parts: [0.505, 0.762], until: 1, align: 'right'},
+  ],
 };
 
 export const ep12Clips = clips as Record<string, SceneMedia>;
@@ -54,5 +59,6 @@ export const EP12_CONFIG: ClipConfig = {
     2: [0.8, 8.8],
     3: [0.8, 8.8],
     4: [0.6, 9.6],
+    5: [0.2, 9.0],
   },
 };
