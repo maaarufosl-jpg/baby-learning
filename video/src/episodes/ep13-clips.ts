@@ -1,0 +1,46 @@
+import clips from './ep13.clips.json';
+import type {ClipConfig, ClipOverlay, SceneMedia} from './clip-types';
+import {EP12_CONFIG} from './ep12-clips';
+
+/**
+ * Episode 13 "বৃষ্টি দেখলে কী বলি?" from Gemini clips (scene numbers follow episodes/ep13-gemini-copy.md).
+ * Times are fractions of the whole clip (0 = start, 1 = end), before trimming.
+ */
+export const EP13_SCENE_COUNT = 7;
+
+export const EP13_OVERLAYS: Record<number, ClipOverlay[]> = {
+  // The short shared opener: the salam, then the recap.
+  1: [
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!', from: 0.08, to: 0.55, top: 860},
+    {type: 'recap', from: 0.45, to: 1},
+  ],
+  2: [
+    {type: 'say', who: 'umayer', text: 'মা, দেখো, বৃষ্টি!', from: 0.17, to: 0.4, top: 880},
+    {type: 'say', who: 'ammu', text: 'চলো, বৃষ্টির দোয়া পড়ি!', from: 0.48, to: 0.69, top: 880},
+  ],
+};
+
+export const ep13Clips = clips as Record<string, SceneMedia>;
+
+export const EP13_CONFIG: ClipConfig = {
+  number: 13,
+  title: 'বৃষ্টি দেখলে কী বলি?',
+  dua: {
+    name: 'বৃষ্টির দোয়া',
+    arabic: 'اللَّهُمَّ صَيِّبًا نَافِعًا',
+    parts: ['আল্লাহুম্মা', 'সাইয়িবান', 'নাফিআ'],
+    meaning: 'হে আল্লাহ, উপকারী বৃষ্টি দাও',
+    source: 'সহিহ বুখারি ১০৩২',
+  },
+  previousDua: EP12_CONFIG.dua,
+  sceneCount: EP13_SCENE_COUNT,
+  clips: ep13Clips,
+  overlays: EP13_OVERLAYS,
+  // The opening greeting is a short cut of episode 1's first scene (public/clips/shared/opener.mp4).
+  borrowClip: {1: {file: 'clips/shared/opener.mp4', seconds: 4.1}},
+  introSeconds: 2.5,
+  // Seconds of each Gemini clip to keep, so the episode stays short.
+  trim: {
+    2: [0.6, 7.2],
+  },
+};
