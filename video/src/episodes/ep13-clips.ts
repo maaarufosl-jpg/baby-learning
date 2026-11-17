@@ -28,6 +28,10 @@ export const EP13_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'dua', mode: 'broken', from: 0.05, to: 0.82, pop: true, align: 'right', scale: 0.55, times: [0.109, 0.356, 0.584]},
     {type: 'dua', mode: 'full', from: 0.82, showMeaning: true, pop: false, align: 'right', scale: 0.55},
   ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.03, to: 0.15},
+    {type: 'repeat', parts: [0.248, 0.465, 0.663], until: 1, align: 'right'},
+  ],
 };
 
 export const ep13Clips = clips as Record<string, SceneMedia>;
@@ -54,5 +58,7 @@ export const EP13_CONFIG: ClipConfig = {
     2: [0.6, 7.2],
     3: [0.9, 8.2],
     4: [0.6, 9.6],
+    // Keeps the pause at the end for the child to say it.
+    5: [0.2, 9.0],
   },
 };
