@@ -33,6 +33,10 @@ export const EP12_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'কেউ কিছু দিলে...', from: 0.24, to: 0.42, top: 880},
     {type: 'repeat', parts: [0.505, 0.762], until: 1, align: 'right'},
   ],
+  6: [
+    {type: 'say', who: 'safa', text: 'জাযাকাল্লাহু খাইরান!', from: 0.36, to: 0.55, top: 880},
+    {type: 'say', who: 'umayer', text: 'সাফাও পেরেছে!', from: 0.59, to: 0.79, top: 880},
+  ],
 };
 
 export const ep12Clips = clips as Record<string, SceneMedia>;
@@ -60,5 +64,6 @@ export const EP12_CONFIG: ClipConfig = {
     3: [0.8, 8.8],
     4: [0.6, 9.6],
     5: [0.2, 9.0],
+    6: [1.0, 8.4],
   },
 };
