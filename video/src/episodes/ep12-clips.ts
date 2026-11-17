@@ -24,6 +24,10 @@ export const EP12_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'জাযাকাল্লাহু খাইরান।', from: 0.67, to: 0.86, top: 880},
     {type: 'footnote', text: 'তিরমিজি ২০৩৫'},
   ],
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.05, to: 0.68, pop: true, align: 'right', scale: 0.55, times: [0.109, 0.446]},
+    {type: 'dua', mode: 'full', from: 0.68, showMeaning: true, pop: false, align: 'right', scale: 0.55},
+  ],
 };
 
 export const ep12Clips = clips as Record<string, SceneMedia>;
@@ -49,5 +53,6 @@ export const EP12_CONFIG: ClipConfig = {
   trim: {
     2: [0.8, 8.8],
     3: [0.8, 8.8],
+    4: [0.6, 9.6],
   },
 };
