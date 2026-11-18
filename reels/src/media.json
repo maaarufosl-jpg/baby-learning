@@ -446,5 +446,29 @@
         "seconds": 4.39
       }
     }
+  },
+  "reel20": {
+    "audio": {
+      "2-1": {
+        "file": "audio/reel20/q2-1.mp3",
+        "seconds": 4.68
+      },
+      "1-1": {
+        "file": "audio/reel20/v1-1.mp3",
+        "seconds": 2.27
+      },
+      "2-2": {
+        "file": "audio/reel20/v2-2.mp3",
+        "seconds": 4.02
+      },
+      "2-3": {
+        "file": "audio/reel20/v2-3.mp3",
+        "seconds": 3
+      },
+      "2-4": {
+        "file": "audio/reel20/v2-4.mp3",
+        "seconds": 3.19
+      }
+    }
   }
 }

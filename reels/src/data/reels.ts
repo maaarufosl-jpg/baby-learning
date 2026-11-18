@@ -961,6 +961,50 @@ export const reels: Reel[] = [
     ],
     unsure: [],
   }),
+  textReel({
+    id: 'reel20',
+    theme: 'lime',
+    number: 20,
+    kind: 'ayah',
+    title: 'আল্লাহ সবসময় সাথে আছেন',
+    kicker: 'ছোট আয়াত · ৮',
+    arabic: 'وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ',
+    meaning: 'তোমরা যেখানেই থাকো, তিনি তোমাদের সাথে আছেন।',
+    source: 'সূরা আল-হাদিদ, আয়াত ৪',
+    note: 'তাই আমরা কখনো একা নই',
+    // between two waqf marks; measured by ear: the qari pauses before "wa huwa" and after "kuntum"
+    quran: {ref: '57:4', words: [28, 32], ms: [57420, 62050]},
+    narration: {
+      intro: 'তুমি কি কখনো, একা লাগে?',
+      meaning: 'তুমি যেখানেই থাকো, আল্লাহ তোমার সাথে আছেন।',
+      source: 'সূরা আল-হাদিদ, চার নম্বর আয়াত।',
+      note: 'তাই আমরা, কখনো একা নই।',
+    },
+    scenes: [
+      {
+        art: 'aurora-night',
+        sound: 'night',
+        look: 'রাতের আকাশে সবুজ আলোর ঢেউ, নিচে শান্ত হ্রদ',
+        prompt: veo('Soft green northern lights glowing over dark mountains and a calm lake, stars twinkling, very slow movement.', 'very quiet night air'),
+        tint: ['#0F2338', '#050B14'],
+      },
+      {
+        art: 'red-canyon',
+        sound: 'stream',
+        look: 'লালচে পাহাড়ি গিরিখাতের মাঝ দিয়ে বয়ে যাওয়া নদী',
+        prompt: veo('A river winding through a quiet red rock canyon under a clear blue sky, warm sunlight on the cliffs.', 'gently flowing river'),
+        tint: ['#C9DCEA', '#7A3A20'],
+      },
+    ],
+    sources: ['সূরা আল-হাদিদ ৫৭:৪ — ... وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ ۚ وَاللّٰهُ بِمَا تَعْمَلُونَ بَصِيرٌ'],
+    checklist: [
+      'আয়াতাংশের আরবি ও হরকত মুসহাফের সাথে মিলানো: وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ',
+      'অনুবাদ: তোমরা যেখানেই থাকো, তিনি তোমাদের সাথে আছেন',
+      'বাচ্চাদের জন্য সহজ কথা ("আমরা কখনো একা নই") ঠিক আছে কি না; আলেমরা এখানে "সাথে থাকা" বলতে জ্ঞান ও দেখাশোনার মাধ্যমে সাথে থাকা বোঝান',
+      'সূত্র: সূরা আল-হাদিদ, আয়াত ৪ (আয়াতের অংশ)',
+    ],
+    unsure: ['তিলাওয়াতের অংশ কানে মেপে নেওয়া (৫৭.৪২–৬২.০৫ সেকেন্ড), দুই দিকেই কারির থামার জায়গায়।'],
+  }),
 ];
 
 // every drawn scene belongs to one reel only, so no two reels look alike

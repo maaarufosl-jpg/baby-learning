@@ -509,4 +509,25 @@ export const SCENES: Record<string, NatureScene> = {
       {type: 'sparkle', count: 24, color: '#FFFFFF', y: [0.5, 1]},
     ],
   },
+  'aurora-night': {
+    zoom: 0.03,
+    layers: [
+      {type: 'sky', colors: ['#06101F', '#0F2338', '#1C3A4E']},
+      {type: 'stars', count: 180, bottom: 0.6},
+      {type: 'mist', y: 0.22, color: '#5BE3A6', opacity: 0.35, count: 6},
+      {type: 'mist', y: 0.32, color: '#4FB6E0', opacity: 0.25, count: 5},
+      {type: 'ridge', kind: 'mountains', y: 0.68, amp: 0.12, color: '#0B1726', seed: 461, snow: '#1E3346'},
+      {type: 'water', y: 0.68, colors: ['#173247', '#050B14'], shimmer: '#8FF0C6', mirror: '#2C6D5E'},
+    ],
+  },
+  'red-canyon': {
+    layers: [
+      {type: 'sky', colors: ['#6FA3D6', '#C9DCEA', '#F3DCC0']},
+      {type: 'sun', x: 0.75, y: 0.2, r: 50, color: '#FFF3D6', glow: 6},
+      {type: 'ridge', kind: 'mountains', y: 0.55, amp: 0.2, color: '#C9774A', seed: 471, drift: 1},
+      {type: 'ridge', kind: 'mountains', y: 0.72, amp: 0.22, color: '#A5552F', seed: 472, drift: 2},
+      {type: 'river', color: '#5E9BB5', shimmer: '#E6F6FF', from: 0.7, width: 0.5, seed: 1.5},
+      {type: 'ridge', kind: 'hills', y: 0.98, amp: 0.1, color: '#7A3A20', seed: 473},
+    ],
+  },
 };
