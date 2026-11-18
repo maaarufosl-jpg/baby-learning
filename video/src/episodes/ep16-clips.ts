@@ -18,6 +18,13 @@ export const EP16_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'চলো, পার্কে যাই!', from: 0.35, to: 0.5, top: 880},
     {type: 'say', who: 'ammu', text: 'দাঁড়াও! আগে একটা দোয়া পড়ি।', from: 0.52, to: 0.74, top: 880},
   ],
+  // The bubbles sit a little higher so the long source note below does not touch them.
+  3: [
+    {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ', from: 0.16, to: 0.38, top: 830},
+    {type: 'say', who: 'ammu', text: 'ঘর থেকে বের হওয়ার সময় বলতেন,', from: 0.39, to: 0.6, top: 830},
+    {type: 'say', who: 'ammu', text: 'বিসমিল্লাহি তাওয়াক্কালতু আলাল্লাহ।', from: 0.63, to: 0.87, top: 830},
+    {type: 'footnote', text: 'আবু দাউদ ৫০৯৫, তিরমিজি ৩৪২৬'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   8: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -47,6 +54,7 @@ export const EP16_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [1.5, 7.8],
+    3: [1.0, 9.0],
     8: [3.8, 8.6],
   },
 };
