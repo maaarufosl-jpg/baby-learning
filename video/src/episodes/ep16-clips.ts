@@ -6,7 +6,7 @@ import {EP15_CONFIG} from './ep15-clips';
  * Episode 16 "ঘর থেকে বের হলে কী বলি?" from Gemini clips (scene numbers follow episodes/ep16-gemini-copy.md).
  * Times are fractions of the whole clip (0 = start, 1 = end), before trimming.
  */
-export const EP16_SCENE_COUNT = 8;
+export const EP16_SCENE_COUNT = 7;
 
 export const EP16_OVERLAYS: Record<number, ClipOverlay[]> = {
   // The short shared opener: the salam, then the recap.
@@ -33,12 +33,13 @@ export const EP16_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.13, to: 0.25},
     {type: 'repeat', parts: [0.347, 0.554, 0.743], until: 1, align: 'right'},
   ],
-  7: [
+  // Scene 6 of the prompts (Safa at the door) is left out; the park scene with Junayed follows straight on.
+  6: [
     {type: 'say', who: 'junayed', text: 'আসসালামু আলাইকুম, উমায়ের!', from: 0.37, to: 0.57, top: 880},
     {type: 'say', who: 'umayer', text: 'ওয়া আলাইকুমুস সালাম, জুনায়েদ!\nচলো খেলি!', from: 0.58, to: 0.8, top: 760},
   ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
-  8: [
+  7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
     {type: 'card', from: 0.38},
   ],
@@ -61,7 +62,7 @@ export const EP16_CONFIG: ClipConfig = {
   clips: ep16Clips,
   overlays: EP16_OVERLAYS,
   // The opening greeting is a short cut of episode 1's first scene (public/clips/shared/opener.mp4).
-  borrowClip: {1: {file: 'clips/shared/opener.mp4', seconds: 4.1}, 8: {file: 'clips/ep07/_ready/scene10.mp4', seconds: 10.1}},
+  borrowClip: {1: {file: 'clips/shared/opener.mp4', seconds: 4.1}, 7: {file: 'clips/ep07/_ready/scene10.mp4', seconds: 10.1}},
   introSeconds: 2.5,
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
@@ -69,7 +70,7 @@ export const EP16_CONFIG: ClipConfig = {
     3: [1.0, 9.0],
     4: [0.3, 9.6],
     5: [1.0, 9.0],
-    7: [1.8, 9.4],
-    8: [3.8, 8.6],
+    6: [1.8, 9.4],
+    7: [3.8, 8.6],
   },
 };
