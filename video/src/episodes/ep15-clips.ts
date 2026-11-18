@@ -19,6 +19,11 @@ export const EP15_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'safa', text: 'আমার বল!', from: 0.3, to: 0.44, top: 880},
     {type: 'say', who: 'ammu', text: 'ভুল কাজ করলে আমরা বলি, আস্তাগফিরুল্লাহ।', from: 0.55, to: 0.85, top: 880},
   ],
+  3: [
+    {type: 'say', who: 'ammu', text: 'আমাদের নবীজি ﷺ', from: 0.14, to: 0.42, top: 880},
+    {type: 'say', who: 'ammu', text: 'প্রতিদিন অনেকবার আস্তাগফিরুল্লাহ বলতেন।', from: 0.46, to: 0.75, top: 880},
+    {type: 'footnote', text: 'সহিহ বুখারি ৬৩০৭'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -48,6 +53,7 @@ export const EP15_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [1.2, 8.6],
+    3: [1.0, 7.8],
     7: [3.8, 8.6],
   },
 };
