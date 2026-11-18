@@ -115,4 +115,5 @@ export const EPISODE_THUMBNAILS = [
   {number: 13, image: 'thumb/ep13-bg.jpg', line1: 'বৃষ্টি দেখলে', line2: 'কী বলি?', corner: 'tl' as Corner},
   {number: 14, image: 'thumb/ep14-bg.jpg', line1: 'সুন্দর কিছু দেখলে', line2: 'কী বলি?', corner: 'tr' as Corner},
   {number: 15, image: 'thumb/ep15-bg.jpg', line1: 'ভুল কাজ করলে', line2: 'কী বলি?', corner: 'tr' as Corner},
+  {number: 16, image: 'thumb/ep16-bg.jpg', line1: 'ঘর থেকে বের হলে', line2: 'কী বলি?', corner: 'tr' as Corner},
 ];
