@@ -34,6 +34,11 @@ export const EP14_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'সুন্দর কিছু দেখলে...', from: 0.35, to: 0.5, top: 880},
     {type: 'repeat', parts: [0.644, 0.673, 0.703], until: 1, align: 'right'},
   ],
+  // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
+  7: [
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
+    {type: 'card', from: 0.38},
+  ],
 };
 
 export const ep14Clips = clips as Record<string, SceneMedia>;
@@ -53,7 +58,7 @@ export const EP14_CONFIG: ClipConfig = {
   clips: ep14Clips,
   overlays: EP14_OVERLAYS,
   // The opening greeting is a short cut of episode 1's first scene (public/clips/shared/opener.mp4).
-  borrowClip: {1: {file: 'clips/shared/opener.mp4', seconds: 4.1}},
+  borrowClip: {1: {file: 'clips/shared/opener.mp4', seconds: 4.1}, 7: {file: 'clips/ep07/_ready/scene10.mp4', seconds: 10.1}},
   introSeconds: 2.5,
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
@@ -62,5 +67,6 @@ export const EP14_CONFIG: ClipConfig = {
     // Ends before Ma speaks again.
     4: [0.8, 8.3],
     5: [0.9, 9.0],
+    7: [3.8, 8.6],
   },
 };
