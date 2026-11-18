@@ -1,6 +1,8 @@
-# পর্ব ১৫: ভুল হলে কী বলি? — Gemini-তে শুধু কপি-পেস্ট
+# পর্ব ১৫: ভুল কাজ করলে কী বলি? — Gemini-তে শুধু কপি-পেস্ট
 
-**গল্প:** দৌড়াতে গিয়ে উমায়েরের পায়ে লেগে সাফার ব্লকের টাওয়ার পড়ে যায়। মা শেখান, ভুল হলে বলি আস্তাগফিরুল্লাহ; নবীজি ﷺ প্রতিদিন অনেকবার বলতেন। তারপর উমায়ের সাফাকে "দুঃখিত" বলে আবার টাওয়ার বানিয়ে দেয়।
+**গল্প:** উমায়ের সাফার হাত থেকে বল কেড়ে নেয়, সাফা কাঁদে। মা শেখান, ভুল কাজ করলে বলি আস্তাগফিরুল্লাহ; নবীজি ﷺ প্রতিদিন অনেকবার বলতেন। তারপর উমায়ের সাফাকে "দুঃখিত" বলে বল ফিরিয়ে দেয়।
+
+**কেন এই গল্প:** আস্তাগফিরুল্লাহ হলো গুনাহ বা ভুল কাজের জন্য আল্লাহর কাছে ক্ষমা চাওয়া। হঠাৎ কিছু পড়ে গেলে বা ভেঙে গেলে (দুর্ঘটনা) এটা গুনাহ নয়; বিপদ বা ক্ষতিতে বলা হয় ইন্নালিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন (সূরা বাকারা ২:১৫৬)। তাই গল্পে ইচ্ছাকৃত ভুল কাজ (খেলনা কেড়ে নেওয়া) রাখা হয়েছে।
 
 **আজকের দোয়া:** أَسْتَغْفِرُ اللَّهَ — আস্তাগফিরুল্লাহ — আমি আল্লাহর কাছে ক্ষমা চাই
 
@@ -10,7 +12,7 @@
 
 প্রতিটা দৃশ্যের জন্য Gemini-তে নতুন চ্যাট খুলে Video বেছে পেস্ট করুন। ভিডিও এলে চ্যাটে পাঠান, সাথে লিখুন "পর্ব ১৫ দৃশ্য ২" এভাবে।
 
-## ২. উফ, পড়ে গেল!
+## ২. খেলনা কেড়ে নেওয়া
 
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text, names or subtitles anywhere on screen.
@@ -19,9 +21,9 @@ Characters: Ma, the children's young mother with a kind gentle face, wearing a l
 
 Setting: a cozy Bangladeshi living room in the daytime: a soft rug on the floor, a soft green sofa with cushions, cream walls, and a window with pink curtains and sunlight.
 
-Action: Safa sits on the rug next to a small tower of colorful wooden blocks she built. Umayer runs past playfully and his foot bumps the tower, and the blocks tumble down softly. Safa looks sad, her lip trembling a little. Umayer stops, surprised and sorry. Ma comes over gently.
+Action: Safa sits on the rug happily playing with a small soft red ball. Umayer wants it and quickly snatches the ball from her hands. Safa's lip trembles and she starts to cry softly. Umayer looks at her and his face turns sorry. Ma comes over gently.
 
-Dialogue: Umayer, surprised: "উফ!" Ma, gently, in Bengali: "ভুল হলে আমরা বলি, আস্তাগফিরুল্লাহ।"
+Dialogue: Safa, crying softly: "আমার বল!" Ma, gently, in Bengali: "ভুল কাজ করলে আমরা বলি, আস্তাগফিরুল্লাহ।"
 ```
 
 ## ৩. নবীজির শেখানো
@@ -63,7 +65,7 @@ Setting: a plain soft pastel peach background with gently floating light circles
 
 Action: Umayer stands on the left side of the frame, smiling, and looks straight at the camera, inviting the viewer to speak with him, pausing with a nod after each part. Keep the middle and right of the frame empty.
 
-Dialogue: Umayer, cheerful and slow, in Bengali: "এবার তুমি বলো! ভুল হলে... আস্তাগফিরুল্লাহ!"
+Dialogue: Umayer, cheerful and slow, in Bengali: "এবার তুমি বলো! ভুল কাজ করলে... আস্তাগফিরুল্লাহ!"
 ```
 
 ## ৬. সাফার সাথে ভাব
@@ -75,7 +77,7 @@ Characters: Safa, Umayer's 2-year-old little sister with a round chubby face and
 
 Setting: a cozy Bangladeshi living room in the daytime: a soft rug on the floor, a soft green sofa with cushions, cream walls, and a window with pink curtains and sunlight.
 
-Action: Umayer kneels beside Safa, says the words softly, and helps her build the block tower again. Safa smiles big, claps and gives Umayer a happy hug.
+Action: Umayer kneels beside Safa, says the words softly, and gives the red ball back to her. Safa smiles big, takes the ball and gives Umayer a happy hug.
 
 Dialogue: Umayer, softly, in Bengali: "আস্তাগফিরুল্লাহ! সাফা, দুঃখিত!" Safa, happily: "ভাইয়া!"
 ```
@@ -91,5 +93,5 @@ Setting: a plain soft pastel mint-green background with gently floating light ci
 
 Action: Ma, Umayer, Safa and Miu stand together on the left half of the frame, smiling and waving goodbye. Keep the right half of the frame empty.
 
-Dialogue: Umayer, in Bengali: "ভুল হলে তুমিও বলবে তো?" Then everyone together, only once: "আসসালামু আলাইকুম! পরের পর্বে দেখা হবে!" Nobody repeats the greeting after that.
+Dialogue: Umayer, in Bengali: "ভুল কাজ করলে তুমিও বলবে তো?" Then everyone together, only once: "আসসালামু আলাইকুম! পরের পর্বে দেখা হবে!" Nobody repeats the greeting after that.
 ```
