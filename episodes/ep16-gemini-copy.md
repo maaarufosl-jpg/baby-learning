@@ -1,12 +1,12 @@
 # পর্ব ১৬: ঘর থেকে বের হলে কী বলি? — Gemini-তে শুধু কপি-পেস্ট
 
-**গল্প:** উমায়ের পার্কে যাওয়ার জন্য দৌড়ে দরজার দিকে যায়। মা থামিয়ে শেখান, নবীজি ﷺ ঘর থেকে বের হওয়ার সময় একটা ছোট দোয়া বলতেন। তারপর সাফাও দোয়া বলে, আর দুই ভাইবোন হাত ধরে বের হয়।
+**গল্প:** উমায়ের পার্কে যাওয়ার জন্য দৌড়ে দরজার দিকে যায়। মা থামিয়ে শেখান, নবীজি ﷺ ঘর থেকে বের হওয়ার সময় একটা ছোট দোয়া বলতেন। তারপর সাফাও দোয়া বলে, দুই ভাইবোন হাত ধরে বের হয়, আর পার্কে বন্ধু জুনায়েদের সাথে দেখা হয়, সালাম দিয়ে খেলা শুরু।
 
 **আজকের দোয়া:** بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ — বিসমিল্লাহি তাওয়াক্কালতু আলাল্লাহ — আল্লাহর নামে (বের হলাম), আল্লাহর ওপর ভরসা করলাম
 
 **সূত্র:** আবু দাউদ ৫০৯৫, তিরমিজি ৩৪২৬। পুরো দোয়ায় এরপর আছে "ওয়া লা হাওলা ওয়া লা কুওয়াতা ইল্লা বিল্লাহ"; ছোটদের জন্য প্রথম অংশ রাখা হয়েছে। ছাড়ার আগে আলেমকে দিয়ে যাচাই করিয়ে নিন।
 
-**ছোট পর্ব:** মোট ৭টা দৃশ্য, প্রায় ১ মিনিট। দৃশ্য ১ বানাতে হবে না (ছোট সালাম)। দৃশ্য ৭ (বিদায়) না বানালেও চলবে।
+**ছোট পর্ব:** মোট ৮টা দৃশ্য, প্রায় ১ মিনিট। নতুন বন্ধু জুনায়েদ (হলুদ পাঞ্জাবি, টুপি নেই), তার বর্ণনা হুবহু একই রাখা হয়েছে। দৃশ্য ১ বানাতে হবে না (ছোট সালাম)। দৃশ্য ৮ (বিদায়) না বানালেও চলবে।
 
 প্রতিটা দৃশ্যের জন্য Gemini-তে নতুন চ্যাট খুলে Video বেছে পেস্ট করুন। ভিডিও এলে চ্যাটে পাঠান, সাথে লিখুন "পর্ব ১৬ দৃশ্য ২" এভাবে।
 
@@ -80,7 +80,21 @@ Action: Safa stands at the open front door holding Umayer's hand. She says the w
 Dialogue: Safa, tiny voice, in Bengali: "বিসমিল্লাহি তাওয়াক্কালতু আলাল্লাহ!" Umayer, happily: "চলো!"
 ```
 
-## ৭. বিদায় (ইচ্ছা হলে)
+## ৭. পার্কে জুনায়েদ
+
+```
+8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text, names or subtitles anywhere on screen.
+
+Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals; Safa, Umayer's 2-year-old little sister with a round chubby face and big brown eyes, wearing a white under-cap and a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Junayed, Umayer's cheerful 5-year-old friend, a Bangladeshi boy a little taller than Umayer with neat short black hair and a wide smile, wearing a mustard-yellow knee-length kurta, white pajama trousers and dark blue sandals, with no cap.
+
+Setting: a bright green neighborhood park in Bangladesh in the morning: soft grass, a small red slide, swings, a paved path, leafy trees and flower bushes, with warm sunlight.
+
+Action: Umayer and Safa walk hand in hand into the park. Their friend Junayed sees them, runs over happily and waves. The children greet each other with big smiles.
+
+Dialogue: Junayed, happily, in Bengali: "আসসালামু আলাইকুম, উমায়ের!" Umayer, smiling: "ওয়া আলাইকুমুস সালাম, জুনায়েদ! চলো খেলি!"
+```
+
+## ৮. বিদায় (ইচ্ছা হলে)
 
 ```
 8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text, names or subtitles anywhere on screen.
