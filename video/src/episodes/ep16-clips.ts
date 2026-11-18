@@ -33,6 +33,10 @@ export const EP16_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.13, to: 0.25},
     {type: 'repeat', parts: [0.347, 0.554, 0.743], until: 1, align: 'right'},
   ],
+  7: [
+    {type: 'say', who: 'junayed', text: 'আসসালামু আলাইকুম, উমায়ের!', from: 0.37, to: 0.57, top: 880},
+    {type: 'say', who: 'umayer', text: 'ওয়া আলাইকুমুস সালাম, জুনায়েদ!\nচলো খেলি!', from: 0.58, to: 0.8, top: 760},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   8: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -65,6 +69,7 @@ export const EP16_CONFIG: ClipConfig = {
     3: [1.0, 9.0],
     4: [0.3, 9.6],
     5: [1.0, 9.0],
+    7: [1.8, 9.4],
     8: [3.8, 8.6],
   },
 };

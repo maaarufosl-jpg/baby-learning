@@ -474,7 +474,7 @@ const Miu: React.FC<{mood: Mood; talking: boolean}> = ({mood, talking}) => {
 
 /* ---------- placement on the stage ---------- */
 
-const BASE_HEIGHT: Record<CharacterId, number> = {umayer: 1, safa: 0.8, ammu: 1.4, abbu: 1.48, nanu: 1.32, miu: 0.55, rafi: 1};
+const BASE_HEIGHT: Record<CharacterId, number> = {umayer: 1, safa: 0.8, ammu: 1.4, abbu: 1.48, nanu: 1.32, miu: 0.55, rafi: 1, junayed: 1.05};
 const PX_PER_UNIT = 1.35;
 
 export const Character: React.FC<{placement: CharacterPlacement; prev?: CharacterPlacement; index: number; talking: boolean}> = ({
@@ -539,7 +539,7 @@ export const Character: React.FC<{placement: CharacterPlacement; prev?: Characte
 };
 
 export const characterName = (id: CharacterId): string =>
-  ({umayer: 'উমায়ের', safa: 'সাফা', ammu: 'মা', abbu: 'আব্বু', nanu: 'নানু', miu: 'মিউ', rafi: 'রাফি'})[id];
+  ({umayer: 'উমায়ের', safa: 'সাফা', ammu: 'মা', abbu: 'আব্বু', nanu: 'নানু', miu: 'মিউ', rafi: 'রাফি', junayed: 'জুনায়েদ'})[id];
 
 export const characterColor = (id: CharacterId): string =>
-  ({umayer: colors.skyDark, safa: colors.peachDark, ammu: colors.sageDark, abbu: colors.sageDark, nanu: '#A98BB5', miu: colors.peachDark, rafi: '#5E9E6E'})[id];
+  ({umayer: colors.skyDark, safa: colors.peachDark, ammu: colors.sageDark, abbu: colors.sageDark, nanu: '#A98BB5', miu: colors.peachDark, rafi: '#5E9E6E', junayed: '#C99A2E'})[id];
