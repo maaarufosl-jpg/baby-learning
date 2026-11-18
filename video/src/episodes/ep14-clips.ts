@@ -28,6 +28,12 @@ export const EP14_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'dua', mode: 'broken', from: 0.05, to: 0.67, pop: true, align: 'right', scale: 0.55, times: [0.129, 0.307, 0.455]},
     {type: 'dua', mode: 'full', from: 0.67, showMeaning: true, pop: false, align: 'right', scale: 0.55},
   ],
+  // Umayer says the word in one go, so the three parts light up one right after another.
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.11, to: 0.23},
+    {type: 'say', who: 'umayer', text: 'সুন্দর কিছু দেখলে...', from: 0.35, to: 0.5, top: 880},
+    {type: 'repeat', parts: [0.644, 0.673, 0.703], until: 1, align: 'right'},
+  ],
 };
 
 export const ep14Clips = clips as Record<string, SceneMedia>;
@@ -55,5 +61,6 @@ export const EP14_CONFIG: ClipConfig = {
     3: [1.0, 8.4],
     // Ends before Ma speaks again.
     4: [0.8, 8.3],
+    5: [0.9, 9.0],
   },
 };
