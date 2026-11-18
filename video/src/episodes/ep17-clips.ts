@@ -25,6 +25,15 @@ export const EP17_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'আল্লাহ কুরআনে এটা শিখিয়েছেন।', from: 0.67, to: 0.88, top: 830},
     {type: 'footnote', text: 'সূরা কাহফ ১৮:২৩–২৪'},
   ],
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.08, to: 0.56, pop: true, align: 'right', scale: 0.55, times: [0.109, 0.257, 0.386]},
+    {type: 'dua', mode: 'full', from: 0.56, showMeaning: true, pop: false, align: 'right', scale: 0.55},
+    {type: 'say', who: 'umayer', text: 'কাল পার্কে যাব, ইনশাআল্লাহ!', from: 0.58, to: 0.86, top: 880},
+  ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.12, to: 0.4},
+    {type: 'repeat', parts: [0.426, 0.515, 0.604], until: 1, align: 'right'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -55,6 +64,8 @@ export const EP17_CONFIG: ClipConfig = {
   trim: {
     2: [1.4, 9.4],
     3: [1.0, 9.1],
+    4: [0.6, 9.0],
+    5: [1.0, 7.8],
     7: [3.8, 8.6],
   },
 };
