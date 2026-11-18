@@ -24,6 +24,10 @@ export const EP14_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'মাশাআল্লাহ।', from: 0.67, to: 0.83, top: 880},
     {type: 'footnote', text: 'সূরা কাহফ ১৮:৩৯'},
   ],
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.05, to: 0.67, pop: true, align: 'right', scale: 0.55, times: [0.129, 0.307, 0.455]},
+    {type: 'dua', mode: 'full', from: 0.67, showMeaning: true, pop: false, align: 'right', scale: 0.55},
+  ],
 };
 
 export const ep14Clips = clips as Record<string, SceneMedia>;
@@ -49,5 +53,7 @@ export const EP14_CONFIG: ClipConfig = {
   trim: {
     2: [1.0, 7.6],
     3: [1.0, 8.4],
+    // Ends before Ma speaks again.
+    4: [0.8, 8.3],
   },
 };
