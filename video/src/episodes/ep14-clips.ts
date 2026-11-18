@@ -34,6 +34,10 @@ export const EP14_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'সুন্দর কিছু দেখলে...', from: 0.35, to: 0.5, top: 880},
     {type: 'repeat', parts: [0.644, 0.673, 0.703], until: 1, align: 'right'},
   ],
+  6: [
+    {type: 'say', who: 'safa', text: 'মাশাআল্লাহ!', from: 0.38, to: 0.53, top: 880},
+    {type: 'say', who: 'umayer', text: 'জাযাকাল্লাহু খাইরান, সাফা!', from: 0.58, to: 0.77, top: 880},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -67,6 +71,7 @@ export const EP14_CONFIG: ClipConfig = {
     // Ends before Ma speaks again.
     4: [0.8, 8.3],
     5: [0.9, 9.0],
+    6: [1.2, 7.9],
     7: [3.8, 8.6],
   },
 };
