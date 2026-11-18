@@ -25,6 +25,10 @@ export const EP16_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'বিসমিল্লাহি তাওয়াক্কালতু আলাল্লাহ।', from: 0.63, to: 0.87, top: 830},
     {type: 'footnote', text: 'আবু দাউদ ৫০৯৫, তিরমিজি ৩৪২৬'},
   ],
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.03, to: 0.86, pop: true, align: 'right', scale: 0.5, times: [0.059, 0.337, 0.624]},
+    {type: 'dua', mode: 'full', from: 0.86, showMeaning: true, pop: false, align: 'right', scale: 0.5},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   8: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -55,6 +59,7 @@ export const EP16_CONFIG: ClipConfig = {
   trim: {
     2: [1.5, 7.8],
     3: [1.0, 9.0],
+    4: [0.3, 9.6],
     8: [3.8, 8.6],
   },
 };
