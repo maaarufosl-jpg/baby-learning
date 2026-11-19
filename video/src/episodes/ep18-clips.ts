@@ -36,6 +36,11 @@ export const EP18_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'নিচে নামলে...', from: 0.57, to: 0.72, top: 880},
     {type: 'repeat', parts: [0.356, 0.733], until: 1, align: 'right'},
   ],
+  6: [
+    {type: 'say', who: 'junayed', text: 'আল্লাহু আকবার!', from: 0.16, to: 0.31, top: 880},
+    {type: 'say', who: 'junayed', text: 'সুবহানাল্লাহ!', from: 0.41, to: 0.6, top: 880},
+    {type: 'say', who: 'umayer', text: 'মাশাআল্লাহ, জুনায়েদ!', from: 0.7, to: 0.86, top: 880},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -68,6 +73,7 @@ export const EP18_CONFIG: ClipConfig = {
     3: [0.5, 9.6],
     4: [0.8, 8.8],
     5: [0.2, 8.9],
+    6: [0.8, 8.7],
     7: [3.8, 8.6],
   },
 };
