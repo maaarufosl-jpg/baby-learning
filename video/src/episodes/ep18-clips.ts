@@ -30,6 +30,12 @@ export const EP18_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'dua', mode: 'broken', from: 0.12, to: 0.75, pop: true, align: 'right', scale: 0.55, times: [0.208, 0.554]},
     {type: 'dua', mode: 'full', from: 0.75, showMeaning: true, pop: false, align: 'right', scale: 0.55},
   ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.04, to: 0.2},
+    {type: 'say', who: 'umayer', text: 'উপরে উঠলে...', from: 0.21, to: 0.35},
+    {type: 'say', who: 'umayer', text: 'নিচে নামলে...', from: 0.57, to: 0.72, top: 880},
+    {type: 'repeat', parts: [0.356, 0.733], until: 1, align: 'right'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -61,6 +67,7 @@ export const EP18_CONFIG: ClipConfig = {
     2: [1.0, 7.6],
     3: [0.5, 9.6],
     4: [0.8, 8.8],
+    5: [0.2, 8.9],
     7: [3.8, 8.6],
   },
 };
