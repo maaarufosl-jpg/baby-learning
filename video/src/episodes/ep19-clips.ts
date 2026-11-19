@@ -18,6 +18,12 @@ export const EP19_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'উমায়ের, ঘরে ঢুকে কী বলতে হয়?', from: 0.33, to: 0.61, top: 880},
     {type: 'say', who: 'umayer', text: 'কী বলতে হয়, মা?', from: 0.65, to: 0.86, top: 880},
   ],
+  // The bubbles sit a little higher so the source note below does not touch them.
+  3: [
+    {type: 'say', who: 'ammu', text: 'ঘরে ঢোকার সময় বলি,\nবিসমিল্লাহ।', from: 0.12, to: 0.35, top: 780},
+    {type: 'say', who: 'ammu', text: 'তারপর সবাইকে সালাম দিই,\nআসসালামু আলাইকুম।', from: 0.37, to: 0.72, top: 780},
+    {type: 'footnote', text: 'সহিহ মুসলিম ২০১৮, সূরা নূর ২৪:৬১'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -47,6 +53,7 @@ export const EP19_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [0.3, 8.8],
+    3: [0.9, 7.6],
     7: [3.8, 8.6],
   },
 };
