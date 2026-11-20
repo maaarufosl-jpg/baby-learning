@@ -120,4 +120,5 @@ export const EPISODE_THUMBNAILS = [
   {number: 18, image: 'thumb/ep18-bg.jpg', line1: 'উপরে উঠলে, নিচে নামলে', line2: 'কী বলি?', corner: 'tr' as Corner},
   {number: 19, image: 'thumb/ep19-bg.jpg', line1: 'ঘরে ঢুকলে', line2: 'কী বলি?', corner: 'tr' as Corner},
   {number: 20, image: 'thumb/ep20-bg.jpg', line1: 'রাগ হলে', line2: 'কী বলি?', corner: 'tc' as Corner},
+  {number: 21, image: 'thumb/ep21-bg.jpg', line1: 'কিছু হারিয়ে গেলে', line2: 'কী বলি?', corner: 'tl' as Corner},
 ];
