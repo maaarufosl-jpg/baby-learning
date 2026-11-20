@@ -24,6 +24,16 @@ export const EP19_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'তারপর সবাইকে সালাম দিই,\nআসসালামু আলাইকুম।', from: 0.37, to: 0.72, top: 780},
     {type: 'footnote', text: 'সহিহ মুসলিম ২০১৮, সূরা নূর ২৪:৬১'},
   ],
+  // Ma answers the salam twice in the clip; the scene ends after her first answer.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.25, to: 0.6, pop: true, align: 'right', scale: 0.55, times: [0.297, 0.436]},
+    {type: 'dua', mode: 'full', from: 0.6, showMeaning: true, pop: false, align: 'right', scale: 0.55},
+    {type: 'say', who: 'ammu', text: 'ওয়া আলাইকুমুস সালাম!', from: 0.62, to: 0.8, top: 880},
+  ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.31},
+    {type: 'repeat', parts: [0.337, 0.525], until: 1, align: 'right'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -54,6 +64,8 @@ export const EP19_CONFIG: ClipConfig = {
   trim: {
     2: [0.3, 8.8],
     3: [0.9, 7.6],
+    4: [1.2, 8.1],
+    5: [0.8, 8.0],
     7: [3.8, 8.6],
   },
 };
