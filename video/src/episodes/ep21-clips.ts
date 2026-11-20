@@ -22,6 +22,11 @@ export const EP21_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'কিছু হারিয়ে গেলে বলি,\nইন্না লিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন।', from: 0.37, to: 0.88, top: 730},
     {type: 'footnote', text: 'সূরা বাকারা ২:১৫৬, সহিহ মুসলিম ৯১৮'},
   ],
+  // The clip briefly shows two Umayers while the camera pans; the first 2.7s are zoomed in on the right
+  // (assets/scene-originals/ep21/scene04.mp4 is the untouched clip).
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.0, to: 1, pop: true, align: 'right', scale: 0.55, times: [0.03, 0.455, 0.782]},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -52,6 +57,7 @@ export const EP21_CONFIG: ClipConfig = {
   trim: {
     2: [1.0, 8.9],
     3: [2.4, 9.1],
+    4: [0.1, 10.0],
     7: [3.8, 8.6],
   },
 };
