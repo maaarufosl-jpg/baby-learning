@@ -31,6 +31,10 @@ export const EP21_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.29},
     {type: 'repeat', parts: [0.307, 0.554, 0.802], until: 1, align: 'right'},
   ],
+  6: [
+    {type: 'say', who: 'safa', text: 'ভাইয়া, এটা নাও!', from: 0.13, to: 0.3, top: 880},
+    {type: 'say', who: 'umayer', text: 'চলো, একসাথে খেলি!', from: 0.3, to: 0.5, top: 880},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -63,6 +67,7 @@ export const EP21_CONFIG: ClipConfig = {
     3: [2.4, 9.1],
     4: [0.1, 10.0],
     5: [0.8, 10.0],
+    6: [0.8, 6.8],
     7: [3.8, 8.6],
   },
 };
