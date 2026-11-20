@@ -23,6 +23,15 @@ export const EP20_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'এতে রাগ চলে যায়।', from: 0.59, to: 0.74, top: 830},
     {type: 'footnote', text: 'সহিহ বুখারি ৬১১৫, সহিহ মুসলিম ২৬১০'},
   ],
+  // The Arabic is long enough to wrap onto Umayer's cap, so the teaching panel shows the Bengali only.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.05, to: 0.75, pop: true, align: 'right', scale: 0.55, hideArabic: true, times: [0.079, 0.347, 0.584]},
+    {type: 'dua', mode: 'full', from: 0.75, showMeaning: true, pop: false, align: 'right', scale: 0.55, hideArabic: true},
+  ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.08, to: 0.3},
+    {type: 'repeat', parts: [0.317, 0.545, 0.802], until: 1, align: 'right'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -53,6 +62,8 @@ export const EP20_CONFIG: ClipConfig = {
   trim: {
     2: [0.5, 8.2],
     3: [1.2, 8.3],
+    4: [0.5, 9.2],
+    5: [0.6, 9.6],
     7: [3.8, 8.6],
   },
 };

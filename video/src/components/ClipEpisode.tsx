@@ -195,7 +195,7 @@ const Overlay: React.FC<{o: ClipOverlay; frames: number}> = ({o, frames}) => {
           <Compact align={o.align} scale={o.scale}>
             <DuaPanel
               dua={cfg.dua}
-              display={{mode: o.mode, showMeaning: o.showMeaning}}
+              display={{mode: o.mode, showMeaning: o.showMeaning, hideArabic: o.hideArabic}}
               layout={layout}
               beatFrames={Math.round(((o.to ?? 1) - (o.from ?? 0)) * frames)}
               hasSpeech={false}
