@@ -17,6 +17,12 @@ export const EP20_OVERLAYS: Record<number, ClipOverlay[]> = {
   2: [
     {type: 'say', who: 'umayer', text: 'সাফা! আমার টাওয়ার ভেঙে দিলে!', from: 0.53, to: 0.79, top: 880},
   ],
+  // The bubbles sit a little higher so the source note below does not touch them.
+  3: [
+    {type: 'say', who: 'ammu', text: 'রাগ হলে বলি,\nআউযু বিল্লাহি মিনাশ শাইতানির রাজিম।', from: 0.16, to: 0.57, top: 730},
+    {type: 'say', who: 'ammu', text: 'এতে রাগ চলে যায়।', from: 0.59, to: 0.74, top: 830},
+    {type: 'footnote', text: 'সহিহ বুখারি ৬১১৫, সহিহ মুসলিম ২৬১০'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -46,6 +52,7 @@ export const EP20_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [0.5, 8.2],
+    3: [1.2, 8.3],
     7: [3.8, 8.6],
   },
 };
