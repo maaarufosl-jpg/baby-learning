@@ -18,6 +18,12 @@ export const EP22_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'মা, তুমি কি ক্লান্ত?\nআমি সাহায্য করি!', from: 0.27, to: 0.61, top: 780},
     {type: 'say', who: 'ammu', text: 'জাযাকাল্লাহু খাইরান, বাবা!', from: 0.64, to: 0.84, top: 880},
   ],
+  // The bubbles sit a little higher so the source note below does not touch them.
+  3: [
+    {type: 'say', who: 'ammu', text: 'মা-বাবার জন্য আল্লাহ\nএকটা দোয়া শিখিয়েছেন।', from: 0.12, to: 0.44, top: 780},
+    {type: 'say', who: 'ammu', text: 'রাব্বির হামহুমা\nকামা রাব্বায়ানি সাগিরা।', from: 0.5, to: 0.95, top: 780},
+    {type: 'footnote', text: 'সূরা বনি ইসরাইল ১৭:২৪'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -47,6 +53,7 @@ export const EP22_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [0.8, 8.6],
+    3: [0.9, 9.8],
     7: [3.8, 8.6],
   },
 };
