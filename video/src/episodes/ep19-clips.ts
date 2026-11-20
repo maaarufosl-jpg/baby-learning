@@ -34,6 +34,10 @@ export const EP19_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.31},
     {type: 'repeat', parts: [0.337, 0.525], until: 1, align: 'right'},
   ],
+  6: [
+    {type: 'say', who: 'safa', text: 'ওয়া আলাইকুমুস সালাম, ভাইয়া!', from: 0.15, to: 0.37, top: 880},
+    {type: 'say', who: 'umayer', text: 'সাফা, তুমিও বলবে তো!', from: 0.6, to: 0.83, top: 880},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -66,6 +70,7 @@ export const EP19_CONFIG: ClipConfig = {
     3: [0.9, 7.6],
     4: [1.2, 8.1],
     5: [0.8, 8.0],
+    6: [0.8, 8.5],
     7: [3.8, 8.6],
   },
 };
