@@ -24,6 +24,11 @@ export const EP22_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'রাব্বির হামহুমা\nকামা রাব্বায়ানি সাগিরা।', from: 0.5, to: 0.95, top: 780},
     {type: 'footnote', text: 'সূরা বনি ইসরাইল ১৭:২৪'},
   ],
+  // Umayer raises his hands in dua at the end, under the full panel with the meaning.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.08, to: 0.75, pop: true, align: 'right', scale: 0.55, times: [0.119, 0.356, 0.554]},
+    {type: 'dua', mode: 'full', from: 0.75, showMeaning: true, pop: false, align: 'right', scale: 0.55},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -54,6 +59,7 @@ export const EP22_CONFIG: ClipConfig = {
   trim: {
     2: [0.8, 8.6],
     3: [0.9, 9.8],
+    4: [0.8, 9.8],
     7: [3.8, 8.6],
   },
 };
