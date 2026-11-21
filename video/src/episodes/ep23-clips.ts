@@ -1,0 +1,51 @@
+import clips from './ep23.clips.json';
+import type {ClipConfig, ClipOverlay, SceneMedia} from './clip-types';
+import {EP22_CONFIG} from './ep22-clips';
+
+/**
+ * Episode 23 "আকাশে চাঁদ-তারা দেখলে কী বলি?" from Gemini clips (scene numbers follow episodes/ep23-gemini-copy.md).
+ * Times are fractions of the whole clip (0 = start, 1 = end), before trimming.
+ */
+export const EP23_SCENE_COUNT = 7;
+
+export const EP23_OVERLAYS: Record<number, ClipOverlay[]> = {
+  // The short shared opener: the salam, then the recap.
+  1: [
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!', from: 0.08, to: 0.55, top: 860},
+    {type: 'recap', from: 0.45, to: 1},
+  ],
+  2: [
+    {type: 'say', who: 'umayer', text: 'মা, দেখো! কত তারা!\nকত বড় চাঁদ!', from: 0.35, to: 0.8, top: 780},
+  ],
+  // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
+  7: [
+    {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
+    {type: 'card', from: 0.38},
+  ],
+};
+
+export const ep23Clips = clips as Record<string, SceneMedia>;
+
+export const EP23_CONFIG: ClipConfig = {
+  number: 23,
+  title: 'আকাশে চাঁদ-তারা দেখলে কী বলি?',
+  dua: {
+    name: 'আল্লাহর প্রশংসা',
+    arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
+    parts: ['সুবহানাল্লাহি', 'ওয়া বিহামদিহি'],
+    meaning: 'আল্লাহ পবিত্র, সব প্রশংসা তাঁর',
+    source: 'সহিহ বুখারি ৬৪০৬, সহিহ মুসলিম ২৬৯৪',
+  },
+  previousDua: EP22_CONFIG.dua,
+  sceneCount: EP23_SCENE_COUNT,
+  clips: ep23Clips,
+  overlays: EP23_OVERLAYS,
+  // The opening greeting is a short cut of episode 1's first scene (public/clips/shared/opener.mp4).
+  borrowClip: {1: {file: 'clips/shared/opener.mp4', seconds: 4.1}, 7: {file: 'clips/ep07/_ready/scene10.mp4', seconds: 10.1}},
+  introSeconds: 2.5,
+  // Seconds of each Gemini clip to keep, so the episode stays short.
+  trim: {
+    2: [1.5, 8.6],
+    7: [3.8, 8.6],
+  },
+};
