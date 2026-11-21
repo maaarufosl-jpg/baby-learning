@@ -31,7 +31,7 @@ Dialogue: Umayer, worried, in Bengali: "মা, সাফার কী হয়
 
 Characters: Ma, the children's young mother with a kind gentle face, wearing a long lavender-blue khimar that covers her hair, ears, neck and chest and falls to her waist, over a sage-green abaya; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
 
-Setting: a cozy Bangladeshi children's bedroom in the daytime: a small bed (Safa resting in it, out of focus in the background) with a soft pastel blanket and pillows, a little bedside table with a glass of water, cream walls, and gentle window light.
+Setting: a cozy Bangladeshi children's bedroom in the daytime: a small bed with a soft pastel blanket and pillows, a little bedside table with a glass of water, cream walls, and gentle window light.
 
 Action: Ma kneels in front of Umayer near the door of the bedroom and explains softly. Umayer listens with big caring eyes and nods. Keep the characters low and to the left so the top right of the frame shows only the plain cream wall, with no frames, shelves, windows or objects there.
 
