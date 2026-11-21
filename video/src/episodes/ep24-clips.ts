@@ -28,6 +28,10 @@ export const EP24_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'dua', mode: 'broken', from: 0.0, to: 0.68, pop: true, align: 'right', scale: 0.55, times: [0.03, 0.238, 0.446]},
     {type: 'dua', mode: 'full', from: 0.68, showMeaning: true, pop: false, align: 'right', scale: 0.55},
   ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.09, to: 0.34},
+    {type: 'repeat', parts: [0.376, 0.554, 0.782], until: 1, align: 'right'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -59,6 +63,7 @@ export const EP24_CONFIG: ClipConfig = {
     2: [1.2, 8.8],
     3: [0.9, 8.4],
     4: [0.1, 9.6],
+    5: [0.6, 9.0],
     7: [3.8, 8.6],
   },
 };
