@@ -23,6 +23,11 @@ export const EP24_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'মানে, হে আল্লাহ,\nআমার জ্ঞান বাড়িয়ে দাও।', from: 0.5, to: 0.81, top: 730},
     {type: 'footnote', text: 'সূরা ত্বহা ২০:১১৪'},
   ],
+  // Umayer raises his hands in dua, then picks up his crayon, under the full panel.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.0, to: 0.68, pop: true, align: 'right', scale: 0.55, times: [0.03, 0.238, 0.446]},
+    {type: 'dua', mode: 'full', from: 0.68, showMeaning: true, pop: false, align: 'right', scale: 0.55},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -53,6 +58,7 @@ export const EP24_CONFIG: ClipConfig = {
   trim: {
     2: [1.2, 8.8],
     3: [0.9, 8.4],
+    4: [0.1, 9.6],
     7: [3.8, 8.6],
   },
 };
