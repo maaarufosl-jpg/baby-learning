@@ -29,6 +29,7 @@ import {EP21_CONFIG} from './episodes/ep21-clips';
 import {EP22_CONFIG} from './episodes/ep22-clips';
 import {EP23_CONFIG} from './episodes/ep23-clips';
 import {EP24_CONFIG} from './episodes/ep24-clips';
+import {promoFrames, ToyPromo} from './components/ToyPromo';
 import {loadAllFonts} from './fonts';
 
 const FPS = 30;
@@ -89,6 +90,7 @@ export const Root: React.FC = () => (
     <Composition id="Ep22Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP22_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP22_CONFIG}} />
     <Composition id="Ep23Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP23_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP23_CONFIG}} />
     <Composition id="Ep24Clips" component={ClipEpisode} durationInFrames={clipEpisodeFrames(FPS, EP24_CONFIG)} fps={FPS} width={1920} height={1080} defaultProps={{cfg: EP24_CONFIG}} />
+    <Composition id="ToyPromo" component={ToyPromo} durationInFrames={promoFrames()} fps={FPS} width={1920} height={1080} />
     <Composition
       id="Ep01"
       component={EpisodeVideo}
