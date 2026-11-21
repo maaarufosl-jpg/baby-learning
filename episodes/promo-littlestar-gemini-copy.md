@@ -46,6 +46,22 @@ Action: Umayer sits on the rug holding a bright pink rounded handheld talking ca
 Dialogue: The toy's friendly voice, in Bengali: "আপেল!" Umayer, excited: "আপেল! মা, খেলনা কথা বলে!"
 ```
 
+## ২খ. উমায়ের মন দিয়ে শোনে (কথা নেই)
+
+খেলনার আসল আওয়াজ প্রায় ১০ সেকেন্ড, পুরোটা বাজানোর জন্য এই চুপচাপ শোনার দৃশ্য।
+
+```
+8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text, letters, logos, names or subtitles anywhere on screen.
+
+Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
+
+Setting: the living room of a cozy Bangladeshi home in the daytime: a soft rug, a beige sofa, cream walls, and warm window light.
+
+Action: Close-up of Umayer sitting on the rug holding a bright pink rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right, with a picture card showing only a big red apple (no letters or words) in its window. He listens to the toy with wide, amazed eyes, smiles, nods slowly, leans his ear a little closer to the toy, and gently touches the apple picture with one finger. His mouth stays closed the whole time.
+
+Dialogue: none. Nobody speaks at all, no voices, only soft room sounds.
+```
+
 ## ৩. সাফার নীল খেলনা
 
 ```
@@ -72,4 +88,18 @@ Setting: a plain soft pastel peach background with gently floating light circles
 Action: Umayer and Safa stand together on the left side of the frame, each holding a rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right (Umayer's is bright pink, Safa's is light sky blue), smiling and looking straight at the camera. Keep the right half of the frame completely empty.
 
 Dialogue: Umayer, cheerful, in Bengali: "আমরা খেলতে খেলতে শিখি!" Safa, tiny voice: "তুমিও শেখো!"
+```
+
+## ৩খ. সাফা মন দিয়ে শোনে (কথা নেই)
+
+```
+8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text, letters, logos, names or subtitles anywhere on screen.
+
+Characters: Safa, Umayer's 2-year-old little sister with a round chubby face and big brown eyes, wearing a white under-cap and a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
+
+Setting: the living room of a cozy Bangladeshi home in the daytime: a soft rug, a beige sofa, cream walls, and warm window light.
+
+Action: Close-up of Safa sitting on the rug holding a light sky-blue rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right, with a picture card showing only a colorful red and blue ball (no letters or words) in its window. She listens to the toy with wide, delighted eyes, smiles and nods, while Umayer sits beside her smiling. Both keep their mouths closed the whole time.
+
+Dialogue: none. Nobody speaks at all, no voices, only soft room sounds.
 ```
