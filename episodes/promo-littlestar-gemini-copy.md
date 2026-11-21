@@ -10,6 +10,8 @@
 5. দুজনে মিলে "তুমিও শেখো!" (Gemini)
 6. শেষ কার্ড: খেলনার ছবি, দাম, অর্ডারের তথ্য। (আমি বানাব)
 
+**আসল ছবি:** assets/promo/toy1/product.jpg (শেষ কার্ডে ব্যবহার হবে)। খেলনার বর্ণনা এই ছবি দেখে মিলিয়ে লেখা।
+
 **খেয়াল রাখুন:** Gemini আসল খেলনা হুবহু বানাতে পারবে না, কাছাকাছি বানাবে। তাই আসল খেলনাটা দেখানোর অংশ তোমার আসল ভিডিও থেকে নেব। Gemini-র কার্ডে অক্ষর আসলে ভুল আসতে পারে, তাই কার্ডে শুধু ছবি (আপেল, কলা) রাখতে বলা হয়েছে। খেলনায় গান-কবিতাও আছে, কিন্তু আমাদের চ্যানেলে মিউজিক নেই, তাই সেটা প্রমোতে দেখাব না।
 
 প্রতিটা দৃশ্যের জন্য Gemini-তে নতুন চ্যাট খুলে Video বেছে পেস্ট করুন। ভিডিও এলে চ্যাটে পাঠান, সাথে লিখুন "প্রমো দৃশ্য ১" এভাবে।
@@ -23,7 +25,7 @@ Characters: Ma, the children's young mother with a kind gentle face, wearing a l
 
 Setting: the living room of a cozy Bangladeshi home in the daytime: a soft rug, a beige sofa, cream walls, and warm window light.
 
-Action: Ma kneels on the rug and gives Umayer and Safa a small colorful gift box. Umayer opens it and lifts out a bright pink handheld talking card reader toy, shaped like a cute rounded animal face with two small round ears on top, a card slot along the top edge, a square window in the middle where the picture on the inserted card shows through, two small round buttons and a tiny red light at the bottom, and small speaker holes on one side. His eyes go wide with joy and Safa claps her hands happily.
+Action: Ma kneels on the rug and gives Umayer and Safa a small colorful gift box. Umayer opens it and lifts out a bright pink rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right. His eyes go wide with joy and Safa claps her hands happily.
 
 Dialogue: Umayer, delighted, in Bengali: "ওয়াও! জাযাকাল্লাহু খাইরান, মা!" Ma, smiling: "এটা দিয়ে খেলতে খেলতে শিখবে!"
 ```
@@ -37,7 +39,7 @@ Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy 
 
 Setting: the living room of a cozy Bangladeshi home in the daytime: a soft rug, a beige sofa, cream walls, and warm window light.
 
-Action: Umayer sits on the rug holding a bright pink handheld talking card reader toy, shaped like a cute rounded animal face with two small round ears on top, a card slot along the top edge, a square window in the middle where the picture on the inserted card shows through, two small round buttons and a tiny red light at the bottom, and small speaker holes on one side. He slides a small picture card showing only a big red apple (no letters or words on the card) into the slot on top. The little red light blinks and a friendly, clear child-like voice comes from the toy. Umayer gasps with delight and repeats the word, bouncing happily.
+Action: Umayer sits on the rug holding a bright pink rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right. He slides a small picture card showing only a big red apple (no letters or words on the card) into the slot on top. The little red light blinks and a friendly, clear child-like voice comes from the toy. Umayer gasps with delight and repeats the word, bouncing happily.
 
 Dialogue: The toy's friendly voice, in Bengali: "আপেল!" Umayer, excited: "আপেল! মা, খেলনা কথা বলে!"
 ```
