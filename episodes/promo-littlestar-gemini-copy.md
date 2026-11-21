@@ -85,7 +85,7 @@ Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy 
 
 Setting: a plain soft pastel peach background with gently floating light circles.
 
-Action: Umayer and Safa stand together on the left side of the frame, each holding a rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right (Umayer's is bright pink, Safa's is light sky blue), smiling and looking straight at the camera. Keep the right half of the frame completely empty.
+Action: Umayer and Safa stand together on the left side of the frame, each holding a rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right (Umayer's is bright pink, Safa's is light sky blue), smiling and looking straight at the camera. The toys make no sound, and there are no music notes or symbols anywhere. Keep the right half of the frame completely empty.
 
 Dialogue: Umayer, cheerful, in Bengali: "আমরা খেলতে খেলতে শিখি!" Safa, tiny voice: "তুমিও শেখো!"
 ```
