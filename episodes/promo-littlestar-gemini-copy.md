@@ -103,3 +103,19 @@ Action: Close-up of Safa sitting on the rug holding a light sky-blue rounded han
 
 Dialogue: none. Nobody speaks at all, no voices, only soft room sounds.
 ```
+
+## ৩গ. সাফা বলে "বল!"
+
+৩খ-তে সাফা চুপচাপ শোনে; তারপর এই দৃশ্যে সে "বল!" বলে।
+
+```
+8-second video, high-quality 3D animated family film style for toddlers, soft warm light, cute characters with natural proportions and five fingers on each hand. Soft natural sounds only, no music, no text, letters, logos, names or subtitles anywhere on screen.
+
+Characters: Safa, Umayer's 2-year-old little sister with a round chubby face and big brown eyes, wearing a white under-cap and a soft pink hijab fully covering her hair, ears and neck with a small white flower clip, a light yellow frock with tiny white dots, white leggings and pink shoes; Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy cheeks, short dark brown hair, a white crocheted prayer cap, a light sky-blue knee-length panjabi, white pajama trousers and brown sandals.
+
+Setting: the living room of a cozy Bangladeshi home in the daytime: a soft rug, a beige sofa, cream walls, and warm window light.
+
+Action: Safa sits on the rug next to Umayer, holding a light sky-blue rounded handheld talking card reader toy shaped like a cute little bear, with a picture card showing only a colorful red and blue ball (no letters or words) in its square window. She looks up from the toy with a big proud smile, claps her little hands and says the word clearly. Umayer laughs happily and claps for her. The toy makes no sound, and there are no music notes or symbols anywhere.
+
+Dialogue: Safa, tiny sweet voice, in Bengali: "বল!" Umayer, laughing: "মাশাআল্লাহ, সাফা!"
+```
