@@ -29,6 +29,14 @@ export const EP22_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'dua', mode: 'broken', from: 0.08, to: 0.75, pop: true, align: 'right', scale: 0.55, times: [0.119, 0.356, 0.554]},
     {type: 'dua', mode: 'full', from: 0.75, showMeaning: true, pop: false, align: 'right', scale: 0.55},
   ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.32},
+    {type: 'repeat', parts: [0.347, 0.594, 0.842], until: 1, align: 'right'},
+  ],
+  6: [
+    {type: 'say', who: 'safa', text: 'মা, তোমাকে ভালোবাসি!', from: 0.28, to: 0.5, top: 880},
+    {type: 'say', who: 'ammu', text: 'আমিও তোমাদের ভালোবাসি!', from: 0.69, to: 0.87, top: 880},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -60,6 +68,8 @@ export const EP22_CONFIG: ClipConfig = {
     2: [0.8, 8.6],
     3: [0.9, 9.8],
     4: [0.8, 9.8],
+    5: [0.7, 10.0],
+    6: [1.0, 9.6],
     7: [3.8, 8.6],
   },
 };
