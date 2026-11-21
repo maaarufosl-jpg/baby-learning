@@ -53,7 +53,7 @@ Characters: Safa, Umayer's 2-year-old little sister with a round chubby face and
 
 Setting: the living room of a cozy Bangladeshi home in the daytime: a soft rug, a beige sofa, cream walls, and warm window light.
 
-Action: Safa sits on the rug holding the same talking card reader toy in light sky blue. With Umayer's help she slides in a small picture card showing only a yellow banana (no letters or words on the card). The light blinks and the toy speaks in a friendly voice. Safa claps and repeats the word in her tiny voice, and Umayer laughs happily beside her.
+Action: Safa sits on the rug holding a light sky-blue rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right. With Umayer's help she slides in a small picture card showing only a yellow banana (no letters or words on the card). The light blinks and the toy speaks in a friendly voice. Safa claps and repeats the word in her tiny voice, and Umayer laughs happily beside her.
 
 Dialogue: The toy's friendly voice, in Bengali: "কলা!" Safa, tiny sweet voice: "কলা!" Umayer, laughing: "মাশাআল্লাহ, সাফা!"
 ```
@@ -67,7 +67,7 @@ Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy 
 
 Setting: a plain soft pastel peach background with gently floating light circles.
 
-Action: Umayer and Safa stand together on the left side of the frame, each holding their talking card reader toy (Umayer the pink one, Safa the light blue one), smiling and looking straight at the camera. Keep the right half of the frame completely empty.
+Action: Umayer and Safa stand together on the left side of the frame, each holding a rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right (Umayer's is bright pink, Safa's is light sky blue), smiling and looking straight at the camera. Keep the right half of the frame completely empty.
 
 Dialogue: Umayer, cheerful, in Bengali: "আমরা খেলতে খেলতে শিখি!" Safa, tiny voice: "তুমিও শেখো!"
 ```
