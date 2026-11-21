@@ -12,6 +12,8 @@
 
 **আসল ছবি:** assets/promo/toy1/product.jpg (শেষ কার্ডে ব্যবহার হবে)। খেলনার বর্ণনা এই ছবি দেখে মিলিয়ে লেখা।
 
+**খেলনার আসল আওয়াজ:** assets/promo/toy1/voice/ (apple, ball, Orange)। Gemini খেলনাকে কথা বলায় না, তাই আসল আওয়াজ বসানো হয়; সেজন্য দৃশ্য ৩-এ কলার বদলে বল।
+
 **খেয়াল রাখুন:** Gemini আসল খেলনা হুবহু বানাতে পারবে না, কাছাকাছি বানাবে। তাই আসল খেলনাটা দেখানোর অংশ তোমার আসল ভিডিও থেকে নেব। Gemini-র কার্ডে অক্ষর আসলে ভুল আসতে পারে, তাই কার্ডে শুধু ছবি (আপেল, কলা) রাখতে বলা হয়েছে। খেলনায় গান-কবিতাও আছে, কিন্তু আমাদের চ্যানেলে মিউজিক নেই, তাই সেটা প্রমোতে দেখাব না।
 
 প্রতিটা দৃশ্যের জন্য Gemini-তে নতুন চ্যাট খুলে Video বেছে পেস্ট করুন। ভিডিও এলে চ্যাটে পাঠান, সাথে লিখুন "প্রমো দৃশ্য ১" এভাবে।
@@ -53,9 +55,9 @@ Characters: Safa, Umayer's 2-year-old little sister with a round chubby face and
 
 Setting: the living room of a cozy Bangladeshi home in the daytime: a soft rug, a beige sofa, cream walls, and warm window light.
 
-Action: Safa sits on the rug holding a light sky-blue rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right. With Umayer's help she slides in a small picture card showing only a yellow banana (no letters or words on the card). The light blinks and the toy speaks in a friendly voice. Safa claps and repeats the word in her tiny voice, and Umayer laughs happily beside her.
+Action: Safa sits on the rug holding a light sky-blue rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right. With Umayer's help she slides in a small picture card showing only a colorful red and blue ball (no letters or words on the card). The light blinks and the toy speaks in a friendly voice. Safa claps and repeats the word in her tiny voice, and Umayer laughs happily beside her.
 
-Dialogue: The toy's friendly voice, in Bengali: "কলা!" Safa, tiny sweet voice: "কলা!" Umayer, laughing: "মাশাআল্লাহ, সাফা!"
+Dialogue: The toy's friendly voice, in Bengali: "বল!" Safa, tiny sweet voice: "বল!" Umayer, laughing: "মাশাআল্লাহ, সাফা!"
 ```
 
 ## ৪. তুমিও শেখো!
