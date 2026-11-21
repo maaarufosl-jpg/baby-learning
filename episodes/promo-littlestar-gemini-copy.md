@@ -71,9 +71,9 @@ Characters: Safa, Umayer's 2-year-old little sister with a round chubby face and
 
 Setting: the living room of a cozy Bangladeshi home in the daytime: a soft rug, a beige sofa, cream walls, and warm window light.
 
-Action: Safa sits on the rug holding a light sky-blue rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right. With Umayer's help she slides in a small picture card showing only a colorful red and blue ball (no letters or words on the card). The light blinks and the toy speaks in a friendly voice. Safa claps and repeats the word in her tiny voice, and Umayer laughs happily beside her.
+Action: Safa sits on the rug holding a light sky-blue rounded handheld talking card reader toy shaped like a cute little bear: two small rounded ears at the top corners, two small puffy wings on its sides, two small rounded feet at the bottom corners, a big square window in the middle where the picture on the inserted card shows through, a card slot on top where the card sticks out, two small round teal buttons at the bottom and a small round speaker grille on the right. With Umayer's help she slides in a small picture card showing only a colorful red and blue ball (no letters or words on the card). She waits a moment, listening to the toy with wide eyes, then claps and says the word in her tiny voice, and Umayer laughs happily beside her. The toy itself makes no sound, no music, no chimes, and there are no music notes or symbols anywhere.
 
-Dialogue: The toy's friendly voice, in Bengali: "বল!" Safa, tiny sweet voice: "বল!" Umayer, laughing: "মাশাআল্লাহ, সাফা!"
+Dialogue: After a short pause, Safa, tiny sweet voice, in Bengali: "বল!" Umayer, laughing: "মাশাআল্লাহ, সাফা!"
 ```
 
 ## ৪. তুমিও শেখো!
