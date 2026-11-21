@@ -17,6 +17,12 @@ export const EP23_OVERLAYS: Record<number, ClipOverlay[]> = {
   2: [
     {type: 'say', who: 'umayer', text: 'মা, দেখো! কত তারা!\nকত বড় চাঁদ!', from: 0.35, to: 0.8, top: 780},
   ],
+  // The bubbles sit a little higher so the source note below does not touch them.
+  3: [
+    {type: 'say', who: 'ammu', text: 'এগুলো সব আল্লাহ বানিয়েছেন।', from: 0.17, to: 0.4, top: 830},
+    {type: 'say', who: 'ammu', text: 'তাই আমরা বলি,\nসুবহানাল্লাহি ওয়া বিহামদিহি।', from: 0.5, to: 0.91, top: 730},
+    {type: 'footnote', text: 'সহিহ বুখারি ৬৪০৬, সহিহ মুসলিম ২৬৯৪'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -46,6 +52,7 @@ export const EP23_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [1.5, 8.6],
+    3: [1.3, 9.4],
     7: [3.8, 8.6],
   },
 };
