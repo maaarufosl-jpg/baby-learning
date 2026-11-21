@@ -23,6 +23,11 @@ export const EP23_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'তাই আমরা বলি,\nসুবহানাল্লাহি ওয়া বিহামদিহি।', from: 0.5, to: 0.91, top: 730},
     {type: 'footnote', text: 'সহিহ বুখারি ৬৪০৬, সহিহ মুসলিম ২৬৯৪'},
   ],
+  // After the two parts Umayer points at the stars and says it whole, under the full panel.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.09, to: 0.67, pop: true, align: 'right', scale: 0.55, times: [0.129, 0.356]},
+    {type: 'dua', mode: 'full', from: 0.67, showMeaning: true, pop: false, align: 'right', scale: 0.55},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -53,6 +58,7 @@ export const EP23_CONFIG: ClipConfig = {
   trim: {
     2: [1.5, 8.6],
     3: [1.3, 9.4],
+    4: [0.8, 9.9],
     7: [3.8, 8.6],
   },
 };
