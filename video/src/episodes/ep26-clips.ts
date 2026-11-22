@@ -18,6 +18,12 @@ export const EP26_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'মা, রিকশায় চড়বো!', from: 0.31, to: 0.52, top: 880},
     {type: 'say', who: 'ammu', text: 'চড়ার আগে একটা দোয়া শিখি!', from: 0.61, to: 0.82, top: 880},
   ],
+  // The bubbles sit higher so the source note below does not touch them; the extra talk after 6.8s is cut.
+  3: [
+    {type: 'say', who: 'ammu', text: 'কোনো বাহনে চড়লে বলি,\nসুবহানাল্লাযি সাখখারা লানা হাযা।', from: 0.1, to: 0.45, top: 730},
+    {type: 'say', who: 'ammu', text: 'আল্লাহ কুরআনে এটা শিখিয়েছেন।', from: 0.47, to: 0.67, top: 830},
+    {type: 'footnote', text: 'সূরা যুখরুফ ৪৩:১৩'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -47,6 +53,7 @@ export const EP26_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [1.0, 8.4],
+    3: [0.8, 6.8],
     7: [3.8, 8.6],
   },
 };
