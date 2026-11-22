@@ -24,6 +24,10 @@ export const EP25_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'নবীজি ﷺ এভাবে বলতেন।', from: 0.67, to: 0.85, top: 830},
     {type: 'footnote', text: 'সহিহ বুখারি ৩৬১৬'},
   ],
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.08, to: 0.86, pop: true, align: 'right', scale: 0.55, times: [0.119, 0.366, 0.634]},
+    {type: 'dua', mode: 'full', from: 0.86, showMeaning: true, pop: false, align: 'right', scale: 0.55},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -54,6 +58,7 @@ export const EP25_CONFIG: ClipConfig = {
   trim: {
     2: [0.3, 8.0],
     3: [0.7, 8.6],
+    4: [0.8, 9.9],
     7: [3.8, 8.6],
   },
 };
