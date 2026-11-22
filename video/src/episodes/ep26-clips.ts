@@ -24,6 +24,16 @@ export const EP26_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'আল্লাহ কুরআনে এটা শিখিয়েছেন।', from: 0.47, to: 0.67, top: 830},
     {type: 'footnote', text: 'সূরা যুখরুফ ৪৩:১৩'},
   ],
+  // Gemini put the rickshaw puller facing the wrong way, so the clip is zoomed onto Ma and Umayer
+  // (assets/scene-originals/ep26/scene04.mp4 is the untouched clip); Ma's extra line at the end is cut.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.03, to: 0.78, pop: true, align: 'right', scale: 0.5, times: [0.059, 0.317, 0.624]},
+    {type: 'dua', mode: 'full', from: 0.78, showMeaning: true, pop: false, align: 'right', scale: 0.5},
+  ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.3},
+    {type: 'repeat', parts: [0.347, 0.594, 0.832], until: 1, align: 'right'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -54,6 +64,8 @@ export const EP26_CONFIG: ClipConfig = {
   trim: {
     2: [1.0, 8.4],
     3: [0.8, 6.8],
+    4: [0.4, 8.2],
+    5: [0.7, 9.9],
     7: [3.8, 8.6],
   },
 };
