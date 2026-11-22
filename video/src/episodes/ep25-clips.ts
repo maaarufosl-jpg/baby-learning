@@ -18,6 +18,12 @@ export const EP25_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'মা, সাফার কী হয়েছে?', from: 0.18, to: 0.42, top: 880},
     {type: 'say', who: 'ammu', text: 'সাফার একটু জ্বর হয়েছে, বাবা।', from: 0.47, to: 0.72, top: 880},
   ],
+  // The bubbles sit higher so the source note below does not touch them.
+  3: [
+    {type: 'say', who: 'ammu', text: "অসুস্থ কাউকে দেখতে গেলে বলি,\nলা বা'সা তাহুরুন ইনশাআল্লাহ।", from: 0.1, to: 0.65, top: 730},
+    {type: 'say', who: 'ammu', text: 'নবীজি ﷺ এভাবে বলতেন।', from: 0.67, to: 0.85, top: 830},
+    {type: 'footnote', text: 'সহিহ বুখারি ৩৬১৬'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -47,6 +53,7 @@ export const EP25_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [0.3, 8.0],
+    3: [0.7, 8.6],
     7: [3.8, 8.6],
   },
 };
