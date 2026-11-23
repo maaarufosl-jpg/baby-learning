@@ -18,6 +18,12 @@ export const EP29_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'ওয়াও জুনায়েদ, নতুন সাইকেল!', from: 0.25, to: 0.5, top: 880},
     {type: 'say', who: 'junayed', text: 'আব্বু কিনে দিয়েছেন!', from: 0.51, to: 0.69, top: 880},
   ],
+  // The bubbles sit higher so the source note below does not touch them.
+  3: [
+    {type: 'say', who: 'ammu', text: 'বন্ধু ভালো কিছু পেলে দোয়া করি,\nবারাকাল্লাহু লাকা।', from: 0.13, to: 0.43, top: 730},
+    {type: 'say', who: 'ammu', text: 'মানে,\nআল্লাহ তোমার জন্য বরকত দিন।', from: 0.47, to: 0.87, top: 730},
+    {type: 'footnote', text: 'সহিহ বুখারি ৫১৫৫'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -47,6 +53,7 @@ export const EP29_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [0.3, 7.0],
+    3: [1.0, 9.0],
     7: [3.8, 8.6],
   },
 };
