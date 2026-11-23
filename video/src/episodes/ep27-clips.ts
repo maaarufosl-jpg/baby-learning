@@ -24,6 +24,10 @@ export const EP27_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'এটা জান্নাতের গুপ্তধন!', from: 0.44, to: 0.62, top: 830},
     {type: 'footnote', text: 'সহিহ বুখারি ৬৩৮৪, সহিহ মুসলিম ২৭০৪'},
   ],
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.02, to: 0.77, pop: true, align: 'right', scale: 0.55, times: [0.04, 0.297, 0.624]},
+    {type: 'dua', mode: 'full', from: 0.77, showMeaning: true, pop: false, align: 'right', scale: 0.48},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -54,6 +58,7 @@ export const EP27_CONFIG: ClipConfig = {
   trim: {
     2: [0.5, 9.1],
     3: [1.0, 6.2],
+    4: [0.2, 9.4],
     7: [3.8, 8.6],
   },
 };
