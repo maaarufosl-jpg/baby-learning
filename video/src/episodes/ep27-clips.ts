@@ -18,6 +18,12 @@ export const EP27_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'উফ! মা, তরমুজটা খুব ভারী!', from: 0.42, to: 0.72, top: 880},
     {type: 'say', who: 'ammu', text: 'একটা দোয়া বলে দেখো!', from: 0.75, to: 0.9, top: 880},
   ],
+  // The bubbles sit higher so the source note below does not touch them; Umayer's unscripted reply after 6.2s is cut.
+  3: [
+    {type: 'say', who: 'ammu', text: 'কঠিন কাজে বলি,\nলা হাওলা ওয়ালা কুওয়াতা ইল্লা বিল্লাহ।', from: 0.12, to: 0.43, top: 730},
+    {type: 'say', who: 'ammu', text: 'এটা জান্নাতের গুপ্তধন!', from: 0.44, to: 0.62, top: 830},
+    {type: 'footnote', text: 'সহিহ বুখারি ৬৩৮৪, সহিহ মুসলিম ২৭০৪'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -47,6 +53,7 @@ export const EP27_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [0.5, 9.1],
+    3: [1.0, 6.2],
     7: [3.8, 8.6],
   },
 };
