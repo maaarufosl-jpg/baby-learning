@@ -32,6 +32,10 @@ export const EP28_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.32},
     {type: 'repeat', parts: [0.356, 0.594, 0.782], until: 1, align: 'right'},
   ],
+  6: [
+    {type: 'say', who: 'umayer', text: "সাফা, ভয় নেই!\nহাসবুনাল্লাহু ওয়া নি'মাল ওয়াকিল!", from: 0.23, to: 0.64, top: 780},
+    {type: 'say', who: 'safa', text: 'আর ভয় নাই!', from: 0.65, to: 0.82, top: 880},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -64,6 +68,7 @@ export const EP28_CONFIG: ClipConfig = {
     3: [0.8, 8.4],
     4: [1.0, 9.6],
     5: [0.7, 9.6],
+    6: [0.3, 9.0],
     7: [3.8, 8.6],
   },
 };
