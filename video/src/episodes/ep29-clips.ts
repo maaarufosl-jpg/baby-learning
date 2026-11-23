@@ -33,6 +33,10 @@ export const EP29_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.11, to: 0.33},
     {type: 'repeat', parts: [0.366, 0.634], until: 1, align: 'right'},
   ],
+  6: [
+    {type: 'say', who: 'umayer', text: 'জুনায়েদ, বারাকাল্লাহু লাকা!', from: 0.18, to: 0.41, top: 880},
+    {type: 'say', who: 'junayed', text: 'জাযাকাল্লাহ!\nচলো, একসাথে চালাই!', from: 0.44, to: 0.74, top: 780},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -65,6 +69,7 @@ export const EP29_CONFIG: ClipConfig = {
     3: [1.0, 9.0],
     4: [0.4, 8.6],
     5: [0.8, 7.7],
+    6: [1.2, 8.2],
     7: [3.8, 8.6],
   },
 };
