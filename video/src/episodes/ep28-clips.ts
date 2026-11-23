@@ -18,6 +18,12 @@ export const EP28_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'মা! আমার ভয় করছে!', from: 0.27, to: 0.55, top: 880},
     {type: 'say', who: 'ammu', text: 'ভয় নেই, বাবা। আমি আছি।', from: 0.62, to: 0.86, top: 880},
   ],
+  // The bubbles sit higher so the source note below does not touch them.
+  3: [
+    {type: 'say', who: 'ammu', text: "ভয় পেলে বলি,\nহাসবুনাল্লাহু ওয়া নি'মাল ওয়াকিল।", from: 0.15, to: 0.56, top: 730},
+    {type: 'say', who: 'ammu', text: 'আল্লাহই আমাদের জন্য যথেষ্ট।', from: 0.58, to: 0.8, top: 830},
+    {type: 'footnote', text: 'সূরা আলে ইমরান ৩:১৭৩, সহিহ বুখারি ৪৫৬৩'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -47,6 +53,7 @@ export const EP28_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [0.3, 9.0],
+    3: [0.8, 8.4],
     7: [3.8, 8.6],
   },
 };
