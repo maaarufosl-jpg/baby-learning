@@ -24,6 +24,11 @@ export const EP29_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'মানে,\nআল্লাহ তোমার জন্য বরকত দিন।', from: 0.47, to: 0.87, top: 730},
     {type: 'footnote', text: 'সহিহ বুখারি ৫১৫৫'},
   ],
+  // After the two parts Umayer says it whole, under the full panel with the meaning.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.05, to: 0.6, pop: true, align: 'right', scale: 0.55, times: [0.069, 0.356]},
+    {type: 'dua', mode: 'full', from: 0.6, showMeaning: true, pop: false, align: 'right', scale: 0.47},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -54,6 +59,7 @@ export const EP29_CONFIG: ClipConfig = {
   trim: {
     2: [0.3, 7.0],
     3: [1.0, 9.0],
+    4: [0.4, 8.6],
     7: [3.8, 8.6],
   },
 };
