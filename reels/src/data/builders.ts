@@ -1,7 +1,7 @@
 import type {ThemeName} from './themes';
 import type {Kind, Line, Reel, Say, Scene, Step} from './types';
 
-type Base = {id: string; number: number; title: string; theme: ThemeName; voice?: string; scenes: Scene[]; sources: string[]; checklist: string[]; unsure?: string[]};
+type Base = {id: string; number: number; title: string; theme: ThemeName; voice?: string; geminiClips?: boolean; scenes: Scene[]; sources: string[]; checklist: string[]; unsure?: string[]};
 /**
  * A qari recitation: verse key and, for part of an ayah, the word range (1-based, inclusive).
  * `ms` overrides the cut (milliseconds in the surah recording) where quran.com's word timings are off.

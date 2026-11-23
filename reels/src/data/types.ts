@@ -47,6 +47,8 @@ export type Reel = {
   title: string;
   /** Colour theme (themes.ts); each reel has its own so reels do not all look the same. */
   theme: import('./themes').ThemeName;
+  /** Real Gemini (Veo) clips are planned for every scene; the drawn art is only a stand-in until they arrive. */
+  geminiClips?: boolean;
   /** Bengali narration voice for this reel, when it differs from the series default. */
   voice?: string;
   scenes: Scene[];
