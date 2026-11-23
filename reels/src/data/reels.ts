@@ -1020,9 +1020,9 @@ export const reels: Reel[] = [
     // measured by ear: from the qari's short pause before "inna" to the end of the ayah
     quran: {ref: '2:222', words: [22, 27], ms: [5161780, 5170340]},
     narration: {
-      intro: 'আল্লাহ আর কাদের ভালোবাসেন, জানো?',
-      meaning: 'যারা ভুল করলে মাফ চায়, আর যারা পরিষ্কার থাকে, আল্লাহ তাদের ভালোবাসেন।',
-      source: 'সূরা আল-বাকারা, দুইশো বাইশ নম্বর আয়াত।',
+      intro: 'আল্লাহ কাদের ভালোবাসেন, জানো?',
+      meaning: 'যারা মাফ চায় আর পরিষ্কার থাকে, আল্লাহ তাদের ভালোবাসেন।',
+      source: '',
     },
     // three 8-second Gemini clips; the drawn scenes stand in until they arrive
     scenes: [
