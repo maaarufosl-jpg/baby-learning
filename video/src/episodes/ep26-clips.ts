@@ -34,6 +34,12 @@ export const EP26_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.3},
     {type: 'repeat', parts: [0.347, 0.594, 0.832], until: 1, align: 'right'},
   ],
+  // Same backwards rickshaw puller here, plus a stranger cycling in at the end: zoomed onto the family
+  // and cut before the stranger (assets/scene-originals/ep26/scene06.mp4 is the untouched clip).
+  6: [
+    {type: 'say', who: 'umayer', text: 'সুবহানাল্লাযি সাখখারা লানা হাযা!', from: 0.23, to: 0.53, top: 880},
+    {type: 'say', who: 'safa', text: 'নানুবাড়ি যাই!', from: 0.6, to: 0.77, top: 880},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -66,6 +72,7 @@ export const EP26_CONFIG: ClipConfig = {
     3: [0.8, 6.8],
     4: [0.4, 8.2],
     5: [0.7, 9.9],
+    6: [2.2, 7.8],
     7: [3.8, 8.6],
   },
 };
