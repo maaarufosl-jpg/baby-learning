@@ -45,7 +45,7 @@ export const Ep01Thumbnail: React.FC = () => (
   </AbsoluteFill>
 );
 
-type Corner = 'tl' | 'tr' | 'tc';
+type Corner = 'tl' | 'tr' | 'tc' | 'bl';
 
 /** A thumbnail for any episode: a still from the episode, a big two-line question and the series label. */
 export const EpisodeThumbnail: React.FC<{image: string; line1: string; line2: string; number: number; corner?: Corner; objectPosition?: string}> = ({
@@ -57,7 +57,7 @@ export const EpisodeThumbnail: React.FC<{image: string; line1: string; line2: st
   objectPosition = '50% 40%',
 }) => {
   const box: React.CSSProperties =
-    corner === 'tr' ? {right: 28, top: 28} : corner === 'tc' ? {left: '50%', top: 28, transform: 'translateX(-50%)'} : {left: 28, top: 28};
+    corner === 'tr' ? {right: 28, top: 28} : corner === 'tc' ? {left: '50%', top: 28, transform: 'translateX(-50%)'} : corner === 'bl' ? {left: 28, bottom: 28} : {left: 28, top: 28};
   return (
     <AbsoluteFill style={{background: colors.cream}}>
       <Img src={staticFile(image)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition}} />
@@ -128,5 +128,5 @@ export const EPISODE_THUMBNAILS = [
   {number: 26, image: 'thumb/ep26-bg.jpg', line1: 'গাড়িতে চড়লে', line2: 'কী বলি?', corner: 'tl' as Corner},
   {number: 27, image: 'thumb/ep27-bg.jpg', line1: 'কঠিন কাজে', line2: 'কী বলি?', corner: 'tr' as Corner},
   {number: 28, image: 'thumb/ep28-bg.jpg', line1: 'ভয় পেলে', line2: 'কী বলি?', corner: 'tl' as Corner},
-  {number: 29, image: 'thumb/ep29-bg.jpg', line1: 'বন্ধু ভালো কিছু পেলে', line2: 'কী বলি?', corner: 'tr' as Corner},
+  {number: 29, image: 'thumb/ep29-bg.jpg', line1: 'বন্ধু ভালো কিছু পেলে', line2: 'কী বলি?', corner: 'bl' as Corner},
 ];
