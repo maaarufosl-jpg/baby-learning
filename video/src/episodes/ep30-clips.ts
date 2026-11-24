@@ -35,6 +35,10 @@ export const EP30_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.32},
     {type: 'repeat', parts: [0.337, 0.545, 0.782], until: 1, align: 'right'},
   ],
+  6: [
+    {type: 'say', who: 'safa', text: 'বারিক লানা! আমিও খেয়েছি!', from: 0.42, to: 0.56, top: 880},
+    {type: 'say', who: 'umayer', text: 'সাফার দুধের গোঁফ!', from: 0.57, to: 0.76, top: 880},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -67,6 +71,7 @@ export const EP30_CONFIG: ClipConfig = {
     3: [0.9, 7.4],
     4: [0.1, 9.0],
     5: [0.8, 9.6],
+    6: [0.3, 8.0],
     7: [3.8, 8.6],
   },
 };
