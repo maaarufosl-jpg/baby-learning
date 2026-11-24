@@ -19,6 +19,12 @@ export const EP30_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'দুধ! মা, আমি খাবো!', from: 0.17, to: 0.42, top: 880},
     {type: 'say', who: 'ammu', text: 'দুধ খাওয়ার একটা সুন্দর দোয়া আছে!', from: 0.48, to: 0.74, top: 880},
   ],
+  // The bubbles sit higher so the source note below does not touch them; Umayer drinking at the end is cut.
+  3: [
+    {type: 'say', who: 'ammu', text: 'দুধ খাওয়ার সময় বলি,\nআল্লাহুম্মা বারিক লানা ফিহি ওয়া যিদনা মিনহু।', from: 0.11, to: 0.59, top: 730},
+    {type: 'say', who: 'ammu', text: 'নবীজি ﷺ শিখিয়েছেন।', from: 0.6, to: 0.73, top: 830},
+    {type: 'footnote', text: 'আবু দাউদ ৩৭৩০, তিরমিজি ৩৪৫৫'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -48,6 +54,7 @@ export const EP30_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [1.0, 7.6],
+    3: [0.9, 7.4],
     7: [3.8, 8.6],
   },
 };
