@@ -30,6 +30,8 @@ export type Timeline = {
   total: number;
   /** Length of each scene (consecutive scenes overlap by CROSSFADE). */
   sceneSeconds: number;
+  /** Gemini-voiced reels: where each clip starts and how long it is. */
+  scenesAt?: {from: number; seconds: number}[];
 };
 
 const sayText = (s: Say) => (isQuran(s) ? `${s.quran}${s.words ? ` (শব্দ ${s.words[0]}–${s.words[1]})` : ''}` : isHadithArabic(s) ? s.hadithArabic : s.voice);
@@ -38,6 +40,29 @@ const sayText = (s: Say) => (isQuran(s) ? `${s.quran}${s.words ? ` (শব্দ
 export const buildTimeline = (reel: Reel, media: ReelMedia = {}): Timeline => {
   const cards: Card[] = [];
   const sounds: Timeline['sounds'] = [];
+  if (reel.geminiVoice) {
+    // one step per clip, each as long as its clip (8 s until it arrives), clips overlapping by CROSSFADE
+    const scenesAt: {from: number; seconds: number}[] = [];
+    let from = 0;
+    reel.steps.forEach((step, si) => {
+      const seconds = media.clips?.[String(si + 1)]?.seconds ?? 8;
+      scenesAt.push({from, seconds});
+      const starts: number[] = [];
+      let at = from + 0.4;
+      step.say.forEach((s, k) => {
+        const m = media.audio?.[soundKey(si, k)];
+        const len = m?.seconds ?? estimate(s);
+        starts.push(at);
+        sounds.push({at, seconds: len, file: m?.file, quran: isQuran(s), arabic: true, text: sayText(s)});
+        at += len + GAP;
+      });
+      const to = from + seconds;
+      cards.push({from: from + 0.2, to: to - 0.2, lines: step.lines.map((l) => ({...l, at: Math.min((l.with !== undefined ? starts[l.with] ?? from : from + 0.2) + (l.delay ?? 0), to - 1)}))});
+      from = to - CROSSFADE;
+    });
+    const endAt = from + CROSSFADE;
+    return {cards, sounds, endAt, total: endAt + OUTRO_SECONDS, sceneSeconds: 8, scenesAt};
+  }
   let t = START;
   reel.steps.forEach((step, si) => {
     const from = t;

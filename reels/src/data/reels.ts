@@ -1,5 +1,5 @@
-import {asmaReel, duaReel, textReel} from './builders';
-import {veo} from './prompt';
+import {asmaReel, duaReel, geminiReel, textReel} from './builders';
+import {veo, veoVoice} from './prompt';
 import type {Reel} from './types';
 
 const HADITH_NUMBERING =
@@ -1005,46 +1005,52 @@ export const reels: Reel[] = [
     ],
     unsure: ['তিলাওয়াতের অংশ কানে মেপে নেওয়া (৫৭.৪২–৬২.০৫ সেকেন্ড), দুই দিকেই কারির থামার জায়গায়।'],
   }),
-  textReel({
+  geminiReel({
     id: 'reel21',
     theme: 'mint',
     number: 21,
-    geminiClips: true,
     kind: 'ayah',
     title: 'আল্লাহ কাদের ভালোবাসেন (২)',
-    kicker: 'ছোট আয়াত · ৯',
-    arabic: 'إِنَّ اللّٰهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ',
-    meaning: 'নিশ্চয়ই আল্লাহ তওবাকারীদের ভালোবাসেন, আর পবিত্র-পরিচ্ছন্নদের ভালোবাসেন।',
-    source: 'সূরা আল-বাকারা, আয়াত ২২২',
-    note: 'ভুল হলে মাফ চাইবো, আর পরিষ্কার থাকবো',
-    // measured by ear: from the qari's short pause before "inna" to the end of the ayah
-    quran: {ref: '2:222', words: [22, 27], ms: [5161780, 5170340]},
-    narration: {
-      intro: 'আল্লাহ কাদের ভালোবাসেন, জানো?',
-      meaning: 'যারা মাফ চায় আর পরিষ্কার থাকে, আল্লাহ তাদের ভালোবাসেন।',
-      source: '',
-    },
-    // three 8-second Gemini clips; the drawn scenes stand in until they arrive
-    scenes: [
+    parts: [
+      {lines: [{style: 'kicker', text: 'ছোট আয়াত · ৯'}, {style: 'title', text: 'আল্লাহ কাদের ভালোবাসেন?', delay: 0.6}]},
       {
-        art: 'clear-stream',
-        sound: 'stream',
-        look: 'পাহাড়ি ছড়ায় স্বচ্ছ পানি পাথরের ওপর দিয়ে বয়ে যাচ্ছে',
-        prompt: veo('Crystal clear water flowing over smooth round stones in a shallow mountain stream, morning sunlight sparkling on the surface, fresh green moss on the rocks.', 'clear gently flowing water'),
-        tint: ['#CDE7EA', '#2F5B5E'],
+        lines: [
+          {style: 'arabic', text: 'إِنَّ اللّٰهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ'},
+          {style: 'source', text: 'সূরা আল-বাকারা, আয়াত ২২২', delay: 3},
+        ],
+        // measured by ear: from the qari's short pause before "inna" to the end of the ayah
+        quran: {ref: '2:222', words: [22, 27], ms: [5161780, 5170340]},
       },
+      {
+        lines: [
+          {style: 'body', text: 'নিশ্চয়ই আল্লাহ তওবাকারীদের ভালোবাসেন, আর পবিত্র-পরিচ্ছন্নদের ভালোবাসেন।'},
+          {style: 'note', text: 'ভুল হলে মাফ চাইবো, আর পরিষ্কার থাকবো', delay: 2},
+        ],
+      },
+    ],
+    // three Gemini clips; clips 1 and 3 carry Gemini's Bengali voice, clip 2 carries the qari's recitation
+    scenes: [
       {
         art: 'dew-leaves',
         sound: 'morning-birds',
         look: 'ভোরে সবুজ পাতার ওপর শিশিরবিন্দু, একটা ফোঁটা ধীরে গড়িয়ে পড়ছে',
-        prompt: veo('Macro shot of fresh dew drops on bright green leaves in early morning, one clear drop slowly rolling down a leaf, soft golden light behind.', 'quiet morning air and faint distant birdsong'),
+        voice: 'আল্লাহ কাদের ভালোবাসেন, জানো?',
+        prompt: veoVoice('Macro shot of fresh dew drops on bright green leaves in early morning, one clear drop slowly rolling down a leaf, soft golden light behind.', 'quiet morning air', 'আল্লাহ কাদের ভালোবাসেন, জানো?'),
         tint: ['#D8EBC4', '#2D5A3A'],
+      },
+      {
+        art: 'clear-stream',
+        sound: 'stream',
+        look: 'পাহাড়ি ছড়ায় স্বচ্ছ পানি পাথরের ওপর দিয়ে বয়ে যাচ্ছে (তিলাওয়াতের সময়, কোনো কথা নেই)',
+        prompt: veo('Crystal clear water flowing over smooth round stones in a shallow mountain stream, morning sunlight sparkling on the surface, fresh green moss on the rocks.', 'clear gently flowing water'),
+        tint: ['#CDE7EA', '#2F5B5E'],
       },
       {
         art: 'rain-lake',
         sound: 'rain-water',
         look: 'হালকা বৃষ্টির পর ঝকঝকে সবুজ বন আর স্বচ্ছ হ্রদ',
-        prompt: veo('A clean, fresh green forest beside a clear calm lake right after light rain, droplets falling from leaves into the water, soft light breaking through.', 'dripping water and a soft breeze'),
+        voice: 'যারা ভুল করলে মাফ চায়, আর পরিষ্কার থাকে, আল্লাহ তাদের ভালোবাসেন।',
+        prompt: veoVoice('A clean, fresh green forest beside a clear calm lake right after light rain, droplets falling from leaves into the water, soft light breaking through.', 'dripping water and a soft breeze', 'যারা ভুল করলে মাফ চায়, আর পরিষ্কার থাকে, আল্লাহ তাদের ভালোবাসেন।'),
         tint: ['#B8CBD0', '#2C4A4F'],
       },
     ],
@@ -1052,7 +1058,7 @@ export const reels: Reel[] = [
     checklist: [
       'আয়াতাংশের আরবি ও হরকত মুসহাফের সাথে মিলানো: إِنَّ اللّٰهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ',
       'অনুবাদ: নিশ্চয়ই আল্লাহ তওবাকারীদের ভালোবাসেন, আর পবিত্র-পরিচ্ছন্নদের ভালোবাসেন',
-      'বাচ্চাদের জন্য সহজ কথা ("ভুল করলে মাফ চায়, পরিষ্কার থাকে") ঠিক আছে কি না',
+      'Gemini-র বাংলা কণ্ঠ ঠিক কথাগুলো ঠিক উচ্চারণে বলেছে কি না',
       'সূত্র: সূরা আল-বাকারা, আয়াত ২২২ (শেষ অংশ)',
       'Gemini ভিডিওতে কোনো মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক নেই',
     ],

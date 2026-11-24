@@ -1,6 +1,6 @@
 # রিল ২১: আল্লাহ কাদের ভালোবাসেন (২)
 
-ধরন: ছোট আয়াত · দৈর্ঘ্য: প্রায় ২৩ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ৩টি প্রকৃতির দৃশ্য
+ধরন: ছোট আয়াত · দৈর্ঘ্য: প্রায় ২৭ সেকেন্ড · খাড়া ১০৮০×১৯২০ · ৩টি প্রকৃতির দৃশ্য
 
 ## পোস্টের ক্যাপশন (কপি করে রিলের বিবরণে দিন)
 
@@ -15,22 +15,22 @@
 3. একইভাবে পরের ভিডিও।
 4. মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক এলে ভিডিওটা বাদ দিয়ে আবার বানান।
 
-### ভিডিও ১: পাহাড়ি ছড়ায় স্বচ্ছ পানি পাথরের ওপর দিয়ে বয়ে যাচ্ছে
+### ভিডিও ১: ভোরে সবুজ পাতার ওপর শিশিরবিন্দু, একটা ফোঁটা ধীরে গড়িয়ে পড়ছে
+
+```
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Macro shot of fresh dew drops on bright green leaves in early morning, one clear drop slowly rolling down a leaf, soft golden light behind. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: soft natural sounds (quiet morning air) and a gentle, warm young male voice speaking slowly and clearly in Bengali, as a voiceover with no one on screen, starting after one second and saying exactly: "আল্লাহ কাদের ভালোবাসেন, জানো?" No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no subtitles, no logos, no watermark, no music.
+```
+
+### ভিডিও ২: পাহাড়ি ছড়ায় স্বচ্ছ পানি পাথরের ওপর দিয়ে বয়ে যাচ্ছে (তিলাওয়াতের সময়, কোনো কথা নেই)
 
 ```
 Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Crystal clear water flowing over smooth round stones in a shallow mountain stream, morning sunlight sparkling on the surface, fresh green moss on the rocks. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — clear gently flowing water. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
 ```
 
-### ভিডিও ২: ভোরে সবুজ পাতার ওপর শিশিরবিন্দু, একটা ফোঁটা ধীরে গড়িয়ে পড়ছে
-
-```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Macro shot of fresh dew drops on bright green leaves in early morning, one clear drop slowly rolling down a leaf, soft golden light behind. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — quiet morning air and faint distant birdsong. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
-```
-
 ### ভিডিও ৩: হালকা বৃষ্টির পর ঝকঝকে সবুজ বন আর স্বচ্ছ হ্রদ
 
 ```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A clean, fresh green forest beside a clear calm lake right after light rain, droplets falling from leaves into the water, soft light breaking through. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: only natural sounds — dripping water and a soft breeze. No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no logos, no watermark, no music, no voice, only natural sounds.
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A clean, fresh green forest beside a clear calm lake right after light rain, droplets falling from leaves into the water, soft light breaking through. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: soft natural sounds (dripping water and a soft breeze) and a gentle, warm young male voice speaking slowly and clearly in Bengali, as a voiceover with no one on screen, starting after one second and saying exactly: "যারা ভুল করলে মাফ চায়, আর পরিষ্কার থাকে, আল্লাহ তাদের ভালোবাসেন।" No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no subtitles, no logos, no watermark, no music.
 ```
 
 ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
@@ -39,8 +39,8 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A clean
 
 | দৃশ্য | কী দেখা যাবে | শব্দ |
 |---|---|---|
-| ১ | পাহাড়ি ছড়ায় স্বচ্ছ পানি পাথরের ওপর দিয়ে বয়ে যাচ্ছে | ছোট নদীর পানির শব্দ |
-| ২ | ভোরে সবুজ পাতার ওপর শিশিরবিন্দু, একটা ফোঁটা ধীরে গড়িয়ে পড়ছে | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
+| ১ | ভোরে সবুজ পাতার ওপর শিশিরবিন্দু, একটা ফোঁটা ধীরে গড়িয়ে পড়ছে | ভোরের হালকা বাতাস, দূরে পাখির ডাক |
+| ২ | পাহাড়ি ছড়ায় স্বচ্ছ পানি পাথরের ওপর দিয়ে বয়ে যাচ্ছে (তিলাওয়াতের সময়, কোনো কথা নেই) | ছোট নদীর পানির শব্দ |
 | ৩ | হালকা বৃষ্টির পর ঝকঝকে সবুজ বন আর স্বচ্ছ হ্রদ | পানিতে বৃষ্টির ফোঁটা |
 
 ## পর্দায় ও কণ্ঠে যা থাকবে
@@ -48,14 +48,13 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A clean
 | সময় | কী | বিষয় |
 |---|---|---|
 | ০:০০ | লেখা | ছোট আয়াত · ৯ |
-| ০:০০ | কণ্ঠ | আল্লাহ কাদের ভালোবাসেন, জানো? |
-| ০:০৪ | লেখা | إِنَّ اللّٰهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ |
-| ০:০৪ | কুরআন | তিলাওয়াত (মিশারি রাশিদ আল-আফাসি): ২:২২২ (শব্দ ২২–২৭) |
-| ০:১৩ | লেখা | নিশ্চয়ই আল্লাহ তওবাকারীদের ভালোবাসেন, আর পবিত্র-পরিচ্ছন্নদের ভালোবাসেন। |
-| ০:১৩ | কণ্ঠ | যারা মাফ চায় আর পরিষ্কার থাকে, আল্লাহ তাদের ভালোবাসেন। |
-| ০:১৫ | লেখা | সূরা আল-বাকারা, আয়াত ২২২ |
-| ০:১৬ | লেখা | ভুল হলে মাফ চাইবো, আর পরিষ্কার থাকবো |
-| ০:২০ | শেষ | দৃশ্য মিলিয়ে যায়, শুধু "ছোট্ট মুমিন" নাম প্রায় দেড় সেকেন্ড |
+| ০:০০ | লেখা | আল্লাহ কাদের ভালোবাসেন? |
+| ০:০৭ | লেখা | إِنَّ اللّٰهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ |
+| ০:০৭ | কুরআন | তিলাওয়াত (মিশারি রাশিদ আল-আফাসি): ২:২২২ (শব্দ ২২–২৭) |
+| ০:১০ | লেখা | সূরা আল-বাকারা, আয়াত ২২২ |
+| ০:১৭ | লেখা | নিশ্চয়ই আল্লাহ তওবাকারীদের ভালোবাসেন, আর পবিত্র-পরিচ্ছন্নদের ভালোবাসেন। |
+| ০:১৯ | লেখা | ভুল হলে মাফ চাইবো, আর পরিষ্কার থাকবো |
+| ০:২৪ | শেষ | দৃশ্য মিলিয়ে যায়, শুধু "ছোট্ট মুমিন" নাম প্রায় দেড় সেকেন্ড |
 
 পুরো সময় দৃশ্যের ওপর নরম অন্ধকার স্তর থাকবে, ওপরে ছোট লোগো। প্রকৃতির শব্দ বাজবে, কণ্ঠের সময় একটু কমে যাবে।
 
@@ -67,7 +66,7 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A clean
 
 - [ ] আয়াতাংশের আরবি ও হরকত মুসহাফের সাথে মিলানো: إِنَّ اللّٰهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ
 - [ ] অনুবাদ: নিশ্চয়ই আল্লাহ তওবাকারীদের ভালোবাসেন, আর পবিত্র-পরিচ্ছন্নদের ভালোবাসেন
-- [ ] বাচ্চাদের জন্য সহজ কথা ("ভুল করলে মাফ চায়, পরিষ্কার থাকে") ঠিক আছে কি না
+- [ ] Gemini-র বাংলা কণ্ঠ ঠিক কথাগুলো ঠিক উচ্চারণে বলেছে কি না
 - [ ] সূত্র: সূরা আল-বাকারা, আয়াত ২২২ (শেষ অংশ)
 - [ ] Gemini ভিডিওতে কোনো মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক নেই
 - [ ] দৃশ্যে কোনো মানুষ, প্রাণী বা পাখি নেই (দৃশ্যগুলো কোডে আঁকা)

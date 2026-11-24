@@ -11,6 +11,8 @@ import {Nature} from './Nature';
 import {SCENES} from '../data/scenes';
 
 const MEDIA = mediaJson as Record<string, ReelMedia>;
+/** The last clip of a Gemini-voiced reel keeps playing under the fade-out. */
+const OUTRO_TAIL = 2.4;
 type Media = ReelMedia;
 
 /** The reel laid out in time from its steps and the lengths of its recorded audio. */
@@ -89,12 +91,13 @@ const Ambience: React.FC<{sound: string; seconds: number; offset: number; duck: 
 };
 
 /** `need` is how long the scene must show footage (the end card covers the rest), so a slightly short clip is slowed to fit. */
-const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; seconds: number; need: number; duck: (sec: number) => number}> = ({reel, i, media, seconds, need, duck}) => {
+/** `loud`: the clip carries Gemini's narration, so its sound plays at full volume (dipping only under the recitation). */
+const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; seconds: number; need: number; duck: (sec: number) => number; offset?: number; loud?: boolean}> = ({reel, i, media, seconds, need, duck, offset: at, loud}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const scene = reel.scenes[i];
   const clip = media.clips?.[String(i + 1)];
-  const offset = i * (seconds - CROSSFADE);
+  const offset = at ?? i * (seconds - CROSSFADE);
   const fadeIn = i === 0 ? 1 : interpolate(frame, [0, CROSSFADE * fps], [0, 1], {extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{opacity: fadeIn, background: `linear-gradient(180deg, ${scene.tint[0]}, ${scene.tint[1]})`}}>
@@ -102,7 +105,7 @@ const SceneLayer: React.FC<{reel: Reel; i: number; media: Media; seconds: number
         <OffthreadVideo
           src={staticFile(clip.file)}
           playbackRate={Math.min(1, Math.max(0.7, clip.seconds / need))}
-          volume={(f) => 0.7 * duck(offset + f / fps)}
+          volume={(f) => (loud ? 1 : 0.7) * duck(offset + f / fps)}
           style={{width: '100%', height: '100%', objectFit: 'cover'}}
         />
       ) : (
@@ -169,13 +172,20 @@ export const ReelVideo: React.FC<{reel: Reel}> = ({reel}) => {
   return (
     <AbsoluteFill style={{background: B.colors.deep}}>
       {reel.scenes.map((_, i) => (
-        <Sequence key={i} from={Math.round(i * (tl.sceneSeconds - CROSSFADE) * fps)} durationInFrames={sceneFrames} name={`দৃশ্য ${i + 1}`}>
+        <Sequence
+          key={i}
+          from={Math.round((tl.scenesAt ? tl.scenesAt[i].from : i * (tl.sceneSeconds - CROSSFADE)) * fps)}
+          durationInFrames={tl.scenesAt ? Math.round((tl.scenesAt[i].seconds + (i === reel.scenes.length - 1 ? OUTRO_TAIL : 0)) * fps) : sceneFrames}
+          name={`দৃশ্য ${i + 1}`}
+        >
           <SceneLayer
             reel={reel}
             i={i}
             media={media}
-            seconds={tl.sceneSeconds}
-            need={i === reel.scenes.length - 1 ? Math.min(tl.sceneSeconds, tl.endAt + 0.6 - i * (tl.sceneSeconds - CROSSFADE)) : tl.sceneSeconds}
+            seconds={tl.scenesAt ? tl.scenesAt[i].seconds : tl.sceneSeconds}
+            offset={tl.scenesAt ? tl.scenesAt[i].from : undefined}
+            loud={reel.geminiVoice}
+            need={tl.scenesAt ? tl.scenesAt[i].seconds : i === reel.scenes.length - 1 ? Math.min(tl.sceneSeconds, tl.endAt + 0.6 - i * (tl.sceneSeconds - CROSSFADE)) : tl.sceneSeconds}
             duck={duck}
           />
         </Sequence>

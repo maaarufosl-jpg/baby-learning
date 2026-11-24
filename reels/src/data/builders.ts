@@ -136,3 +136,15 @@ export const textReel = (
     ],
   };
 };
+
+/**
+ * A reel whose Bengali narration Gemini speaks inside the clips (the user found the TTS voice robotic).
+ * One part per clip: its on-screen lines, and for the recitation clip the qari's recitation laid over it.
+ */
+export const geminiReel = (b: Base & {kind: Kind; parts: {lines: Line[]; quran?: QuranRef}[]}): Reel => ({
+  ...b,
+  unsure: b.unsure ?? [],
+  geminiClips: true,
+  geminiVoice: true,
+  steps: b.parts.map((p) => ({lines: p.lines, say: p.quran ? [recite(p.quran)] : []})),
+});

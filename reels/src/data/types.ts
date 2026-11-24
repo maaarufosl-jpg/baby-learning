@@ -36,6 +36,8 @@ export type Scene = {
   look: string;
   /** Optional English prompt, only if a real video clip is ever wanted instead of the drawn scene. */
   prompt: string;
+  /** Gemini-voiced reels: the Bengali line Gemini speaks in this clip (empty for the recitation clip). */
+  voice?: string;
   /** Base colours (top, bottom), used behind the scene. */
   tint: [string, string];
 };
@@ -49,6 +51,11 @@ export type Reel = {
   theme: import('./themes').ThemeName;
   /** Real Gemini (Veo) clips are planned for every scene; the drawn art is only a stand-in until they arrive. */
   geminiClips?: boolean;
+  /**
+   * Gemini makes the Bengali voice inside the clips: one step per clip, played back to back at the clips' own length,
+   * with the clip's sound at full volume. Only the qari's recitation is added on top.
+   */
+  geminiVoice?: boolean;
   /** Bengali narration voice for this reel, when it differs from the series default. */
   voice?: string;
   scenes: Scene[];
