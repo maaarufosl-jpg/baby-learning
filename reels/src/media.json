@@ -502,6 +502,13 @@
         "file": "audio/reel22/q2-1.mp3",
         "seconds": 8.54
       }
+    },
+    "clips": {
+      "1": {
+        "file": "clips/reel22/_ready/scene1.mp4",
+        "seconds": 10.1,
+        "soundEnd": 4.7
+      }
     }
   }
 }
