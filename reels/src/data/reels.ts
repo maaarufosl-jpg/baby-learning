@@ -1064,6 +1064,65 @@ export const reels: Reel[] = [
     ],
     unsure: ['তিলাওয়াতের অংশ কানে মেপে নেওয়া (কারির ছোট বিরতি থেকে আয়াতের শেষ পর্যন্ত)।'],
   }),
+  geminiReel({
+    id: 'reel22',
+    theme: 'violet',
+    number: 22,
+    kind: 'ayah',
+    title: 'আল্লাহ কাছেই আছেন',
+    parts: [
+      {lines: [{style: 'kicker', text: 'ছোট আয়াত · ১০'}, {style: 'title', text: 'আল্লাহ কত কাছে?', delay: 0.6}]},
+      {
+        lines: [
+          {style: 'arabic', text: 'وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ'},
+          {style: 'source', text: 'সূরা আল-বাকারা, আয়াত ১৮৬', delay: 3},
+        ],
+        // the start of 2:186 to the first waqf, where the qari pauses; measured by ear
+        quran: {ref: '2:186', words: [1, 6], ms: [4147550, 4156050]},
+      },
+      {
+        lines: [
+          {style: 'body', text: 'আমার বান্দারা যখন তোমাকে আমার কথা জিজ্ঞেস করে, (বলো) আমি তো কাছেই আছি।'},
+          {style: 'note', text: 'তাই সবকিছু আল্লাহর কাছে চাইবো', delay: 2},
+        ],
+      },
+    ],
+    // three Gemini clips; clips 1 and 3 carry Gemini's Bengali voice, clip 2 carries the qari's recitation
+    scenes: [
+      {
+        art: 'dawn-river',
+        sound: 'morning-birds',
+        look: 'ভোরে শান্ত নদীর ওপর নরম আলো',
+        voice: 'তুমি কি জানো, আল্লাহ কত কাছে?',
+        prompt: veoVoice('A wide calm river at dawn with light mist on the water, the soft pastel sky reflected on the smooth surface.', 'quiet lapping water', 'তুমি কি জানো, আল্লাহ কত কাছে?'),
+        tint: ['#F1D3A8', '#3B6E73'],
+      },
+      {
+        art: 'starry-lake',
+        sound: 'night',
+        look: 'তারাভরা রাতের আকাশ, শান্ত হ্রদে তারার ছায়া (তিলাওয়াতের সময়, কোনো কথা নেই)',
+        prompt: veo('A deep starry night sky over a calm mountain lake, stars reflected on the still water, a slow time-lapse of the stars moving.', 'very quiet night air'),
+        tint: ['#2A3765', '#0B1229'],
+      },
+      {
+        art: 'clouds-part',
+        sound: 'wind',
+        look: 'মেঘ সরে আকাশ থেকে নরম আলোর রেখা নামছে',
+        voice: 'আল্লাহ বলেন, আমি তো কাছেই আছি। তাই সবকিছু, আল্লাহর কাছে চাইবো।',
+        prompt: veoVoice('Soft clouds slowly parting in the sky and gentle rays of warm sunlight beaming down over green hills.', 'a soft breeze', 'আল্লাহ বলেন, আমি তো কাছেই আছি। তাই সবকিছু, আল্লাহর কাছে চাইবো।'),
+        tint: ['#D9D2B8', '#3A5A4C'],
+      },
+    ],
+    sources: ['সূরা আল-বাকারা ২:১৮৬ — وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ ...'],
+    checklist: [
+      'আয়াতাংশের আরবি ও হরকত মুসহাফের সাথে মিলানো: وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ',
+      'অনুবাদ: আমার বান্দারা যখন তোমাকে আমার কথা জিজ্ঞেস করে, (বলো) আমি তো কাছেই আছি',
+      'Gemini-র বাংলা কণ্ঠ ঠিক কথাগুলো ঠিক উচ্চারণে বলেছে কি না',
+      'সূত্র: সূরা আল-বাকারা, আয়াত ১৮৬ (প্রথম অংশ)',
+      'Gemini ভিডিওতে কোনো মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক নেই',
+    ],
+    unsure: ['তিলাওয়াতের অংশ কানে মেপে নেওয়া (আয়াতের শুরু থেকে প্রথম থামা পর্যন্ত)।'],
+  }),
 ];
 
 // every drawn scene belongs to one reel only, so no two reels look alike

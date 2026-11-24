@@ -495,5 +495,13 @@
         "soundEnd": 9.4
       }
     }
+  },
+  "reel22": {
+    "audio": {
+      "2-1": {
+        "file": "audio/reel22/q2-1.mp3",
+        "seconds": 8.54
+      }
+    }
   }
 }
