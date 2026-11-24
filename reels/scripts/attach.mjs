@@ -32,7 +32,16 @@ if (existsSync(clipDir)) {
       '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', out,
     );
     execFileSync('ffmpeg', args);
-    entry.clips[n] = {file: `clips/${reel.id}/_ready/scene${n}.mp4`, seconds: duration(out)};
+    // when the sound last rises above a quiet level: for Gemini-voiced clips, where the speech ends
+    const raw = execFileSync('ffmpeg', ['-loglevel', 'error', '-i', out, '-vn', '-ac', '1', '-ar', '8000', '-f', 's16le', '-'], {maxBuffer: 1 << 26});
+    const pcm = new Int16Array(raw.buffer, raw.byteOffset, Math.floor(raw.length / 2));
+    let soundEnd = 0;
+    for (let i = 0; i + 800 <= pcm.length; i += 800) {
+      let sum = 0;
+      for (let j = i; j < i + 800; j++) sum += pcm[j] * pcm[j];
+      if (20 * Math.log10(Math.sqrt(sum / 800) / 32768 + 1e-9) > -35) soundEnd = (i + 800) / 8000;
+    }
+    entry.clips[n] = {file: `clips/${reel.id}/_ready/scene${n}.mp4`, seconds: duration(out), soundEnd: Math.round(soundEnd * 100) / 100};
     console.log(`scene ${n}: ${name} -> ${entry.clips[n].seconds}s${hasAudio ? '' : ' (no sound in clip)'}`);
   }
 }

@@ -2,7 +2,7 @@ import type {Card, Reel, Say} from './types';
 
 /** Audio made for a reel, keyed by "<step>-<sound>" (1-based); written by scripts/narrate.mjs and scripts/quran.mjs. */
 export type ReelMedia = {
-  clips?: Record<string, {file: string; seconds: number}>;
+  clips?: Record<string, {file: string; seconds: number; soundEnd?: number}>;
   audio?: Record<string, {file: string; seconds: number}>;
 };
 
@@ -45,7 +45,10 @@ export const buildTimeline = (reel: Reel, media: ReelMedia = {}): Timeline => {
     const scenesAt: {from: number; seconds: number}[] = [];
     let from = 0;
     reel.steps.forEach((step, si) => {
-      const seconds = media.clips?.[String(si + 1)]?.seconds ?? 8;
+      // a clip with Gemini's voice is cut a moment after the speech ends, so no long silence follows
+      const clip = media.clips?.[String(si + 1)];
+      const spoken = reel.scenes[si]?.voice && clip?.soundEnd;
+      const seconds = clip ? (spoken ? Math.min(clip.seconds, Math.max(5, clip.soundEnd! + 1.8)) : clip.seconds) : 8;
       scenesAt.push({from, seconds});
       const starts: number[] = [];
       let at = from + 0.4;
