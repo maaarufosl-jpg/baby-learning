@@ -485,6 +485,12 @@
         "file": "audio/reel21/v2-2.mp3",
         "seconds": 4.94
       }
+    },
+    "clips": {
+      "1": {
+        "file": "clips/reel21/_ready/scene1.mp4",
+        "seconds": 10.1
+      }
     }
   }
 }
