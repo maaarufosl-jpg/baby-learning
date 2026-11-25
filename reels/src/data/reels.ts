@@ -1123,6 +1123,65 @@ export const reels: Reel[] = [
     ],
     unsure: ['তিলাওয়াতের অংশ কানে মেপে নেওয়া (আয়াতের শুরু থেকে প্রথম থামা পর্যন্ত)।'],
   }),
+  geminiReel({
+    id: 'reel23',
+    theme: 'gold',
+    number: 23,
+    kind: 'ayah',
+    title: 'তিনি কুরআন শিখিয়েছেন',
+    parts: [
+      {lines: [{style: 'kicker', text: 'ছোট আয়াত · ১১'}, {style: 'title', text: 'কুরআন কে শিখিয়েছেন?', delay: 0.6}]},
+      {
+        lines: [
+          {style: 'arabic', text: 'الرَّحْمٰنُ ۝ عَلَّمَ الْقُرْآنَ'},
+          {style: 'source', text: 'সূরা আর-রহমান, আয়াত ১–২', delay: 3},
+        ],
+        // two whole ayahs, one after the other
+        quran: [{ref: '55:1'}, {ref: '55:2'}],
+      },
+      {
+        lines: [
+          {style: 'body', text: 'দয়াময় আল্লাহ, তিনি কুরআন শিখিয়েছেন।'},
+          {style: 'note', text: 'তাই আমরা প্রতিদিন একটু কুরআন শিখবো', delay: 2},
+        ],
+      },
+    ],
+    // three Gemini clips; clips 1 and 3 carry Gemini's Bengali voice, clip 2 carries the qari's recitation
+    scenes: [
+      {
+        art: 'sunrise-hills',
+        sound: 'morning-birds',
+        look: 'কুয়াশা ঢাকা সবুজ পাহাড়ের ওপারে সোনালি সূর্যোদয়',
+        voice: 'কুরআন আমাদের কে শিখিয়েছেন, জানো?',
+        prompt: veoVoice('A golden sunrise over layers of misty green hills, warm light slowly spreading across the valley.', 'a soft morning breeze', 'কুরআন আমাদের কে শিখিয়েছেন, জানো?'),
+        tint: ['#F3C77B', '#2F5D47'],
+      },
+      {
+        art: 'white-blossom',
+        sound: 'leaves',
+        look: 'নীল আকাশের নিচে ডালে ফুটে থাকা সাদা ফুল (তিলাওয়াতের সময়, কোনো কথা নেই)',
+        prompt: veo('Branches full of soft white blossoms against a clear blue sky, a few petals drifting slowly through the air.', 'a soft breeze through branches'),
+        tint: ['#E9EEF7', '#5A7898'],
+      },
+      {
+        art: 'golden-meadow',
+        sound: 'wind',
+        look: 'সোনালি বিকেলে বাতাসে দোল খাওয়া ঘাসের মাঠ',
+        voice: 'দয়াময় আল্লাহ, আমাদের কুরআন শিখিয়েছেন। তাই প্রতিদিন, একটু কুরআন শিখবো।',
+        prompt: veoVoice('A wide meadow of tall golden grass swaying gently in the wind at golden hour, warm low sunlight shining through.', 'wind moving through the grass', 'দয়াময় আল্লাহ, আমাদের কুরআন শিখিয়েছেন। তাই প্রতিদিন, একটু কুরআন শিখবো।'),
+        tint: ['#F0C987', '#5B6B3A'],
+      },
+    ],
+    sources: ['সূরা আর-রহমান ৫৫:১–২ — الرَّحْمٰنُ ۝ عَلَّمَ الْقُرْآنَ'],
+    checklist: [
+      'আরবি ও হরকত মুসহাফের সাথে মিলানো: الرَّحْمٰنُ ۝ عَلَّمَ الْقُرْآنَ',
+      'অনুবাদ: দয়াময় আল্লাহ, তিনি কুরআন শিখিয়েছেন',
+      'Gemini-র বাংলা কণ্ঠ ঠিক কথাগুলো ঠিক উচ্চারণে বলেছে কি না',
+      'সূত্র: সূরা আর-রহমান, আয়াত ১–২',
+      'Gemini ভিডিওতে কোনো মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক নেই',
+    ],
+    unsure: [],
+  }),
 ];
 
 // every drawn scene belongs to one reel only, so no two reels look alike
