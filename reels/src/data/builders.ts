@@ -131,7 +131,8 @@ export const textReel = (
     ...b,
     unsure: b.unsure ?? [],
     steps: [
-      {lines: [{style: 'kicker', text: b.kicker}], say: [{voice: b.narration.intro}]},
+      // the user does not want the "ছোট আয়াত" label at the start: an empty kicker shows only the spoken intro's title
+      {lines: b.kicker ? [{style: 'kicker', text: b.kicker}] : [{style: 'title', text: b.title}], say: [{voice: b.narration.intro}]},
       {lines, say, hold: 1.2},
     ],
   };

@@ -1012,7 +1012,7 @@ export const reels: Reel[] = [
     kind: 'ayah',
     title: 'আল্লাহ কাদের ভালোবাসেন (২)',
     parts: [
-      {lines: [{style: 'kicker', text: 'ছোট আয়াত · ৯'}, {style: 'title', text: 'আল্লাহ কাদের ভালোবাসেন?', delay: 0.6}]},
+      {lines: [{style: 'title', text: 'আল্লাহ কাদের ভালোবাসেন?'}]},
       {
         lines: [
           {style: 'arabic', text: 'إِنَّ اللّٰهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ'},
@@ -1071,7 +1071,7 @@ export const reels: Reel[] = [
     kind: 'ayah',
     title: 'আল্লাহ কাছেই আছেন',
     parts: [
-      {lines: [{style: 'kicker', text: 'ছোট আয়াত · ১০'}, {style: 'title', text: 'আল্লাহ কত কাছে?', delay: 0.6}]},
+      {lines: [{style: 'title', text: 'আল্লাহ কত কাছে?'}]},
       {
         lines: [
           {style: 'arabic', text: 'وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ'},
@@ -1130,7 +1130,7 @@ export const reels: Reel[] = [
     kind: 'ayah',
     title: 'তিনি কুরআন শিখিয়েছেন',
     parts: [
-      {lines: [{style: 'kicker', text: 'ছোট আয়াত · ১১'}, {style: 'title', text: 'কুরআন কে শিখিয়েছেন?', delay: 0.6}]},
+      {lines: [{style: 'title', text: 'কুরআন কে শিখিয়েছেন?'}]},
       {
         lines: [
           {style: 'arabic', text: 'الرَّحْمٰنُ ۝ عَلَّمَ الْقُرْآنَ'},
