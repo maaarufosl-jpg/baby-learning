@@ -24,6 +24,15 @@ export const EP31_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'আল্লাহুম্মা আতইম মান আতআমানি,\nওয়াসকি মান সাকানি।', from: 0.36, to: 0.82, top: 730},
     {type: 'footnote', text: 'সহিহ মুসলিম ২০৫৫'},
   ],
+  // The Arabic is long, so the teaching panel shows the Bengali only; Umayer's extra line after 8.7s is cut.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.0, to: 0.82, pop: true, align: 'right', scale: 0.5, hideArabic: true, times: [0.01, 0.257, 0.485, 0.693]},
+    {type: 'dua', mode: 'full', from: 0.82, showMeaning: true, pop: false, align: 'right', scale: 0.5, hideArabic: true},
+  ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.05, to: 0.2},
+    {type: 'repeat', parts: [0.228, 0.455, 0.693, 0.832], until: 1, align: 'right', scale: 0.5},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -54,6 +63,8 @@ export const EP31_CONFIG: ClipConfig = {
   trim: {
     2: [1.0, 7.4],
     3: [0.9, 8.4],
+    4: [0.0, 8.7],
+    5: [0.3, 9.8],
     7: [3.8, 8.6],
   },
 };
