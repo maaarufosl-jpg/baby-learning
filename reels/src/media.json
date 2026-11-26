@@ -556,6 +556,13 @@
         "file": "audio/reel24/q2-1.mp3",
         "seconds": 7.99
       }
+    },
+    "clips": {
+      "1": {
+        "file": "clips/reel24/_ready/scene1.mp4",
+        "seconds": 10.1,
+        "soundEnd": 4.1
+      }
     }
   }
 }
