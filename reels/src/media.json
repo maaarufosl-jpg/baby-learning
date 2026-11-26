@@ -562,6 +562,11 @@
         "file": "clips/reel24/_ready/scene1.mp4",
         "seconds": 10.1,
         "soundEnd": 4.1
+      },
+      "2": {
+        "file": "clips/reel24/_ready/scene2.mp4",
+        "seconds": 10.1,
+        "soundEnd": 10
       }
     }
   }
