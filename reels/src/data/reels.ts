@@ -1182,6 +1182,66 @@ export const reels: Reel[] = [
     ],
     unsure: [],
   }),
+  geminiReel({
+    id: 'reel24',
+    theme: 'peach',
+    number: 24,
+    kind: 'ayah',
+    title: 'শুকরিয়া করলে আল্লাহ আরও দেন',
+    parts: [
+      {lines: [{style: 'title', text: 'আল্লাহকে ধন্যবাদ দিলে কী হয়?'}]},
+      {
+        lines: [
+          {style: 'arabic', text: 'وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ'},
+          {style: 'source', text: 'সূরা ইবরাহিম, আয়াত ৭', delay: 3},
+        ],
+        // the start of 14:7 to the first waqf, where the qari pauses; measured by ear
+        quran: {ref: '14:7', words: [1, 6], ms: [143350, 151300]},
+      },
+      {
+        lines: [
+          {style: 'body', text: 'যখন তোমাদের রব ঘোষণা করলেন: তোমরা কৃতজ্ঞ হলে, আমি অবশ্যই তোমাদের আরও দেবো।'},
+          {style: 'note', text: 'তাই সবসময় আল্লাহকে ধন্যবাদ দেবো', delay: 2},
+        ],
+      },
+    ],
+    // three Gemini clips; clips 1 and 3 carry Gemini's Bengali voice, clip 2 carries the qari's recitation
+    scenes: [
+      {
+        art: 'orange-tree',
+        sound: 'morning-birds',
+        look: 'সকালের রোদে পাকা ফলে ভরা গাছের ডাল',
+        voice: 'আল্লাহকে ধন্যবাদ দিলে, কী হয় জানো?',
+        prompt: veoVoice('Branches of a fruit tree heavy with ripe oranges glowing in soft morning sunlight, leaves moving slightly in the breeze.', 'a gentle breeze through leaves', 'আল্লাহকে ধন্যবাদ দিলে, কী হয় জানো?'),
+        tint: ['#F4D29A', '#3E5E34'],
+      },
+      {
+        art: 'golden-rice',
+        sound: 'wind',
+        look: 'সোনালি পাকা ধানের মাঠে বাতাস (তিলাওয়াতের সময়, কোনো কথা নেই)',
+        prompt: veo('A wide field of golden ripe rice swaying gently in the wind at sunset, warm soft light over the field.', 'wind through the rice field'),
+        tint: ['#F2CF83', '#7A6230'],
+      },
+      {
+        art: 'rain-paddy',
+        sound: 'rain',
+        look: 'সবুজ ধানক্ষেতে নরম বৃষ্টি, তারপর আলো',
+        voice: 'আল্লাহকে ধন্যবাদ দিলে, আল্লাহ আরও বেশি দেন। তাই সবসময়, আল্লাহকে ধন্যবাদ দেবো।',
+        prompt: veoVoice('Soft rain falling over bright green rice paddies, then warm sunlight breaking through the clouds and making the wet leaves glow.', 'gentle rain', 'আল্লাহকে ধন্যবাদ দিলে, আল্লাহ আরও বেশি দেন। তাই সবসময়, আল্লাহকে ধন্যবাদ দেবো।'),
+        tint: ['#BFD7B0', '#2E5A3A'],
+      },
+    ],
+    sources: ['সূরা ইবরাহিম ১৪:৭ — وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ ۖ وَلَئِن كَفَرْتُمْ إِنَّ عَذَابِي لَشَدِيدٌ'],
+    checklist: [
+      'আয়াতাংশের আরবি ও হরকত মুসহাফের সাথে মিলানো: وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ',
+      'অনুবাদ: যখন তোমাদের রব ঘোষণা করলেন: তোমরা কৃতজ্ঞ হলে, আমি অবশ্যই তোমাদের আরও দেবো',
+      'বাচ্চাদের জন্য সহজ কথা ("আল্লাহকে ধন্যবাদ দিলে আল্লাহ আরও বেশি দেন") ঠিক আছে কি না',
+      'Gemini-র বাংলা কণ্ঠ ঠিক কথাগুলো ঠিক উচ্চারণে বলেছে কি না',
+      'সূত্র: সূরা ইবরাহিম, আয়াত ৭ (প্রথম অংশ)',
+      'Gemini ভিডিওতে কোনো মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক নেই',
+    ],
+    unsure: ['তিলাওয়াতের অংশ কানে মেপে নেওয়া (আয়াতের শুরু থেকে প্রথম থামা পর্যন্ত)।'],
+  }),
 ];
 
 // every drawn scene belongs to one reel only, so no two reels look alike

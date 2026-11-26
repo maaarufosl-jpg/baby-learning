@@ -549,5 +549,13 @@
         "soundEnd": 8.6
       }
     }
+  },
+  "reel24": {
+    "audio": {
+      "2-1": {
+        "file": "audio/reel24/q2-1.mp3",
+        "seconds": 7.99
+      }
+    }
   }
 }
