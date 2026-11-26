@@ -1242,6 +1242,65 @@ export const reels: Reel[] = [
     ],
     unsure: ['তিলাওয়াতের অংশ কানে মেপে নেওয়া (আয়াতের শুরু থেকে প্রথম থামা পর্যন্ত)।'],
   }),
+  geminiReel({
+    id: 'reel25',
+    theme: 'rose',
+    number: 25,
+    kind: 'ayah',
+    title: 'বাবা-মায়ের সাথে সুন্দর ব্যবহার',
+    parts: [
+      {lines: [{style: 'title', text: 'বাবা-মায়ের সাথে কেমন ব্যবহার করবো?'}]},
+      {
+        lines: [
+          {style: 'arabic', text: 'وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا'},
+          {style: 'source', text: 'সূরা আল-ইসরা, আয়াত ২৩', delay: 3},
+        ],
+        // the start of 17:23 to the first waqf, where the qari pauses; measured by ear
+        quran: {ref: '17:23', words: [1, 8], ms: [443850, 455200]},
+      },
+      {
+        lines: [
+          {style: 'body', text: 'তোমার রব আদেশ দিয়েছেন: তাঁকে ছাড়া কারো ইবাদত করো না, আর বাবা-মায়ের সাথে সুন্দর ব্যবহার করো।'},
+          {style: 'note', text: 'তাই বাবা-মায়ের কথা শুনবো, তাঁদের ভালোবাসবো', delay: 2},
+        ],
+      },
+    ],
+    // three Gemini clips; clips 1 and 3 carry Gemini's Bengali voice, clip 2 carries the qari's recitation
+    scenes: [
+      {
+        art: 'lone-tree',
+        sound: 'leaves',
+        look: 'সবুজ মাঠে একা দাঁড়িয়ে থাকা বড় ছায়াঘেরা গাছ',
+        voice: 'বাবা-মায়ের সাথে, কেমন ব্যবহার করবো জানো?',
+        prompt: veoVoice('A single large leafy tree standing in a green meadow on a sunny morning, its branches moving gently in the breeze, giving soft shade.', 'wind in the leaves', 'বাবা-মায়ের সাথে, কেমন ব্যবহার করবো জানো?'),
+        tint: ['#CBE3B6', '#35603C'],
+      },
+      {
+        art: 'two-trees-sunset',
+        sound: 'wind',
+        look: 'সূর্যাস্তে পাহাড়ের ওপর পাশাপাশি দুটো গাছ (তিলাওয়াতের সময়, কোনো কথা নেই)',
+        prompt: veo('Two trees standing side by side on a gentle hill against a warm golden sunset sky, grass moving softly in the wind.', 'evening breeze'),
+        tint: ['#F1BE7E', '#4A4E3A'],
+      },
+      {
+        art: 'rose-garden',
+        sound: 'morning-birds',
+        look: 'সকালের আলোয় শিশিরভেজা গোলাপি আর সাদা ফুলের বাগান',
+        voice: 'আল্লাহ বলেছেন, বাবা-মায়ের সাথে সবসময় সুন্দর ব্যবহার করবে।',
+        prompt: veoVoice('A garden of soft pink and white roses covered in morning dew, petals moving very slightly in the breeze, warm morning light.', 'a light morning breeze', 'আল্লাহ বলেছেন, বাবা-মায়ের সাথে সবসময় সুন্দর ব্যবহার করবে।'),
+        tint: ['#F6D5DC', '#4F6A4A'],
+      },
+    ],
+    sources: ['সূরা আল-ইসরা ১৭:২৩ — وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا ۚ ...'],
+    checklist: [
+      'আয়াতাংশের আরবি ও হরকত মুসহাফের সাথে মিলানো: وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا',
+      'অনুবাদ: তোমার রব আদেশ দিয়েছেন: তাঁকে ছাড়া কারো ইবাদত করো না, আর বাবা-মায়ের সাথে সুন্দর ব্যবহার করো',
+      'Gemini-র বাংলা কণ্ঠ ঠিক কথাগুলো ঠিক উচ্চারণে বলেছে কি না',
+      'সূত্র: সূরা আল-ইসরা, আয়াত ২৩ (প্রথম অংশ)',
+      'Gemini ভিডিওতে কোনো মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক নেই',
+    ],
+    unsure: ['quran.com এর শব্দের সময় এই আয়াতে মেলে না; তিলাওয়াতের অংশ কানে মেপে নেওয়া (আয়াতের শুরু থেকে প্রথম থামা পর্যন্ত)।'],
+  }),
 ];
 
 // every drawn scene belongs to one reel only, so no two reels look alike

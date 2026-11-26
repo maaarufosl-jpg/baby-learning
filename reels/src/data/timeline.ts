@@ -59,7 +59,9 @@ export const buildTimeline = (reel: Reel, media: ReelMedia = {}): Timeline => {
         sounds.push({at, seconds: len, file: m?.file, quran: isQuran(s), arabic: true, text: sayText(s)});
         at += len + GAP;
       });
-      const to = from + seconds;
+      // a recitation longer than its clip stretches the scene (the clip is slowed to fit, down to 0.7x)
+      const to = Math.max(from + seconds, at - GAP + 0.6);
+      scenesAt[si].seconds = to - from;
       cards.push({from: from + 0.2, to: to - 0.2, lines: step.lines.map((l) => ({...l, at: Math.min((l.with !== undefined ? starts[l.with] ?? from : from + 0.2) + (l.delay ?? 0), to - 1)}))});
       from = to - CROSSFADE;
     });
