@@ -24,6 +24,19 @@ export const EP32_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'তিনবার বললে জান্নাতও\nআমাদের জন্য দোয়া করে!', from: 0.6, to: 0.9, top: 730},
     {type: 'footnote', text: 'তিরমিজি ২৫৭২, আবু দাউদ ৭৯২'},
   ],
+  // Ma and Umayer take the dua in turns; the panel lights each part as Ma says it.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.1, to: 1, pop: true, align: 'right', times: [0.129, 0.347, 0.693]},
+  ],
+  5: [
+    {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.1, to: 0.21},
+    {type: 'repeat', parts: [0.337, 0.545, 0.802], until: 1, align: 'right'},
+  ],
+  // Cut after they fall asleep, before a stray sound at 8.5s.
+  6: [
+    {type: 'say', who: 'umayer', text: 'আল্লাহুম্মা ইন্নি আসআলুকাল জান্নাহ!', from: 0.18, to: 0.51, top: 880},
+    {type: 'say', who: 'safa', text: 'জান্নাহ!', from: 0.535, to: 0.64, top: 880},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -54,6 +67,9 @@ export const EP32_CONFIG: ClipConfig = {
   trim: {
     2: [1.2, 8.2],
     3: [0.7, 9.2],
+    4: [1.0, 9.4],
+    5: [0.7, 9.2],
+    6: [1.5, 8.4],
     7: [3.8, 8.6],
   },
 };
