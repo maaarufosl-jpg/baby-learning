@@ -1301,6 +1301,66 @@ export const reels: Reel[] = [
     ],
     unsure: ['quran.com এর শব্দের সময় এই আয়াতে মেলে না; তিলাওয়াতের অংশ কানে মেপে নেওয়া (আয়াতের শুরু থেকে প্রথম থামা পর্যন্ত)।'],
   }),
+  geminiReel({
+    id: 'reel26',
+    theme: 'sky',
+    number: 26,
+    kind: 'ayah',
+    title: 'আল্লাহ সব দেখেন',
+    parts: [
+      {lines: [{style: 'title', text: 'কেউ না দেখলেও, কে দেখেন?'}]},
+      {
+        lines: [
+          {style: 'arabic', text: 'أَلَمْ يَعْلَم بِأَنَّ اللّٰهَ يَرَىٰ'},
+          {style: 'source', text: 'সূরা আল-আলাক, আয়াত ১৪', delay: 2},
+        ],
+        // the whole ayah
+        quran: {ref: '96:14'},
+      },
+      {
+        lines: [
+          {style: 'body', text: 'সে কি জানে না যে, আল্লাহ দেখেন?'},
+          {style: 'note', text: 'আল্লাহ সব দেখেন, তাই আমরা ভালো কাজ করবো', delay: 1.5},
+        ],
+      },
+    ],
+    // three Gemini clips; clips 1 and 3 carry Gemini's Bengali voice, clip 2 carries the qari's recitation
+    scenes: [
+      {
+        art: 'starry-hills',
+        sound: 'night',
+        look: 'পাহাড়ের ওপর তারাভরা রাতের আকাশ',
+        voice: 'কেউ না দেখলেও, কে আমাদের দেখেন জানো?',
+        prompt: veoVoice('A clear starry night sky with the Milky Way slowly turning above the dark silhouette of quiet hills.', 'quiet night air', 'কেউ না দেখলেও, কে আমাদের দেখেন জানো?'),
+        tint: ['#2B3A67', '#0E1530'],
+      },
+      {
+        art: 'single-peak',
+        sound: 'mountain-wind',
+        look: 'ভোরের আলোয় উঁচু পাহাড়চূড়া (তিলাওয়াতের সময়, কোনো কথা নেই)',
+        prompt: veo('A tall mountain peak glowing in soft dawn light above a sea of clouds, very calm and wide.', 'soft high mountain wind'),
+        tint: ['#C89AA6', '#2F3550'],
+      },
+      {
+        art: 'sunflower-field',
+        sound: 'wind',
+        look: 'নীল আকাশের নিচে সূর্যমুখী ফুলের মাঠ',
+        voice: 'আল্লাহ সব দেখেন। তাই আমরা সবসময়, ভালো কাজ করবো।',
+        prompt: veoVoice('A bright field of sunflowers swaying gently under a clear blue sky with soft white clouds.', 'a light summer breeze', 'আল্লাহ সব দেখেন। তাই আমরা সবসময়, ভালো কাজ করবো।'),
+        tint: ['#A9CDEB', '#4E7E3C'],
+      },
+    ],
+    sources: ['সূরা আল-আলাক ৯৬:১৪ — أَلَمْ يَعْلَم بِأَنَّ اللّٰهَ يَرَىٰ'],
+    checklist: [
+      'আরবি ও হরকত মুসহাফের সাথে মিলানো: أَلَمْ يَعْلَم بِأَنَّ اللّٰهَ يَرَىٰ',
+      'অনুবাদ: সে কি জানে না যে, আল্লাহ দেখেন?',
+      'বাচ্চাদের জন্য শিক্ষা ("আল্লাহ সব দেখেন, তাই ভালো কাজ করবো") ঠিক আছে কি না',
+      'Gemini-র বাংলা কণ্ঠ ঠিক কথাগুলো ঠিক উচ্চারণে বলেছে কি না',
+      'সূত্র: সূরা আল-আলাক, আয়াত ১৪',
+      'Gemini ভিডিওতে কোনো মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক নেই',
+    ],
+    unsure: [],
+  }),
 ];
 
 // every drawn scene belongs to one reel only, so no two reels look alike

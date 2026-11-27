@@ -599,5 +599,13 @@
         "soundEnd": 7.4
       }
     }
+  },
+  "reel26": {
+    "audio": {
+      "2-1": {
+        "file": "audio/reel26/q2-1.mp3",
+        "seconds": 5.62
+      }
+    }
   }
 }
