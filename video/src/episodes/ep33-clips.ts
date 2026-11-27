@@ -25,6 +25,11 @@ export const EP33_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'মানে, আল্লাহ ছাড়া\nআর কোনো মাবুদ নেই।', from: 0.46, to: 0.69, top: 730},
     {type: 'footnote', text: 'তিরমিজি ৩৩৮৩, ইবনে মাজাহ ৩৮০০'},
   ],
+  // Ma and Umayer take the two parts in turns, then say it all together; Umayer's extra sound at 9.1s is cut.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.05, to: 0.52, pop: true, align: 'right', times: [0.089, 0.297]},
+    {type: 'dua', mode: 'full', from: 0.52, showMeaning: true, pop: false, align: 'right', scale: 0.5},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -55,6 +60,7 @@ export const EP33_CONFIG: ClipConfig = {
   trim: {
     2: [1.8, 8.0],
     3: [1.1, 6.9],
+    4: [0.6, 8.2],
     7: [3.8, 8.6],
   },
 };
