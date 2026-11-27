@@ -606,6 +606,23 @@
         "file": "audio/reel26/q2-1.mp3",
         "seconds": 5.62
       }
+    },
+    "clips": {
+      "1": {
+        "file": "clips/reel26/_ready/scene1.mp4",
+        "seconds": 10.1,
+        "soundEnd": 4.5
+      },
+      "2": {
+        "file": "clips/reel26/_ready/scene2.mp4",
+        "seconds": 10.1,
+        "soundEnd": 10
+      },
+      "3": {
+        "file": "clips/reel26/_ready/scene3.mp4",
+        "seconds": 10.1,
+        "soundEnd": 7
+      }
     }
   }
 }
