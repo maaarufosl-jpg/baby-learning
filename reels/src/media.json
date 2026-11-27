@@ -587,6 +587,11 @@
         "file": "clips/reel25/_ready/scene1.mp4",
         "seconds": 10.1,
         "soundEnd": 5.3
+      },
+      "2": {
+        "file": "clips/reel25/_ready/scene2.mp4",
+        "seconds": 10.1,
+        "soundEnd": 10
       }
     }
   }
