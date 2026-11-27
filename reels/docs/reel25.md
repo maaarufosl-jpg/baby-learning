@@ -18,7 +18,7 @@
 ### ভিডিও ১: সবুজ মাঠে একা দাঁড়িয়ে থাকা বড় ছায়াঘেরা গাছ
 
 ```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A single large leafy tree standing in a green meadow on a sunny morning, its branches moving gently in the breeze, giving soft shade. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: soft natural sounds (wind in the leaves) and a gentle, warm young male voice speaking slowly and clearly in Bengali, as a voiceover with no one on screen, starting after one second and saying exactly: "বাবা-মায়ের সাথে, কেমন ব্যবহার করবো জানো?" No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no subtitles, no logos, no watermark, no music.
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A single large leafy tree standing in a green meadow on a sunny morning, its branches moving gently in the breeze, giving soft shade. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: soft natural sounds (wind in the leaves) and the same gentle narrator in every clip: a soft, sweet young Bangladeshi boy of about 12, with a fairly high, clear voice, calm, warm and kind, smiling slightly, never robotic, speaking slowly and clearly in Bengali as a voiceover with no one on screen, starting after one second and saying exactly: "বাবা-মায়ের সাথে, কেমন ব্যবহার করবো জানো?" No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no subtitles, no logos, no watermark, no music.
 ```
 
 ### ভিডিও ২: সূর্যাস্তে পাহাড়ের ওপর পাশাপাশি দুটো গাছ (তিলাওয়াতের সময়, কোনো কথা নেই)
@@ -30,7 +30,7 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. Two tre
 ### ভিডিও ৩: সকালের আলোয় শিশিরভেজা গোলাপি আর সাদা ফুলের বাগান
 
 ```
-Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A garden of soft pink and white roses covered in morning dew, petals moving very slightly in the breeze, warm morning light. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: soft natural sounds (a light morning breeze) and a gentle, warm young male voice speaking slowly and clearly in Bengali, as a voiceover with no one on screen, starting after one second and saying exactly: "আল্লাহ বলেছেন, বাবা-মায়ের সাথে সবসময় সুন্দর ব্যবহার করবে।" No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no subtitles, no logos, no watermark, no music.
+Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A garden of soft pink and white roses covered in morning dew, petals moving very slightly in the breeze, warm morning light. Very slow, calm camera movement. Soft natural light, peaceful mood, gentle colours. Keep the middle of the frame soft and uncluttered so text can be placed over it. Audio: soft natural sounds (a light morning breeze) and the same gentle narrator in every clip: a soft, sweet young Bangladeshi boy of about 12, with a fairly high, clear voice, calm, warm and kind, smiling slightly, never robotic, speaking slowly and clearly in Bengali as a voiceover with no one on screen, starting after one second and saying exactly: "আল্লাহ বলেছেন, বাবা-মায়ের সাথে সবসময় সুন্দর ব্যবহার করবে।" No people, no animals, no birds or insects visible, no faces, no hands, no buildings, no text, no subtitles, no logos, no watermark, no music.
 ```
 
 ভিডিও না আসা পর্যন্ত কোডে আঁকা দৃশ্য দেখানো হয়।
@@ -48,11 +48,11 @@ Vertical 9:16 video, 8 seconds, photorealistic cinematic nature footage. A garde
 | সময় | কী | বিষয় |
 |---|---|---|
 | ০:০০ | লেখা | বাবা-মায়ের সাথে কেমন ব্যবহার করবো? |
-| ০:০৭ | লেখা | وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا |
-| ০:০৭ | কুরআন | তিলাওয়াত (মিশারি রাশিদ আল-আফাসি): ১৭:২৩ (শব্দ ১–৮) |
-| ০:১০ | লেখা | সূরা আল-ইসরা, আয়াত ২৩ |
-| ০:১৯ | লেখা | তোমার রব আদেশ দিয়েছেন: তাঁকে ছাড়া কারো ইবাদত করো না, আর বাবা-মায়ের সাথে সুন্দর ব্যবহার করো। |
-| ০:২১ | লেখা | তাই বাবা-মায়ের কথা শুনবো, তাঁদের ভালোবাসবো |
+| ০:০৬ | লেখা | وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا |
+| ০:০৬ | কুরআন | তিলাওয়াত (মিশারি রাশিদ আল-আফাসি): ১৭:২৩ (শব্দ ১–৮) |
+| ০:০৯ | লেখা | সূরা আল-ইসরা, আয়াত ২৩ |
+| ০:১৮ | লেখা | তোমার রব আদেশ দিয়েছেন: তাঁকে ছাড়া কারো ইবাদত করো না, আর বাবা-মায়ের সাথে সুন্দর ব্যবহার করো। |
+| ০:২০ | লেখা | তাই বাবা-মায়ের কথা শুনবো, তাঁদের ভালোবাসবো |
 | ০:২৭ | শেষ | দৃশ্য মিলিয়ে যায়, শুধু "ছোট্ট মুমিন" নাম প্রায় দেড় সেকেন্ড |
 
 পুরো সময় দৃশ্যের ওপর নরম অন্ধকার স্তর থাকবে, ওপরে ছোট লোগো। প্রকৃতির শব্দ বাজবে, কণ্ঠের সময় একটু কমে যাবে।
