@@ -35,6 +35,10 @@ export const EP33_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'এবার তুমি বলো!', from: 0.12, to: 0.26},
     {type: 'repeat', parts: [0.406, 0.673], until: 1, align: 'right'},
   ],
+  6: [
+    {type: 'say', who: 'umayer', text: 'লা ইলাহা ইল্লাল্লাহ!', from: 0.11, to: 0.31, top: 880},
+    {type: 'say', who: 'safa', text: 'ইল্লাল্লাহ!', from: 0.32, to: 0.46, top: 880},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -67,6 +71,7 @@ export const EP33_CONFIG: ClipConfig = {
     3: [1.1, 6.9],
     4: [0.6, 8.2],
     5: [1.0, 8.4],
+    6: [0.9, 9.6],
     7: [3.8, 8.6],
   },
 };
