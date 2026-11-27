@@ -19,6 +19,12 @@ export const EP33_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'umayer', text: 'মা, সবচেয়ে সেরা কথা কোনটা?', from: 0.22, to: 0.5, top: 880},
     {type: 'say', who: 'ammu', text: 'আল্লাহকে মনে করার কথা!', from: 0.55, to: 0.79, top: 880},
   ],
+  // Ma's teaching ends at 6.6s; the unscripted lines after it are cut. Bubbles sit higher to clear the source note.
+  3: [
+    {type: 'say', who: 'ammu', text: 'সবচেয়ে সেরা জিকির,\nলা ইলাহা ইল্লাল্লাহ।', from: 0.13, to: 0.45, top: 730},
+    {type: 'say', who: 'ammu', text: 'মানে, আল্লাহ ছাড়া\nআর কোনো মাবুদ নেই।', from: 0.46, to: 0.69, top: 730},
+    {type: 'footnote', text: 'তিরমিজি ৩৩৮৩, ইবনে মাজাহ ৩৮০০'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -48,6 +54,7 @@ export const EP33_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [1.8, 8.0],
+    3: [1.1, 6.9],
     7: [3.8, 8.6],
   },
 };
