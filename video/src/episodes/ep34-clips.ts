@@ -18,6 +18,12 @@ export const EP34_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'আমাদের নবীজি মুহাম্মদ (সা.)\nছোটদের খুব ভালোবাসতেন।', from: 0.13, to: 0.52, top: 780},
     {type: 'say', who: 'umayer', text: 'মা, নবীজির নাম শুনলে কী বলি?', from: 0.54, to: 0.86, top: 880},
   ],
+  // Bubbles sit higher so the source note below does not touch them.
+  3: [
+    {type: 'say', who: 'ammu', text: 'বলি,\nসাল্লাল্লাহু আলাইহি ওয়া সাল্লাম।', from: 0.13, to: 0.44, top: 730},
+    {type: 'say', who: 'ammu', text: 'একবার বললে আল্লাহ\nদশবার রহমত দেন!', from: 0.5, to: 0.84, top: 730},
+    {type: 'footnote', text: 'সহিহ মুসলিম ৪০৮'},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -47,6 +53,7 @@ export const EP34_CONFIG: ClipConfig = {
   // Seconds of each Gemini clip to keep, so the episode stays short.
   trim: {
     2: [1.1, 8.8],
+    3: [1.0, 8.7],
     7: [3.8, 8.6],
   },
 };
