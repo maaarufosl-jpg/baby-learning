@@ -1421,6 +1421,67 @@ export const reels: Reel[] = [
     ],
     unsure: [],
   }),
+  geminiReel({
+    id: 'reel28',
+    theme: 'lime',
+    number: 28,
+    kind: 'ayah',
+    title: 'আল্লাহর নিয়ামত গুনে শেষ হয় না',
+    parts: [
+      {lines: [{style: 'title', text: 'আল্লাহ আমাদের কত কিছু দিয়েছেন!'}]},
+      {
+        lines: [
+          {style: 'arabic', text: 'وَإِن تَعُدُّوا نِعْمَةَ اللّٰهِ لَا تُحْصُوهَا ۗ إِنَّ اللّٰهَ لَغَفُورٌ رَّحِيمٌ'},
+          {style: 'source', text: 'সূরা আন-নাহল, আয়াত ১৮', delay: 2},
+        ],
+        // the whole ayah
+        quran: {ref: '16:18'},
+      },
+      {
+        lines: [
+          {style: 'body', text: 'তোমরা আল্লাহর নিয়ামত গুনে শেষ করতে পারবে না।'},
+          {style: 'note', text: 'তাই সবসময় বলি: আলহামদুলিল্লাহ', delay: 1.5},
+        ],
+      },
+    ],
+    // three Gemini clips; clips 1 and 3 carry Gemini's Bengali voice, clip 2 carries the qari's recitation
+    scenes: [
+      {
+        art: 'river-valley',
+        sound: 'stream',
+        look: 'রোদে ঝিকমিক করা চওড়া নদী',
+        voice: 'আল্লাহ আমাদের কত কিছু দিয়েছেন, গুনে দেখবে?',
+        prompt: veoVoice('Countless tiny sparkles of sunlight glittering on the surface of a wide, slow river winding through green hills.', 'a gently flowing river', 'আল্লাহ আমাদের কত কিছু দিয়েছেন, গুনে দেখবে?'),
+        tint: ['#BFE3A0', '#3E6B3A'],
+      },
+      {
+        art: 'canopy',
+        sound: 'leaves',
+        look: 'কুয়াশাভরা সবুজ বনে গাছের ফাঁক দিয়ে রোদের রেখা (তিলাওয়াতের সময়, কোনো কথা নেই)',
+        prompt: veo('A lush green forest of tall trees with soft sunbeams shining through light morning mist, very calm.', 'soft rustling leaves'),
+        tint: ['#9CCB7A', '#24432A'],
+      },
+      {
+        art: 'golden-meadow',
+        sound: 'wind',
+        look: 'রোদে পাকা আঙুরে ভরা লতা',
+        voice: 'আল্লাহর দেওয়া জিনিস, গুনে শেষ করা যায় না। তাই বলি, আলহামদুলিল্লাহ।',
+        prompt: veoVoice('Green vines heavy with bunches of ripe purple grapes glowing in warm golden sunlight, leaves moving gently in the breeze.', 'a warm gentle breeze through leaves', 'আল্লাহর দেওয়া জিনিস, গুনে শেষ করা যায় না। তাই বলি, আলহামদুলিল্লাহ।'),
+        tint: ['#D8E59A', '#5A3E5E'],
+      },
+    ],
+    sources: ['সূরা আন-নাহল ১৬:১৮ — وَإِن تَعُدُّوا نِعْمَةَ اللّٰهِ لَا تُحْصُوهَا ۗ إِنَّ اللّٰهَ لَغَفُورٌ رَّحِيمٌ'],
+    checklist: [
+      'আরবি ও হরকত মুসহাফের সাথে মিলানো: وَإِن تَعُدُّوا نِعْمَةَ اللّٰهِ لَا تُحْصُوهَا ۗ إِنَّ اللّٰهَ لَغَفُورٌ رَّحِيمٌ',
+      'অনুবাদ: আর যদি তোমরা আল্লাহর নিয়ামত গণনা করো, তবে তা গুনে শেষ করতে পারবে না। নিশ্চয়ই আল্লাহ ক্ষমাশীল, পরম দয়ালু।',
+      'পর্দায় শুধু প্রথম অংশের সহজ অনুবাদ দেখানো হয়েছে; এটা ঠিক আছে কি না',
+      'বাচ্চাদের জন্য শিক্ষা ("তাই সবসময় বলি: আলহামদুলিল্লাহ") ঠিক আছে কি না',
+      'Gemini-র বাংলা কণ্ঠ ঠিক কথাগুলো ঠিক উচ্চারণে বলেছে কি না',
+      'সূত্র: সূরা আন-নাহল, আয়াত ১৮',
+      'Gemini ভিডিওতে কোনো মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক নেই',
+    ],
+    unsure: ['পর্দায় অনুবাদে আয়াতের শেষ অংশ (নিশ্চয়ই আল্লাহ ক্ষমাশীল, পরম দয়ালু) ছোট রাখার জন্য বাদ দেওয়া হয়েছে; তিলাওয়াতে পুরো আয়াত আছে'],
+  }),
 ];
 // every drawn scene belongs to one reel only, so no two reels look alike
 const seen = new Map<string, string>();

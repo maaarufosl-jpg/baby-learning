@@ -649,5 +649,13 @@
         "soundEnd": 8.3
       }
     }
+  },
+  "reel28": {
+    "audio": {
+      "2-1": {
+        "file": "audio/reel28/q2-1.mp3",
+        "seconds": 12.8
+      }
+    }
   }
 }
