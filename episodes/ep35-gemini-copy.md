@@ -19,7 +19,7 @@ Characters: Umayer, a 4-year-old Bangladeshi boy with big warm brown eyes, rosy 
 
 Setting: a bright, tidy Bangladeshi children's bedroom in the morning: a tall oval mirror in a simple wooden frame standing on the floor at the left side of the room, a small wooden dresser with a hairbrush, sunlight coming through a white curtain, soft mint-green walls. The mirror shows only a correct reflection of whoever stands in front of it. Fresh and cheerful.
 
-Action: Umayer stands in front of the tall mirror, brushing his hair under his cap edge with a small hairbrush and smiling proudly at his reflection. Ma stands just behind him, watching lovingly. Umayer turns to Ma happily and speaks; Ma smiles and answers softly.
+Action: Umayer stands in front of the tall mirror, gently brushing the side of his hair with a small hairbrush and smiling proudly at his reflection. Ma stands just behind him, watching lovingly. Umayer turns to Ma happily and speaks; Ma smiles and answers softly.
 
 Dialogue: Umayer, proud and happy, in Bengali: "মা, দেখো, আমি কত সুন্দর!" Ma, smiling: "মাশাআল্লাহ! আয়না দেখলে দোয়া পড়ি।"
 ```
