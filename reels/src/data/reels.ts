@@ -1361,8 +1361,67 @@ export const reels: Reel[] = [
     ],
     unsure: [],
   }),
+  geminiReel({
+    id: 'reel27',
+    theme: 'coral',
+    number: 27,
+    kind: 'ayah',
+    title: 'ভালো কাজের প্রতিদান ভালো',
+    parts: [
+      {lines: [{style: 'title', text: 'ভালো কাজ করলে কী পাই?'}]},
+      {
+        lines: [
+          {style: 'arabic', text: 'هَلْ جَزَاءُ الْإِحْسَانِ إِلَّا الْإِحْسَانُ'},
+          {style: 'source', text: 'সূরা আর-রহমান, আয়াত ৬০', delay: 2},
+        ],
+        // the whole ayah
+        quran: {ref: '55:60'},
+      },
+      {
+        lines: [
+          {style: 'body', text: 'ভালো কাজের প্রতিদান, ভালো ছাড়া আর কী হতে পারে?'},
+          {style: 'note', text: 'ভালো করলে আল্লাহ আরও ভালো দেন', delay: 1.5},
+        ],
+      },
+    ],
+    // three Gemini clips; clips 1 and 3 carry Gemini's Bengali voice, clip 2 carries the qari's recitation
+    scenes: [
+      {
+        art: 'white-blossom',
+        sound: 'wind',
+        look: 'বসন্তের হাওয়ায় গোলাপি ফুলে ভরা ডাল',
+        voice: 'ভালো কাজ করলে, আল্লাহ আমাদের কী দেন জানো?',
+        prompt: veoVoice('Branches full of soft pink spring blossoms swaying gently in a light breeze, with a few petals drifting in warm morning sunlight.', 'a soft spring breeze and rustling petals', 'ভালো কাজ করলে, আল্লাহ আমাদের কী দেন জানো?'),
+        tint: ['#F4C3C8', '#7A4A5A'],
+      },
+      {
+        art: 'dawn-cove',
+        sound: 'waves',
+        look: 'সকালের নরম আলোয় শান্ত ফিরোজা রঙের সাগর-উপহ্রদ (তিলাওয়াতের সময়, কোনো কথা নেই)',
+        prompt: veo('A calm turquoise lagoon with small gentle waves on white sand, under soft morning light, very peaceful and wide.', 'very soft gentle waves'),
+        tint: ['#8FD3D0', '#2E5E6E'],
+      },
+      {
+        art: 'wildflowers',
+        sound: 'wind',
+        look: 'সোনালি বিকেলে রঙিন বুনো ফুলের মাঠ',
+        voice: 'ভালো কাজ করলে, আল্লাহ আরও ভালো দেন। তাই এসো, আমরা সবাই ভালো কাজ করি।',
+        prompt: veoVoice('A wide meadow of colourful wildflowers glowing in golden late-afternoon sunlight, swaying slowly in the breeze.', 'a warm gentle breeze through grass', 'ভালো কাজ করলে, আল্লাহ আরও ভালো দেন। তাই এসো, আমরা সবাই ভালো কাজ করি।'),
+        tint: ['#F2B880', '#6E5A2E'],
+      },
+    ],
+    sources: ['সূরা আর-রহমান ৫৫:৬০ — هَلْ جَزَاءُ الْإِحْسَانِ إِلَّا الْإِحْسَانُ'],
+    checklist: [
+      'আরবি ও হরকত মুসহাফের সাথে মিলানো: هَلْ جَزَاءُ الْإِحْسَانِ إِلَّا الْإِحْسَانُ',
+      'অনুবাদ: উত্তম কাজের প্রতিদান উত্তম ছাড়া আর কী হতে পারে?',
+      'বাচ্চাদের জন্য শিক্ষা ("ভালো করলে আল্লাহ আরও ভালো দেন") ঠিক আছে কি না',
+      'Gemini-র বাংলা কণ্ঠ ঠিক কথাগুলো ঠিক উচ্চারণে বলেছে কি না',
+      'সূত্র: সূরা আর-রহমান, আয়াত ৬০',
+      'Gemini ভিডিওতে কোনো মানুষ, প্রাণী, পাখি, লেখা বা মিউজিক নেই',
+    ],
+    unsure: [],
+  }),
 ];
-
 // every drawn scene belongs to one reel only, so no two reels look alike
 const seen = new Map<string, string>();
 for (const r of reels) {

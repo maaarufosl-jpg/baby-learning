@@ -624,5 +624,13 @@
         "soundEnd": 7
       }
     }
+  },
+  "reel27": {
+    "audio": {
+      "2-1": {
+        "file": "audio/reel27/q2-1.mp3",
+        "seconds": 8.49
+      }
+    }
   }
 }
