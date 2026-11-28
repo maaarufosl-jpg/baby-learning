@@ -24,6 +24,10 @@ export const EP34_OVERLAYS: Record<number, ClipOverlay[]> = {
     {type: 'say', who: 'ammu', text: 'একবার বললে আল্লাহ\nদশবার রহমত দেন!', from: 0.5, to: 0.84, top: 730},
     {type: 'footnote', text: 'সহিহ মুসলিম ৪০৮'},
   ],
+  // Ma and Umayer take the three parts in turns; the panel lights each part as Ma says it.
+  4: [
+    {type: 'dua', mode: 'broken', from: 0.04, to: 1, pop: true, align: 'right', times: [0.069, 0.307, 0.515]},
+  ],
   // Episode 7's goodbye stands in for this episode's own: same outfits, kept from the salam on.
   7: [
     {type: 'say', who: 'everyone', text: 'আসসালামু আলাইকুম!\nপরের পর্বে দেখা হবে!', from: 0.39, to: 0.8},
@@ -54,6 +58,7 @@ export const EP34_CONFIG: ClipConfig = {
   trim: {
     2: [1.1, 8.8],
     3: [1.0, 8.7],
+    4: [0.4, 8.4],
     7: [3.8, 8.6],
   },
 };
